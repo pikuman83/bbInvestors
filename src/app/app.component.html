@@ -1,1 +1,18 @@
-<h1>Bienvenid@s a la web de BB-Investors</h1>
+<header class="header1 d-flex">
+  <div class="logo-header as-center">
+    <img src="../assets/bblogo.jpg" width="220px" alt="Company's logo">
+  </div>
+  <div class="header2 as-center">
+    <div class="user d-block">
+      <h4>EN</h4>
+    </div>
+    <div class="menu d-flex">
+      <a [routerLink]="['/inicio']" i18n>INICIO</a>
+      <a [routerLink]="['/about']" i18n>SOBRE MI</a>
+      <a [routerLink]="['/services']" i18n>SERVICIOS</a>
+      <a [routerLink]="['/projects']" i18n>PORTAFOLIO</a>
+      <a [routerLink]="['/news']" i18n>ACTUALIDAD</a>
+    </div>
+  </div>
+</header>
+<router-outlet></router-outlet>

@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+html, body { height: 100%; overflow-x: hidden; }
+/* body { margin: 0; font-family: 'Roboto Slab', serif; } */
+body { margin: 0; font-family: sans-serif; }
+.d-flex{
+    display: flex;
+}
+.d-block{
+    display: block;
+}
+.as-center{
+    align-self: center;
+}
+.w-100{
+    width: 100%;
+}
+.txt-center{
+    text-align: center;
+}
+a, a:visited, a:hover {
+    color: #1D4C56;
+    font-weight: 550;
+    text-decoration: none;
+}
+a:hover {
+    color: #d7944a;
+}
+.green{
+    color: #1D4C56;
+}
+.orange{
+    color: #d7944a;
+}
+.flex-center{
+    justify-content: center;
+}

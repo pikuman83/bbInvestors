@@ -1,0 +1,19 @@
+.colored-box{
+    background-color: #1D4C56;
+}
+.eslogan{
+    text-align: center;
+    margin: 200px auto;
+}
+.transparent-box{
+    background-color: white;
+    height: fit-content;
+    min-height: 340px;
+    font-size: 40px;
+    opacity: 0.8;
+    padding: 1em;
+    margin-left: -100px;
+    margin-top: 60px;
+    line-height: 60px;
+    align-items: center;
+}

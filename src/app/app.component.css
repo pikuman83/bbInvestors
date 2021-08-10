@@ -1,0 +1,19 @@
+.header1{
+    width: 100%;
+    color: #1D4C56;
+    min-height: 100px;
+}
+.logo-header{
+    min-width: 30%;
+    text-align: center;
+}
+.header2{
+    width: 70%;
+    text-align: end;
+}
+.header2 a{
+    margin: 0 16px;
+}
+.menu{
+    justify-content: center;
+}
