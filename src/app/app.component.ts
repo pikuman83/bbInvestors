@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, LOCALE_ID } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +10,15 @@ export class AppComponent implements OnInit {
   title = 'bbInvestors';
   siteLanguage: string = 'ES';
   languageList = ['ES','EN','FR'];
-  
+  private locale = LOCALE_ID.toString();
+
   ngOnInit() {
-      this.siteLanguage = window.location.pathname.split('/')[1].toLocaleUpperCase();
-    console.log(window.location.pathname, this.siteLanguage);
+    if (this.locale !== 'en' || 'es' || 'fr'){
+      this.siteLanguage = 'en';
+    }
+    else{
+      this.siteLanguage = window.location.pathname.split('/')[1].toUpperCase();
+    }
+      console.log(window.location.pathname, this.siteLanguage);
   }
 }

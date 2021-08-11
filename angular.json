@@ -5,6 +5,7 @@
   "projects": {
     "bbInvestors": {
       "i18n": {
+        "sourceLocale": "en-US",
         "locales": {
           "en": "src/translate/messages.en.xlf",
           "es": "src/translate/messages.es.xlf"
@@ -23,6 +24,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": true,
+            "aot":true, 
             "outputPath": "dist/bbInvestors",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -64,12 +67,6 @@
                 }
               ],
               "outputHashing": "all"
-            },
-            "en": {
-              "localize": ["en"]
-            },
-            "es": {
-              "localize": ["es"]
             },
             "development": {
               "buildOptimizer": false,
