@@ -1,4 +1,4 @@
-/es 302 Language=es
-/es 301 Language=es
+/es /es/index.html 302
+/es /es/index.html 301
 /es/* /index.html 200
 /en/* /index.html 200
