@@ -6,8 +6,8 @@ import { NewsComponent } from './modules/static-content/news/news.component';
 import { ServicesComponent } from './modules/static-content/services/services.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/inicio', pathMatch: 'full'},
-  {path: 'en', redirectTo: '/inicio', pathMatch: 'full'},
+  {path: '', redirectTo: '/en/inicio', pathMatch: 'full'},
+  {path: 'es', redirectTo: '/es/inicio', pathMatch: 'full'},
   {path: 'inicio', component: InicioComponent},
   {path: 'about', component: AboutComponent},
   {path: 'services', component: ServicesComponent},
