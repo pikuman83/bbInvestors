@@ -29,8 +29,12 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatButtonModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: (navigator.language !== 'en' && navigator.language !== 'es')? '/en' : `/${navigator.language}`}],
+  providers: [{provide: APP_BASE_HREF, useValue: (navigator.language !== 'en' && navigator.language !== 'es')? '/en/' : `/${navigator.language}/`}],
   bootstrap: [AppComponent]
 })
 // {provide: LOCALE_ID, useValue: (navigator.language !== 'en' && navigator.language !== 'es')? 'en' : navigator.language }
-export class AppModule {}
+export class AppModule {
+  constructor(){
+    console.log((navigator.language !== 'en' && navigator.language !== 'es')? '/en' : `/${navigator.language}`)
+  }
+}
