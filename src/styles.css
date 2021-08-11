@@ -25,6 +25,9 @@ a, a:visited, a:hover {
 a:hover {
     color: #d7944a;
 }
+a:focus {
+    color: #d7944a;
+}
 .green{
     color: #1D4C56;
 }
@@ -34,3 +37,5 @@ a:hover {
 .flex-center{
     justify-content: center;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

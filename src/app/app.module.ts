@@ -6,6 +6,13 @@ import { AppComponent } from './app.component';
 
 import { StaticContentModule } from "./modules/static-content/static-content.module";
 import { ProjectsModule } from "./modules/projects/projects.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+// import { MatSelectModule } from '@angular/material/select';
+// import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -15,7 +22,11 @@ import { ProjectsModule } from "./modules/projects/projects.module";
     BrowserModule,
     AppRoutingModule,
     StaticContentModule,
-    ProjectsModule
+    ProjectsModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,14 +4,19 @@
   </div>
   <div class="header2 as-center">
     <div class="user d-block">
-      <h4>EN</h4>
+      <button mat-button [matMenuTriggerFor]="langMenu">{{siteLanguage}}<mat-icon>arrow_drop_down</mat-icon></button>
+      <mat-menu #langMenu="matMenu">
+        <a mat-menu-item href="/es">ES</a>
+        <a mat-menu-item href="/en">EN</a>
+        <a mat-menu-item href="/fr">FR</a>
+      </mat-menu>
     </div>
     <div class="menu d-flex">
-      <a [routerLink]="['/inicio']" i18n>INICIO</a>
-      <a [routerLink]="['/about']" i18n>SOBRE MI</a>
-      <a [routerLink]="['/services']" i18n>SERVICIOS</a>
-      <a [routerLink]="['/projects']" i18n>PORTAFOLIO</a>
-      <a [routerLink]="['/news']" i18n>ACTUALIDAD</a>
+      <a [routerLink]="['/inicio']" i18n="@@menu1">INICIO</a>
+      <a [routerLink]="['/about']" i18n="@@menu2">SOBRE MI</a>
+      <a [routerLink]="['/services']" i18n="@@menu3">SERVICIOS</a>
+      <a [routerLink]="['/projects']" i18n="@@menu4">PORTAFOLIO</a>
+      <a [routerLink]="['/news']" i18n="@@menu5">ACTUALIDAD</a>
     </div>
   </div>
 </header>

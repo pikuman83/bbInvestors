@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="menu1" datatype="html">
+        <source>INICIO</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu2" datatype="html">
+        <source>SOBRE MI</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu3" datatype="html">
+        <source>SERVICIOS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu4" datatype="html">
+        <source>PORTAFOLIO</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu5" datatype="html">
+        <source>ACTUALIDAD</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6734179026699749195" datatype="html">
+        <source>Construimos y diversificamos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5882569406504251888" datatype="html">
+        <source>su portafolio de inversiones</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4267869769502242449" datatype="html">
+        <source>inmobiliarias internacionales</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1536315283111102498" datatype="html">
+        <source>de manera fácil, remota <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> y segura.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
