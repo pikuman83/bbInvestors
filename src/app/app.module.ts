@@ -1,4 +1,5 @@
 import { NgModule, LOCALE_ID  } from '@angular/core';
+import {APP_BASE_HREF} from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: (navigator.language !== 'en' && navigator.language !== 'es')? '/en' : `/${navigator.language}`}],
   bootstrap: [AppComponent]
 })
 // {provide: LOCALE_ID, useValue: (navigator.language !== 'en' && navigator.language !== 'es')? 'en' : navigator.language }
