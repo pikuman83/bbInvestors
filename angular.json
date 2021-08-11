@@ -7,7 +7,7 @@
       "i18n": {
         "locales": {
           "en": "src/translate/messages.en.xlf",
-          "es": "src/translate/messages.xlf"
+          "es": "src/translate/messages.es.xlf"
         }
       },
       "projectType": "application",
@@ -33,7 +33,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []

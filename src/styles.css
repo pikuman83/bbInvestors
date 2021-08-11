@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
-html, body { height: 100%; overflow-x: hidden; }
-/* body { margin: 0; font-family: 'Roboto Slab', serif; } */
-body { margin: 0; font-family: sans-serif; }
+html, body { height: 100%; overflow-x: hidden;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* body { margin: 0; font-family: sans-serif; } */
 .d-flex{
     display: flex;
 }
@@ -37,5 +36,3 @@ a:focus {
 .flex-center{
     justify-content: center;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
