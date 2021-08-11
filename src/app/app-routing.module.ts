@@ -7,8 +7,8 @@ import { ServicesComponent } from './modules/static-content/services/services.co
 
 const routes: Routes = [
   {path: '', redirectTo: '/inicio', pathMatch: 'full'},
-  // {path: 'en', redirectTo: '/inicio', pathMatch: 'full'},
-  // {path: 'es', redirectTo: '/inicio', pathMatch: 'full'},
+  {path: 'en', redirectTo: '/inicio', pathMatch: 'full'},
+  {path: 'es', redirectTo: '/inicio', pathMatch: 'full'},
   {path: 'inicio', component: InicioComponent},
   {path: 'about', component: AboutComponent},
   {path: 'services', component: ServicesComponent},
