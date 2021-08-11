@@ -13,6 +13,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
       this.siteLanguage = window.location.pathname.split('/')[1].toUpperCase();
-      console.log(window.location.pathname, this.siteLanguage);
+      console.log(window.location.pathname, this.siteLanguage, navigator.language);
   }
 }
