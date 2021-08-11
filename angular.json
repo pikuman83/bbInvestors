@@ -5,10 +5,19 @@
   "projects": {
     "bbInvestors": {
       "i18n": {
-        "sourceLocale": "en-US",
+        "sourceLocale": {
+          "code": "en",
+          "baseHref": ""
+        },
         "locales": {
-          "en": "src/translate/messages.en.xlf",
-          "es": "src/translate/messages.es.xlf"
+          "en": {
+            "baseHref": "",
+            "translation": "src/translate/messages.en.xlf"
+          },
+          "es": {
+            "baseHref": "",
+            "translation": "src/translate/messages.es.xlf"
+          }
         }
       },
       "projectType": "application",
