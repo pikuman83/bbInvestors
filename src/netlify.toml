@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/*"
+  to = "/en/home"
+  status = 302
+  conditions = {Language = ["en"]}
