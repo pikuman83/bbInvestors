@@ -36,7 +36,7 @@
               {
                 "glob": "_redirects",
                 "input": "src",
-                "output": "../"
+                "output": "/"
               }
             ],
             "styles": [
