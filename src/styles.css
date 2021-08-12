@@ -1,5 +1,5 @@
 html, body { height: 100%; overflow-x: hidden;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; box-sizing: border-box; }
 /* body { margin: 0; font-family: sans-serif; } */
 .d-flex{
     display: flex;
@@ -35,4 +35,15 @@ a:focus {
 }
 .flex-center{
     justify-content: center;
+}
+.bt-big{
+    display: block;
+    padding: 40px;
+    border: 2px solid #d7944a;
+}
+.bold{
+    font-weight: 500;
+}
+.flex-col{
+    flex-direction: column;
 }
