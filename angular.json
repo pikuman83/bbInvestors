@@ -30,7 +30,6 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "disablePathCheck",
               "src/favicon.ico",
               "src/assets",
               {
