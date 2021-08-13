@@ -11,5 +11,6 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  card: string = "Le acompañaré y guiaré en todo el proceso de invertir en mercados internacionales de manera controlada y segura. Trabajaremos juntos para conseguir los objetivos marcados:"
 
 }

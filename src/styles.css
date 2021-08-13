@@ -1,17 +1,20 @@
 html, body { height: 100%; overflow-x: hidden;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; box-sizing: border-box; }
-/* body { margin: 0; font-family: sans-serif; } */
+
 .d-flex{
     display: flex;
 }
 .d-block{
     display: block;
 }
+.w-100{
+    width: 100%;
+}
 .as-center{
     align-self: center;
 }
-.w-100{
-    width: 100%;
+.flex-center{
+    justify-content: center;
 }
 .txt-center{
     text-align: center;
@@ -33,12 +36,9 @@ a:focus {
 .orange{
     color: #d7944a;
 }
-.flex-center{
-    justify-content: center;
-}
 .bt-big{
     display: block;
-    padding: 40px;
+    padding: 40px 80px;
     border: 2px solid #d7944a;
 }
 .bold{
