@@ -1,22 +1,22 @@
-html, body { height: 100%; overflow-x: hidden;}
+/* Major break points
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px */
+
+html, body { height: 100%; overflow-x: hidden; box-sizing: border-box;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; box-sizing: border-box; }
 
-.d-flex{
-    display: flex;
-}
-.d-block{
-    display: block;
-}
-.w-100{
+.wrapper{
     width: 100%;
-}
-.as-center{
-    align-self: center;
-}
-.flex-center{
+    max-width: 1200px;
+    display: flex;
     justify-content: center;
-}
-.txt-center{
+    align-items: flex-end;
+    margin: 0 auto;
+    flex-wrap: wrap;
     text-align: center;
 }
 a, a:visited, a:hover {
@@ -30,20 +30,65 @@ a:hover {
 a:focus {
     color: #d7944a;
 }
+
+
+
+/* FLEXBOX */
+.d-flex{
+    display: flex;
+}
+.flex-col{
+    flex-direction: column;
+}
+.flex-row{
+    flex-direction: row;
+}
+.as-center{
+    align-self: center;
+}
+.as-end{
+    align-self: flex-end;
+}
+.flex-center{
+    justify-content: center;
+}
+
+
+
+
+.d-block{
+    display: block;
+}
+.w-100{
+    width: 100%;
+}
+.txt-center{
+    text-align: center;
+}
 .green{
     color: #1D4C56;
 }
 .orange{
     color: #d7944a;
 }
+.bold{
+    font-weight: 500;
+}
+.mt-50{
+    margin-top: 50px;
+}
+.mb-50{
+    margin-bottom: 50px;
+}
+.m-auto{
+    margin: 0 auto;
+}
+
+
+
+
 .bt-big{
     display: block;
     padding: 40px 80px;
     border: 2px solid #d7944a;
-}
-.bold{
-    font-weight: 500;
-}
-.flex-col{
-    flex-direction: column;
 }
