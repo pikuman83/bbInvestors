@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --localize",
-    "postbuild":"cp \".\/bbInvestors\\es\\_redirects\" \".\/bbInvestors\"",
+    "postbuild":"cp \".\/es\\_redirects\" \".\/\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
