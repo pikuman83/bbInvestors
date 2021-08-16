@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --localize",
-    "postbuild":"cp /opt/build/repo/src/_redirects*",
+    "postbuild":"cp /opt/build/repo/src/_redirects ./",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
