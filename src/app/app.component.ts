@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   title = 'bbInvestors';
   siteLanguage = '';
   languageList = ['ES','EN','FR'];
+  showForm = false;
 
   ngOnInit() {
       // this.siteLanguage = window.location.pathname.split('/')[1].toUpperCase();

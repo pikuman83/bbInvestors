@@ -9,16 +9,6 @@
 html, body { height: 100%; overflow-x: hidden; box-sizing: border-box;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; box-sizing: border-box; }
 
-.wrapper{
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    text-align: center;
-}
 a, a:visited, a:hover {
     color: #1D4C56;
     font-weight: 550;
@@ -32,8 +22,16 @@ a:focus {
 }
 
 
-
 /* FLEXBOX */
+.wrapper{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: flex-end;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    text-align: center;
+}
 .d-flex{
     display: flex;
 }
@@ -51,6 +49,9 @@ a:focus {
 }
 .flex-center{
     justify-content: center;
+}
+.flex-between{
+    justify-content: space-between;
 }
 
 

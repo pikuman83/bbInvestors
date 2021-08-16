@@ -1,0 +1,19 @@
+.form-container{
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+mat-form-field{
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+}
+form button{
+    width: 400px;
+    max-width: 400px;
+    color: white;
+    background-color: #1D4C56;
+    height: 50px;
+    border-radius: 6px;
+    margin-top: 20px;
+}

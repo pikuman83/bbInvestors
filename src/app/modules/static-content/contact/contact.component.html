@@ -1,1 +1,60 @@
-<p>contact works!</p>
+<form class="form-container" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" autocomplete="off">
+  
+  <mat-form-field appearance="outline">
+    <mat-label>Asunto</mat-label>
+    <mat-select formControlName="asunto">
+      <mat-option value="Quiero invertir">Quiero invertir</mat-option>
+      <mat-option value="Quiero reservar">Quiero reservar</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input matInput placeholder="Jose Luis Rodriguez Amador" formControlName="name"
+      [class.isValid]="myForm.controls.name.valid"
+      [class.invalid]="myForm.controls.name.invalid && (myForm.controls.name.dirty || myForm.controls.name.touched)">
+    <mat-hint *ngIf="myForm.controls.name.invalid && (myForm.controls.name.dirty || myForm.controls.name.touched)">
+      Por favor indique su nombre.
+    </mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Teléfono</mat-label>
+    <input type="tel" matInput placeholder="+34-930 000 000" formControlName="movil"
+      [class.valid]="myForm.controls.movil.valid"
+      [class.invalid]="myForm.controls.movil.invalid && (myForm.controls.movil.dirty || myForm.controls.movil.touched)">
+    <mat-hint *ngIf="myForm.controls.movil.invalid && (myForm.controls.movil.dirty || myForm.controls.movil.touched)">
+      El número debe empezar por el simbolo + seguido delcodigo del país y posteriormente el número de teléfono.
+    </mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput placeholder="hola@buenosdías.com" formControlName="email"
+      [class.valid]="myForm.controls.email.valid"
+      [class.invalid]="myForm.controls.email.invalid && (myForm.controls.email.dirty || myForm.controls.email.touched)">
+    <mat-hint *ngIf="myForm.controls.email.invalid && (myForm.controls.email.dirty || myForm.controls.email.touched)">
+      Por favor introduzca su email para que le podamos enviar información de su interés.
+    </mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Mensaje</mat-label>
+    <textarea matInput [mat-autosize]="true" formControlName="message"
+      [class.valid]="myForm.controls.message.valid"
+      [class.invalid]="myForm.controls.message.invalid && (myForm.controls.message.dirty || myForm.controls.message.touched)">
+      Estoy interesado en 
+    </textarea>
+    <mat-hint *ngIf="myForm.controls.message.invalid && (myForm.controls.message.dirty || myForm.controls.message.touched)">
+      Nos encantaria saber de usted. Por favor indique en que le podemos ayudar. O si prefiere que le llamemos nosotros 
+      por favor escriba llamame.
+    </mat-hint>
+  </mat-form-field>
+  
+  <div class="terms">
+    <input type="checkbox" id="data-policy">
+    <label for="data-policy">Estoy de acuerdo con los términos y condiciones</label>
+  </div>
+
+  <button type="submit" [disabled]="myForm.invalid">Enviar</button>
+</form>
