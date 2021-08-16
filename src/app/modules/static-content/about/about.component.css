@@ -37,7 +37,7 @@
 .s-m{
     grid-column: 4/7;
     grid-row: 3/4;
-    background-image: url(../../../../assets/social-media-fake.jpg);
+    background-image: url(assets/social-media-fake.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -71,7 +71,7 @@
     grid-row: 2/8;
     font-size: 1.5em;
     line-height: 1.5em;
-    background-image: url(../../../../assets/img259.jpg);
+    background-image: url(assets/img259.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
