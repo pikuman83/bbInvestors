@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --localize",
     "postbuild":"xcopy /s \".\/dist\\bbInvestors\\es\\_redirects\" \".\/dist\\bbInvestors\" \/Y",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
