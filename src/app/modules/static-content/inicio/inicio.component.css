@@ -1,9 +1,10 @@
-section{
+.section1{
     background-color: #1D4C56;
 }
 header{
     width: 100%;
     height: 100vh;
+    padding-top: 90px;
     display: flex;
     justify-content: center;
 }
@@ -62,7 +63,6 @@ header{
     justify-content: center;
     font-size: 1em;
     font-weight: 300;
-    align-self: center;
     color: #d7944a;
     border: 2px solid #d7944a;
 }
@@ -121,12 +121,148 @@ header{
 }
 
 
+/* 1st WHITE BOX */
+.first-white-bx{
+    min-height: 650px;
+}
+#btn4{
+    width: 170px;
+    font-weight: 500;
+    
+}
+.font-set{
+    font-size: 2.2em;
+    line-height: 1.4em;
+    letter-spacing: 1px;
+}
+.font-set1{
+    font-size: 1.4em;
+    line-height: 1.2em;
+    font-weight: 300;
+}
+.w-40{
+    width: 40%;
+}
+.w-30{
+    width: 30%;
+}
+.line3-bx{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(5, 100px);
+    text-align: center;
+}
+.line3-bx *{
+    margin: 0 auto;
+}
+.line3{
+    grid-column: 1;
+    grid-row: 1/5;
+    height: 100%;
+    border-right: #d7944a 2px solid;
+}
+.circle{
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    background-color: #d7944a;
+}
+.circle:first-child{
+    grid-column: 1;
+    grid-row: 1;
+}
+.circle:nth-child(2){
+    grid-column: 1;
+    grid-row: 2;
+}
+.circle:nth-child(3){
+    grid-column: 1;
+    grid-row: 3;
+}
+.circle:nth-child(4){
+    grid-column: 1;
+    grid-row: 4;
+}
 
-
-a:hover{
+.first-white-bx a:hover, .section1 a:hover{
     background-color: #d7944a;
     color: white;
 }
 .ml-5{
     margin-left: 5px;
+}
+
+/* SECTION3 - PROJECTS*/
+.section3{
+    background-color: #1D4C56;
+    width: 100%;
+    position: relative;
+}
+.section3 > div:first-child{
+    font-size: 3.5em;
+    line-height: 3em;
+    color: lightgray;
+    height: 150px;
+    text-align: center;
+}
+.section3 > div:last-child{
+    font-size: 2.2em;
+    line-height: 5em;
+    height: 150px;
+    text-align: center;
+}
+.section3 a{
+    color: #d7944a;
+}
+.section3-image{
+    padding-top: 400px;
+    width: 100vw;
+    background-image: url(../../../../assets/Seda.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.cities{
+    position: absolute;
+    right: 250px;
+    top: 25px;
+    z-index: 2;
+}
+.cities a:not(.cities a:last-child){
+    display: table;
+    font-size: 2.2em;
+    line-height: 2em;
+    color: #1D4C56;
+}
+.cities a:nth-child(-n+3){
+    border-bottom: #d7944a 2px solid;
+}
+.section3 a:hover{
+    color: #d7944a;
+}
+.section3 .section3-image .cities a:hover{
+    color: #d7944a;
+}
+#btn4:hover{
+    color: white;
+    background-color: #d7944a;
+}
+.transparent-bg{
+    position: absolute;
+    width: 294px;
+    height: 340px;
+    background-color: gray;
+    top: 182px;
+    right: 222px;
+    z-index: 1;
+    opacity: 0.3;
+}
+.section3-footer a{
+    color: lightgray;
+}
+.section3-footer a{
+    border-right: #d7944a 1px solid;
+    border-left: #d7944a 1px solid;
+    padding: 0 25px;
 }

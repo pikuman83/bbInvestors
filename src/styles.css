@@ -11,7 +11,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; box-sizing:
 
 a, a:visited, a:hover {
     color: #1D4C56;
-    font-weight: 550;
     text-decoration: none;
 }
 a:hover {
@@ -44,6 +43,12 @@ a:focus {
 .ai-center{
     align-items: center;
 }
+.ai-end{
+    align-items: flex-end;
+}
+.as-start{
+    align-self: flex-start;
+}
 .as-center{
     align-self: center;
 }
@@ -63,9 +68,6 @@ a:focus {
 .d-block{
     display: block;
 }
-.w-100{
-    width: 100%;
-}
 .txt-center{
     text-align: center;
 }
@@ -78,11 +80,30 @@ a:focus {
 .bold{
     font-weight: 500;
 }
+
+
+/* WIDTHS */
+.mx-w-12{
+    max-width: 1200px;
+}
+.w-100{
+    width: 100%;
+}
+.w-50{
+    width: 50%;
+    box-sizing: border-box;
+}
+
+
+/* MARGINS */
 .mt-50{
     margin-top: 50px;
 }
 .mb-50{
     margin-bottom: 50px;
+}
+.mt-25{
+    margin-top: 25px;
 }
 .mb-25{
     margin-bottom: 25px;
