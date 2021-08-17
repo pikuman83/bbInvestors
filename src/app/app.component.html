@@ -1,16 +1,31 @@
+
+<div class="contact" (click)="showForm=!showForm">
+  <mat-icon class="contact-text">mail</mat-icon>
+  <div class="contact-text">Contact</div>
+</div>
+<div class="popupForm" [class.visible]="showForm">
+  <app-contact></app-contact>
+</div>
+
 <header>
   <div class="header">
     <div class="logo-header as-center">
-      <img src="assets/bblogo.jpg" width="220px" alt="Company's logo">
+      <img src="assets/bblogo.png" width="72px" alt="Company's logo">
     </div>
     <div class="header2 as-center">
       <div class="user d-flex">
           
         <div class="hello-user">Hello Investor</div>
         
-        <button mat-button [matMenuTriggerFor]="langMenu">{{siteLanguage}}<mat-icon>arrow_drop_down</mat-icon></button>
+        <!-- {{siteLanguage}} -->
+        <button mat-button [matMenuTriggerFor]="langMenu" >
+          <mat-icon *ngIf="siteLanguage===''">language</mat-icon>
+          {{setLang()}}
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+
         <mat-menu #langMenu="matMenu">
-          <a mat-menu-item href="/es">ES</a>
+          <a class="menuFirstItem" mat-menu-item href="/es">ES</a>
           <a mat-menu-item href="/en">EN</a>
           <a mat-menu-item href="/fr">FR</a>
         </mat-menu>
@@ -27,20 +42,13 @@
 </header>
 <router-outlet></router-outlet>
 <footer>
-  <div class="d-flex copyright">
-    <div class="c-symbol">C</div>
-    <div>2021 BB For Investors. Todos los derechos reservados.</div>
+  <div class="d-flex flex-between copyright">
+    <div>&copy; 2021 BB For Investors. Todos los derechos reservados.</div>
+    <div>
+      <a href="#">Políticas</a> | 
+      <a href="#">Terminos</a> | 
+      <a href="#">Cookies</a> | 
+      <a href="#">Mapa del sitio</a> 
+    </div>
   </div>
-  <div class="blue lighter">
-    <a href="#">Políticas</a> | 
-    <a href="#">Terminos</a> | 
-    <a href="#">Cookies</a> | 
-    <a href="#">Mapa del sitio</a> 
-  </div>
-<div class="contact" (click)="showForm=!showForm">
-  <h2 class="contact-text">Contact</h2>
-</div>
-<div class="popuptext" [class.visible]="showForm">
-  <app-contact></app-contact>
-</div>
 </footer>

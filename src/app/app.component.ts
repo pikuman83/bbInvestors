@@ -1,4 +1,4 @@
-import { Component, OnInit, LOCALE_ID } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,15 @@ export class AppComponent implements OnInit {
   showForm = false;
 
   ngOnInit() {
-      this.siteLanguage = window.location.pathname.split('/')[1].toUpperCase();
-      // this.siteLanguage = (navigator.language !== 'en' && navigator.language !== 'es')? 'EN' : navigator.language.toUpperCase();
+    this.setLang();
+      // this.siteLanguage = window.location.pathname.split('/')[1].toUpperCase();
+  }
+
+  setLang(){
+    let lang = '';
+    if (window.location.pathname.split('/')[1] === 'en') return lang = 'EN';
+    if (window.location.pathname.split('/')[1] === 'es') return lang = 'ES';
+    if (window.location.pathname.split('/')[1] === 'fr') return lang = 'FR';
+    return lang = ''
   }
 }

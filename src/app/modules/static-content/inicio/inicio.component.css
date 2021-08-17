@@ -1,39 +1,121 @@
-.colored-box{
+section{
     background-color: #1D4C56;
-    position: relative;
-    min-height: 1000px;
+}
+header{
+    width: 100%;
+    height: 92vh;
+    display: flex;
+    justify-content: center;
 }
 .eslogan{
-    text-align: center;
-    margin: 200px auto;
+    width: 480px;
+    background-image: url(../../../../assets/incio1.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 50px;
 }
-.transparent-box{
-    background-color: white;
-    height: fit-content;
-    min-height: 400px;
-    max-height: 400px;
-    font-size: 40px;
-    opacity: 0.8;
+.container{
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 50px;
+    margin: 0 auto;
+}
+.img1{
+    grid-column: 1/9;
+    grid-row: 1/11;
+    background-image: url(../../../../assets/investor.jpg);
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.bg-settings{
+    background-repeat: no-repeat;
+}
+.bx{
+    box-sizing: border-box;
+    width: 100%;
+    height: 90%;
+    margin: 0 auto;
     padding: 1em;
-    margin-left: -100px;
-    margin-top: 60px;
-    line-height: 76px;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    align-self: center;
 }
-.position1{
-    position: absolute;
-    /* bottom: 0px; */
-    right: 20%;
-    font-size: 2em;
-    font-weight: 400;
+.bx-1{
+    grid-column: 7/13;
+    grid-row: 2/10;
+    background-color: white;
+    font-size: 2.5em;
+    opacity: 0.8;
+    line-height: 1.8em;
+}
+.btn{
+    width: 100%;
+    height: 50px;
+    align-self: center;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: 300;
+    align-self: center;
     color: #d7944a;
+    border: 2px solid #d7944a;
 }
-.temp{
-    height: 2000px;
+.btn1{
+    grid-column: 10/12;
+    grid-row: 10/12;
 }
-.palo1{
+.line1{
     width: 0;
-    height: 350px;
-    position: absolute;
-    border-right: 3px solid #d7944a;
+    height: 90%;
+    grid-column: 8;
+    grid-row: 9/15;
+    z-index: 1;
+    margin-left: 25px;
+    border-right: 2px solid #d7944a;
+}
+.img2{
+    grid-column: 2/8;
+    grid-row: 17/31;
+    background-image: url(../../../../assets/img115.jpg);
+    width: 80%;
+    margin: 0 auto;
+    background-size: contain;
+    background-position: top;
+}
+.bx-2{
+    grid-column: 7/12;
+    grid-row: 18/30;
+    background-color: #d7944a;
+    color: white;
+    font-size: 2.2em;
+    line-height: 1.5em;
+}
+.btn2{
+    grid-column: 8/10;
+    grid-row: 29/34;
+}
+.btn3{
+    grid-column: 10/12;
+    grid-row: 29/34;
+}
+.formula{
+    grid-column: 2/8;
+    grid-row: 32/38;
+    color: #d7944a;
+    font-size: 2.6em;
+    line-height: 2em;
+    margin: 0 auto;
+}
+.line2{
+    grid-column: 7;
+    grid-row: 38/40;
+    width: 0;
+    height: 100%;
+    border-left: #d7944a 2px solid;
 }

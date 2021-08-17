@@ -1,21 +1,42 @@
-<div class="container">
-    <div class="colored-box">
-        <div class="w-100 txt-center">
-            <img class="eslogan" src="assets/inicio1.jpg" width="420px" alt="eslogan">
-        </div>
-        <section class="w-100 d-flex flex-center">
-            <img src="assets/img109.jpg" width="800px" height="640px" alt="handshake">
-            <div class="transparent-box">
+<section>
+    <header>
+        <div class="eslogan"></div>
+        <!-- <img src="assets/incio1.svg" width="420px" alt="eslogan"> -->
+    </header>
+    <div class="container">
+        <div class="img1 bg-settings"></div>
+        <div class="bx bx-1">
+            <div>
                 <span class="green" i18n>Construimos y diversificamos</span><br>
                 <span class="orange" i18n>su portafolio de inversiones</span><br>
                 <span class="green" i18n>inmobiliarias internacionales</span><br>
-                <span class="orange" i18n>de manera fácil, remota <br> y segura.</span><br>
+                <span class="orange" i18n>de manera fácil, remota y segura</span>
             </div>
-        </section>
-        <a class="bt-big position1" [routerLink]="['/services']" >VER SERVICIOS</a>
-        <div class="palo1"></div>
-        <div class="temp"></div>
+        </div>
+        <a class="btn btn1" [routerLink]="['/services']" >VER SERVICIOS</a>
+        <div class="line1"></div>
+        <div class="img2 bg-settings"></div>
+        <div class="myname"></div>
+        <div class="bx bx-2">
+            “En estos tiempos, la 
+            supervivencia económica 
+            pasa por la diversificación de 
+            sus activos.
+            Mi trabajo es facilitar sus 
+            inversiones en activos 
+            inmobiliarios en el extranjero 
+            con ayuda de mi experiencia y 
+            conocimientos”
+        </div>
+        <a class="btn btn2" [routerLink]="['/about']" >MAS SOBRE MI</a>
+        <a class="btn btn3" [routerLink]="['/projects']">PORTAFOLIO</a>
+        <div class="formula">
+            <li> su activo</li>
+            <div>+ mi asesoramiento</div>
+            <div>= su beneficio</div>
+        </div>
+        <div class="line2"></div>
     </div>
-    <app-news></app-news>
-    <app-contact></app-contact>
-</div>
+</section>
+<app-news></app-news>
+<app-contact></app-contact>

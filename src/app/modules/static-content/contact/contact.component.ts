@@ -1,5 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -8,13 +8,21 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class ContactComponent implements OnInit,OnDestroy {
 
-  myForm = this.fb.group({
+  contactForm = this.fb.group({
     asunto: ['Quiero invertir'],
     name: ['', Validators.required],
     movil: [''],
     email: ['', [Validators.required, Validators.email]],
     message: ['', [Validators.required, Validators.minLength(5)]],
   });
+  
+  @Input() popup!:boolean;
+  // this will be used to add css classes for
+  // heading
+  // button color and size
+  // total width
+  // background and animations
+  // show the top title and close bar
 
   constructor(private fb: FormBuilder) { }
 
@@ -25,8 +33,9 @@ export class ContactComponent implements OnInit,OnDestroy {
     console.log('Contact component destroyed');
   }
 
-  onSubmit(form:any) {
-// send emails
+  onSubmit(form:FormGroup) {
+    // send emails
+    console.log(form)
   }
 
 }
