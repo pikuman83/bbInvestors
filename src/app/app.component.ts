@@ -8,12 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   title = 'bbInvestors';
-  siteLanguage = '';
   showForm = false;
+  showMenu = false;
 
   ngOnInit() {
     this.setLang();
-      // this.siteLanguage = window.location.pathname.split('/')[1].toUpperCase();
   }
 
   setLang(){

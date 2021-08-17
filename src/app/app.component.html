@@ -1,54 +1,85 @@
-
-<div class="contact" (click)="showForm=!showForm">
-  <mat-icon class="contact-text">mail</mat-icon>
-  <div class="contact-text">Contact</div>
-</div>
-<div class="popupForm" [class.visible]="showForm">
-  <app-contact></app-contact>
-</div>
-
-<header>
-  <div class="header">
-    <div class="logo-header as-center">
-      <img src="assets/bblogo.png" width="72px" alt="Company's logo">
+<!-- LANDING PAGE -->
+<div [ngClass]="{'container-landing': !showMenu, 'destroy': showMenu}">
+  <div class="investor-bx d-flex flex-col flex-center ai-center">
+    <div class="d-flex">
+      <div class="logo-single"></div>
+      <div class="logo-single"></div>
+      <div class="logo-for logo-inv"></div>
     </div>
-    <div class="header2 as-center">
-      <div class="user d-flex">
+    <div class="title-inv mb-50">Maximice el retorno de las inversiones inmobiliarias</div>
+    <a class="seeHow-btn" [routerLink]="['/home']" (click)="showMenu=!showMenu" [class.destroy]="showMenu">
+      VEA COMO &nbsp; <img class="greaterThan orange" src="../assets/morethan.png" width="16px" alt="right arrow"></a>
+  </div>
+  <div class="guest-bx d-flex flex-col flex-center ai-center">
+    <div class="d-flex">
+      <div class="logo-single"></div>
+      <div class="logo-single"></div>
+      <div class="logo-for logo-gst"></div>
+    </div>
+    <div class="title-gst mb-50">Viva una auténtica experiencia en nuestros acogedores apartamentos</div>
+    <a class="seeHow-btn" [routerLink]="['/home']" (click)="showMenu=!showMenu" [class.destroy]="showMenu">
+      RESERVE YA! &nbsp; <img class="greaterThan orange" src="../assets/morethan.png" width="16px" alt="right arrow"></a>
+  </div>
+</div>
+
+<!-- FIXED SIDE CONTACT FORM -->
+<div class="destroy" [class.show]="showMenu">
+  <div class="contact" (click)="showForm=!showForm">
+    <mat-icon class="contact-text">mail</mat-icon>
+    <div class="contact-text">Contact</div>
+  </div>
+  <div class="popupForm" [class.visible]="showForm">
+    <app-contact></app-contact>
+  </div>
+  
+<!-- TOP MENU BAR -->
+  <header>
+    <div class="header">
+      <div class="as-center">
+        <img class="mr-12" src="assets/bblogo.png" width="72px" alt="Company's logo">
+        <img src="../assets/For-investors-1.png" width="72px" alt="Company's logo">
+      </div>
+      <div class="header2 as-center">
+        <div class="user d-flex">
+            
+          <div class="hello-user">Hello Investor</div>
           
-        <div class="hello-user">Hello Investor</div>
-        
-        <!-- {{siteLanguage}} -->
-        <button mat-button [matMenuTriggerFor]="langMenu" >
-          <mat-icon *ngIf="siteLanguage===''">language</mat-icon>
-          {{setLang()}}
-          <mat-icon>arrow_drop_down</mat-icon>
-        </button>
-
-        <mat-menu #langMenu="matMenu">
-          <a class="menuFirstItem" mat-menu-item href="/es">ES</a>
-          <a mat-menu-item href="/en">EN</a>
-          <a mat-menu-item href="/fr">FR</a>
-        </mat-menu>
-      </div>
-      <div class="menu d-flex">
-        <a [routerLink]="['/home']" i18n="@@menu1">INICIO</a>
-        <a [routerLink]="['/about']" i18n="@@menu2">SOBRE MI</a>
-        <a [routerLink]="['/services']" i18n="@@menu3">SERVICIOS</a>
-        <a [routerLink]="['/projects']" i18n="@@menu4">PORTAFOLIO</a>
-        <a [routerLink]="['/news']" i18n="@@menu5">ACTUALIDAD</a>
-      </div>
-  </div>
-  </div>
-</header>
-<router-outlet></router-outlet>
-<footer>
-  <div class="d-flex flex-between copyright">
-    <div>&copy; 2021 BB For Investors. Todos los derechos reservados.</div>
-    <div>
-      <a href="#">Políticas</a> | 
-      <a href="#">Terminos</a> | 
-      <a href="#">Cookies</a> | 
-      <a href="#">Mapa del sitio</a> 
+          <button mat-button [matMenuTriggerFor]="langMenu" >
+            <mat-icon *ngIf="setLang()===''">language</mat-icon>
+            {{setLang()}}
+            <mat-icon>arrow_drop_down</mat-icon>
+          </button>
+  
+          <mat-menu #langMenu="matMenu">
+            <a class="menuFirstItem" mat-menu-item href="/es">ES</a>
+            <a mat-menu-item href="/en">EN</a>
+            <a mat-menu-item href="/fr">FR</a>
+          </mat-menu>
+        </div>
+        <div class="menu d-flex">
+          <a [routerLink]="['/home']" i18n="@@menu1">INICIO</a>
+          <a [routerLink]="['/about']" i18n="@@menu2">SOBRE MI</a>
+          <a [routerLink]="['/services']" i18n="@@menu3">SERVICIOS</a>
+          <a [routerLink]="['/projects']" i18n="@@menu4">PORTAFOLIO</a>
+          <a [routerLink]="['/news']" i18n="@@menu5">ACTUALIDAD</a>
+        </div>
     </div>
-  </div>
-</footer>
+    </div>
+  </header>
+
+  <!-- REST OF THE APP -->
+  <router-outlet class="router"></router-outlet>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="d-flex flex-between copyright">
+      <div>&copy; 2021 BB For Investors. Todos los derechos reservados.</div>
+      <div>
+        <a href="#">Políticas</a> | 
+        <a href="#">Terminos</a> | 
+        <a href="#">Cookies</a> | 
+        <a href="#">Mapa del sitio</a> 
+      </div>
+    </div>
+  </footer>
+</div>

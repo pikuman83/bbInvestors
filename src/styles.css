@@ -41,6 +41,9 @@ a:focus {
 .flex-row{
     flex-direction: row;
 }
+.ai-center{
+    align-items: center;
+}
 .as-center{
     align-self: center;
 }
@@ -80,6 +83,15 @@ a:focus {
 }
 .mb-50{
     margin-bottom: 50px;
+}
+.mb-25{
+    margin-bottom: 25px;
+}
+.mr-12{
+    margin-right: 12px;
+}
+.ml-12{
+    margin-left: 12px;
 }
 .m-auto{
     margin: 0 auto;
