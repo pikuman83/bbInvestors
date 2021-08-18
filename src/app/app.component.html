@@ -24,12 +24,12 @@
 
 <!-- FIXED SIDE CONTACT FORM -->
 <div class="destroy" [class.show]="showMenu">
-  <div class="contact" (click)="showForm=!showForm">
+  <div class="contact1" (click)="showForm=!showForm">
     <mat-icon class="contact-text">mail</mat-icon>
     <div class="contact-text">Contact</div>
   </div>
   <div class="popupForm" [class.visible]="showForm">
-    <app-contact></app-contact>
+    <app-contact [popup]="true"></app-contact>
   </div>
   
 <!-- TOP MENU BAR -->

@@ -1,3 +1,8 @@
+<div class="navBar d-flex" *ngIf="popup">
+  <div>Contacto</div>
+  <div (click)="close($event)">X</div>
+</div>
+
 <form class="form-container" [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)" autocomplete="off">
   
   <mat-form-field appearance="outline">
@@ -10,9 +15,9 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Nombre</mat-label>
-    <input matInput placeholder="Jose Luis Rodriguez Amador" formControlName="name"
-      [class.isValid]="contactForm.controls.name.valid"
-      [class.invalid]="contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)">
+    <input matInput placeholder="Jose Luis Rodriguez Amador" formControlName="name">
+    <!-- [class.isValid]="contactForm.controls.name.valid"
+      [class.invalid]="contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)" -->
     <mat-hint *ngIf="contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)">
       Por favor indique su nombre.
     </mat-hint>
@@ -20,9 +25,9 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Teléfono</mat-label>
-    <input type="tel" matInput placeholder="+34-930 000 000" formControlName="movil"
-      [class.valid]="contactForm.controls.movil.valid"
-      [class.invalid]="contactForm.controls.movil.invalid && (contactForm.controls.movil.dirty || contactForm.controls.movil.touched)">
+    <input type="tel" matInput placeholder="+34-930 000 000" formControlName="movil">
+    <!-- [class.valid]="contactForm.controls.movil.valid"
+      [class.invalid]="contactForm.controls.movil.invalid && (contactForm.controls.movil.dirty || contactForm.controls.movil.touched)" -->
     <mat-hint *ngIf="contactForm.controls.movil.invalid && (contactForm.controls.movil.dirty || contactForm.controls.movil.touched)">
       El número debe empezar por el simbolo + seguido delcodigo del país y posteriormente el número de teléfono.
     </mat-hint>
@@ -30,9 +35,9 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
-    <input type="email" matInput placeholder="hola@buenosdías.com" formControlName="email"
-      [class.valid]="contactForm.controls.email.valid"
-      [class.invalid]="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)">
+    <input type="email" matInput placeholder="hola@buenosdías.com" formControlName="email">
+    <!-- [class.valid]="contactForm.controls.email.valid"
+      [class.invalid]="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)" -->
     <mat-hint *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)">
       Por favor introduzca su email para que le podamos enviar información de su interés.
     </mat-hint>
@@ -40,14 +45,13 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Mensaje</mat-label>
-    <textarea matInput [mat-autosize]="true" formControlName="message"
-      [class.valid]="contactForm.controls.message.valid"
-      [class.invalid]="contactForm.controls.message.invalid && (contactForm.controls.message.dirty || contactForm.controls.message.touched)">
+    <textarea matInput [mat-autosize]="true" rows="4" formControlName="message">
+      <!-- [class.valid]="contactForm.controls.message.valid"
+      [class.invalid]="contactForm.controls.message.invalid && (contactForm.controls.message.dirty || contactForm.controls.message.touched)" -->
       Estoy interesado en 
     </textarea>
     <mat-hint *ngIf="contactForm.controls.message.invalid && (contactForm.controls.message.dirty || contactForm.controls.message.touched)">
-      Nos encantaria saber de usted. Por favor indique en que le podemos ayudar. O si prefiere que le llamemos nosotros 
-      por favor escriba llamame.
+      Por favor indique en que le podemos ayudar O si prefiere que le llamemos nosotros escriba llamame.
     </mat-hint>
   </mat-form-field>
   
@@ -56,5 +60,5 @@
     <label for="data-policy">Estoy de acuerdo con los términos y condiciones</label>
   </div>
 
-  <button type="submit" [disabled]="contactForm.invalid">Enviar</button>
+  <button type="submit" [ngClass]="{'popStyle': popup, 'small':!popup}" [disabled]="contactForm.invalid">Enviar</button>
 </form>

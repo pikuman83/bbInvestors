@@ -16,7 +16,7 @@ export class ContactComponent implements OnInit,OnDestroy {
     message: ['', [Validators.required, Validators.minLength(5)]],
   });
   
-  @Input() popup!:boolean;
+  @Input() popup=true;
   // this will be used to add css classes for
   // heading
   // button color and size
@@ -33,6 +33,9 @@ export class ContactComponent implements OnInit,OnDestroy {
     console.log('Contact component destroyed');
   }
 
+  close(e: Event){
+    console.log(e.target)
+  }
   onSubmit(form:FormGroup) {
     // send emails
     console.log(form)

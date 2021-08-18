@@ -76,7 +76,7 @@
 
 
 /* CONTACT FORM */
-.contact{
+.contact1{
     display: flex;
     align-items: center;
     position: fixed;
@@ -97,27 +97,6 @@
     letter-spacing: 2px;
     font-weight: 400;
     margin: 6px auto;
-}
-.popupForm{
-    display: flex;
-    align-items: center;
-    top: 46%;
-    right: 57px;
-    left: auto;
-    background-color: whitesmoke;
-    border-radius: 10px;
-    width: 400px;
-    position: absolute;
-    box-shadow: 0 0 6px rgba(0,0,0,0.16);
-    transform: rotateY(90deg) !important; /* rotate 90deg means normal view, transform 0deg means invisible (the latter is used in the upcoming class) */
-    transition: all 0.5s ease 0s; /* the effect, pushe it (push bcoz of transporm origin, this is just the motion strategy, contains no effect) towards the new position slowly */
-    transform-origin: 100% 0 0; /* makes the transition starts from thee origin*/
-    z-index: 1;
-    padding: 36px;
-    height: -80px;
-}
-.visible{
-    transform: rotateY(0deg) !important;
 }
 
 
