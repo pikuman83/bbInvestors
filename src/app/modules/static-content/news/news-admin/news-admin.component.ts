@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-// import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -10,33 +9,25 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class NewsAdminComponent implements OnInit {
   
   newsForm = this.fb.group({
-    img: ['', Validators.required],
     cat: [''],
     title: ['', Validators.required],
     url: ['', Validators.required],
-    src: ['']
+    src: [''],
+    img: [null, Validators.required]
   });
-  // const id = Math.random().toString(36).substring(2);
-  @Input() popup=true;
 
-  constructor(private fb: FormBuilder) {
-    // firestore: AngularFirestore
-    // console.log(firestore.collection('news').valueChanges)
-   }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     console.log('Contact component initialised');
   }
+
   ngOnDestroy():void {
     console.log('Contact component destroyed');
   }
 
-  close(e: Event){
-    console.log(e.target)
-  }
-  onSubmit(form:FormGroup) {
-    // send emails
-    console.log(form)
+  createNews(form:FormGroup) {
+    console.log(form.value)
   }
 
 }

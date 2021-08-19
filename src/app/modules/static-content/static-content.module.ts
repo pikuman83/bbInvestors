@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from "../shared/shared.module";
 import { InicioComponent } from './inicio/inicio.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
@@ -27,7 +28,8 @@ import { NewsAdminComponent } from './news/news-admin/news-admin.component';
     ReactiveFormsModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    SharedModule
   ],
   exports: [
     ContactComponent

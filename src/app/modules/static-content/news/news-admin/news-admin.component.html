@@ -1,4 +1,6 @@
-<form class="form-container" [formGroup]="newsForm" (ngSubmit)="onSubmit(newsForm)" autocomplete="off">
+<!-- gs://bbforinvestors.appspot.com/News -->
+
+<form class="form-container" [formGroup]="newsForm" (ngSubmit)="createNews(newsForm)" autocomplete="off">
 
     <mat-form-field appearance="legacy">
         <mat-label>Categoría</mat-label>
@@ -26,15 +28,9 @@
         <input matInput placeholder="Lavanguardia" formControlName="src">
     </mat-form-field>
 
-    <label class="img-label">Imagen</label>
-    <div class="file-upload-bx">
-        <input type="file" formControlName="img" accept=".png,.jpg,.svg">
-    </div>
+    <app-file-upload (fileEvent)="newsForm.controls.img"></app-file-upload>
 
-    <!-- <label class="custom-file-upload">
-        <input type="file"/>
-        Custom Upload
-    </label> -->
-
-    <button type="submit" [ngClass]="{'popStyle': popup, 'small':!popup}" [disabled]="newsForm.invalid">Enviar</button>
+    <input matInput formControlName="img" hidden>
+    
+    <button type="submit" [disabled]="newsForm.invalid">Crear</button>
 </form>

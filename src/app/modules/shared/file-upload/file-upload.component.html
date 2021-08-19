@@ -1,1 +1,14 @@
-<p>file-upload works!</p>
+<label class="img-label">Imagen</label>
+<div class="file-upload-bx">
+
+    <label class="custom-file-upload" *ngIf="!fileName">
+        <input type="file" accept=".png,.jpg,.svg" (change)="uploadFile($event)"/>
+        Seleccionar archivo
+    </label>
+
+    <div class="file-list" *ngIf="fileName">
+        <div style="color: cornflowerblue;">{{fileName}}</div>
+        <mat-progress-bar mode="determinate" [value]="uploadPercent | async"></mat-progress-bar>
+        <mat-icon style="cursor:pointer" (click)="deleteImg()">delete_outline</mat-icon>
+    </div>
+</div>

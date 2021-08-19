@@ -9,23 +9,13 @@
     margin: 0 auto;
     margin-top: 12px;
 }
-.img-label{
-    color: rgba(0,0,0,.54);
-    text-align: left;
-}
-.file-upload-bx{
-    border-bottom: ridge;
-    padding-bottom: 12px;
-}
-.file-upload-bx *{
-    color: rgba(0,0,0,.54);
-}
-
-
-/* input[type="file"] {
-    display: none;
-}
-.custom-file-upload {
-    border-bottom: 1px solid rgba(0,0,0,.54);;
+button[type="submit"]{
+    padding: 6px;
+    width: 120px;
+    background-color: white;
+    margin-top: 6px;
+    border: rgba(0,0,0,.54) 1px solid;
+    box-shadow: 0 0 6px rgba(0,0,0,0.16);
     cursor: pointer;
-} */
+
+}
