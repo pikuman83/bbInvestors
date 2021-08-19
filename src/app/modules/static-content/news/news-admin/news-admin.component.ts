@@ -13,7 +13,8 @@ export class NewsAdminComponent implements OnInit {
     title: ['', Validators.required],
     url: ['', Validators.required],
     src: [''],
-    img: [null, Validators.required]
+    img: [null, Validators.required],
+    downloadUrl: ['', Validators.required]
   });
 
   constructor(private fb: FormBuilder) {}
@@ -24,6 +25,9 @@ export class NewsAdminComponent implements OnInit {
 
   ngOnDestroy():void {
     console.log('Contact component destroyed');
+  }
+  abc(x: any){
+    console.log(x)
   }
 
   createNews(form:FormGroup) {

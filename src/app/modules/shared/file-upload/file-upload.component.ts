@@ -16,7 +16,10 @@ export class FileUploadComponent implements OnInit {
 
   @Output() fileEvent:EventEmitter<any> = new EventEmitter();
   @Input() fileName = '';
+  @Input() URL = '';
+
   uploadPercent!: Observable<number|undefined>;
+  downloadURL!: Observable<string>;
 
   uploadFile(event: any) {
     const file = event.target.files[0];
@@ -26,17 +29,23 @@ export class FileUploadComponent implements OnInit {
       return;
     }
 
-    const task = this.storage.upload(`News/${file.name}`, file);
+    const filePath = Date.now().toString();
+    const fileRef = this.storage.ref(`News/${filePath}/${file.name}`);
+    const task = this.storage.upload(`News/${filePath}/${file.name}`, file);
     this.uploadPercent = task.percentageChanges();
     task.snapshotChanges().pipe(finalize(() => {
-      this.fileName = file.name;
-      this.fileEvent.emit(file.name);
+      fileRef.getDownloadURL().subscribe((x) => {
+        this.URL = x;
+        this.fileName = file.name;
+        this.fileEvent.emit({'img':file.name, URL: x});
+      })
     })).subscribe();
   }
 
   deleteImg(){
-    this.storage.ref(`News/${this.fileName}`).delete();
+    this.storage.refFromURL(this.URL).delete();
       this.fileName = '';
-      this.fileEvent.emit('');
+      this.URL = '';
+      this.fileEvent.emit({'img':'', URL: ''});
   }
 }

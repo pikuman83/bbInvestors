@@ -1,5 +1,3 @@
-<!-- gs://bbforinvestors.appspot.com/News -->
-
 <form class="form-container" [formGroup]="newsForm" (ngSubmit)="createNews(newsForm)" autocomplete="off">
 
     <mat-form-field appearance="legacy">
@@ -28,9 +26,11 @@
         <input matInput placeholder="Lavanguardia" formControlName="src">
     </mat-form-field>
 
-    <app-file-upload (fileEvent)="newsForm.controls.img"></app-file-upload>
-
-    <input matInput formControlName="img" hidden>
+    <app-file-upload 
+    (fileEvent)="newsForm.patchValue({img:$event.img, downloadUrl:$event.URL})" 
+    [fileName]="newsForm.controls.img.value"
+    [URL]="newsForm.controls.downloadUrl.value"
+    ></app-file-upload>
     
     <button type="submit" [disabled]="newsForm.invalid">Crear</button>
 </form>
