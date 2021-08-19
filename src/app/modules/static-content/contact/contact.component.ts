@@ -11,18 +11,12 @@ export class ContactComponent implements OnInit,OnDestroy {
   contactForm = this.fb.group({
     asunto: ['Quiero invertir'],
     name: ['', Validators.required],
-    movil: [''],
+    movil: ['', Validators.minLength(9)],
     email: ['', [Validators.required, Validators.email]],
     message: ['', [Validators.required, Validators.minLength(5)]],
   });
   
   @Input() popup=true;
-  // this will be used to add css classes for
-  // heading
-  // button color and size
-  // total width
-  // background and animations
-  // show the top title and close bar
 
   constructor(private fb: FormBuilder) { }
 

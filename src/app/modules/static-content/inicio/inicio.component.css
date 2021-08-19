@@ -125,10 +125,11 @@ header{
 .first-white-bx{
     min-height: 650px;
 }
-#btn4{
+.btn4{
     width: 170px;
-    font-weight: 500;
-    
+}
+#btn5{
+    width: 170px;    
 }
 .font-set{
     font-size: 2.2em;
@@ -244,7 +245,7 @@ header{
 .section3 .section3-image .cities a:hover{
     color: #d7944a;
 }
-#btn4:hover{
+#btn5:hover{
     color: white;
     background-color: #d7944a;
 }

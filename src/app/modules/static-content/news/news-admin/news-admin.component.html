@@ -1,0 +1,40 @@
+<form class="form-container" [formGroup]="newsForm" (ngSubmit)="onSubmit(newsForm)" autocomplete="off">
+
+    <mat-form-field appearance="legacy">
+        <mat-label>Categoría</mat-label>
+        <input matInput formControlName="cat">
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+        <mat-label>Titulo</mat-label>
+        <input matInput formControlName="title" >
+        <mat-hint *ngIf="newsForm.controls.title.invalid && (newsForm.controls.title.dirty || newsForm.controls.title.touched)">
+        * Campo obligatorio.
+        </mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+        <mat-label>URL</mat-label>
+        <input matInput formControlName="url" placeholder="www.lavanguardia.com/mi-articulo-favorito">
+        <mat-hint *ngIf="newsForm.controls.url.invalid && (newsForm.controls.url.dirty || newsForm.controls.url.touched)">
+            * Campo obligatorio
+        </mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+        <mat-label>Fuente</mat-label>
+        <input matInput placeholder="Lavanguardia" formControlName="src">
+    </mat-form-field>
+
+    <label class="img-label">Imagen</label>
+    <div class="file-upload-bx">
+        <input type="file" formControlName="img" accept=".png,.jpg,.svg">
+    </div>
+
+    <!-- <label class="custom-file-upload">
+        <input type="file"/>
+        Custom Upload
+    </label> -->
+
+    <button type="submit" [ngClass]="{'popStyle': popup, 'small':!popup}" [disabled]="newsForm.invalid">Enviar</button>
+</form>
