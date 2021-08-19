@@ -27,7 +27,9 @@ export class NewsAdminComponent implements OnInit {
   }
 
   createNews(form:FormGroup) {
-    console.log(form.value)
+    console.log(form.value);
+    // accordion.close();
+    // first element on page.focus()
   }
 
 }
