@@ -1,36 +1,48 @@
-<form class="form-container" [formGroup]="newsForm" (ngSubmit)="createNews(newsForm)" autocomplete="off">
-
-    <mat-form-field appearance="legacy">
-        <mat-label>Categoría</mat-label>
-        <input matInput formControlName="cat">
-    </mat-form-field>
-
-    <mat-form-field appearance="legacy">
-        <mat-label>Titulo</mat-label>
-        <input matInput formControlName="title" >
-        <mat-hint *ngIf="newsForm.controls.title.invalid && (newsForm.controls.title.dirty || newsForm.controls.title.touched)">
-        * Campo obligatorio.
-        </mat-hint>
-    </mat-form-field>
-
-    <mat-form-field appearance="legacy">
-        <mat-label>URL</mat-label>
-        <input matInput formControlName="url" placeholder="www.lavanguardia.com/mi-articulo-favorito">
-        <mat-hint *ngIf="newsForm.controls.url.invalid && (newsForm.controls.url.dirty || newsForm.controls.url.touched)">
-            * Campo obligatorio
-        </mat-hint>
-    </mat-form-field>
-
-    <mat-form-field appearance="legacy">
-        <mat-label>Fuente</mat-label>
-        <input matInput placeholder="Lavanguardia" formControlName="src">
-    </mat-form-field>
-
-    <app-file-upload 
-    (fileEvent)="newsForm.patchValue({img:$event.img, downloadUrl:$event.URL})" 
-    [fileName]="newsForm.controls.img.value"
-    [URL]="newsForm.controls.downloadUrl.value"
-    ></app-file-upload>
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon style="padding-top: 19px;">list_alt</mat-icon>
+      </mat-panel-title>
+      <mat-panel-description>
+        <h2>{{news? 'Editar noticia' : 'Agregar noticia'}}</h2>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
     
-    <button type="submit" [disabled]="newsForm.invalid">Crear</button>
-</form>
+    <form class="form-container" [formGroup]="newsForm" (ngSubmit)="createNews(newsForm)" autocomplete="off">
+        <!-- <h1>{{news.title}}</h1> -->
+        <mat-form-field appearance="legacy">
+            <mat-label>Categoría</mat-label>
+            <input matInput formControlName="cat">
+        </mat-form-field>
+    
+        <mat-form-field appearance="legacy">
+            <mat-label>Titulo</mat-label>
+            <input matInput formControlName="title" >
+            <mat-hint *ngIf="newsForm.controls.title.invalid && (newsForm.controls.title.dirty || newsForm.controls.title.touched)">
+            * Campo obligatorio.
+            </mat-hint>
+        </mat-form-field>
+    
+        <mat-form-field appearance="legacy">
+            <mat-label>URL</mat-label>
+            <input matInput formControlName="url" placeholder="www.lavanguardia.com/mi-articulo-favorito">
+            <mat-hint *ngIf="newsForm.controls.url.invalid && (newsForm.controls.url.dirty || newsForm.controls.url.touched)">
+                * Campo obligatorio
+            </mat-hint>
+        </mat-form-field>
+    
+        <mat-form-field appearance="legacy">
+            <mat-label>Fuente</mat-label>
+            <input matInput placeholder="Lavanguardia" formControlName="src">
+        </mat-form-field>
+    
+        <app-file-upload 
+        (fileEvent)="newsForm.patchValue({img:$event.img, downloadUrl:$event.URL})" 
+        [fileName]="newsForm.controls.img.value"
+        [URL]="newsForm.controls.downloadUrl.value"
+        ></app-file-upload>
+        
+        <button type="submit" [disabled]="newsForm.invalid">Crear</button>
+    </form>
+
+  </mat-expansion-panel>

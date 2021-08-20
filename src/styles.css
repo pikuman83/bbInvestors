@@ -150,7 +150,8 @@ a:focus {
 
 /* CONTACT ANIMATION */
 .contact-animation{
-    background-image: url(./assets/f1-1.png), url(./assets/f2.png);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Ff1-1.png?alt=media&token=7de261e0-93f0-4b73-b8aa-15eacb2ec5c7), 
+    url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Ff2.png?alt=media&token=8cf70660-a2c3-43f0-bb36-a4c68bce0801);
     background-position-y: -96px, bottom;
     background-repeat: no-repeat;
     transition: all 2s ease-in-out;

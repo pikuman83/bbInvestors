@@ -35,10 +35,10 @@
     background-size: contain;
 }
 .logo-inv{
-    background: url(../assets/For-investors-1.png);
+    background: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2FFor-investors-1.png?alt=media&token=e0d7a927-a983-4bd0-add4-daeb2c3ea9d5);
 }
 .logo-gst{
-    background: url(../assets/For-guest-1.png);
+    background: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2FFor-guest-1.png?alt=media&token=c325f642-2c23-4df7-856a-d6dc5a7328c4);
 }
 .logo-for{
     width: 142px;
@@ -59,7 +59,8 @@
     font-weight: 300;
 }
 .greaterThan{
-    vertical-align: text-top;
+    vertical-align: bottom;
+    font-size: 28px;
 }
 .seeHow-btn{
     color: #d7944a;
@@ -69,7 +70,7 @@
     font-size: 1em;
     letter-spacing: 1px;
 }
-.seeHow-btn:hover{
+.seeHow-btn:hover, .seeHow-btn:hover mat-icon{
     background-color: #d7944a;
     color: white;
 }

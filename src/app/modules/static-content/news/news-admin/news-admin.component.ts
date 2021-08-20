@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { News } from '../news.component';
 
 @Component({
   selector: 'app-news-admin',
@@ -8,32 +9,46 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class NewsAdminComponent implements OnInit {
   
+  @Input() news!: News;
+  @Output() addEvent:EventEmitter<News> = new EventEmitter();
+  @Output() editEvent:EventEmitter<News> = new EventEmitter();
+  
   newsForm = this.fb.group({
+    id: [''],
     cat: [''],
     title: ['', Validators.required],
     url: ['', Validators.required],
     src: [''],
-    img: [null, Validators.required],
+    img: ['', Validators.required],
     downloadUrl: ['', Validators.required]
   });
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    console.log('Contact component initialised');
+    console.log('1',this.newsForm);
+
+    if (this.news) {
+      console.log('edit received in child', this.news)
+      this.newsForm.patchValue({...this.news});
+      console.log('Form Value', this.newsForm.value)
+    }; 
   }
 
-  ngOnDestroy():void {
-    console.log('Contact component destroyed');
-  }
-  abc(x: any){
-    console.log(x)
-  }
 
   createNews(form:FormGroup) {
-    console.log(form.value);
+    // emit = > add or edit request {form}
+    // if this.news? emit edit
+    // reset
+    if (this.news) {
+      form.value.id = Date.now();
+      this.editEvent.emit(form.value);  
+    }
+    else{
+      form.value.id = Date.now();
+      this.addEvent.emit(form.value);
+    }
     // accordion.close();
     // first element on page.focus()
   }
-
 }

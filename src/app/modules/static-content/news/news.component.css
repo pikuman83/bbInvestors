@@ -1,3 +1,65 @@
+.fake-div{
+    height: 90px;
+}
+.heading-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    height: calc(100vh - 90px);
+    margin: 0 auto;
+    background-position-x: -130px, 20px;
+}
+.heading{
+    width: 100%;
+    padding: 15%;
+    font-size: 50px;
+    line-height: 1.2em;
+    color: #1D4C56;
+    font-weight: 300;
+    text-align: center;
+}
+.scroll-icon{
+    font-size: 48px;
+    color: #1D4C56;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    margin-top: -82px;
+    transition: all 0.5s ease 0s;
+    cursor: pointer;
+}
+.scroll-icon:hover{
+    margin-top: -70px;
+}
+
+.container{
+    padding-top: 140px;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.card{
+    max-width: 300px;
+    justify-content: center;
+    display: block;
+    margin: 50px;
+}
+.desc{
+    width: 250px;
+    max-width: 250px;
+    margin: 0 auto;
+    margin-top: -50px;
+    word-wrap: break-word;
+    background-color: white;
+    backface-visibility: hidden;
+}
+.card-heading{
+    font-size: 2.2em;
+}
 .temp{
     padding-top: 200px;
     display: block;

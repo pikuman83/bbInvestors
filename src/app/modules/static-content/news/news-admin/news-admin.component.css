@@ -19,3 +19,7 @@ button[type="submit"]{
     cursor: pointer;
 
 }
+mat-panel-description{
+    flex-grow: 1;
+    padding-top: 15px;
+}

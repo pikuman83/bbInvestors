@@ -23,7 +23,7 @@ export class FileUploadComponent implements OnInit {
 
   uploadFile(event: any) {
     const file = event.target.files[0];
-    
+    this.fileName = file.name;
     if(file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/svg' ){
       alert('Invalid file types, Please select an image');
       return;
@@ -36,7 +36,6 @@ export class FileUploadComponent implements OnInit {
     task.snapshotChanges().pipe(finalize(() => {
       fileRef.getDownloadURL().subscribe((x) => {
         this.URL = x;
-        this.fileName = file.name;
         this.fileEvent.emit({'img':file.name, URL: x});
       })
     })).subscribe();
