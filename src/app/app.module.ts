@@ -9,7 +9,7 @@ import { ProjectsModule } from "./modules/projects/projects.module";
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 
 
@@ -25,7 +25,7 @@ import { environment } from 'src/environments/environment';
     ProjectsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
-    AngularFireDatabaseModule
+    AngularFirestoreModule
   ],
   // {provide: APP_BASE_HREF, useValue: (navigator.language !== 'en' && navigator.language !== 'es')? '/en/' : `/${navigator.language}/`}
   providers: [],

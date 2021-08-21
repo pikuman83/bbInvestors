@@ -1,18 +1,20 @@
-<mat-expansion-panel>
+<mat-expansion-panel #panel 
+  (afterExpand)="afterExpandFocus()" 
+  (afterCollapse)="openPanel? panelEvent.emit():''"
+  [expanded]="openPanel" >
     <mat-expansion-panel-header>
       <mat-panel-title>
         <mat-icon style="padding-top: 19px;">list_alt</mat-icon>
       </mat-panel-title>
       <mat-panel-description>
-        <h2>{{news? 'Editar noticia' : 'Agregar noticia'}}</h2>
+        <h2>{{edit&&edit.id? 'Editar Artículo' : 'Agregar Artículo'}}</h2>
       </mat-panel-description>
     </mat-expansion-panel-header>
     
-    <form class="form-container" [formGroup]="newsForm" (ngSubmit)="createNews(newsForm)" autocomplete="off">
-        <!-- <h1>{{news.title}}</h1> -->
+    <form class="form-container" [formGroup]="newsForm" (ngSubmit)="createNews(newsForm);panel.close()" autocomplete="off">
         <mat-form-field appearance="legacy">
             <mat-label>Categoría</mat-label>
-            <input matInput formControlName="cat">
+            <input matInput id="firstField" formControlName="cat">
         </mat-form-field>
     
         <mat-form-field appearance="legacy">
@@ -37,12 +39,14 @@
         </mat-form-field>
     
         <app-file-upload 
-        (fileEvent)="newsForm.patchValue({img:$event.img, downloadUrl:$event.URL})" 
-        [fileName]="newsForm.controls.img.value"
-        [URL]="newsForm.controls.downloadUrl.value"
-        ></app-file-upload>
-        
-        <button type="submit" [disabled]="newsForm.invalid">Crear</button>
+          (fileEvent)="newsForm.patchValue({img:$event.img, downloadUrl:$event.URL})" 
+          [fileName]="newsForm.controls.img.value"
+          [URL]="newsForm.controls.downloadUrl.value">
+        </app-file-upload>
+
+        <mat-action-row>
+          <button type="submit" mat-button color="primary" [disabled]="newsForm.invalid">Crear</button>
+        </mat-action-row>
     </form>
 
   </mat-expansion-panel>

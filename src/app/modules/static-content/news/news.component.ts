@@ -1,13 +1,19 @@
+// #template = template is handling some features
+// Open panel on edit click
+
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { map } from 'rxjs/operators';
+import { FireStoreService } from 'src/app/core/fire-store.service';
 
 export interface News{
-  id: string,
-  cat: string;
-  title: string;
-  url: string;
-  src: string;
-  img: string;
-  downloadUrl: string 
+  id?: string;
+  cat?: string;
+  title?: string;
+  url?: string;
+  src?: string;
+  img?: string;
+  downloadUrl?: string 
 }
 
 @Component({
@@ -18,31 +24,67 @@ export interface News{
 
 export class NewsComponent implements OnInit {
 
-  public news!: News;
-  newsList: News[] = [];
+  panelevent(a: boolean){
+    console.log(a,'djkhsakjdhj')
+  }
+  news!: any;
+  newsList =  <News[]>[];
+  openPanel = false;
 
-  constructor() { }
+  constructor(private service: FireStoreService, private storage: AngularFireStorage) { }
 
   ngOnInit(): void {
+    console.log('news component initialized')
     this.getAllNewsList();
   }
 
-  getAllNewsList(){
-    // bring list from store
+  getAllNewsList(): void{
+    this.service.getAll().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      )
+    ).subscribe(data => {
+      this.newsList = data;
+      console.log(this.newsList)
+    });
   }
-  addNews(e:News){
-    this.newsList.push(e);
-    document.getElementById('focus')?.focus();
-    // window.location.hash = '#start';
-    // add to store
+
+  // #template
+  addNews(article:News){
+    this.newsList?.push(article);
+    this.service.create(article).then(()=> {
+      console.log('Created succesfully')
+      // window.location.hash = '#start';
+    })
   }
-  editNews(newObj: News){
-    const i = this.newsList.indexOf(this.news);
-    if (~i) this.newsList[i] = newObj;
-    // edit it in the store
+  editNews(newObj: News): void {
+    if (newObj && this.news) {
+      this.service.update(this.news.id, newObj)
+        .then(() => {
+          this.newsList = this.newsList?.map(x =>  {
+            if (x.id === newObj.id) {
+              x = newObj;
+              return x;
+            }
+            return x
+          })
+          this.news = {};
+          // notify?
+        })
+        .catch(err => console.log(err));
+    }
   }
-  deleteNews(id: string, i: number){
-    this.newsList.splice(i, 1);
-    // delete from the store
+  deleteNews(id: string|undefined, url: string|undefined, i: number): void {
+    if (id) {
+      this.service.delete(id)
+        .then(() => {
+          this.storage.refFromURL(url!).delete();
+          this.newsList?.splice(i, 1);
+          // show confirmation?
+        })
+    .catch(err => console.log(err));
+    }
   }
 }

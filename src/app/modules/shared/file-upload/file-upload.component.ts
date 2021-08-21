@@ -1,3 +1,5 @@
+// Clean up on error or not submission or run a periodic scan for cleaning
+
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { News } from '../news.component';
 
@@ -7,14 +7,17 @@ import { News } from '../news.component';
   templateUrl: './news-admin.component.html',
   styleUrls: ['./news-admin.component.css']
 })
-export class NewsAdminComponent implements OnInit {
+export class NewsAdminComponent implements OnInit, OnChanges {
   
-  @Input() news!: News;
+  @Input() edit: News = {};
+  @Input() openPanel = false;
+  
   @Output() addEvent:EventEmitter<News> = new EventEmitter();
   @Output() editEvent:EventEmitter<News> = new EventEmitter();
+  @Output() focusEvent:EventEmitter<any> = new EventEmitter();
+  @Output() panelEvent:EventEmitter<any> = new EventEmitter();
   
   newsForm = this.fb.group({
-    id: [''],
     cat: [''],
     title: ['', Validators.required],
     url: ['', Validators.required],
@@ -25,30 +28,30 @@ export class NewsAdminComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {
-    console.log('1',this.newsForm);
-
-    if (this.news) {
-      console.log('edit received in child', this.news)
-      this.newsForm.patchValue({...this.news});
-      console.log('Form Value', this.newsForm.value)
-    }; 
+  ngOnInit(): void {}
+  ngOnChanges(): void {
+    if (this.edit) {
+      this.newsForm.patchValue({...this.edit});
+    };
+    if(this.openPanel){
+      console.log('openPanel received as true')
+    }
+  }
+  afterExpandFocus(){
+    setTimeout(() => {
+      document.getElementById('firstField')?.focus();
+    }, );
   }
 
-
   createNews(form:FormGroup) {
-    // emit = > add or edit request {form}
-    // if this.news? emit edit
-    // reset
-    if (this.news) {
-      form.value.id = Date.now();
-      this.editEvent.emit(form.value);  
+    if (this.edit&&this.edit.id) {
+      this.editEvent.emit(form.value);
+      this.edit = {};
     }
     else{
-      form.value.id = Date.now();
       this.addEvent.emit(form.value);
     }
-    // accordion.close();
-    // first element on page.focus()
+    this.newsForm.reset();
+    this.focusEvent.emit();
   }
 }
