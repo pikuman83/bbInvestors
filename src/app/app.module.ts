@@ -25,7 +25,7 @@ import { environment } from 'src/environments/environment';
     ProjectsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
-    AngularFirestoreModule
+    AngularFirestoreModule.enablePersistence(),
   ],
   // {provide: APP_BASE_HREF, useValue: (navigator.language !== 'en' && navigator.language !== 'es')? '/en/' : `/${navigator.language}/`}
   providers: [],

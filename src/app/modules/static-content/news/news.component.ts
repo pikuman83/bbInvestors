@@ -27,7 +27,7 @@ export class NewsComponent implements OnInit {
   panelevent(a: boolean){
     console.log(a,'djkhsakjdhj')
   }
-  news!: any;
+  news!: News|null;
   newsList =  <News[]>[];
   openPanel = false;
 
@@ -61,7 +61,7 @@ export class NewsComponent implements OnInit {
   }
   editNews(newObj: News): void {
     if (newObj && this.news) {
-      this.service.update(this.news.id, newObj)
+      this.service.update(this.news.id!, newObj)
         .then(() => {
           this.newsList = this.newsList?.map(x =>  {
             if (x.id === newObj.id) {
@@ -78,13 +78,15 @@ export class NewsComponent implements OnInit {
   }
   deleteNews(id: string|undefined, url: string|undefined, i: number): void {
     if (id) {
+      // this.newsList?.splice(i, 0);
       this.service.delete(id)
         .then(() => {
           this.storage.refFromURL(url!).delete();
-          this.newsList?.splice(i, 1);
           // show confirmation?
         })
-    .catch(err => console.log(err));
+    .catch(err => 
+      // show error?
+      console.log(err));
     }
   }
 }
