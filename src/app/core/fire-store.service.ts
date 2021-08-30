@@ -1,33 +1,31 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { News } from '../modules/static-content/news/news.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FireStoreService {
 
-  private dbPath = '/news';
+  constructor(private db: AngularFirestore) {}
 
-  objectRef: AngularFirestoreCollection<News>;
-
-  constructor(private db: AngularFirestore) {
-    this.objectRef = db.collection(this.dbPath);
+  getAll(path: string): AngularFirestoreCollection<any> {
+    return this.db.collection(`/${path}`);
   }
 
-  getAll(): AngularFirestoreCollection<News> {
-    return this.objectRef;
+  get(path: string, documentId: string) {
+    return this.db.collection(`/${path}`).doc(documentId);
   }
 
-  create(news: News): any {
-    return this.objectRef.add({ ...news });
+  create(path: string, data: any): any {
+    return this.db.collection(`/${path}`).add({ ...data });
   }
 
-  update(id: string, data: any): Promise<void> {
-    return this.objectRef.doc(id).update(data);
+  update(path: string, id: string, data: any): Promise<void> {
+    return this.db.collection(`/${path}`).doc(id).update(data);
   }
 
-  delete(id: string): Promise<void> {
-    return this.objectRef.doc(id).delete();
+  delete(path: string, id: string): Promise<void> {
+    return this.db.collection(`/${path}`).doc(id).delete();
   }
+  
 }

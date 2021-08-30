@@ -33,14 +33,10 @@ export class NewsAdminComponent implements OnInit, OnChanges {
     if (this.edit) {
       this.newsForm.patchValue({...this.edit});
     };
-    if(this.openPanel){
-      console.log('openPanel received as true')
-    }
   }
+  
   afterExpandFocus(){
-    setTimeout(() => {
-      document.getElementById('firstField')?.focus();
-    }, );
+    document.getElementById('firstField')?.focus();
   }
 
   createNews(form:FormGroup) {

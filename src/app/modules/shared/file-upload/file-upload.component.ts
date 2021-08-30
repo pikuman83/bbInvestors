@@ -18,7 +18,10 @@ export class FileUploadComponent implements OnInit {
 
   @Output() fileEvent:EventEmitter<any> = new EventEmitter();
   @Input() fileName = '';
+
+  @Input() pName = '';
   @Input() URL = '';
+  @Input() title!: string;
 
   uploadPercent!: Observable<number|undefined>;
   downloadURL!: Observable<string>;
@@ -26,14 +29,17 @@ export class FileUploadComponent implements OnInit {
   uploadFile(event: any) {
     const file = event.target.files[0];
     this.fileName = file.name;
+
     if(file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/svg' ){
       alert('Invalid file types, Please select an image');
       return;
     }
 
-    const filePath = Date.now().toString();
-    const fileRef = this.storage.ref(`News/${filePath}/${file.name}`);
-    const task = this.storage.upload(`News/${filePath}/${file.name}`, file);
+    const filePath = this.title === 'Imagen'? 
+      `News/${Date.now().toString()}`:
+      `Projects/${this.pName}/${Date.now().toString()}`;
+    const fileRef = this.storage.ref(`${filePath}/${file.name}`);
+    const task = this.storage.upload(`${filePath}/${file.name}`, file);
     this.uploadPercent = task.percentageChanges();
     task.snapshotChanges().pipe(finalize(() => {
       fileRef.getDownloadURL().subscribe((x) => {

@@ -1,0 +1,37 @@
+<div class="fake-div"></div>
+
+<div class="title" #focusDiv>Proyectos de éxito</div>
+<div class="header-img"></div>
+
+<mat-tab-group animationDuration="1200ms" 
+  (selectedIndexChange)="filterByCity($event)"
+  [(selectedIndex)]="tabIndex"> <!--$event is the new index-->
+
+  <mat-tab *ngFor="let tab of tabs; let i = index" [label]="tab|uppercase">
+    <div class="projs-container">
+      <div class="project" *ngFor="let projects of tabContent; let i = index">
+        <div (click)="router.navigate(['projects/project-details/' + projects.id])" 
+        [ngStyle]="{'background': 'url(' + projects.fotoFinal + ')', 'height': '320px', 'background-position': 'center' ,'background-size': 'cover'}"></div>
+        <div class="proj-name">{{projects.titulo}}</div>
+        <div class="proj-location">{{projects.ciudad}} | {{projects.pais}}</div>
+
+        <!-- if admin -->
+        <div class="desc-btns txt-center">
+          <button (click)="news=projects;openPanel=true"><mat-icon >edit</mat-icon></button>
+          <button><mat-icon (click)="deleteNews(projects.id, projects)">delete_forever</mat-icon></button>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>
+
+<!-- if admin -->
+<app-projects-admin class="mt-childComp-200"
+    (addEvent)="addProject($event)"
+    (editEvent)="editNews($event)"
+    (focusEvent)="focusDiv.focus()"
+    (panelEvent)="openPanel = false"
+    [edit]="news!"
+    [openPanel]="openPanel">
+</app-projects-admin>

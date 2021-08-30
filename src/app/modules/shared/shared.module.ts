@@ -1,13 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from '../../app-routing.module';
-
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { FileUploadComponent } from './file-upload/file-upload.component';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,6 +14,7 @@ import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/mater
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -26,8 +22,6 @@ import { MatInputModule } from '@angular/material/input';
   ],
   imports: [
     CommonModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
@@ -39,13 +33,11 @@ import { MatInputModule } from '@angular/material/input';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    AppRoutingModule
+    MatTabsModule
   ],
   exports: [
-    FileUploadComponent, 
     CommonModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
+    FileUploadComponent,
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
@@ -57,7 +49,7 @@ import { MatInputModule } from '@angular/material/input';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    AppRoutingModule
+    MatTabsModule
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}

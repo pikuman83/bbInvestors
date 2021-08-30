@@ -1,0 +1,54 @@
+.form-container{
+    display: block;
+    padding: 50px;
+    text-align: center;
+    margin: 0 auto;
+}
+.container1{
+    display: block;
+    width: 40%;
+    box-sizing: border-box;
+}
+mat-form-field, app-file-upload{
+    width: 100%;
+    display: block;
+    margin-top: 22px;
+}
+button[type="submit"]{
+    padding: 6px;
+    width: 170px;
+    background-color: white;
+    margin-top: 6px;
+    border: rgba(0,0,0,.54) 1px solid;
+    box-shadow: 0 0 6px rgba(0,0,0,0.16);
+    cursor: pointer;
+}
+mat-panel-description{
+    flex-grow: 1;
+    padding-top: 15px;
+}
+.fotosObra{
+    display: flex;
+    justify-content: center;
+}
+.fotosObra app-file-upload{
+    width: 60%;
+}
+.addNewField{
+    border: rgba(0,0,0,.54) 1px solid;
+    padding: 6px;
+    color: blue;
+    font-weight: 500;
+    width: fit-content;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.addNewField:hover{
+    box-shadow: 0 0 6px rgba(0,0,0,0.16);
+}
+.removeField{
+    display: flex;
+    cursor: pointer;
+    align-self: center;
+    margin: 35px 0 0 12px;
+}

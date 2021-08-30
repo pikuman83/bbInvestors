@@ -61,6 +61,12 @@ a:focus {
 .flex-between{
     justify-content: space-between;
 }
+.flex-around{
+    justify-content: space-around;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
 
 
 
@@ -181,4 +187,23 @@ a:focus {
 }
 .visible{
     transform: rotateY(0deg) !important;
+}
+
+/* A fake div covering top menu bar height */
+.fake-div{
+    height: 90px;
+}
+
+/* Edit and delete buttons shared between projects and news component */
+.desc-btns button{
+    border: none;
+    background: none;
+    margin: 12px 2px;
+    cursor: pointer;
+}
+.desc-btns button:first-child{
+    color: cadetblue;
+}
+.desc-btns button:last-child{
+    color: crimson;
 }

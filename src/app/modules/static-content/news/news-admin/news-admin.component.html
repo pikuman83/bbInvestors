@@ -41,7 +41,8 @@
         <app-file-upload 
           (fileEvent)="newsForm.patchValue({img:$event.img, downloadUrl:$event.URL})" 
           [fileName]="newsForm.controls.img.value"
-          [URL]="newsForm.controls.downloadUrl.value">
+          [URL]="newsForm.controls.downloadUrl.value"
+          [title]="'Imagen'">
         </app-file-upload>
 
         <mat-action-row>

@@ -1,0 +1,14 @@
+<div class="fake-div"></div>
+
+<div class="container mx-width-1200 m-auto" *ngIf="project">
+  <img-comparison-slider class="w-100">
+    <figure slot="first" class="before">
+      <img [src]="project.fotoAntes">
+      <figcaption>Before</figcaption>
+    </figure>
+    <figure slot="second" class="after">
+      <img [src]="project.fotoDsps">
+      <figcaption>After</figcaption>
+    </figure>
+  </img-comparison-slider>
+</div>

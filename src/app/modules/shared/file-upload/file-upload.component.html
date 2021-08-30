@@ -1,14 +1,15 @@
-<label class="img-label">Imagen</label>
+<label class="img-label">{{title}}</label>
 <div class="file-upload-bx">
 
-    <label class="custom-file-upload" *ngIf="!fileName">
-        <input type="file" accept=".png,.jpg,.svg" (change)="uploadFile($event)"/>
+    <label class="custom-file-upload" *ngIf="fileName||!URL||!URL.length">
+        <input type="file" accept=".png,.jpg,.svg" (change)="uploadFile($event)"
+        [disabled]="title!=='Imagen'&&!pName"/>
         Seleccionar archivo
     </label>
 
-    <div class="file-list" *ngIf="fileName">
-        <div style="color: cornflowerblue;">{{fileName}}</div>
+    <div class="file-list" *ngIf="fileName||URL&&URL.length">
+        <div *ngIf="title==='Imagen'" style="color: cornflowerblue;">{{fileName}}</div>
         <mat-progress-bar mode="determinate" [value]="uploadPercent | async"></mat-progress-bar>
-        <mat-icon style="cursor:pointer" (click)="deleteImg()">delete_forever</mat-icon>
+        <mat-icon *ngIf="URL&&URL.length" style="cursor:pointer" (click)="deleteImg()">delete_forever</mat-icon>
     </div>
 </div>

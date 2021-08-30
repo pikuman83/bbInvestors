@@ -24,9 +24,6 @@ export interface News{
 
 export class NewsComponent implements OnInit {
 
-  panelevent(a: boolean){
-    console.log(a,'djkhsakjdhj')
-  }
   news!: News|null;
   newsList =  <News[]>[];
   openPanel = false;
@@ -39,7 +36,7 @@ export class NewsComponent implements OnInit {
   }
 
   getAllNewsList(): void{
-    this.service.getAll().snapshotChanges().pipe(
+    this.service.getAll('news').snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({ id: c.payload.doc.id, ...c.payload.doc.data() })
@@ -47,21 +44,19 @@ export class NewsComponent implements OnInit {
       )
     ).subscribe(data => {
       this.newsList = data;
-      console.log(this.newsList)
     });
   }
 
   // #template
   addNews(article:News){
     this.newsList?.push(article);
-    this.service.create(article).then(()=> {
-      console.log('Created succesfully')
+    this.service.create('news',article).then(()=> {
       // window.location.hash = '#start';
     })
   }
   editNews(newObj: News): void {
     if (newObj && this.news) {
-      this.service.update(this.news.id!, newObj)
+      this.service.update('news',this.news.id!, newObj)
         .then(() => {
           this.newsList = this.newsList?.map(x =>  {
             if (x.id === newObj.id) {
@@ -79,14 +74,15 @@ export class NewsComponent implements OnInit {
   deleteNews(id: string|undefined, url: string|undefined, i: number): void {
     if (id) {
       // this.newsList?.splice(i, 0);
-      this.service.delete(id)
+      this.service.delete('news',id)
         .then(() => {
           this.storage.refFromURL(url!).delete();
           // show confirmation?
         })
     .catch(err => 
       // show error?
-      console.log(err));
+      console.error(err)
+      );
     }
   }
 }

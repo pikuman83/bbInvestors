@@ -1,0 +1,73 @@
+.title{
+    background-color: #1D4C56;
+    width: 100%;
+    font-size: 3.5em;
+    line-height: 3em;
+    color: lightgray;
+    height: 150px;
+    text-align: center;
+}
+.header-img{
+    /* padding-top: 690px; */
+    height: calc(100vh - 240px); /* 240 = 90 top-bar + 150 title*/
+    width: 100%;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fimg108.jpg?alt=media&token=0ce8641a-37a6-4e83-8433-c6d0d446180b);
+    background-size: cover;
+    background-position: center;
+}
+mat-tab-group{
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin: 100px auto;
+}
+
+/* Encasulated.None */
+.mat-tab-body-content{
+    overflow: hidden !important;
+}
+.mat-tab-header{
+    border-bottom: none;
+}
+.mat-tab-label, .mat-tab-link {
+    font-size: 20px;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+}
+.mat-ink-bar{
+    background-color: #d7944a !important;
+    width: 120px !important;
+    margin-left: 20px !important;
+}
+/* ********** */
+
+.projs-container{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.project{
+    margin-top: 100px;
+    display: block;
+    text-align: center;
+    width: 45%;
+}
+.proj-name{
+    margin-top: 12px;
+    font-size: 2.2em;
+    line-height: 1.2em;
+}
+.proj-location{
+    font-size: 1.2em;
+    color: lightgray;
+    margin-bottom: 12px;
+}
+.mt-childComp-200{
+    margin: 0 auto;
+    max-width: 1200px;
+    box-sizing: border-box;
+    display: block;
+    margin-top: 100px;
+}

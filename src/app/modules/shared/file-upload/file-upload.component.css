@@ -30,5 +30,5 @@ label input[type="file"] {
     line-height: 1.2em;
 }
 mat-progress-bar{
-    max-width: 150px;
+    width: 88%;
 }

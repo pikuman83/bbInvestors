@@ -6,6 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
 import { NewsComponent } from './news/news.component';
 import { NewsAdminComponent } from './news/news-admin/news-admin.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NewsAdminComponent } from './news/news-admin/news-admin.component';
     NewsAdminComponent
   ],
   imports: [
-    SharedModule
+    SharedModule,
+    AppRoutingModule
   ],
   exports: [
     ContactComponent
