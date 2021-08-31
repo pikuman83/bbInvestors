@@ -81,7 +81,7 @@ export class ProjectsComponent implements OnInit {
       // set tab focus
     })
   }
-  editNews(newObj: any): void {
+  editProject(newObj: any): void {
     if (newObj && this.project) {
       this.service.update('projects', this.project.id!, newObj)
         .then(() => {

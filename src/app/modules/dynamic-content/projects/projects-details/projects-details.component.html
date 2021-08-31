@@ -1,14 +1,104 @@
 <div class="fake-div"></div>
 
-<div class="container mx-width-1200 m-auto" *ngIf="project">
-  <img-comparison-slider class="w-100">
+<div class="container" *ngIf="project">
+
+  <header>
+    <div class="proj-name">{{project.titulo}}</div>
+    <div class="proj-location">{{project.ciudad}} | {{project.pais}}</div>
+  </header>
+
+  <img-comparison-slider>
     <figure slot="first" class="before">
-      <img [src]="project.fotoAntes">
-      <figcaption>Before</figcaption>
+      <img class="img-antes-dsps" [src]="project.fotoAntes">
+      <figcaption>Antes</figcaption>
     </figure>
     <figure slot="second" class="after">
-      <img [src]="project.fotoDsps">
-      <figcaption>After</figcaption>
+      <img class="img-antes-dsps" [src]="project.fotoDsps">
+      <figcaption>Despúes</figcaption>
     </figure>
   </img-comparison-slider>
+
+  <div class="green-bx">
+    <div class="max-width">
+      <div class="intervencion">
+        <div class="heading">INTERVENCIÓN</div>
+        <div><span class="numbers">1 </span> Bid <span class="plus">+</span></div>
+        <div><span class="numbers">2 </span> Bargain <span class="plus">+</span></div>
+        <div><span class="numbers">3 </span> Build <span class="plus">+</span></div>
+        <div><span class="numbers">4 </span> Business <span class="plus">+</span></div>
+      </div>
+  
+      <div class="project-data">
+  
+        <div class="data-box1">
+          <div>
+            <div>SUP.</div>
+            <div>{{project.sup}}</div>
+          </div>
+          <div>
+            <div>HAB.</div>
+            <div>{{project.hab}}</div>
+          </div>
+          <div>
+            <div>BAÑOS</div>
+            <div>{{project.bath}}</div>
+          </div>
+          <div>
+            <div>AÑO</div>
+            <div>{{project.year}}</div>
+          </div>
+        </div>
+  
+        <div class="data-box2">
+          <div>
+            <div>MOD. NEGOCIO</div>
+            <div>{{project.bModel}}</div>
+          </div>
+          <div>
+            <div>RENTABILIDAD</div>
+            <div>{{project.rentabilidad}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <div class="max-width">
+      <div class="heading">EL PROYECTO</div>
+      <div>{{project.desc}}</div>
+    </div>
+  </div>
+
+  <div class="green-bx">
+    <div class="obra-container">
+      <div class="heading">PROCESO DE OBRA</div>
+      <div class="obra-imgs">
+        <div *ngFor="let f of project.fotosObra">
+          <img class="fotosObra" [src]="f" alt="Foto de Obra">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="heading heading-last">RESULTADO FINAL</div> <!--max-width, margin-auto test-left-->
+  <img [src]="project.fotoFinal" alt="Foto final" class="w-100">
+  
+  <div class="navigation-bar">
+    <div class="back">
+      <mat-icon style="width: 5px;">navigate_before</mat-icon>
+      <mat-icon>navigate_before</mat-icon>
+      ANTERIOR
+    </div>
+    <div class="return">VOLVER A PROYECTOS</div>
+    <div class="next">SIGUIENTE 
+      <mat-icon style="width: 5px;">navigate_next</mat-icon>
+      <mat-icon>navigate_next</mat-icon>
+    </div>
+  </div>
+
+  <div class="contact-btn">
+    ¡TRABAJEMOS JUNTOS!
+  </div>
+
 </div>

@@ -1,4 +1,39 @@
+.container{
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.5em;
+  color: #d7944a;
+}
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 175px;
+}
+.proj-name{
+  font-size: 2.5em;
+  line-height: 1.5em;
+  color: black;
+}
+.proj-location{
+  font-size: 1.5em;
+  line-height: 1.5em;
+  color: #d7944a;
+}
+
+.heading{
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: 1.5px;
+}
+
 /*Image comparison classes*/
+img-comparison-slider{
+  width: 100%;
+  height: calc(100vh - 265px);
+}
 .before, .after{
   margin: 0;
 }
@@ -19,4 +54,137 @@
 }
 .after figcaption{
   right: 12px;
+}
+.img-antes-dsps{
+  width: 100%;
+  max-width: 100%;
+  height: calc(100vh - 265px);
+  max-height: calc(100vh - 265px);
+}
+
+/* Green area with project data */
+.green-bx{
+  display: flex;
+  align-items: center;
+  background-color: #1D4C56;
+  width: 100%;
+  padding: 25px;
+  min-height: 350px;
+}
+.max-width{
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.intervencion{
+  width: calc(50% - 50px);
+}
+.intervencion div:not(.intervencion>div:first-child){  
+  background-color: #d7944a;
+  color: #1D4C56;
+  width: fit-content;
+  padding: 6px;
+  padding-left: 20px;
+  min-width: 210px;
+  margin-top: 4px;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.numbers{
+  font-size: 1.8em;
+  line-height: 37px;
+}
+.plus{
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.project-data{
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 50px);
+  text-align: center;
+  justify-content: space-around;
+  font-size: 30px;
+  line-height: 50px;
+}
+.project-data > div{
+  display: flex;
+  justify-content: space-between;
+}
+.project-data > div > div > div:last-child{
+  color: lightgray;
+}
+
+/* Description */
+.desc{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #d7e0df;
+  padding: 25px;
+  min-height: 350px;
+}
+.desc > div > div {
+  width: calc(50% - 50px);
+  align-items: center;
+}
+.desc > div > div:last-child{
+  color: black;
+  font-weight: 300;
+}
+
+/* OBRA */
+.obra-container{
+  width: 1200px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.obra-imgs{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 49.6px;
+}
+.fotosObra{
+  margin: 6px;
+  width: 290px;
+  height: 260px;
+}
+
+.heading-last{
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 175px;
+}
+
+.navigation-bar{
+  display: flex;
+  justify-content: space-around;
+  color: lightgray;
+  font-size: 14px;
+  margin: 100px auto;
+  width: 100%;
+}
+.navigation-bar *{
+  display: flex;
+  align-items: center;
+}
+
+.contact-btn{
+  margin: 150px auto;
+  display: block;
+  width: fit-content;
+  text-align: center;
+  padding: 30px;
+  border: #d7944a solid 2px;
+  letter-spacing: 1px;
+  font-size: 25px;
+  font-weight: 300;
 }
