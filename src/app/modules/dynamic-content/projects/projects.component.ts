@@ -4,14 +4,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { FireStoreService } from 'src/app/core/fire-store.service';
 
-export interface News{
+export interface Projects{
   id?: string;
-  cat?: string;
-  title?: string;
-  url?: string;
-  src?: string;
-  img?: string;
-  downloadUrl?: string 
+  titulo?: string;
+  ciudad?: string;
+  pais?: string;
+  sup?: string;
+  hab?: string;
+  bath?: string;
+  year?: string;
+  bModel?: string;
+  rentabilidad?: string;
+  desc?: string;
+  fotoAntes?: string;
+  fotoDsps?: string;
+  fotoFinal?: string;
+  fotosObra?: string[];
 }
 
 @Component({
@@ -23,11 +31,11 @@ export interface News{
 export class ProjectsComponent implements OnInit {
 
   tabIndex = 0;
-  news!: any|null;
-  newsList =  <any[]>[];
+  project!: Projects|null;
+  pList =  <Projects[]>[];
   openPanel = false;
   tabs: [string] = ['ALL'];
-  tabContent = <any[]>[];
+  tabContent = <Projects[]>[];
 
   constructor(
     private service: FireStoreService, 
@@ -46,13 +54,13 @@ export class ProjectsComponent implements OnInit {
         )
       )
     ).subscribe(data => {
-      this.newsList = data!;
-      this.newsList.map(x => x.ciudad).map(y => {
-        if (!this.tabs.includes(y)){
-          this.tabs.push(y);
+      this.pList = data!;
+      this.pList.map(x => x.ciudad).map(y => {
+        if (!this.tabs.includes(y!)){
+          this.tabs.push(y!);
         }
       });
-      this.tabContent = this.newsList;
+      this.tabContent = this.pList;
       const city = this.route.snapshot.paramMap.get('city');
       const i = this.tabs.indexOf(city!);
       if(i) this.tabIndex = i;
@@ -61,30 +69,28 @@ export class ProjectsComponent implements OnInit {
 
   filterByCity(i: number){
     if(this.tabs[i]==='ALL') {
-      this.tabContent = this.newsList;  
+      this.tabContent = this.pList;  
       return this.tabContent;
     }
-    this.tabContent = this.newsList.filter(x => x.ciudad === this.tabs[i]);
+    this.tabContent = this.pList.filter(x => x.ciudad === this.tabs[i]);
     return this.tabContent;
   }
   
   addProject(article:any){
-    // this.newsList?.push(article);
     this.service.create('projects',article).then(()=> {
       // set tab focus
     })
   }
   editNews(newObj: any): void {
-    if (newObj && this.news) {
-      this.service.update('projects', this.news.id!, newObj)
+    if (newObj && this.project) {
+      this.service.update('projects', this.project.id!, newObj)
         .then(() => {
-          this.news = {};
-          // turn form fields error state to valid.
+          this.project = {};
           // notify?
           }
         )
-        .catch(err => // notify?
-          console.error(err)
+        .catch(err =>
+          alert(err)
         );
     }
   }
@@ -102,11 +108,9 @@ export class ProjectsComponent implements OnInit {
           }
           this.tabs.splice(this.tabs.indexOf(project.ciudad), 1)
           // show confirmation?
-          // refresh cities tabs array
         })
     .catch(err => 
-      // show error?
-      console.error(err)
+      alert(err)
       );
     }
   }

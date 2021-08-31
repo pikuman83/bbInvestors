@@ -17,7 +17,7 @@
 
         <!-- if admin -->
         <div class="desc-btns txt-center">
-          <button (click)="news=projects;openPanel=true"><mat-icon >edit</mat-icon></button>
+          <button (click)="project=projects;openPanel=true"><mat-icon >edit</mat-icon></button>
           <button><mat-icon (click)="deleteNews(projects.id, projects)">delete_forever</mat-icon></button>
         </div>
       </div>
@@ -32,6 +32,6 @@
     (editEvent)="editNews($event)"
     (focusEvent)="focusDiv.focus()"
     (panelEvent)="openPanel = false"
-    [edit]="news!"
+    [edit]="project!"
     [openPanel]="openPanel">
 </app-projects-admin>

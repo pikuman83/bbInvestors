@@ -3,8 +3,8 @@
 // this number can be used to order in the latest entry or oldest entry, can i provide a drag n drop sort order?
 
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { News } from '../projects.component';
+import { FormArray, FormBuilder, FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { Projects } from '../projects.component';
 
 @Component({
   selector: 'app-projects-admin',
@@ -16,10 +16,12 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
   @Input() edit: any = {};
   @Input() openPanel = false;
   
-  @Output() addEvent:EventEmitter<News> = new EventEmitter();
-  @Output() editEvent:EventEmitter<News> = new EventEmitter();
+  @Output() addEvent:EventEmitter<Projects> = new EventEmitter();
+  @Output() editEvent:EventEmitter<Projects> = new EventEmitter();
   @Output() focusEvent:EventEmitter<any> = new EventEmitter();
   @Output() panelEvent:EventEmitter<any> = new EventEmitter();
+
+  fileName = '';
   
   projectsForm = this.fb.group({
     titulo:  ['', Validators.required],
@@ -58,7 +60,6 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
       
       const fo = this.edit.fotosObra;
       if(fo.length){
-        console.log(fo)
         this.fotosObra.clear();
         for (let i = 0; i < fo.length; i++){
           this.newFotoObra();
@@ -72,17 +73,18 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
       document.getElementById('firstField')?.focus();
   }
 
-  addEditProject(form:FormGroup) {
+  addEditProject(form:FormGroup, fd: FormGroupDirective) {
     if (this.edit&&this.edit.id) {
       this.editEvent.emit(form.value);
-      this.edit = {};
-      this.fotosObra.clear();
     }
-    else{
+    else {
       this.addEvent.emit(form.value);
-      this.fotosObra.clear();
     }
+    this.fotosObra.clear();
+    this.edit = {};
+    this.fileName = '';
     this.projectsForm.reset();
+    fd.resetForm();
     this.focusEvent.emit();
   }
 
@@ -97,13 +99,9 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
     if (e.URL){
       foArray[i]= e.URL;
       this.fotosObra.setValue(foArray);
-      console.log('add event received', foArray)
     }
     else {
       this.fotosObra.removeAt(i);
-      // foArray.splice(i, 1);
-      console.log('delete event received', this.fotosObra.value)
-      // this.fotosObra.setValue(foArray);
     }
   }
 

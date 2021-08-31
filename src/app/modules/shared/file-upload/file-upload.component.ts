@@ -1,6 +1,6 @@
 // Clean up on error or not submission or run a periodic scan for cleaning
 
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
@@ -10,11 +10,14 @@ import { finalize } from 'rxjs/operators';
   templateUrl: './file-upload.component.html',
   styleUrls: ['./file-upload.component.css']
 })
-export class FileUploadComponent implements OnInit {
+export class FileUploadComponent implements OnInit, OnChanges {
 
   constructor(private storage: AngularFireStorage) { }
 
   ngOnInit(): void {}
+  ngOnChanges(): void {
+    console.log('file upload onchanges:', this.fileName)
+  }
 
   @Output() fileEvent:EventEmitter<any> = new EventEmitter();
   @Input() fileName = '';
