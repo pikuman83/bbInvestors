@@ -15,9 +15,7 @@ export class FileUploadComponent implements OnInit, OnChanges {
   constructor(private storage: AngularFireStorage) { }
 
   ngOnInit(): void {}
-  ngOnChanges(): void {
-    console.log('file upload onchanges:', this.fileName)
-  }
+  ngOnChanges(): void {}
 
   @Output() fileEvent:EventEmitter<any> = new EventEmitter();
   @Input() fileName = '';
@@ -31,25 +29,27 @@ export class FileUploadComponent implements OnInit, OnChanges {
 
   uploadFile(event: any) {
     const file = event.target.files[0];
-    this.fileName = file.name;
+    if (file) {
+      this.fileName = file.name;
 
-    if(file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/svg' ){
-      alert('Invalid file types, Please select an image');
-      return;
+      if(file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/svg' ){
+        alert('Invalid file types, Please select an image');
+        return;
+      }
+
+      const filePath = this.title === 'Imagen'? 
+        `News/${Date.now().toString()}`:
+        `Projects/${this.pName}/${Date.now().toString()}`;
+      const fileRef = this.storage.ref(`${filePath}/${file.name}`);
+      const task = this.storage.upload(`${filePath}/${file.name}`, file);
+      this.uploadPercent = task.percentageChanges();
+      task.snapshotChanges().pipe(finalize(() => {
+        fileRef.getDownloadURL().subscribe((x) => {
+          this.URL = x;
+          this.fileEvent.emit({'img':file.name, URL: x});
+        })
+      })).subscribe();
     }
-
-    const filePath = this.title === 'Imagen'? 
-      `News/${Date.now().toString()}`:
-      `Projects/${this.pName}/${Date.now().toString()}`;
-    const fileRef = this.storage.ref(`${filePath}/${file.name}`);
-    const task = this.storage.upload(`${filePath}/${file.name}`, file);
-    this.uploadPercent = task.percentageChanges();
-    task.snapshotChanges().pipe(finalize(() => {
-      fileRef.getDownloadURL().subscribe((x) => {
-        this.URL = x;
-        this.fileEvent.emit({'img':file.name, URL: x});
-      })
-    })).subscribe();
   }
 
   deleteImg(){

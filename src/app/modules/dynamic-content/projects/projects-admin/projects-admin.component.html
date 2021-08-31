@@ -69,6 +69,7 @@
         <mat-form-field appearance="legacy">
         <mat-label>Rentabilidad</mat-label>
         <input matInput formControlName="rentabilidad">
+        <div matSuffix>%</div>
         </mat-form-field>
 
         <mat-form-field appearance="legacy">
@@ -82,24 +83,24 @@
       <div class="container1">  
 
         <app-file-upload 
-          (fileEvent)="projectsForm.patchValue({fotoAntes:$event.URL});fileName=$event.fileName"
-          [fileName]="fileName"
+          (fileEvent)="projectsForm.patchValue({fotoAntes:$event.URL})"
+          [fileName]="projectsForm.controls.fotoAntes.value"
           [URL]="projectsForm.controls.fotoAntes.value"
           [pName]="projectsForm.controls.titulo.value"
           [title]="'Foto-Antes'">
         </app-file-upload>
   
         <app-file-upload 
-          (fileEvent)="projectsForm.patchValue({fotoDsps:$event.URL});fileName=$event.fileName" 
-          [fileName]="fileName"
+          (fileEvent)="projectsForm.patchValue({fotoDsps:$event.URL})"
+          [fileName]="projectsForm.controls.fotoDsps.value"
           [URL]="projectsForm.controls.fotoDsps.value"
           [title]="'Foto-Despues'"
           [pName]="projectsForm.controls.titulo.value">
         </app-file-upload>
   
         <app-file-upload 
-          (fileEvent)="projectsForm.patchValue({fotoFinal:$event.URL});fileName=$event.fileName" 
-          [fileName]="fileName"
+          (fileEvent)="projectsForm.patchValue({fotoFinal:$event.URL})"
+          [fileName]="projectsForm.controls.fotoFinal.value"
           [URL]="projectsForm.controls.fotoFinal.value"
           [title]="'Foto-Final'"
           [pName]="projectsForm.controls.titulo.value">
@@ -108,8 +109,8 @@
         <div class="d-flex flex-col" formArrayName="fotosObra"> 
           <div class="fotosObra" *ngFor="let fo of fotosObra.controls; index as i">
             <app-file-upload
-              (fileEvent)="addDeleteObra($event, i);fileName=$event.fileName"
-              [fileName]="fileName"
+              (fileEvent)="addDeleteObra($event, i)"
+              [fileName]="fo.value"
               [URL]="fo.value"
               [title]="'Foto-Obra '+ (i+1)"
               [pName]="projectsForm.controls.titulo.value">

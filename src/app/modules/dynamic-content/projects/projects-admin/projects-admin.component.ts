@@ -20,8 +20,6 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
   @Output() editEvent:EventEmitter<Projects> = new EventEmitter();
   @Output() focusEvent:EventEmitter<any> = new EventEmitter();
   @Output() panelEvent:EventEmitter<any> = new EventEmitter();
-
-  fileName = '';
   
   projectsForm = this.fb.group({
     titulo:  ['', Validators.required],
@@ -82,7 +80,6 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
     }
     this.fotosObra.clear();
     this.edit = {};
-    this.fileName = '';
     this.projectsForm.reset();
     fd.resetForm();
     this.focusEvent.emit();
