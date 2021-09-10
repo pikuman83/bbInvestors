@@ -22,4 +22,13 @@ export class AppComponent implements OnInit {
     if (window.location.pathname.split('/')[1] === 'fr') return lang = 'FR';
     return lang = ''
   }
+
+  openNav() {
+    document.getElementById("mySidenav")!.style.width = "250px";
+  }
+  
+  closeNav() {
+    document.getElementById("mySidenav")!.style.width = "0";
+  }
+
 }

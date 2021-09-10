@@ -26,10 +26,15 @@
     width: 50%;
     height: 100%;
 }
+.mx-width-80{
+    width: 60%;
+    max-width: 60%;
+    min-height: 250px;
+    position: relative;
+}
 .logo-single{
-    width: 85px;
-    height: 150px;
-    margin-bottom: 50px;
+    width: 65px;
+    height: 115px;
     background: url(../assets/logo-single.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -41,22 +46,26 @@
     background: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2FFor-guest-1.png?alt=media&token=c325f642-2c23-4df7-856a-d6dc5a7328c4);
 }
 .logo-for{
-    width: 142px;
+    width: 130px;
     height: 78px;
-    margin: 0 0 50px 12px;
+    margin: 0 0 0 12px;
     background-repeat: no-repeat;
     background-size: contain;
     align-self: flex-end;
 }
 .title-inv{
-    font-size: 1.5em;
+    font-size: 17px;
     color: white;
     font-weight: 300;
+    position: absolute;
+    top: 150px;
 }
 .title-gst{
-    font-size: 1.5em;
+    font-size: 17px;
     color: #1D4C56;
-    font-weight: 300;
+    font-weight: 500;
+    position: absolute;
+    top: 150px;
 }
 .greaterThan{
     vertical-align: bottom;
@@ -66,9 +75,13 @@
     color: #d7944a;
     border: #d7944a 2px solid;
     border-radius: 6px;
-    padding: 10px 24px;
-    font-size: 1em;
+    padding: 6px 10px;
+    font-size: 13px;
     letter-spacing: 1px;
+    font-weight: 600;
+    position: absolute;
+    bottom: -20px;
+    right: 0;
 }
 .seeHow-btn:hover, .seeHow-btn:hover mat-icon{
     background-color: #d7944a;
@@ -81,7 +94,7 @@
     display: flex;
     align-items: center;
     position: fixed;
-    top: 46%;
+    top: calc(50% - 45px);
     right: 0;
     left: auto;
     writing-mode: tb-rl;
@@ -90,7 +103,7 @@
     font-weight: 300;
     background: #d7944a;
     z-index: 2;
-    padding: 12px;
+    padding: 6px;
     border-radius: 0 8px 8px 0;
     cursor: pointer;
 }
@@ -120,6 +133,7 @@ header{
     align-items: flex-end;
     margin: 0 auto;
     text-align: center;
+    padding: 0 40px;
 }
 .header2 a{
     margin: 0 16px;
@@ -154,6 +168,71 @@ header{
     color: #d7944a  ;
 }
 
+/* SIDENAV */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 80px;
+    right: 0;
+    padding-top: 25px;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+.sidenav a {
+    padding: 16px 8px 16px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #1D4C56;
+    display: block;
+    transition: 0.3s;
+}
+.sidenav a:hover {
+    color: black;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.sidenav .helloUser{
+    position: absolute;
+    bottom: 100px;
+    margin: 30px 0 0 32px;
+    letter-spacing: 2px;
+    color: green;
+}
+.sidenav .langbtn{
+    position: absolute;
+    top: 150px;
+    right: -5px;
+    margin-left: 50px;
+    transition: 0.3s;
+}
+.responsive-top-bar{
+    display: none;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    text-align: end;
+    height: 80px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.16);
+    position: fixed;
+    z-index: 99;
+}
+.sideNav-icon{
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    color: #1D4C56;
+}
+  
 /* APP */
 .router{
     margin-top: 90px;
@@ -162,6 +241,7 @@ header{
 /* FOOTER */
 footer{
     margin: 25px auto;
+    width: 90%;
     max-width: 1200px;
 }
 .copyright{
@@ -176,4 +256,13 @@ footer{
 }
 .copyright > div {
     margin-right: 25px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    header {display: none;}
+    .responsive-top-bar {display: flex;}
+    .container-landing {display: block;}
+    .investor-bx, .guest-bx {width: 100%; height: 50%;}
 }

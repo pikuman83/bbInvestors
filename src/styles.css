@@ -6,8 +6,17 @@
   xl: 1200px,
   xxl: 1400px */
 
+@font-face {
+    font-family: Baskerville;
+    src: url(./assets/Fonts/Baskerville-01.woff);
+}
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url(./assets/Fonts/HelveticaNeue-01.woff);
+}
+
 html, body { height: 100%; overflow-x: hidden; box-sizing: border-box;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; box-sizing: border-box; }
+body { margin: 0; font-family: 'Helvetica Neue', sans-serif; box-sizing: border-box; }
 
 a, a:visited, a:hover {
     color: #1D4C56;
@@ -84,7 +93,7 @@ a:focus {
     color: #d7944a;
 }
 .bold{
-    font-weight: 500;
+    font-weight: 800;
 }
 
 
@@ -206,4 +215,13 @@ a:focus {
 }
 .desc-btns button:last-child{
     color: crimson;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .fake-div{
+        height: 80px;
+    }
 }
