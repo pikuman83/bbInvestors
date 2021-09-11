@@ -15,6 +15,8 @@
     src: url(./assets/Fonts/HelveticaNeue-01.woff);
 }
 
+.bask{font-family: Baskerville;}
+
 html, body { height: 100%; overflow-x: hidden; box-sizing: border-box;}
 body { margin: 0; font-family: 'Helvetica Neue', sans-serif; box-sizing: border-box; }
 
@@ -31,15 +33,6 @@ a:focus {
 
 
 /* FLEXBOX */
-.wrapper{
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    align-items: flex-end;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    text-align: center;
-}
 .d-flex{
     display: flex;
 }
@@ -133,7 +126,9 @@ a:focus {
 .m-auto{
     margin: 0 auto;
 }
-
+.def-side-p{
+    padding: 0 40px 0 40px;
+}
 
 
 
@@ -167,9 +162,10 @@ a:focus {
 .contact-animation{
     background-image: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Ff1-1.png?alt=media&token=7de261e0-93f0-4b73-b8aa-15eacb2ec5c7), 
     url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Ff2.png?alt=media&token=8cf70660-a2c3-43f0-bb36-a4c68bce0801);
-    background-position-y: -96px, bottom;
+    background-position-y: -40px, bottom;
     background-repeat: no-repeat;
     transition: all 2s ease-in-out;
+    background-size: contain;
 }
 .contact-animation:hover{
     background-position-y: bottom, top;
@@ -221,7 +217,6 @@ a:focus {
 
 
 @media screen and (max-width: 768px) {
-    .fake-div{
-        height: 80px;
-    }
+    .fake-div{height: 80px;}
+    .contact-animation{background-position-y: 36px, bottom;}
 }

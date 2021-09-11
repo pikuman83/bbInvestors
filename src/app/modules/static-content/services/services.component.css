@@ -2,40 +2,47 @@
     background-color: #1D4C56;
 }
 .title{
+    padding-top: 50px;
+    text-align: center;
     font-size: 6em;
-    line-height: 3em;
-    color: gray;
-    margin: 0 auto;
-    width: fit-content;
+    line-height: 200px;
+    color: #e6ecec;
+    font-family: Baskerville;
+}
+.wrapper{
+    text-align: center;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    margin: 50px auto;
+    padding: 0 40px 0 40px;
 }
 .section1, .section2{
-    width: 40%;
-    max-width: 40%;
+    width: 45%;
+    max-width: 45%;
 }
 .section2{
     flex-direction: row;
 }
 .image{
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fimg115.jpg?alt=media&token=ac376764-2440-427d-99af-adab640caa5c);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fimg19.jpg?alt=media&token=3e433155-02a4-4f60-8db3-043c6600a2b8);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 600px;
 }
 .card{
-    box-sizing: border-box;
     background-color: white;
-    flex-wrap: nowrap;
-    font-size: 1.5em;
-    line-height: 1.5em;
-    padding: 1.5em;
-    min-height: 277px;
+    font-size: 25px;
+    line-height: 36px;
+    padding: 40px;
 }
 .pin{
-    margin-top: 23px;
+    margin-top: 14px;
+    width: 10%;
 }
 .mid-space{
-    width: 228px;
+    width: 100%;
     align-self: center;
     border-top: #d7944a 2px solid;
 }
@@ -49,7 +56,7 @@
 }
 .line1{
     width: 60px;
-    height: 198px;
+    height: 168px;
     border-top: #d7944a 2px solid;
     border-left: #d7944a 2px solid;
 }
@@ -58,21 +65,26 @@
 }
 .big-line{
     align-self: flex-end;
-    margin-bottom: 75px;
+    margin-bottom: 60px;
 }
 .buttons{
     width: 100%;
     text-align: left;
     align-items: flex-end;
+    font-family: Baskerville;
 }
 .button1{
-    width: 90%;
-    height: 150px;
-    font-size: 2.5em;
-    line-height: 150px;
-    letter-spacing: 4px;
-    margin: 25px 0;
-    padding-left: 24px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 120px;
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin: 24px 0;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 340px;
 }
 .button1:not(.button1:first-child){
     cursor: pointer;
@@ -80,6 +92,7 @@
 }
 .button1:hover:not(.button1:first-child:hover){
     width: 100%;
+    max-width: 380px;
     background-color: #d7944a;
 }
 .button2{
@@ -88,8 +101,7 @@
 }
 .button1:first-child{
     color: #d7944a;
-    letter-spacing: 3px;
-    font-size: 3em;
+    font-size: 38px;
 }
 .button2:last-child{
     margin-bottom: 0;
@@ -100,8 +112,9 @@
 }
 .contact-link{
     width: fit-content;
-    padding: 6em;
+    padding: 50px 0 100px 0;
     margin: 0 auto;
+    white-space: nowrap;
 }
 .contact-button{
     color: #d7944a;
@@ -149,10 +162,8 @@
 
 
 .boxes{
-    text-align: left;
     font-size: 1.5em;
     line-height: 1.5em;
-    max-width: 1200px;
 }
 .box{
     display: flex;
@@ -172,11 +183,13 @@
     font-size: 3em;
     padding: 0 30px 0 0;
     color: #1D4C56;
+    font-family: Baskerville;
 }
 .box-heading{
     color: #1D4C56;
     font-size: 1.5em;
     line-height: 1.5em;
+    font-family: Baskerville;
 }
 .box-heading1{
     color: #d7944a;
@@ -196,4 +209,65 @@
 }
 .bullet-padding{
     padding-left: 28px;
+}
+
+@media screen and (max-width: 768px) {
+    .title{display: none;}
+    .pin{display: none;}
+    .section2{display: none;}
+    .wrapper{
+        margin: 0;
+        display: block;
+        padding: 0;
+    }
+    .section1{
+        width: unset;
+        max-width: unset;
+    }
+    .image{padding-top: 180px;}
+    .contact-link{padding: 100px 40px 100px 40px;}
+    .bt-big{padding: 20px;}
+    .heading2{
+        font-size: 2em;
+        line-height: 1.2em;
+        padding: 0 20px;
+    }
+    .cards1{display: block;}
+    .card1{
+        max-width: unset;
+        padding: 20px;
+        text-align: center;
+    }   
+    .card-heading{
+        text-align: inherit;
+        margin-top: 12px;
+    }
+    .card-desc{margin-top: 25px;}
+    .contact-animation{padding: 20px;}
+    .box{
+        margin: 0;
+        padding: 50px 20px;
+    }
+    .box-number{
+        font-size: 2em;
+        padding: 0 12px 0 0;
+    }
+    .box-heading{text-align: center;}
+    .box-heading1{
+        font-size: 1em;
+        line-height: 1.3em;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+    .box-desc{
+        font-size: 18px;
+        line-height: 1.5em;
+        margin-right: 0;
+        padding: 0;
+    }
+    .mobile-display{display: block;}
+    .col{
+        max-width: unset;
+        margin: 0;
+    }
 }
