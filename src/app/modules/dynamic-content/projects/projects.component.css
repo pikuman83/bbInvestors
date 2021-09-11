@@ -20,6 +20,7 @@ mat-tab-group{
     margin: 0 auto;
     overflow: hidden;
     margin: 100px auto;
+    padding: 0 40px;
 }
 
 /* Encasulated.None */
@@ -70,4 +71,24 @@ mat-tab-group{
     box-sizing: border-box;
     display: block;
     margin-top: 100px;
+}
+
+app-projects-admin{
+    padding: 40px;
+}
+
+@media screen and (max-width: 992px) {
+    mat-tab-group{padding: 0 20px;}
+    .project{
+        width: 100%;
+        box-shadow: 0 0 6px rgba(0,0,0,0.16);
+    }
+    app-projects-admin{padding: 20px;}
+}
+
+@media screen and (max-width: 992px) {
+    .title{
+        font-size: 2.5em;
+        line-height: 4em;
+    }
 }
