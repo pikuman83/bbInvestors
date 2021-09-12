@@ -1,17 +1,17 @@
 <div class="fake-div"></div>
 
 <div class="heading-container contact-animation">
-    <div class="heading" #focusDiv>
+    <div class="heading bask" #focusDiv>
         Porque el saber es el poder en estos tiempos tan cambiantes, 
         aquí encontrarás las noticias que BB considera relevantes para los actuales y futuros inversores.
     </div>
 </div>
 
-<mat-icon (click)="'scroll down or include it inside a tag'" class="scroll-icon">unfold_more</mat-icon>
-
-<div class="bg">    
-    <div class="fake-div"></div>
-    
+<div class="scroll-icon" id="scroll-icon" (click)="scroll()">
+    <mat-icon>expand_more</mat-icon>
+    <mat-icon class="ico1">expand_more</mat-icon>
+</div>
+<div class="bg" id="news-section">        
     <div class="container"> 
         <div class="card" *ngFor="let n of newsList; let i = index">
             <img class="news-image" [src]="n.downloadUrl" width="300" height="200" alt="News-Image">
