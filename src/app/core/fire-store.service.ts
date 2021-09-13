@@ -9,7 +9,7 @@ export class FireStoreService {
   constructor(private db: AngularFirestore) {}
 
   getAll(path: string): AngularFirestoreCollection<any> {
-    return this.db.collection(`/${path}`);
+    return this.db.collection(`/${path}`, path === 'projects'? ref => ref.orderBy('ciudad'): ref => ref.orderBy('cat'));
   }
 
   get(path: string, documentId: string) {

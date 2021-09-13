@@ -15,8 +15,6 @@ export class ContactComponent implements OnInit,OnDestroy {
     email: ['', [Validators.required, Validators.email]],
     message: ['', [Validators.required, Validators.minLength(5)]],
   });
-  
-  @Input() popup=true;
 
   constructor(private fb: FormBuilder) { }
 
@@ -27,9 +25,6 @@ export class ContactComponent implements OnInit,OnDestroy {
     console.log('Contact component destroyed');
   }
 
-  close(e: Event){
-    console.log(e.target)
-  }
   onSubmit(form:FormGroup) {
     // send emails
     console.log(form)

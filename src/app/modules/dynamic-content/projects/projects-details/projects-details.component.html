@@ -1,10 +1,10 @@
-<div class="fake-div"></div>
-
+<div class="fake-div" id="focusTrapper"></div>
+<a class="back-arrow" routerLink="/projects" title="volver a proyectos"><mat-icon>arrow_back</mat-icon></a>
 <div class="container" *ngIf="project">
 
   <header>
-    <div class="proj-name">{{project.titulo}}</div>
-    <div class="proj-location">{{project.ciudad}} | {{project.pais}}</div>
+    <div class="proj-name bask">{{project.titulo}}</div>
+    <div class="proj-location">{{project.ciudad | uppercase}} | {{project.pais | uppercase}}</div>
   </header>
 
   <img-comparison-slider>
@@ -14,7 +14,7 @@
     </figure>
     <figure slot="second" class="after">
       <img class="img-antes-dsps" [src]="project.fotoDsps">
-      <figcaption>Despúes</figcaption>
+      <figcaption>Después</figcaption>
     </figure>
   </img-comparison-slider>
 
@@ -82,22 +82,25 @@
   </div>
 
   <div class="heading heading-last">RESULTADO FINAL</div> <!--max-width, margin-auto test-left-->
-  <img [src]="project.fotoFinal" alt="Foto final" class="w-100">
+  <img class="fotoFinal w-100" [src]="project.fotoFinal" alt="Foto final">
   
   <div class="navigation-bar">
-    <div class="back">
+    
+    <div class="back" [class.hide]="projectsLoaded()" (click)="previous()">
       <mat-icon style="width: 5px;">navigate_before</mat-icon>
-      <mat-icon>navigate_before</mat-icon>
-      ANTERIOR
+      <mat-icon>navigate_before</mat-icon>ANTERIOR
     </div>
-    <div class="return">VOLVER A PROYECTOS</div>
-    <div class="next">SIGUIENTE 
+
+    <div class="return" routerLink="/projects">VOLVER A PROYECTOS</div>
+    
+    <div class="next" [class.hide]="projectsLoaded()" (click)="next()">SIGUIENTE 
       <mat-icon style="width: 5px;">navigate_next</mat-icon>
       <mat-icon>navigate_next</mat-icon>
     </div>
+
   </div>
 
-  <div class="contact-btn">
+  <div class="contact-btn" routerLink="/contact">
     ¡TRABAJEMOS JUNTOS!
   </div>
 

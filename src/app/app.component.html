@@ -26,14 +26,19 @@
   </div>
 </div>
 
+<div class="destroy" [class.show]="showMenu"> <!--Kill it if user is admin-->
+
 <!-- FIXED SIDE CONTACT FORM -->
-<div class="destroy" style="position: relative;" [class.show]="showMenu"> <!--Kill it if user is admin-->
   <div class="contact1" (click)="showForm=!showForm">
     <mat-icon class="contact-text">mail</mat-icon>
     <div class="contact-text">Contact</div>
   </div>
   <div class="popupForm" [class.visible]="showForm">
-    <app-contact [popup]="true"></app-contact>
+    <div class="navBar d-flex">
+      <div>Contacto</div>
+      <div (click)="showForm=!showForm"><mat-icon>close</mat-icon></div>
+    </div>
+    <app-contact></app-contact>
   </div>
   
 <!-- TOP MENU BAR -->

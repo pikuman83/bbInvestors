@@ -44,16 +44,21 @@ export class ProjectsComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getAllNewsList();
+    this.getCollection();
   }
 
-  getAllNewsList(): void{
+  getCollection(): void{
+    const LS = localStorage.getItem('projects');
+    if (LS) localStorage.removeItem('projects');
+    localStorage.setItem('projects', '');
     this.service.getAll('projects').snapshotChanges().pipe(
       map(changes =>
-        changes.map(c => ({id: c.payload.doc.id, ...c.payload.doc.data()})
-        )
+        changes.map(c => ({id: c.payload.doc.id, ...c.payload.doc.data()
+        }))
+        // changes.map(x => this.idList.push(x.payload.doc.id))
       )
     ).subscribe(data => {
+      localStorage.setItem('projects', JSON.stringify(data.map(x => x.id)));
       this.pList = data!;
       this.pList.map(x => x.ciudad).map(y => {
         if (!this.tabs.includes(y!)){
@@ -94,7 +99,7 @@ export class ProjectsComponent implements OnInit {
         );
     }
   }
-  deleteNews(id: string|undefined, project: any): void {
+  deleteDoc(id: string|undefined, project: any): void {
     if (id) {
       this.service.delete('projects', id)
         .then(() => {
@@ -106,7 +111,7 @@ export class ProjectsComponent implements OnInit {
               this.storage.refFromURL(url).delete();
             });
           }
-          this.tabs.splice(this.tabs.indexOf(project.ciudad), 1)
+          // this.tabs.splice(this.tabs.indexOf(project.ciudad), 1) DELETE ONLY IF NO MORE CITY IS AVAILABLE OR IT WILL BE DONE AUTOMATICALLY
           // show confirmation?
         })
     .catch(err => 

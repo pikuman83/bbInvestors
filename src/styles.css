@@ -17,7 +17,7 @@
 
 .bask{font-family: Baskerville;}
 
-html, body { height: 100%; overflow-x: hidden; box-sizing: border-box; scroll-behavior: smooth;}
+html, body { height: 100%; overflow-x: hidden; box-sizing: border-box; overflow: auto;}
 body { margin: 0; font-family: 'Helvetica Neue', sans-serif; box-sizing: border-box;}
 
 a, a:visited, a:hover {
@@ -131,7 +131,9 @@ a:focus {
 }
 
 
-
+.pointer{
+    cursor: pointer;
+}
 .bt-big{
     display: block;
     padding: 40px 80px;
@@ -173,22 +175,19 @@ a:focus {
 
 /* CONTACT POPUP */
 .popupForm{
-    display: flex;
-    align-items: center;
-    top: 12%;
-    right: 57px;
-    left: auto;
-    background-color: whitesmoke;
-    border-radius: 10px;
-    width: 400px;
+    max-width: 300px;
     position: absolute;
+    bottom: 12px;
+    right: 0;
+    left: auto;
+    background-color: white;
+    border-radius: 10px;
     box-shadow: 0 0 6px rgba(0,0,0,0.16);
     transform: rotateY(90deg) !important; /* rotate 90deg means normal view, transform 0deg means invisible (the latter is used in the upcoming class) */
     transition: all 0.5s ease 0s; /* the effect, pushe it (push bcoz of transporm origin, this is just the motion strategy, contains no effect) towards the new position slowly */
     transform-origin: 100% 0 0; /* makes the transition starts from thee origin*/
-    z-index: 1;
-    padding: 16px 36px 36px 36px;
-    height: -80px;
+    z-index: 2;
+    padding: 20px;
 }
 .visible{
     transform: rotateY(0deg) !important;
