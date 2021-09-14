@@ -166,13 +166,13 @@ a:focus {
 .contact-animation{
     background-image: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Ff1-1.png?alt=media&token=7de261e0-93f0-4b73-b8aa-15eacb2ec5c7), 
     url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Ff2.png?alt=media&token=8cf70660-a2c3-43f0-bb36-a4c68bce0801);
-    background-position-y: -40px, bottom;
+    /* background-position-y: -40px, bottom; */
     background-repeat: no-repeat;
-    transition: all 2s ease-in-out;
+    /* transition: all 2s ease-in-out; */
     background-size: contain;
 }
 .contact-animation:hover{
-    background-position-y: bottom, top;
+    /* background-position-y: bottom, top; */
 }
 
 /* CONTACT POPUP */
@@ -222,7 +222,7 @@ a:focus {
     cursor: pointer;
     position: absolute;
     left: 50%;
-    margin-top: -35px;
+    bottom: 12px;
 }
 .scroll-icon *{
     font-size: 40px;
@@ -241,7 +241,7 @@ a:focus {
 
 @media screen and (max-width: 768px) {
     .fake-div{height: 80px;}
-    .contact-animation{background-position-y: 36px, bottom;}
+    /* .contact-animation{background-position-y: 36px, bottom;} */
 }
 @media screen and (max-width: 5765px) {
     .contact > div:first-child{font-size: 40px;}
