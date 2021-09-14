@@ -9,8 +9,7 @@
 }
 .header-img{
     /* padding-top: 690px; */
-    /* height: calc(100vh - 240px); 240 = 90 top-bar + 150 title */
-    height: 600px;
+    height: calc(100vh - 240px); /* 240 = 90 top-bar + 150 title*/
     max-height: 600px;
     width: 100%;
     background-image: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fimg108.jpg?alt=media&token=0ce8641a-37a6-4e83-8433-c6d0d446180b);

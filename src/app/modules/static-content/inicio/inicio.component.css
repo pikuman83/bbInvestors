@@ -3,8 +3,7 @@
 }
 header{
     width: 100%;
-    /* height: calc(100vh - 90px); */
-    height: 600px;
+    height: calc(100vh - 90px);
     display: flex;
     justify-content: center;
 }
@@ -397,8 +396,7 @@ header{
     }
 }
 @media screen and (max-width: 768px) {
-    /* header{height: calc(100vh - 80px);} */
-    header{height: 400px;}
+    header{height: calc(100vh - 80px);}
     .container{display: block; padding: 0;}
     .bg-settings{padding-top: 400px;}
     .bx-1{font-size: 6vw; opacity: 1; text-align: center;}

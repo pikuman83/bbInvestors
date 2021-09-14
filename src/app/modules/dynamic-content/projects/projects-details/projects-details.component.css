@@ -48,8 +48,7 @@ header{
 /*Image comparison classes*/
 img-comparison-slider{
   width: 100%;
-  /* height: calc(100vh - 265px); */
-  height: 600px;
+  height: calc(100vh - 265px);
   max-height: 600px;
 }
 .before, .after{
@@ -79,8 +78,7 @@ img-comparison-slider{
 .img-antes-dsps{
   width: 100%;
   max-width: 100%;
-  /* height: calc(100vh - 265px); */
-  height: 600px;
+  height: calc(100vh - 265px);
   max-height: 600px;
   /* max-height: calc(100vh - 265px); */
 }
