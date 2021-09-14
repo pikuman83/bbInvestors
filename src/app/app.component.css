@@ -1,3 +1,7 @@
+.bd-box *{
+    box-sizing: border-box;
+}
+
 /* CONTACT FORM */
 .contact1{
     display: flex;
