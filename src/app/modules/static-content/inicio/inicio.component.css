@@ -409,7 +409,7 @@ header{
     .line1, .line2m .line2m {display: none;}
     .img2{margin-left: 0;}
     .myname{margin: 40px auto; font-size: 36px; height: 50px;}
-    .bx-2{margin-left: 0;}
+    .bx-2{margin-left: 0; display: block;}
     .btn2{margin-left: calc(50% - 233px);}
     .btn2, .btn3 {display: inline-flex;}
     .formula{display: none;}
@@ -428,11 +428,6 @@ header{
     .section3-footer a{padding:  0 10px;}
 }
 @media screen and (max-width: 576px) {
-    .section3 > div:last-child{font-size: 12px;}
-    .section3-footer a{padding:  0 4px;}
-
-}
-@media screen and (max-width: 576px) {
     .container{padding-bottom: 1px;}
     .img2{padding-top: 0;}
     .btn2{margin-left: auto;}
@@ -443,6 +438,7 @@ header{
     .first-white-bx > div:last-child{width: 100%; padding-bottom: 40px;}
     .section3 > div:first-child{font-size: 20px; padding: 20px 0; height: unset;}
     .section3-image{padding-top: 200px;}
-    .section3 > div:last-child{height: unset; padding: 20px 0;}
+    .section3 > div:last-child{height: unset; padding: 20px 0; font-size: 12px;}
+    .section3-footer a{padding:  0 4px;}
     .bg > div:first-child{font-size: 40px;}
 }

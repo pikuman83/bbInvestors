@@ -7,6 +7,7 @@ import { ServicesComponent } from './services/services.component';
 import { NewsComponent } from './news/news.component';
 import { NewsAdminComponent } from './news/news-admin/news-admin.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     AboutComponent,
     ServicesComponent,
     NewsComponent,
-    NewsAdminComponent
+    NewsAdminComponent,
+    LandingComponent
   ],
   imports: [
     SharedModule,

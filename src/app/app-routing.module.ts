@@ -5,11 +5,13 @@ import { ProjectsComponent } from './modules/dynamic-content/projects/projects.c
 import { AboutComponent } from './modules/static-content/about/about.component';
 import { ContactComponent } from './modules/static-content/contact/contact.component';
 import { InicioComponent } from './modules/static-content/inicio/inicio.component';
+import { LandingComponent } from './modules/static-content/landing/landing.component';
 import { NewsComponent } from './modules/static-content/news/news.component';
 import { ServicesComponent } from './modules/static-content/services/services.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '', redirectTo: '/routing', pathMatch: 'full'},
+  {path: 'routing', component: LandingComponent},
   {path: 'home', component: InicioComponent},
   {path: 'about', component: AboutComponent},
   {path: 'services', component: ServicesComponent},
