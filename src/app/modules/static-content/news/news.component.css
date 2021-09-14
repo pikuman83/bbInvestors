@@ -3,7 +3,8 @@
     align-items: center;
     justify-content: center;
     max-width: 1200px;
-    height: calc(100vh - 95px);
+    /* height: calc(100vh - 95px); */
+    height: 600px;
     margin: 0 auto;
     background-position-x: -130px, 20px;
 }
@@ -92,7 +93,8 @@ app-news-admin{
 @media screen and (max-width: 768px) {
     .heading-container{
         background-position-x: 0;
-        height: calc(100vh - 80px);
+        /* height: calc(100vh - 80px); */
+        height: 400px;
     }
     .heading{
         padding: 40px;
