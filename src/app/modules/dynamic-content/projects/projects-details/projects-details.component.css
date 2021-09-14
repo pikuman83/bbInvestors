@@ -1,7 +1,14 @@
-.back-arrow{
+.top-arrow{
+  border-radius: 16px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.8;
+  background-color: white;
   position: absolute;
   top: 100px;
   left: 20px;
+  z-index: 2;
+  box-shadow: 0 0 6px rgb(0 0 0 / 16%);
 }
 .container{
   width: 100%;
@@ -248,7 +255,7 @@ img-comparison-slider{
   }
 }
 @media screen and (max-width: 768px) {
-  .back-arrow{top: 90px;}
+  .top-arrow{top: 90px;}
   img-comparison-slider, .img-antes-dsps{max-height: 300px;}
   .green-bx .max-width{display: block;}
   .intervencion{

@@ -31,7 +31,6 @@ export class NewsComponent implements OnInit {
   constructor(private service: FireStoreService, private storage: AngularFireStorage) { }
 
   ngOnInit(): void {
-    console.log('news component initialized')
     this.getAllNewsList();
   }
 

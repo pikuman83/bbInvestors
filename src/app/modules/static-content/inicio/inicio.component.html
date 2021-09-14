@@ -6,7 +6,7 @@
     <div class="container">
         <div class="img1 bg-settings"></div>
         <div class="bx bx-1">
-            <div>
+            <div class="bask">
                 <span class="green" i18n>Construimos y diversificamos</span><br>
                 <span class="orange" i18n>su portafolio de inversiones</span><br>
                 <span class="green" i18n>inmobiliarias internacionales</span><br>
@@ -16,9 +16,9 @@
         <a class="btn btn1" [routerLink]="['/services']" >VER SERVICIOS</a>
         <div class="line1"></div>
         <div class="img2 bg-settings"></div>
-        <div class="myname"></div>
+        <div class="myname">Brigitte, su asesora.</div>
         <div class="bx bx-2">
-            “En estos tiempos, la supervivencia económica pasa por la diversificación de sus activos.
+            “En estos tiempos, la supervivencia económica pasa por la diversificación de sus activos.<br>
             Mi trabajo es facilitar sus inversiones en activos inmobiliarios en el extranjero 
             con ayuda de mi experiencia y conocimientos”
         </div>
@@ -79,11 +79,25 @@
     </div>
 </section>
 
-<!-- <app-news></app-news> -->
+<div class="bg" id="news-section">
+    <div class="bask">BB NEWS</div>
+    <div>Aquí encontrará mi selección de<br>
+        artículos de interés para el inversor</div>   
+    <div class="container-news"> 
+        <div class="card" *ngFor="let n of newsList; let i = index">
+            <img class="news-image" [src]="n.downloadUrl" width="300" height="200" alt="News-Image">
+            <div class="desc">
+                <a class="card-heading" href=`${n.url}` target="_blank" rel="noopener noreferrer">{{n.title}}</a>
+                <div class="src">{{n.src}}</div>
+                <div class="cat">{{n.cat}}</div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="contact">
-    <div>Contactemos</div>
-    <div>Tanto si tiene preguntas como si <br>quiere ponerse manos a la obra, todo <br> comienza con un “Hola” </div>
+    <div class="bask">Contactemos</div>
+    <div class="helv">Tanto si tiene preguntas como si <br>quiere ponerse manos a la obra, todo <br> comienza con un “Hola” </div>
 </div>
 <div class="mx-w-12 contact-animation">
     <app-contact></app-contact>

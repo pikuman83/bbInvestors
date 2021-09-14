@@ -16,6 +16,7 @@
 }
 
 .bask{font-family: Baskerville;}
+.helv{font-family: 'Helvetica Neue';}
 
 html, body { height: 100%; overflow-x: hidden; box-sizing: border-box; overflow: auto;}
 body { margin: 0; font-family: 'Helvetica Neue', sans-serif; box-sizing: border-box;}
@@ -146,7 +147,7 @@ a:focus {
 .contact{
     width: 100%;
     text-align: center;
-    margin: 50px auto;
+    margin: 0 auto 50px auto;
     color: #1D4C56;
 }
 .contact div:first-child{
