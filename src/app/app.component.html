@@ -1,4 +1,4 @@
-<div> 
+<div *ngIf="service.showMenu">
   <!-- FIXED SIDE CONTACT FORM -->
   <div class="contact1" (click)="showForm=!showForm">
     <mat-icon class="contact-text">mail</mat-icon>
@@ -11,8 +11,8 @@
     </div>
     <app-contact></app-contact>
   </div>
-  
-<!-- TOP MENU BAR -->
+
+  <!-- TOP MENU BAR -->
   <header>
     <div class="header">
       <div class="as-center">
@@ -29,7 +29,7 @@
             {{setLang()}}
             <mat-icon>arrow_drop_down</mat-icon>
           </button>
-  
+
           <mat-menu #langMenu="matMenu">
             <a class="menuFirstItem" mat-menu-item href="/es">ES</a>
             <a mat-menu-item href="/en">EN</a>
@@ -82,12 +82,13 @@
       <img style="margin-top: 25px;" src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2FFor-investors-1.png?alt=media&token=e0d7a927-a983-4bd0-add4-daeb2c3ea9d5" width="60" height="40" alt="Company's logo">
     <span class="sideNav-icon" (click)="openNav()">&#9776;</span>
   </div>
+</div>
 
-  <!-- REST OF THE APP -->
-  <router-outlet class="router"></router-outlet>
+<!-- APP -->
+<router-outlet class="router"></router-outlet>
 
-  <!-- FOOTER -->
-  <footer>
+<!-- FOOTER -->
+  <footer *ngIf="service.showMenu">
     <div class="d-flex flex-between copyright">
       <div>&copy; 2021 BB For Investors. Todos los derechos reservados.</div>
       <div>
@@ -98,4 +99,3 @@
       </div>
     </div>
   </footer>
-</div>

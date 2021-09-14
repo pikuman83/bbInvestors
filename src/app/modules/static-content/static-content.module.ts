@@ -17,7 +17,7 @@ import { LandingComponent } from './landing/landing.component';
     ServicesComponent,
     NewsComponent,
     NewsAdminComponent,
-    LandingComponent
+    LandingComponent,
   ],
   imports: [
     SharedModule,

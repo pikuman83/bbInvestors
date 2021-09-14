@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from 'src/app/global.service';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service: GlobalService) { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
+  
 }

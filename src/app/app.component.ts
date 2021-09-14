@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from './global.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ export class AppComponent implements OnInit {
 
   title = 'bbInvestors';
   showForm = false;
-  showMenu = false;
+
+  constructor(public service: GlobalService){}
 
   ngOnInit() {
     this.setLang();
@@ -20,11 +22,11 @@ export class AppComponent implements OnInit {
     if (window.location.pathname.split('/')[1] === 'en') return lang = 'EN';
     if (window.location.pathname.split('/')[1] === 'es') return lang = 'ES';
     if (window.location.pathname.split('/')[1] === 'fr') return lang = 'FR';
-    return lang = ''
+    return lang = '';
   }
 
   openNav() {
-    document.getElementById("mySidenav")!.style.width = "250px";
+    document.getElementById("mySidenav")!.style.width = "100%";
   }
   
   closeNav() {
