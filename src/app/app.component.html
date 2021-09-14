@@ -37,18 +37,18 @@
           </mat-menu>
         </div>
         <div class="menu d-flex">
-          <a [routerLink]="['/home']" i18n="@@menu1">INICIO</a>
-          <a [routerLink]="['/about']" i18n="@@menu2">SOBRE MI</a>
-          <a [routerLink]="['/services']" i18n="@@menu3">SERVICIOS</a>
-          <a [routerLink]="['/projects']" i18n="@@menu4">PORTAFOLIO</a>
-          <a [routerLink]="['/news']" i18n="@@menu5">ACTUALIDAD</a>
+          <a [routerLink]="['/home']" i18n="@@menu1" (click)="closeNav()">INICIO</a>
+          <a [routerLink]="['/about']" i18n="@@menu2" (click)="closeNav()">SOBRE MI</a>
+          <a [routerLink]="['/services']" i18n="@@menu3" (click)="closeNav()">SERVICIOS</a>
+          <a [routerLink]="['/projects']" i18n="@@menu4" (click)="closeNav()">PORTAFOLIO</a>
+          <a [routerLink]="['/news']" i18n="@@menu5" (click)="closeNav()">ACTUALIDAD</a>
         </div>
       </div>
     </div>
   </header>
 
   <!-- RESPONSIVE SIDENAV -->
-  <div id="mySidenav" class="sidenav" (blur)="closeNav()">
+  <div id="mySidenav" class="sidenav">
 
     <a class="closebtn" (click)="closeNav()">&times;</a>
     <button mat-button [matMenuTriggerFor]="langMenu">
@@ -70,11 +70,11 @@
 
     <div class="helloUser">Hello Investor</div>
 
-    <a class="mt-50" [routerLink]="['/home']" i18n="@@menu1">INICIO</a>
-    <a [routerLink]="['/about']" i18n="@@menu2">SOBRE MI</a>
-    <a [routerLink]="['/services']" i18n="@@menu3">SERVICIOS</a>
-    <a [routerLink]="['/projects']" i18n="@@menu4">PORTAFOLIO</a>
-    <a [routerLink]="['/news']" i18n="@@menu5">ACTUALIDAD</a>
+    <a class="mt-50" [routerLink]="['/home']" i18n="@@menu1" (click)="closeNav()" >INICIO</a>
+    <a [routerLink]="['/about']" i18n="@@menu2" (click)="closeNav()">SOBRE MI</a>
+    <a [routerLink]="['/services']" i18n="@@menu3" (click)="closeNav()">SERVICIOS</a>
+    <a [routerLink]="['/projects']" i18n="@@menu4" (click)="closeNav()">PORTAFOLIO</a>
+    <a [routerLink]="['/news']" i18n="@@menu5" (click)="closeNav()">ACTUALIDAD</a>
 
   </div>
   <div class="responsive-top-bar">

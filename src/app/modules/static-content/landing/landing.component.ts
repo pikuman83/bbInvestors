@@ -8,8 +8,9 @@ import { GlobalService } from 'src/app/global.service';
 })
 export class LandingComponent implements OnInit {
 
-  constructor(public service: GlobalService) { }
+  constructor(public service: GlobalService) { service.showMenu = false }
 
   ngOnInit(): void {}
+  ngOnDestroy(): void{console.log('landing destroyed')}
   
 }
