@@ -187,6 +187,6 @@ footer{
 
 
 @media screen and (max-width: 768px) {
-    header {display: none;}
+    /* header {display: none;} */
     .responsive-top-bar {display: flex;}
 }
