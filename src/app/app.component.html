@@ -1,98 +1,96 @@
-<div class="bd-box">
-  <div *ngIf="service.showMenu">
-    <!-- FIXED SIDE CONTACT FORM -->
-    <div class="contact1" (click)="showForm=!showForm">
-      <mat-icon class="contact-text">mail</mat-icon>
-      <div class="contact-text">Contact</div>
+<div *ngIf="service.showMenu">
+  <!-- FIXED SIDE CONTACT FORM -->
+  <div class="contact1" (click)="showForm=!showForm">
+    <mat-icon class="contact-text">mail</mat-icon>
+    <div class="contact-text">Contact</div>
+  </div>
+  <div class="popupForm" [class.visible]="showForm">
+    <div class="navBar d-flex">
+      <div>Contacto</div>
+      <div (click)="showForm=!showForm"><mat-icon>close</mat-icon></div>
     </div>
-    <div class="popupForm" [class.visible]="showForm">
-      <div class="navBar d-flex">
-        <div>Contacto</div>
-        <div (click)="showForm=!showForm"><mat-icon>close</mat-icon></div>
-      </div>
-      <app-contact></app-contact>
-    </div>
-
-    <!-- TOP MENU BAR -->
-    <header>
-      <div class="header">
-        <div class="as-center">
-          <img class="mr-12" src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fbblogo.png?alt=media&token=070eb20e-86a5-46ce-9172-7eb107fe5df1" width="72px" alt="Company's logo">
-          <img src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2FFor-investors-1.png?alt=media&token=e0d7a927-a983-4bd0-add4-daeb2c3ea9d5" width="72px" alt="Company's logo">
-        </div>
-        <div class="header2 as-center">
-          <div class="user d-flex">
-              
-            <div class="hello-user">Hello Investor</div>
-            
-            <button mat-button [matMenuTriggerFor]="langMenu" >
-              <mat-icon *ngIf="setLang()===''">language</mat-icon>
-              {{setLang()}}
-              <mat-icon>arrow_drop_down</mat-icon>
-            </button>
-
-            <mat-menu #langMenu="matMenu">
-              <a class="menuFirstItem" mat-menu-item href="/es">ES</a>
-              <a mat-menu-item href="/en">EN</a>
-              <a mat-menu-item href="/fr">FR</a>
-            </mat-menu>
-          </div>
-          <div class="menu d-flex">
-            <a [routerLink]="['/home']" i18n="@@menu1" (click)="closeNav()">INICIO</a>
-            <a [routerLink]="['/about']" i18n="@@menu2" (click)="closeNav()">SOBRE MI</a>
-            <a [routerLink]="['/services']" i18n="@@menu3" (click)="closeNav()">SERVICIOS</a>
-            <a [routerLink]="['/projects']" i18n="@@menu4" (click)="closeNav()">PORTAFOLIO</a>
-            <a [routerLink]="['/news']" i18n="@@menu5" (click)="closeNav()">ACTUALIDAD</a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- RESPONSIVE SIDENAV -->
-    <div id="mySidenav" class="sidenav">
-
-      <a class="closebtn" (click)="closeNav()">&times;</a>
-      <button mat-button [matMenuTriggerFor]="langMenu">
-        <mat-icon *ngIf="setLang()===''">language</mat-icon>
-        {{setLang()}}
-        <mat-icon>arrow_drop_down</mat-icon>
-      </button>
-
-      <mat-menu #langMenu="matMenu">
-        <a class="menuFirstItem" mat-menu-item href="/es">ES</a>
-        <a mat-menu-item href="/en">EN</a>
-        <a mat-menu-item href="/fr">FR</a>
-      </mat-menu>
-
-      <div class="helloUser">Hello Investor</div>
-
-      <a class="mt-50" [routerLink]="['/home']" i18n="@@menu1" (click)="closeNav()" >INICIO</a>
-      <a [routerLink]="['/about']" i18n="@@menu2" (click)="closeNav()">SOBRE MI</a>
-      <a [routerLink]="['/services']" i18n="@@menu3" (click)="closeNav()">SERVICIOS</a>
-      <a [routerLink]="['/projects']" i18n="@@menu4" (click)="closeNav()">PORTAFOLIO</a>
-      <a [routerLink]="['/news']" i18n="@@menu5" (click)="closeNav()">ACTUALIDAD</a>
-
-    </div>
-    <div class="responsive-top-bar">
-      <img style="margin: 10px; align-self: center;" src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fbblogo.png?alt=media&token=070eb20e-86a5-46ce-9172-7eb107fe5df1" width="60" height="50" alt="Company's logo">
-        <img style="margin-top: 25px;" src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2FFor-investors-1.png?alt=media&token=e0d7a927-a983-4bd0-add4-daeb2c3ea9d5" width="60" height="40" alt="Company's logo">
-      <span class="sideNav-icon" (click)="openNav()">&#9776;</span>
-    </div>
+    <app-contact></app-contact>
   </div>
 
-  <!-- APP -->
-  <router-outlet class="router"></router-outlet>
+  <!-- TOP MENU BAR -->
+  <header>
+    <div class="header">
+      <div class="as-center">
+        <img class="mr-12" src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fbblogo.png?alt=media&token=070eb20e-86a5-46ce-9172-7eb107fe5df1" width="72px" alt="Company's logo">
+        <img src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2FFor-investors-1.png?alt=media&token=e0d7a927-a983-4bd0-add4-daeb2c3ea9d5" width="72px" alt="Company's logo">
+      </div>
+      <div class="header2 as-center">
+        <div class="user d-flex">
+            
+          <div class="hello-user">Hello Investor</div>
+          
+          <button mat-button [matMenuTriggerFor]="langMenu" >
+            <mat-icon *ngIf="setLang()===''">language</mat-icon>
+            {{setLang()}}
+            <mat-icon>arrow_drop_down</mat-icon>
+          </button>
 
-  <!-- FOOTER -->
-  <footer *ngIf="service.showMenu">
-    <div class="d-flex flex-between copyright">
-      <div>&copy; 2021 BB For Investors. Todos los derechos reservados.</div>
-      <div>
-        <a href="#">Políticas</a> | 
-        <a href="#">Terminos</a> | 
-        <a href="#">Cookies</a> | 
-        <a href="#">Mapa del sitio</a> 
+          <mat-menu #langMenu="matMenu">
+            <a class="menuFirstItem" mat-menu-item href="/es">ES</a>
+            <a mat-menu-item href="/en">EN</a>
+            <a mat-menu-item href="/fr">FR</a>
+          </mat-menu>
+        </div>
+        <div class="menu d-flex">
+          <a [routerLink]="['/home']" i18n="@@menu1" (click)="closeNav()">INICIO</a>
+          <a [routerLink]="['/about']" i18n="@@menu2" (click)="closeNav()">SOBRE MI</a>
+          <a [routerLink]="['/services']" i18n="@@menu3" (click)="closeNav()">SERVICIOS</a>
+          <a [routerLink]="['/projects']" i18n="@@menu4" (click)="closeNav()">PORTAFOLIO</a>
+          <a [routerLink]="['/news']" i18n="@@menu5" (click)="closeNav()">ACTUALIDAD</a>
+        </div>
       </div>
     </div>
-  </footer>
+  </header>
+
+  <!-- RESPONSIVE SIDENAV -->
+  <div id="mySidenav" class="sidenav">
+
+    <a class="closebtn" (click)="closeNav()">&times;</a>
+    <button mat-button [matMenuTriggerFor]="langMenu">
+      <mat-icon *ngIf="setLang()===''">language</mat-icon>
+      {{setLang()}}
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+
+    <mat-menu #langMenu="matMenu">
+      <a class="menuFirstItem" mat-menu-item href="/es">ES</a>
+      <a mat-menu-item href="/en">EN</a>
+      <a mat-menu-item href="/fr">FR</a>
+    </mat-menu>
+
+    <div class="helloUser">Hello Investor</div>
+
+    <a class="mt-50" [routerLink]="['/home']" i18n="@@menu1" (click)="closeNav()" >INICIO</a>
+    <a [routerLink]="['/about']" i18n="@@menu2" (click)="closeNav()">SOBRE MI</a>
+    <a [routerLink]="['/services']" i18n="@@menu3" (click)="closeNav()">SERVICIOS</a>
+    <a [routerLink]="['/projects']" i18n="@@menu4" (click)="closeNav()">PORTAFOLIO</a>
+    <a [routerLink]="['/news']" i18n="@@menu5" (click)="closeNav()">ACTUALIDAD</a>
+
+  </div>
+  <div class="responsive-top-bar">
+    <img style="margin: 10px; align-self: center;" src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fbblogo.png?alt=media&token=070eb20e-86a5-46ce-9172-7eb107fe5df1" width="60" height="50" alt="Company's logo">
+      <img style="margin-top: 25px;" src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2FFor-investors-1.png?alt=media&token=e0d7a927-a983-4bd0-add4-daeb2c3ea9d5" width="60" height="40" alt="Company's logo">
+    <span class="sideNav-icon" (click)="openNav()">&#9776;</span>
+  </div>
 </div>
+
+<!-- APP -->
+<router-outlet class="router"></router-outlet>
+
+<!-- FOOTER -->
+<footer *ngIf="service.showMenu">
+  <div class="d-flex flex-between copyright">
+    <div>&copy; 2021 BB For Investors. Todos los derechos reservados.</div>
+    <div>
+      <a href="#">Políticas</a> | 
+      <a href="#">Terminos</a> | 
+      <a href="#">Cookies</a> | 
+      <a href="#">Mapa del sitio</a> 
+    </div>
+  </div>
+</footer>
