@@ -133,7 +133,7 @@
     position: absolute;
     top: 150px;
     transform: rotateX(90deg);
-    animation: titles 0.5s 3.1s forwards;
+    animation: titles 0.5s 3.5s forwards;
 }
 @keyframes titles {
     100%{transform: rotateX(0deg);}
@@ -149,11 +149,11 @@
     font-weight: 600;
     position: absolute;
     bottom: 0;
-    left: 150px;
+    left: 160px;
     width: 95px;
     text-align: center;
     transform: rotateX(90deg);
-    animation: buttons 1s 3s forwards;
+    animation: buttons 1s 3.3s forwards;
 }
 .greaterThan{
     vertical-align: bottom;
