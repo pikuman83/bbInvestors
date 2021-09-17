@@ -81,7 +81,7 @@ a:focus {
     text-align: center;
 }
 .green{
-    color: #1D4C56;
+    color: #1D4C56 !important;
 }
 .orange{
     color: #d7944a;
