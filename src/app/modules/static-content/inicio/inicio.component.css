@@ -243,8 +243,9 @@ header{
     color: #d7944a;
 }
 .section3-image{
+    box-sizing: border-box;
     padding-top: 400px;
-    width: 100vw;
+    width: 98vw;
     background-image: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fimg108.jpg?alt=media&token=0ce8641a-37a6-4e83-8433-c6d0d446180b);
     background-position: center;
     background-repeat: no-repeat;
