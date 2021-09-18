@@ -18,17 +18,17 @@
     text-align: center;
 }
 
-.scroll-icon *{
+/* .scroll-icon *{
     font-size: 40px;
     display: block;
-}
+} */
 
 .bg{
     width: 100%;
     background-color: #1D4C56;
 }
 .container{
-    padding: 50px 0;
+    padding: 40px 0;
     max-width: 1200px;
     display: flex;
     align-items: center;
@@ -43,7 +43,7 @@
     max-width: 300px;
     justify-content: center;
     display: block;
-    margin: 50px 25px;
+    margin: 40px 20px;
 }
 .desc{
     width: 275px;
@@ -71,7 +71,7 @@
     line-height: 22px;
 }
 .src{
-    padding-top: 25px;
+    padding-top: 20px;
     font-size: 16px;
     color: #1D4C56;
 }

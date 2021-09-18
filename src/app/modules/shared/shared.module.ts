@@ -15,10 +15,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDialogModule } from '@angular/material/dialog';
+
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
-    FileUploadComponent
+    FileUploadComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +37,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule
   ],
   exports: [
     CommonModule,
@@ -49,7 +54,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}

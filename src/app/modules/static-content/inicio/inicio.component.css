@@ -55,10 +55,9 @@ header{
     line-height: 1.8em;
 }
 .btn{
-    width: 100%;
-    height: 50px;
+    width: fit-content;
     align-self: center;
-    letter-spacing: 1px;
+    padding: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,6 +65,7 @@ header{
     font-weight: 300;
     color: #d7944a;
     border: 2px solid #d7944a;
+    min-width: 100px;
 }
 .btn1{
     grid-column: 10/12;
@@ -74,7 +74,7 @@ header{
 .line1{
     width: 0;
     height: 90%;
-    grid-column: 8;
+    grid-column: 9;
     grid-row: 9/15;
     z-index: 1;
     margin-left: 25px;
@@ -91,7 +91,7 @@ header{
 }
 .myname{
     grid-column: 7/12;
-    grid-row: 15/16;
+    grid-row: 16;
     font-size: 30px;
     line-height: 100%;
     color: lightgray;
@@ -104,23 +104,22 @@ header{
 .bx-2{
     font-family: 'Helvetica Neue';
     grid-column: 7/12;
-    grid-row: 16/28;
+    grid-row: 17/27;
     background-color: #d7944a;
     color: white;
-    font-size: 25px;
+    font-size: 26px;
     line-height: 164%;
-    letter-spacing: 3px;
+    /* letter-spacing: 3px; */
     margin-left: -20px;
 }
 .btn2{
     grid-column: 8/10;
-    grid-row: 29/31;
-    margin-left: -52px;
+    grid-row: 27;
 }
 .btn3{
     grid-column: 10/12;
-    grid-row: 29/31;
-    margin-left: -50px;
+    grid-row: 27;
+    margin-left: -40px;
 }
 .formula{
     grid-column: 2/8;
@@ -171,7 +170,7 @@ header{
 .line3-bx{
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: repeat(5, 100px);
+    grid-template-rows: repeat(20, 25px);
     text-align: center;
 }
 .line3-bx *{
@@ -179,7 +178,7 @@ header{
 }
 .line3{
     grid-column: 1;
-    grid-row: 1/5;
+    grid-row: 1/17;
     height: 100%;
     border-right: #d7944a 2px solid;
 }
@@ -195,15 +194,15 @@ header{
 }
 .circle:nth-child(2){
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 8;
 }
 .circle:nth-child(3){
     grid-column: 1;
-    grid-row: 3;
+    grid-row: 11;
 }
 .circle:nth-child(4){
     grid-column: 1;
-    grid-row: 4;
+    grid-row: 14;
 }
 
 .first-white-bx a:hover, .section1 a:hover{
@@ -216,69 +215,75 @@ header{
 
 /* SECTION3 - PROJECTS*/
 .section3{
-    /* background-color: #1D4C56; */
     width: 100%;
     position: relative;
 }
-.section3 > div:first-child{
+.section3-title{
     font-size: 3.5em;
-    line-height: 3em;
+    line-height: 100%;
     color: lightgray;
-    height: 150px;
+    padding: 20px;
     text-align: center;
     margin: 0 auto;
     background-color: #1D4C56;
     max-width: 1200px;
 }
-.section3 > div:last-child{
+.cities1{
     font-size: 2.2em;
-    line-height: 5em;
-    height: 150px;
+    line-height: 100%;
+    padding: 20px;
     text-align: center;
     margin: 0 auto;
     background-color: #1D4C56;
     max-width: 1200px;
+    margin-top: -1px;
 }
 .section3 a{
     color: #d7944a;
 }
 .section3-image{
     box-sizing: border-box;
-    padding-top: 400px;
-    width: 98vw;
+    padding-top: 550px;
+    width: 100%;
     background-image: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fimg108.jpg?alt=media&token=0ce8641a-37a6-4e83-8433-c6d0d446180b);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
-.cities{
+.fakediv{
+    max-width: 1200px;
+    background-color: #1D4C56;
+    margin: 0 auto;
+    height: 158px;
+}
+/* .cities{
     position: absolute;
     right: 5%;
     top: 25px;
     margin-right: 18px;
     z-index: 2;
-}
-.cities a:not(.cities a:last-child){
+} */
+/* .cities a:not(.cities a:last-child){
     display: table;
     font-size: 2.2em;
     line-height: 2em;
     color: #1D4C56;
-}
-.cities a:nth-child(-n+3){
+} */
+/* .cities a:nth-child(-n+3){
     border-bottom: #d7944a 2px solid;
-}
+} */
 .section3 a:hover{
     color: #d7944a;
 }
-.section3 .section3-image .cities a:hover{
+/* .section3 .section3-image .cities a:hover{
     color: #d7944a;
 }
 #btn5:hover{
     color: white;
     background-color: #d7944a;
-}
-.transparent-bg{
+} */
+/* .transparent-bg{
     position: absolute;
     width: 294px;
     height: 340px;
@@ -287,11 +292,10 @@ header{
     right: 5%;
     z-index: 1;
     opacity: 0.3;
-}
-.section3-footer a{
+} */
+
+.cities1 a{
     color: lightgray;
-}
-.section3-footer a{
     border-right: #d7944a 1px solid;
     border-left: #d7944a 1px solid;
     padding: 0 25px;
@@ -320,6 +324,10 @@ header{
     font-family: 'Helvetica Neue';
     margin-bottom: 40px;
 }
+.fullWidth{
+    background-color: #1D4C56;
+    width: 100%;
+}
 .container-news{
     padding: 50px 0;
     max-width: 1200px;
@@ -328,7 +336,6 @@ header{
     justify-content: center;
     margin: 0 auto;
     flex-wrap: wrap;
-    background-color: #1D4C56;
 }
 .news-image{
     box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
@@ -374,31 +381,46 @@ header{
     color: dodgerblue;
     font-weight: 300
 }
+.contact .helv{padding: 20px;}
 
 @media screen and (max-width: 1090px) {
     .bx-1{font-size: 30px; line-height: 50px;}
 }
 @media screen and (max-width: 1050px) {
-    .bx-2{grid-column: 8/13;}
+    .bx-2{grid-column: 8/13;
+    font-size: 24px;}
     .img2{
         background-size: cover;
         grid-column: 1/8;
         margin-left: 20px;
     }
     .myname{grid-column: 8/13;}
-    .btn2, .btn3{margin-left: 0;}
+    .btn2{grid-column: 9/12;}
+    .btn3{
+        grid-column: 11/12;
+        margin-left: 40px;
+        margin-left: -5px;
+    }
+    .line2{display: none;}
 }
 @media screen and (max-width: 910px) {
     .bx-1{font-size: 22px;}
     .bx-2{letter-spacing: 0;}
-    .section3 > div:last-child{
+    .cities1{
         font-size: 22px;
-        line-height: 7em;
+        line-height: 100%;
     }
+    .fakediv{height: 150px;}
+    .btn3{margin-left: 10px;}
+    .line3{grid-row: 1/18;}
+    .circle:nth-child(2){grid-row: 7;margin-top: -11px;}
+    .circle:nth-child(3){grid-row: 10; margin-top: 10px;}
+    .circle:nth-child(4){grid-row: 14; margin-top: 2px;}
+    .formula{font-size: 2em;}
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 785px) {
     header{height: calc(100vh - 80px);}
-    .container{display: block; padding: 0;}
+    .container{display: block; padding: 20px 0;}
     .bg-settings{padding-top: 400px;}
     .bx-1{font-size: 6vw; opacity: 1; text-align: center;}
     .btn{
@@ -406,40 +428,41 @@ header{
         margin: 40px auto;
         padding: 0 40px;
         min-width: 150px;
+        height: 50px;
     }
     .line1, .line2m .line2m {display: none;}
     .img2{margin-left: 0;}
     .myname{margin: 40px auto; font-size: 36px; height: 50px;}
     .bx-2{margin-left: 0; display: block;}
     .btn2{margin-left: calc(50% - 233px);}
-    .btn2, .btn3 {display: inline-flex;}
+    .btn2{margin-left: auto;}
+    .btn2, .btn3 {display: flex;}
     .formula{display: none;}
     .cities, .transparent-bg{display: none;}
-    .section3 > div:first-child, .section3 > div:last-child{
+    .section3-title, .cities1{
         line-height: 100%;
-        padding: 40px 0;
-        height: 50px;
+        padding: 20px 0;
     }
-    .section3 > div:last-child{
+    .section3-image{padding-top: 400px;}
+    .fakediv{height: 145px;}
+    .cities1{
         display: flex;
         align-items: center;
         font-size: 18px;
         justify-content: center;
     }
-    .section3-footer a{padding:  0 10px;}
+    .cities1 a{padding:  0 10px;}
 }
 @media screen and (max-width: 576px) {
-    .container{padding-bottom: 1px;}
     .img2{padding-top: 0;}
-    .btn2{margin-left: auto;}
-    .btn2, .btn3 {display: flex;}
     .first-white-bx{display: block;}
     .first-white-bx > div:first-child{width: 100%; padding: 40px 0;}
     .first-white-bx > div:nth-child(2){display: none;}
     .first-white-bx > div:last-child{width: 100%; padding-bottom: 40px;}
-    .section3 > div:first-child{font-size: 20px; padding: 20px 0; height: unset;}
-    .section3-image{padding-top: 200px;}
-    .section3 > div:last-child{height: unset; padding: 20px 0; font-size: 12px;}
-    .section3-footer a{padding:  0 4px;}
+    .section3-title{font-size: 20px; padding: 20px 0; height: unset;}
+    .cities1{height: unset; padding: 20px 0; font-size: 12px;}
+    .section3-image{padding-top: 300px;}
+    .fakediv{height: 111px;}
+    .cities1 a{padding:  0 4px;}
     .bg > div:first-child{font-size: 40px;}
 }

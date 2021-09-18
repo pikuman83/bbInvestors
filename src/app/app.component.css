@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     position: fixed;
-    top: calc(50% - 45px);
+    top: calc(100% - 123px);
     right: 0;
     left: auto;
     writing-mode: tb-rl;
@@ -80,13 +80,14 @@ header{
     color: green;
     margin-right: 12px;
 }
-.user button{
+.lang-button{
     padding: 0;
     text-align: end;
     border-left: #1D4C56 1px solid;
     border-top-left-radius : 0;
     border-bottom-left-radius: 0;
     margin-left: 10px;
+    color: #1D4C56;
 }
 .menuFirstItem:focus{
     color: #1D4C56;

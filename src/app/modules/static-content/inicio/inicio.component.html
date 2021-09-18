@@ -58,38 +58,43 @@
 </div>
 <section class="section3">
 
-    <div>Proyectos de éxito</div>
+    <div>
+        <div class="section3-title">Proyectos de éxito</div>
+        <div class="cities1">
+            <a routerLink="/projects/Barcelona">Barcelona</a>
+            <a routerLink="/projects/Budapest">Budapest</a>
+            <a routerLink="/projects/Sevilla">Sevilla</a>
+            <a routerLink="/projects/Jerez de la Frontera">Jerez de la Frontera</a>
+        </div>
+    </div>
     
-    <div class="transparent-bg"></div>
+    <!-- <div class="transparent-bg"></div> -->
     
     <div class="section3-image">
-        <div class="cities">
+        <!-- <div class="cities">
             <a routerLink="/projects/Barcelona">Barcelona</a>
             <a routerLink="/projects/Budapest">Budapest</a>
             <a routerLink="/projects/Sevilla">Sevilla</a>
             <a routerLink="/projects/Jerez de la Frontera">Jerez de la Frontera</a>
             <a class="btn mt-25" id="btn5" [routerLink]="['/projects']" >VER PORTAFOLIO</a>
-        </div>
+        </div> -->
     </div>
-    <div class="section3-footer">
-        <a routerLink="/projects/Barcelona">Barcelona</a>
-        <a routerLink="/projects/Budapest">Budapest</a>
-        <a routerLink="/projects/Sevilla">Sevilla</a>
-        <a routerLink="/projects/Jerez de la Frontera">Jerez de la Frontera</a>
-    </div>
+    <div class="fakediv"></div>
 </section>
 
 <div class="bg" id="news-section">
     <div class="bask">BB NEWS</div>
     <div>Aquí encontrará mi selección de<br>
         artículos de interés para el inversor</div>   
-    <div class="container-news"> 
-        <div class="card" *ngFor="let n of newsList; let i = index">
-            <img class="news-image" [src]="n.downloadUrl" width="300" height="200" alt="News-Image">
-            <div class="desc">
-                <a class="card-heading" href=`${n.url}` target="_blank" rel="noopener noreferrer">{{n.title}}</a>
-                <div class="src">{{n.src}}</div>
-                <div class="cat">{{n.cat}}</div>
+    <div class="fullWidth"> 
+        <div class="container-news mx-w-12">
+            <div class="card" *ngFor="let n of newsList; let i = index">
+                <img class="news-image" [src]="n.downloadUrl" width="300" height="200" alt="News-Image">
+                <div class="desc">
+                    <a class="card-heading" href=`${n.url}` target="_blank" rel="noopener noreferrer">{{n.title}}</a>
+                    <div class="src">{{n.src}}</div>
+                    <div class="cat">{{n.cat}}</div>
+                </div>
             </div>
         </div>
     </div>
@@ -97,7 +102,7 @@
 
 <div class="contact">
     <div class="bask">Contactemos</div>
-    <div class="helv">Tanto si tiene preguntas como si <br>quiere ponerse manos a la obra, todo <br> comienza con un “Hola” </div>
+    <div class="helv">Tanto si tiene preguntas como si quiere ponerse manos a la obra, todo comienza con un “Hola” </div>
 </div>
 <div class="mx-w-12 contact-animation">
     <app-contact></app-contact>

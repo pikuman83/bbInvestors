@@ -36,6 +36,7 @@
     font-size: 25px;
     line-height: 36px;
     padding: 40px;
+    /* text-align: center; */
 }
 .pin{
     margin-top: 14px;
@@ -77,7 +78,8 @@
     box-sizing: border-box;
     width: 100%;
     height: 120px;
-    font-size: 30px;
+    font-size: 26px;
+    line-height: 30px;
     letter-spacing: 1px;
     margin: 24px 0;
     padding: 0 20px;
@@ -101,7 +103,6 @@
 }
 .button1:first-child{
     color: #d7944a;
-    font-size: 38px;
 }
 .button2:last-child{
     margin-bottom: 0;
@@ -137,6 +138,7 @@
 .card1{
     max-width: 30%;
     padding: 50px;
+    text-align: center;
     /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
 }
 .card-heading{

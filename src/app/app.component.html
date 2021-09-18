@@ -22,9 +22,15 @@
       <div class="header2 as-center">
         <div class="user d-flex">
             
-          <div class="hello-user">Hello Investor</div>
+          <!-- user? show first: second -->
+          <!-- <div class="helloUser">Hello Investor</div> -->
+          <button class="green" title="Login" mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+
+          <button class="green" title="Call us" mat-icon-button><mat-icon>phone</mat-icon></button>
           
-          <button mat-button [matMenuTriggerFor]="langMenu" >
+          <button class="lang-button" title="Change language" mat-button [matMenuTriggerFor]="langMenu" >
             <mat-icon *ngIf="setLang()===''">language</mat-icon>
             {{setLang()}}
             <mat-icon>arrow_drop_down</mat-icon>
@@ -63,7 +69,16 @@
       <a mat-menu-item href="/fr">FR</a>
     </mat-menu>
 
-    <div class="helloUser">Hello Investor</div>
+    <!-- user? show first: second -->
+    <!-- <div class="helloUser">Hello Investor</div> -->
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item ><mat-icon>dashboard</mat-icon><span>Private Area</span></button>
+      <button mat-menu-item ><mat-icon>password</mat-icon><span>Change Password</span></button>
+      <button mat-menu-item ><mat-icon>logout</mat-icon><span>Sign out</span></button>
+    </mat-menu>
 
     <a class="mt-50" [routerLink]="['/home']" i18n="@@menu1" (click)="closeNav()" >INICIO</a>
     <a [routerLink]="['/about']" i18n="@@menu2" (click)="closeNav()">SOBRE MI</a>
@@ -73,7 +88,7 @@
 
   </div>
   <div class="responsive-top-bar">
-    <img style="margin: 10px; align-self: center;" src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fbblogo.png?alt=media&token=070eb20e-86a5-46ce-9172-7eb107fe5df1" width="60" height="50" alt="Company's logo">
+    <img style="margin: 10px 10px 10px 20px; align-self: center;" src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fbblogo.png?alt=media&token=070eb20e-86a5-46ce-9172-7eb107fe5df1" width="60" height="50" alt="Company's logo">
       <img style="margin-top: 25px;" src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2FFor-investors-1.png?alt=media&token=e0d7a927-a983-4bd0-add4-daeb2c3ea9d5" width="60" height="40" alt="Company's logo">
     <span class="sideNav-icon" (click)="openNav()">&#9776;</span>
   </div>

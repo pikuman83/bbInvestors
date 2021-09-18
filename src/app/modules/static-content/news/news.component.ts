@@ -85,9 +85,9 @@ export class NewsComponent implements OnInit {
     }
   }
 
-  scroll():  void{
-    document.getElementById('news-section')?.scrollIntoView();
-    document.getElementById('scroll-icon')?.classList.add('hide-scroll');
-  }
+  // scroll():  void{
+  //   document.getElementById('news-section')?.scrollIntoView();
+  //   document.getElementById('scroll-icon')?.classList.add('hide-scroll');
+  // }
 
 }
