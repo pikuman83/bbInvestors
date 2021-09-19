@@ -3,6 +3,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { FireStoreService } from 'src/app/core/fire-store.service';
+import { AuthService } from '../../shared/auth.service';
 
 export interface Projects{
   id?: string;
@@ -41,7 +42,8 @@ export class ProjectsComponent implements OnInit {
     private service: FireStoreService, 
     private storage: AngularFireStorage, 
     public router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    public auth: AuthService) { }
 
   ngOnInit(): void {
     this.getCollection();

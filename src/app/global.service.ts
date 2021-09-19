@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-// import { Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalService {
 
-  // landing = new Subject<boolean>();
-  showMenu = true;
+  showMenu1 = new Subject<boolean>();
+  showMenu: boolean = true;
 
-  constructor() { }
+  constructor() {this.showMenu1.subscribe(x => this.showMenu = x) }
   
 }

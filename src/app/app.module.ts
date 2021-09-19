@@ -10,6 +10,7 @@ import { DynamicModule } from "./modules/dynamic-content/dynamic.module";
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +28,7 @@ import { AppRoutingModule } from './app-routing.module';
     DynamicModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
+    AngularFireAuthModule,
     AngularFirestoreModule.enablePersistence(),
   ],
   // {provide: APP_BASE_HREF, useValue: (navigator.language !== 'en' && navigator.language !== 'es')? '/en/' : `/${navigator.language}/`}

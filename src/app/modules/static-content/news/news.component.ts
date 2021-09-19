@@ -1,10 +1,9 @@
-// #template = template is handling some features
 // Open panel on edit click
-
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { map } from 'rxjs/operators';
 import { FireStoreService } from 'src/app/core/fire-store.service';
+import { AuthService } from '../../shared/auth.service';
 
 export interface News{
   id?: string;
@@ -28,7 +27,9 @@ export class NewsComponent implements OnInit {
   newsList =  <News[]>[];
   openPanel = false;
 
-  constructor(private service: FireStoreService, private storage: AngularFireStorage) { }
+  constructor(private service: FireStoreService, 
+    private storage: AngularFireStorage, 
+    public auth: AuthService) { }
 
   ngOnInit(): void {
     this.getAllNewsList();

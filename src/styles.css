@@ -33,6 +33,10 @@ a:focus {
 }
 
 
+.bd-box{
+    box-sizing: border-box;
+}
+
 /* FLEXBOX */
 .d-flex{
     display: flex;
@@ -67,6 +71,9 @@ a:focus {
 .flex-around{
     justify-content: space-around;
 }
+.flex-end{
+    justify-content: end;
+}
 .flex-wrap{
     flex-wrap: wrap;
 }
@@ -79,6 +86,9 @@ a:focus {
 }
 .txt-center{
     text-align: center;
+}
+.txt-end{
+    text-align: end;
 }
 .green{
     color: #1D4C56 !important;
@@ -107,16 +117,16 @@ a:focus {
 
 /* MARGINS */
 .mt-50{
-    margin-top: 50px;
+    margin-top: 40px;
 }
 .mb-50{
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 .mt-25{
-    margin-top: 25px;
+    margin-top: 20px;
 }
 .mb-25{
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 .mr-12{
     margin-right: 12px;
@@ -128,7 +138,10 @@ a:focus {
     margin: 0 auto;
 }
 .def-side-p{
-    padding: 0 40px 0 40px;
+    padding: 0 40px;
+}
+.p-20{
+    padding: 20px;
 }
 
 
@@ -238,6 +251,10 @@ a:focus {
     display: none;
 }
 
+/* MAT snackbar class */
+.happy{
+    color: greenyellow;
+}
 
 @media screen and (max-width: 768px) {
     .fake-div{height: 80px;}

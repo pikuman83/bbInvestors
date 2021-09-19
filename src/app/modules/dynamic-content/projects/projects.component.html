@@ -15,8 +15,7 @@
         <div class="proj-name bask">{{projects.titulo}}</div>
         <div class="proj-location">{{projects.ciudad}} | {{projects.pais}}</div>
 
-        <!-- if admin -->
-        <div class="desc-btns txt-center">
+        <div *ngIf="auth.authenticated&&auth.user.email==='pikuman10@gmail.com'" class="desc-btns txt-center">
           <button (click)="project=projects;openPanel=true"><mat-icon >edit</mat-icon></button>
           <button><mat-icon (click)="deleteDoc(projects.id, projects)">delete_forever</mat-icon></button>
         </div>
@@ -26,12 +25,12 @@
 
 </mat-tab-group>
 
-<!-- if admin -->
 <app-projects-admin class="mt-childComp-200"
-    (addEvent)="addProject($event)"
-    (editEvent)="editProject($event)"
-    (focusEvent)="focusDiv.focus()"
-    (panelEvent)="openPanel = false"
-    [edit]="project!"
-    [openPanel]="openPanel">
+  *ngIf="auth.authenticated&&auth.user.email==='pikuman10@gmail.com'"
+  (addEvent)="addProject($event)"
+  (editEvent)="editProject($event)"
+  (focusEvent)="focusDiv.focus()"
+  (panelEvent)="openPanel = false"
+  [edit]="project!"
+  [openPanel]="openPanel">
 </app-projects-admin>

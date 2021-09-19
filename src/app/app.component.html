@@ -22,15 +22,14 @@
       <div class="header2 as-center">
         <div class="user d-flex">
             
-          <!-- user? show first: second -->
-          <!-- <div class="helloUser">Hello Investor</div> -->
-          <button class="green" title="Login" mat-icon-button [matMenuTriggerFor]="menu">
-            <mat-icon>account_circle</mat-icon>
+          <button class="user-btn" [title]="auth.authenticated?'Logout':'Login'" mat-icon-button [matMenuTriggerFor]="menu">
+            <div class="hello-user" *ngIf="auth.authenticated">Hello {{auth.user.displayName}} <mat-icon>arrow_drop_down</mat-icon></div>
+            <mat-icon *ngIf="!auth.authenticated">account_circle</mat-icon>
           </button>
 
-          <button class="green" title="Call us" mat-icon-button><mat-icon>phone</mat-icon></button>
+          <button class="phone-logo" title="Call us" mat-icon-button><mat-icon>phone</mat-icon></button>
           
-          <button class="lang-button" title="Change language" mat-button [matMenuTriggerFor]="langMenu" >
+          <button class="green" style="padding: 0;" title="Change language" mat-button [matMenuTriggerFor]="langMenu" >
             <mat-icon *ngIf="setLang()===''">language</mat-icon>
             {{setLang()}}
             <mat-icon>arrow_drop_down</mat-icon>
@@ -55,9 +54,24 @@
 
   <!-- RESPONSIVE SIDENAV -->
   <div id="mySidenav" class="sidenav">
+    
+    <button class="user-logo user-btn" [title]="auth.authenticated?'Logout':'Login'" mat-icon-button [matMenuTriggerFor]="menu">
+      <div class="hello-user" *ngIf="auth.authenticated">Hello {{auth.user.displayName}} <mat-icon>arrow_drop_down</mat-icon></div>
+      <mat-icon *ngIf="!auth.authenticated">account_circle</mat-icon>
+    </button>
 
-    <a class="closebtn" (click)="closeNav()">&times;</a>
-    <button mat-button [matMenuTriggerFor]="langMenu">
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="auth.authenticated? signOut():openLogin('')">
+        <mat-icon>{{auth.authenticated? 'logout': 'login'}}</mat-icon>
+          {{auth.authenticated? 'Logout': 'Login'}}</button>
+      <button mat-menu-item ><mat-icon>dashboard</mat-icon><span>Private Area</span></button>
+      <button mat-menu-item (click)="openLogin('new')" *ngIf="auth.authenticated&&auth.user.email==='pikuman10@gmail.com'"><mat-icon>person_add</mat-icon>Signup user</button>
+      <button mat-menu-item ><mat-icon>password</mat-icon><span>Change Password</span></button>
+    </mat-menu>
+
+    <button class="phone-logo" title="Call us" mat-icon-button><mat-icon>phone</mat-icon></button>
+
+    <button class="langbtn" mat-button [matMenuTriggerFor]="langMenu">
       <mat-icon *ngIf="setLang()===''">language</mat-icon>
       {{setLang()}}
       <mat-icon>arrow_drop_down</mat-icon>
@@ -69,28 +83,23 @@
       <a mat-menu-item href="/fr">FR</a>
     </mat-menu>
 
-    <!-- user? show first: second -->
-    <!-- <div class="helloUser">Hello Investor</div> -->
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>account_circle</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item ><mat-icon>dashboard</mat-icon><span>Private Area</span></button>
-      <button mat-menu-item ><mat-icon>password</mat-icon><span>Change Password</span></button>
-      <button mat-menu-item ><mat-icon>logout</mat-icon><span>Sign out</span></button>
-    </mat-menu>
+    <a class="closebtn green" (click)="closeNav()">&times;</a>
 
-    <a class="mt-50" [routerLink]="['/home']" i18n="@@menu1" (click)="closeNav()" >INICIO</a>
+    <a class="mt-50" [routerLink]="['/home']" i18n="@@menu1" (click)="closeNav()">INICIO</a>
     <a [routerLink]="['/about']" i18n="@@menu2" (click)="closeNav()">SOBRE MI</a>
     <a [routerLink]="['/services']" i18n="@@menu3" (click)="closeNav()">SERVICIOS</a>
     <a [routerLink]="['/projects']" i18n="@@menu4" (click)="closeNav()">PORTAFOLIO</a>
     <a [routerLink]="['/news']" i18n="@@menu5" (click)="closeNav()">ACTUALIDAD</a>
-
+      <!-- <mat-icon class="icon-padding">home</mat-icon>
+      <mat-icon class="icon-padding">person</mat-icon>
+      <mat-icon class="icon-padding">apartment</mat-icon>
+      <mat-icon class="icon-padding">cottage</mat-icon>
+      <mat-icon class="icon-padding">feed</mat-icon> -->
   </div>
   <div class="responsive-top-bar">
     <img style="margin: 10px 10px 10px 20px; align-self: center;" src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fbblogo.png?alt=media&token=070eb20e-86a5-46ce-9172-7eb107fe5df1" width="60" height="50" alt="Company's logo">
-      <img style="margin-top: 25px;" src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2FFor-investors-1.png?alt=media&token=e0d7a927-a983-4bd0-add4-daeb2c3ea9d5" width="60" height="40" alt="Company's logo">
-    <span class="sideNav-icon" (click)="openNav()">&#9776;</span>
+      <img style="margin-top: 33px; height: fit-content;" src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2FFor-investors-1.png?alt=media&token=e0d7a927-a983-4bd0-add4-daeb2c3ea9d5" width="60" height="40" alt="Company's logo">
+    <span id="menu-icon" class="sideNav-icon" (click)="openNav()">&#9776;</span>
   </div>
 </div>
 

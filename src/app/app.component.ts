@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { GlobalService } from './global.service';
+import { AuthService } from './modules/shared/auth.service';
+import { LoginComponent } from './modules/shared/login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +13,12 @@ export class AppComponent implements OnInit {
 
   title = 'bbInvestors';
   showForm = false;
+  showMenu = true;
 
-  constructor(public service: GlobalService){}
+  constructor(public service: GlobalService, 
+    public dialog: MatDialog,
+    public auth: AuthService
+    ){}
 
   ngOnInit() {
     this.setLang();
@@ -25,12 +32,22 @@ export class AppComponent implements OnInit {
     return lang = '';
   }
 
+  openLogin(type: string){
+    const dialogRef = this.dialog.open(LoginComponent,{width: '350px', disableClose:true, autoFocus:true, data:type});
+  }
+
   openNav() {
     document.getElementById("mySidenav")!.style.width = "100%";
+    document.getElementById("menu-icon")!.classList.add('hide');
   }
   
   closeNav() {
     document.getElementById("mySidenav")!.style.width = "0";
+    document.getElementById("menu-icon")!.classList.remove('hide');
+  }
+
+  signOut(){
+    this.auth.logOut();
   }
 
 }
