@@ -30,7 +30,8 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.authService.login(this.loginForm.value.email, this.loginForm.value.secret);
-    this._snackBar.open(`Welcome back ${this.authService.user.displayName}`, '-MBFW-', {panelClass: 'happy'});
+    this._snackBar.open(`Welcome back ${this.authService.user.displayName? this.authService.user.displayName: ''}`, 
+    '-MBFW-', {panelClass: 'happy'});
     this.dialogRef.close();
     // Navigate Somewhere? some settings has been changed, make sure everything works fine
   }

@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     max-width: 1200px;
-    height: calc(100vh - 95px);
+    height: calc(100vh - 90px);
     margin: 0 auto;
     background-position-x: -130px, 20px;
     position: relative;
@@ -24,7 +24,9 @@
 } */
 
 .bg{
+    display: flex;
     width: 100%;
+    height: calc(100vh - 90px);
     background-color: #1D4C56;
 }
 .container{
@@ -95,6 +97,7 @@ app-news-admin{
         background-position-x: 0;
         height: calc(100vh - 80px);
     }
+    .bg{height: calc(100vh - 80px);}
     .heading{
         padding: 40px;
         font-size: 40px;

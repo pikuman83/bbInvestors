@@ -51,6 +51,10 @@ export class AuthService {
       this.auth.credential.subscribe(x=> x?.user?.updateProfile)
       credential.user!.updateProfile({ displayName } as User)
         .then( () => {credential.user;}) // Returns the updated User object
+        const adminRole = firebase.functions().httpsCallable('addAdminRole');
+        adminRole({email: this.user.email}).then(res => {
+        console.log(res);
+      })
     })
     .catch(error => {
       this._snackBar.open(error.message, 'Sign-up failed.');

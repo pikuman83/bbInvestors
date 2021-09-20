@@ -23,7 +23,9 @@
         <div class="user d-flex">
             
           <button class="user-btn" [title]="auth.authenticated?'Logout':'Login'" mat-icon-button [matMenuTriggerFor]="menu">
-            <div class="hello-user" *ngIf="auth.authenticated">Hello {{auth.user.displayName}} <mat-icon>arrow_drop_down</mat-icon></div>
+            <div class="hello-user" *ngIf="auth.authenticated">
+              Hello {{auth.user.displayName? auth.user.displayName: 'Welcome back'}} 
+              <mat-icon>arrow_drop_down</mat-icon></div>
             <mat-icon *ngIf="!auth.authenticated">account_circle</mat-icon>
           </button>
 
@@ -56,7 +58,9 @@
   <div id="mySidenav" class="sidenav">
     
     <button class="user-logo user-btn" [title]="auth.authenticated?'Logout':'Login'" mat-icon-button [matMenuTriggerFor]="menu">
-      <div class="hello-user" *ngIf="auth.authenticated">Hello {{auth.user.displayName}} <mat-icon>arrow_drop_down</mat-icon></div>
+      <div class="hello-user" *ngIf="auth.authenticated">
+        Hello {{auth.user.displayName? auth.user.displayName: 'Welcome back'}} 
+        <mat-icon>arrow_drop_down</mat-icon></div>
       <mat-icon *ngIf="!auth.authenticated">account_circle</mat-icon>
     </button>
 
