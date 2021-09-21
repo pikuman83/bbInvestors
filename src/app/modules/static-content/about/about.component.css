@@ -2,7 +2,7 @@
     width: 100%;
     background-color: #d7e0df;
     z-index: -2;
-    height: 100%;
+    height: calc(100% - 90px);
     position: absolute;
 }
 .bg-header{
@@ -221,6 +221,7 @@ footer{
 
 
 @media screen and (max-width: 768px) {
+    .bg-container{height: calc(100% -80px);}
     .bg-header{display: none;}
     .container{display: block;}
     .header{

@@ -99,7 +99,7 @@ header{
     display: flex;
 }
 .sidenav {
-    height: 100%;
+    height: calc(100% - 90px);
     width: 0;
     position: fixed;
     z-index: 1;
@@ -181,6 +181,7 @@ footer{
     padding: 20px;
     width: 100%;
     max-width: 1200px;
+    background-color: white;
 }
 .copyright{
     color: gray;
@@ -200,4 +201,5 @@ footer{
 @media screen and (max-width: 768px) {
     header {display: none;}
     .responsive-top-bar {display: flex;}
+    .sidenav{height: calc(100% - 80px);}
 }

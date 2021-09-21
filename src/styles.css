@@ -204,6 +204,7 @@ a:focus {
     transform-origin: 100% 0 0; /* makes the transition starts from thee origin*/
     z-index: 2;
     padding: 20px;
+    box-sizing: border-box;
 }
 .visible{
     transform: rotateY(0deg) !important;
