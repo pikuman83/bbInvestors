@@ -219,6 +219,10 @@ a:focus {
     background: none;
     margin: 12px 2px;
     cursor: pointer;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    display: initial;
+    padding-top: 4px;
 }
 .desc-btns button:first-child{
     color: cadetblue;

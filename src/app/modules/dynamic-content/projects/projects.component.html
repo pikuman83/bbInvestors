@@ -12,7 +12,7 @@
       <div class="project" *ngFor="let projects of tabContent; let i = index">
         <div (click)="router.navigate(['projects/project-details/' + projects.id])" 
         [ngStyle]="{'background': 'url(' + projects.fotoFinal + ')', 'height': '320px', 'background-position': 'center' ,'background-size': 'cover'}"></div>
-        <div class="proj-name bask">{{projects.titulo}}</div>
+        <div class="proj-name bask">{{getLang()==='ES'? projects.tituloES : getLang()==='EN'? projects.tituloEN: projects.tituloFR}}</div>
         <div class="proj-location">{{projects.ciudad}} | {{projects.pais}}</div>
 
         <div *ngIf="auth.authenticated&&auth.isAdmin" class="desc-btns txt-center">

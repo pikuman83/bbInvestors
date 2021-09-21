@@ -13,117 +13,180 @@
     
   <form class="form-container" [formGroup]="projectsForm" #formDirective="ngForm"
     (ngSubmit)="addEditProject(projectsForm, formDirective);panel.close()" autocomplete="off">
-    <div class="d-flex flex-between w-100">
-      <div class="container1">  
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon class="as-center">maps_home_work</mat-icon>
+              </mat-panel-title>
+              <mat-panel-description style="align-self: center; padding: 0;">
+                MULTILANGUAGE PROJECT DATA
+              </mat-panel-description>
+            </mat-expansion-panel-header>
 
-        <mat-form-field appearance="legacy">
-          <mat-label>Título</mat-label>
-          <input matInput formControlName="titulo" id="firstField">
-          <mat-hint *ngIf="projectsForm.controls.titulo.invalid && (projectsForm.controls.titulo.dirty || projectsForm.controls.titulo.touched)">
-          * Campo obligatorio.
-          </mat-hint>
-        </mat-form-field>
+            <mat-button-toggle-group formControlName="langToggle">
+              <mat-button-toggle value="ES">ES</mat-button-toggle>
+              <mat-button-toggle value="EN">EN</mat-button-toggle>
+              <mat-button-toggle value="FR">FR</mat-button-toggle>
+            </mat-button-toggle-group>
 
-        <mat-form-field appearance="legacy">
-          <mat-label>Ciudad</mat-label>
-          <input matInput formControlName="ciudad" >
-          <mat-hint *ngIf="projectsForm.controls.ciudad.invalid && (projectsForm.controls.ciudad.dirty || projectsForm.controls.ciudad.touched)">
-          * Campo obligatorio.
-          </mat-hint>
-        </mat-form-field>
+            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='ES'" appearance="legacy">
+              <mat-label>Título</mat-label>
+              <input matInput formControlName="tituloES" id="firstField">
+              <mat-hint *ngIf="projectsForm.controls.tituloES.invalid && (projectsForm.controls.tituloES.dirty || projectsForm.controls.tituloES.touched)">
+              * Campo obligatorio.
+              </mat-hint>
+            </mat-form-field>
+            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='EN'" appearance="legacy">
+              <mat-label>Title</mat-label>
+              <input matInput formControlName="tituloEN">
+              <mat-hint *ngIf="projectsForm.controls.tituloES.invalid && (projectsForm.controls.tituloES.dirty || projectsForm.controls.tituloES.touched)">
+              * Campo obligatorio.
+              </mat-hint>
+            </mat-form-field>
+            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='FR'" appearance="legacy">
+              <mat-label>Titre</mat-label>
+              <input matInput formControlName="tituloFR">
+              <mat-hint *ngIf="projectsForm.controls.tituloES.invalid && (projectsForm.controls.tituloES.dirty || projectsForm.controls.tituloES.touched)">
+              * Campo obligatorio.
+              </mat-hint>
+            </mat-form-field>
 
-        <mat-form-field appearance="legacy">
-          <mat-label>País</mat-label>
-          <input matInput formControlName="pais" >
-          <mat-hint *ngIf="projectsForm.controls.pais.invalid && (projectsForm.controls.pais.dirty || projectsForm.controls.pais.touched)">
-          * Campo obligatorio.
-          </mat-hint>
-        </mat-form-field>
+            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='ES'" appearance="legacy">
+              <mat-label>Descripción</mat-label>
+              <textarea matInput [mat-autosize]="true" rows="4" formControlName="descES">
+              </textarea>
+            </mat-form-field>
+            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='EN'" appearance="legacy">
+              <mat-label>Description</mat-label>
+              <textarea matInput [mat-autosize]="true" rows="4" formControlName="descEN">
+              </textarea>
+            </mat-form-field>
+            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='FR'" appearance="legacy">
+              <mat-label>La description</mat-label>
+              <textarea matInput [mat-autosize]="true" rows="4" formControlName="descFR">
+              </textarea>
+            </mat-form-field>
 
-        <mat-form-field appearance="legacy">
-          <mat-label>Superficie</mat-label>
-          <input matInput formControlName="sup">
-          <div matSuffix>m²</div>
-        </mat-form-field>
-  
-        <mat-form-field appearance="legacy">
-          <mat-label>Habitaciones</mat-label>
-          <input matInput formControlName="hab" >
-        </mat-form-field>
-  
-        <mat-form-field appearance="legacy">
-          <mat-label>Baños</mat-label>
-          <input matInput formControlName="bath">
-        </mat-form-field>
-  
-        <mat-form-field appearance="legacy">
-          <mat-label>Año</mat-label>
-          <input matInput formControlName="year">
-        </mat-form-field>
-  
-        <mat-form-field appearance="legacy">
-          <mat-label>Mod. Negocio</mat-label>
-          <input matInput formControlName="bModel">
-        </mat-form-field>
-  
-        <mat-form-field appearance="legacy">
-        <mat-label>Rentabilidad</mat-label>
-        <input matInput formControlName="rentabilidad">
-        <div matSuffix>%</div>
-        </mat-form-field>
+            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='ES'" appearance="legacy">
+              <mat-label>Mod. Negocio</mat-label>
+              <input matInput formControlName="bModelES">
+            </mat-form-field>
+            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='EN'" appearance="legacy">
+              <mat-label>Business model</mat-label>
+              <input matInput formControlName="bModelEN">
+            </mat-form-field>
+            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='FR'" appearance="legacy">
+              <mat-label>Modèle d'affaires</mat-label>
+              <input matInput formControlName="bModelFR">
+            </mat-form-field>
+          </mat-expansion-panel>
 
-        <mat-form-field appearance="legacy">
-          <mat-label>Descripción</mat-label>
-          <textarea matInput [mat-autosize]="true" rows="4" formControlName="desc">
-          </textarea>
-        </mat-form-field>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon class="as-center">location_city</mat-icon>
+              </mat-panel-title>
+              <mat-panel-description style="align-self: center; padding: 0;">
+                MEASUREMENT
+              </mat-panel-description>
+            </mat-expansion-panel-header>
 
-      </div>
-  
-      <div class="container1">  
+            <mat-form-field appearance="legacy">
+              <mat-label>Superficie</mat-label>
+              <input matInput formControlName="sup">
+              <div matSuffix>m²</div>
+            </mat-form-field>
+      
+            <mat-form-field appearance="legacy">
+              <mat-label>Habitaciones</mat-label>
+              <input matInput formControlName="hab" >
+            </mat-form-field>
+      
+            <mat-form-field appearance="legacy">
+              <mat-label>Baños</mat-label>
+              <input matInput formControlName="bath">
+            </mat-form-field>
+      
+            <mat-form-field appearance="legacy">
+              <mat-label>Año</mat-label>
+              <input matInput formControlName="year">
+            </mat-form-field>
+      
+            <mat-form-field appearance="legacy">
+            <mat-label>Rentabilidad</mat-label>
+            <input matInput formControlName="rentabilidad">
+            <div matSuffix>%</div>
+            </mat-form-field>
 
-        <app-file-upload 
-          (fileEvent)="projectsForm.patchValue({fotoAntes:$event.URL})"
-          [fileName]="projectsForm.controls.fotoAntes.value"
-          [URL]="projectsForm.controls.fotoAntes.value"
-          [pName]="projectsForm.controls.titulo.value"
-          [title]="'Foto-Antes'">
-        </app-file-upload>
-  
-        <app-file-upload 
-          (fileEvent)="projectsForm.patchValue({fotoDsps:$event.URL})"
-          [fileName]="projectsForm.controls.fotoDsps.value"
-          [URL]="projectsForm.controls.fotoDsps.value"
-          [title]="'Foto-Despues'"
-          [pName]="projectsForm.controls.titulo.value">
-        </app-file-upload>
-  
-        <app-file-upload 
-          (fileEvent)="projectsForm.patchValue({fotoFinal:$event.URL})"
-          [fileName]="projectsForm.controls.fotoFinal.value"
-          [URL]="projectsForm.controls.fotoFinal.value"
-          [title]="'Foto-Final'"
-          [pName]="projectsForm.controls.titulo.value">
-        </app-file-upload>
-  
-        <div class="d-flex flex-col" formArrayName="fotosObra"> 
-          <div class="fotosObra" *ngFor="let fo of fotosObra.controls; index as i">
-            <app-file-upload
-              (fileEvent)="addDeleteObra($event, i)"
-              [fileName]="fo.value"
-              [URL]="fo.value"
-              [title]="'Foto-Obra '+ (i+1)"
-              [pName]="projectsForm.controls.titulo.value">
-            </app-file-upload>
-            <mat-icon *ngIf="!fo.value||!fo.value.length" class="removeField" (click)="removeField(i)">remove_circle</mat-icon>
+            <mat-form-field appearance="legacy">
+              <mat-label>Ciudad</mat-label>
+              <input matInput formControlName="ciudad" >
+              <mat-hint *ngIf="projectsForm.controls.ciudad.invalid && (projectsForm.controls.ciudad.dirty || projectsForm.controls.ciudad.touched)">
+              * Campo obligatorio.
+              </mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy">
+              <mat-label>País</mat-label>
+              <input matInput formControlName="pais" >
+              <mat-hint *ngIf="projectsForm.controls.pais.invalid && (projectsForm.controls.pais.dirty || projectsForm.controls.pais.touched)">
+              * Campo obligatorio.
+              </mat-hint>
+            </mat-form-field>
+            
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon class="as-center">auto_awesome</mat-icon>
+              </mat-panel-title>
+              <mat-panel-description style="align-self: center; padding: 0;">
+                IMAGES
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+          <app-file-upload 
+            (fileEvent)="projectsForm.patchValue({fotoAntes:$event.URL})"
+            [fileName]="projectsForm.controls.fotoAntes.value"
+            [URL]="projectsForm.controls.fotoAntes.value"
+            [pName]="projectsForm.controls.tituloES.value"
+            [title]="'Foto-Antes'">
+          </app-file-upload>
+    
+          <app-file-upload 
+            (fileEvent)="projectsForm.patchValue({fotoDsps:$event.URL})"
+            [fileName]="projectsForm.controls.fotoDsps.value"
+            [URL]="projectsForm.controls.fotoDsps.value"
+            [title]="'Foto-Despues'"
+            [pName]="projectsForm.controls.tituloES.value">
+          </app-file-upload>
+    
+          <app-file-upload 
+            (fileEvent)="projectsForm.patchValue({fotoFinal:$event.URL})"
+            [fileName]="projectsForm.controls.fotoFinal.value"
+            [URL]="projectsForm.controls.fotoFinal.value"
+            [title]="'Foto-Final'"
+            [pName]="projectsForm.controls.tituloES.value">
+          </app-file-upload>
+    
+          <div class="d-flex flex-col" formArrayName="fotosObra"> 
+            <div class="fotosObra" *ngFor="let fo of fotosObra.controls; index as i">
+              <app-file-upload
+                (fileEvent)="addDeleteObra($event, i)"
+                [fileName]="fo.value"
+                [URL]="fo.value"
+                [title]="'Foto-Obra '+ (i+1)"
+                [pName]="projectsForm.controls.tituloES.value">
+              </app-file-upload>
+              <mat-icon *ngIf="!fo.value||!fo.value.length" class="removeField" (click)="removeField(i)">remove_circle</mat-icon>
+            </div>
+    
+            <div class="addNewField as-center d-flex" (click)="newFotoObra()">+ foto obra</div>
           </div>
-  
-          <div class="addNewField as-center d-flex" (click)="newFotoObra()">+ foto obra</div>
-  
-        </div>
-      </div>
-    </div>
-
+        </mat-expansion-panel>
+      </mat-accordion>
     <mat-action-row>
       <button type="submit" mat-button color="primary" [disabled]="projectsForm.invalid">Publicar</button>
     </mat-action-row>

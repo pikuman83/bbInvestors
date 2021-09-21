@@ -32,6 +32,12 @@ export class ProjectsComponent implements OnInit {
     this.getCollection();
   }
 
+  getLang(){
+    if (window.location.pathname.split('/')[1] === 'en') return 'EN';
+    if (window.location.pathname.split('/')[1] === 'fr') return 'FR';
+    return 'ES';
+  }
+
   getCollection(): void{
     const LS = localStorage.getItem('projects');
     if (LS) localStorage.removeItem('projects');

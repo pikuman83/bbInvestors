@@ -22,10 +22,16 @@ export class ProjectsDetailsComponent implements OnInit {
     this.service.get('projects', this.id!).valueChanges().subscribe((project) => this.project = project);
   }
 
+  getLang(){
+    if (window.location.pathname.split('/')[1] === 'en') return 'EN';
+    if (window.location.pathname.split('/')[1] === 'fr') return 'FR';
+    return 'ES';
+  }
+
   projectsLoaded(){
     const proj = localStorage.getItem('projects');
-    if (proj && proj.length) return true
-    else return false;
+    if (proj && proj.length) return true;
+    return false;
   }
 
   /**

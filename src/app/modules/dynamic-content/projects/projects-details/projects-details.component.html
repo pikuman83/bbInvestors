@@ -5,7 +5,7 @@
 <div class="container" *ngIf="project">
 
   <header>
-    <div class="proj-name bask">{{project.titulo}}</div>
+    <div class="proj-name bask">{{getLang()==='ES'? project.tituloES : getLang()==='EN'? project.tituloEN: project.tituloFR}} </div>
     <div class="proj-location">{{project.ciudad | uppercase}} | {{project.pais | uppercase}}</div>
   </header>
 
@@ -54,7 +54,7 @@
         <div class="data-box2">
           <div>
             <div>MOD. NEGOCIO</div>
-            <div>{{project.bModel}}</div>
+            <div>{{getLang()==='ES'? project.bModelES : getLang()==='EN'? project.bModelEN: project.bModelFR}}</div>
           </div>
           <div>
             <div>RENTABILIDAD</div>
@@ -68,7 +68,7 @@
   <div class="desc">
     <div class="max-width">
       <div class="heading">EL PROYECTO</div>
-      <div>{{project.desc}}</div>
+      <div>{{getLang()==='ES'? project.descES : getLang()==='EN'? project.descEN: project.descFR}}</div>
     </div>
   </div>
 
@@ -88,14 +88,14 @@
   
   <div class="navigation-bar">
     
-    <div class="back" [class.hide]="projectsLoaded()" (click)="previous()">
+    <div class="nav" [class.show]="projectsLoaded()" (click)="previous()">
       <mat-icon style="width: 5px;">navigate_before</mat-icon>
       <mat-icon>navigate_before</mat-icon>ANTERIOR
     </div>
 
-    <div class="return" routerLink="/projects">VOLVER A PROYECTOS</div>
+    <div class="show" routerLink="/projects">VOLVER A PROYECTOS</div>
     
-    <div class="next" [class.hide]="projectsLoaded()" (click)="next()">SIGUIENTE 
+    <div class="nav" [class.show]="projectsLoaded()" (click)="next()">SIGUIENTE 
       <mat-icon style="width: 5px;">navigate_next</mat-icon>
       <mat-icon>navigate_next</mat-icon>
     </div>

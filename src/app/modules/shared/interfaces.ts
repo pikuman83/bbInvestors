@@ -14,16 +14,22 @@ export interface UserProfile {
 
 export interface Projects{
   id?: string;
-  titulo?: string;
+  tituloES?: string;
+  tituloEN?: string;
+  tituloFR?: string;
   ciudad?: string;
   pais?: string;
   sup?: string;
   hab?: string;
   bath?: string;
   year?: string;
-  bModel?: string;
+  bModelES?: string;
+  bModelEN?: string;
+  bModelFR?: string;
   rentabilidad?: string;
-  desc?: string;
+  descES?: string;
+  descEN?: string;
+  descFR?: string;
   fotoAntes?: string;
   fotoDsps?: string;
   fotoFinal?: string;

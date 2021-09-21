@@ -3,11 +3,7 @@
     padding: 50px;
     text-align: center;
     margin: 0 auto;
-}
-.container1{
-    display: block;
-    width: 40%;
-    box-sizing: border-box;
+    max-width: 600px;
 }
 mat-form-field, app-file-upload{
     width: 100%;
@@ -26,6 +22,12 @@ button[type="submit"]{
 mat-panel-description{
     flex-grow: 1;
     padding-top: 15px;
+}
+.mt-47{
+    margin-top: 47px;
+}
+.mt-85{
+    margin-top: 85px;
 }
 .fotosObra{
     display: flex;
@@ -53,11 +55,16 @@ mat-panel-description{
     align-self: center;
     margin: 35px 0 0 12px;
 }
+.hide{
+    visibility: hidden;
+    position: absolute;
+}
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
     form div:first-child{display: block;}
     .form-container{padding: 0;}
     .container1{width: 100%;}
+    .mt-47, .mt-85{margin-top: 46px;}
     mat-action-row{justify-content: center;}
     .fotosObra{
         display: flex !important;

@@ -22,17 +22,25 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
   @Output() focusEvent:EventEmitter<any> = new EventEmitter();
   @Output() panelEvent:EventEmitter<any> = new EventEmitter();
   
+  
   projectsForm = this.fb.group({
-    titulo:  ['', Validators.required],
+    langToggle: ['ES'], 
+    tituloES:  ['', Validators.required],
+    tituloEN:  ['', Validators.required],
+    tituloFR:  ['', Validators.required],
     ciudad: ['', Validators.required],
     pais:  [''],
     sup: [''],
     hab: [''],
     bath: [''],
     year: [''],
-    bModel: [''],
+    bModelES: [''],
+    bModelEN: [''],
+    bModelFR: [''],
     rentabilidad: [''],
-    desc:[''],
+    descES:[''],
+    descEN:[''],
+    descFR:[''],
     fotoAntes: ['', Validators.required],
     fotoDsps: ['', Validators.required],
     fotoFinal: ['', Validators.required],

@@ -33,7 +33,7 @@
           
           <button class="green" style="padding: 0;" title="Change language" mat-button [matMenuTriggerFor]="langMenu" >
             <mat-icon *ngIf="setLang()===''">language</mat-icon>
-            {{setLang()}}
+            {{setLang()? setLang():''}}
             <mat-icon>arrow_drop_down</mat-icon>
           </button>
 

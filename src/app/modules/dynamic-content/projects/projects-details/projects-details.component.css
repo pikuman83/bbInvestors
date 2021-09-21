@@ -202,18 +202,23 @@ img-comparison-slider{
   margin: 100px auto;
   width: 100%;
 }
-.navigation-bar div{
+/* .navigation-bar div{
   display: flex;
   align-items: center;
   padding: 6px;
+} */
+.nav{
+  display: none;
 }
 .navigation-bar *:hover{
   cursor: pointer;
   background: darkgray;
   color: white;
 }
-.hide{
-  display: none;
+.show{
+  display: flex;
+  align-items: center;
+  padding: 6px;
 }
 
 .contact-btn{
