@@ -142,6 +142,7 @@ a:focus {
 }
 .p-20{
     padding: 20px;
+    box-sizing: border-box;
 }
 
 
@@ -233,27 +234,27 @@ a:focus {
 
 /* Scroll strategy: jump 1 Viewport down, requires another class ".scroll-icon" which is in the same component 
     and  ids to the elements and a JS function to work */
-.scroll-icon{
+/* .scroll-icon{
     color: #1D4C56;
     transition: all 0.5s ease 0s;
     cursor: pointer;
     position: absolute;
     left: 50%;
     bottom: 12px;
-}
-.scroll-icon *{
+} */
+/* .scroll-icon *{
     font-size: 40px;
     display: block;
-}
-.ico1{
+} */
+/* .ico1{
     margin-top: -35px;
-}
-.scroll-icon:hover{
+} */
+/* .scroll-icon:hover{
     margin-top: -45px;
-}
-.hide-scroll{
+} */
+/* .hide-scroll{
     display: none;
-}
+} */
 
 /* MAT snackbar class */
 .happy{

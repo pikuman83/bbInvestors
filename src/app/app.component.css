@@ -182,8 +182,9 @@ header{
 
 /* FOOTER */
 footer{
-    margin: 25px auto;
-    width: 90%;
+    box-sizing: border-box;
+    padding: 20px auto ;
+    width: 100%;
     max-width: 1200px;
 }
 .copyright{

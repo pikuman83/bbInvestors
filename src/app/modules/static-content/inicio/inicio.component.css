@@ -323,6 +323,7 @@ header{
     letter-spacing: 1px;
     font-family: 'Helvetica Neue';
     margin-bottom: 40px;
+    padding: 20px;
 }
 .fullWidth{
     background-color: #1D4C56;
