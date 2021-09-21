@@ -138,6 +138,7 @@ header{
 }
 .sidenav{
     margin-left: 20px;
+    z-index: 101;
 }
 .langbtn{
     padding: 0;

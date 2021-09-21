@@ -81,12 +81,6 @@
       <mat-icon>arrow_drop_down</mat-icon>
     </button>
 
-    <mat-menu #langMenu="matMenu">
-      <a class="menuFirstItem" mat-menu-item href="/es">ES</a>
-      <a mat-menu-item href="/en">EN</a>
-      <a mat-menu-item href="/fr">FR</a>
-    </mat-menu>
-
     <a class="closebtn green" (click)="closeNav()">&times;</a>
 
     <a class="mt-50" [routerLink]="['/home']" i18n="@@menu1" (click)="closeNav()">INICIO</a>
