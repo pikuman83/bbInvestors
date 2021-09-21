@@ -69,7 +69,7 @@
         <mat-icon>{{auth.authenticated? 'logout': 'login'}}</mat-icon>
           {{auth.authenticated? 'Logout': 'Login'}}</button>
       <button mat-menu-item ><mat-icon>dashboard</mat-icon><span>Private Area</span></button>
-      <button mat-menu-item (click)="openLogin('new')" *ngIf="auth.authenticated&&auth.user.email==='pikuman10@gmail.com'"><mat-icon>person_add</mat-icon>Signup user</button>
+      <button mat-menu-item (click)="openLogin('new')" *ngIf="auth.authenticated&&auth.isAdmin"><mat-icon>person_add</mat-icon>Signup user</button>
       <button mat-menu-item ><mat-icon>password</mat-icon><span>Change Password</span></button>
     </mat-menu>
 

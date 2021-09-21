@@ -1,24 +1,44 @@
 import { Injectable} from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { default as firebase } from 'firebase/app';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { UserProfile } from './interfaces';
+import { CredentialsPromptComponent } from './login/credentials-prompt/credentials-prompt.component';
 
-export type User = firebase.User;
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  /** User object snapshot */
-  public user: User|any;
-  /**Right way to get user */
-    // public get user(): User { 
-    //   return this.auth.currentUser; 
-    // }
+  /**For the method auth.currentUser you have to use awaits and keep track of the states manually
+   * the current method with the observer used with onAuthstateChanged is a better solution*/
+  public user: UserProfile|any;
 
-  constructor(readonly auth: AngularFireAuth, private _snackBar: MatSnackBar) {
-    this.auth.onAuthStateChanged(user => this.user = user)
+  /** As admin role is not assignable directly from the web in firebase and a server app node.js is required
+   * which uses admin sdk to manage users, a work around is done, creating a user profile collection*/
+  isAdmin = false;
+
+  constructor(readonly auth: AngularFireAuth, 
+    private _snackBar: MatSnackBar, 
+    private fire: AngularFirestore, 
+    private dialog: MatDialog) {
+    this.auth.onAuthStateChanged(user => {
+      if (user){
+        const currentUser = this.fire.collection('users').doc(user.uid).valueChanges().subscribe((x)=>{
+          if (x){
+            this.user = x;
+            this.user.role === 'admin'? this.isAdmin = true: this.isAdmin = false;
+          }
+          // else should delete the user
+        currentUser.unsubscribe()
+      })
+      } else {
+        this.user = null;
+        this.isAdmin = false;
+      }
+    })
   }
 
   /** Returns true if user is logged in */
@@ -26,9 +46,8 @@ export class AuthService {
     return !!this.user;
   }
 
-  login(email:string, password: string){
-    // this.auth.authState.subscribe((x)=> {x?.getIdTokenResult()}) //probably you can set and get claims like this.
-    this.auth.signInWithEmailAndPassword(email, password)
+  async login(email:string, password: string){
+   await this.auth.signInWithEmailAndPassword(email, password)
     .catch((error) => {
       if (error.code === 'auth/wrong-password') {
         alert('Wrong password.');
@@ -43,23 +62,49 @@ export class AuthService {
    * @param email the email to register with
    * @param password the secret password
    * @param name (optional) the user name
-   * @returns the authenticated User object
+   * @returns create and update currentUser, its profile with displayname and role.
    */
-  signUp(email: string, password: string, displayName: string = 'Investor') {
-    this.auth.createUserWithEmailAndPassword(email, password)
-    .then((credential)=> {
-      this.auth.credential.subscribe(x=> x?.user?.updateProfile)
-      credential.user!.updateProfile({ displayName } as User)
-        .then( () => {credential.user;}) // Returns the updated User object
-        const adminRole = firebase.functions().httpsCallable('addAdminRole');
-        adminRole({email: this.user.email}).then(res => {
-        console.log(res);
+  signUp(email: string, password: string, displayName: string = '', admin: boolean) {
+    if (this.user && this.isAdmin){
+      this.auth.createUserWithEmailAndPassword(email, password)
+      .then((credential)=> {
+        this.auth.signOut().then(()=> {
+          const dialogRef = this.dialog.open(CredentialsPromptComponent,
+            {width: '300px', disableClose:true, autoFocus:true}).afterClosed()
+            .subscribe(async (credentials)=>{
+               await this.login(credentials.email, credentials.secret).then((x) => {
+                this.createUser(credential.user, admin, displayName).then(()=>{
+                  credential.user!.updateProfile({ displayName })
+               })
+            })
+            dialogRef.unsubscribe();  
+          })
+        })
       })
-    })
-    .catch(error => {
-      this._snackBar.open(error.message, 'Sign-up failed.');
+      .catch(error => {
+        this._snackBar.open(error.message, 'Sign-up failed.');
     });
+    } else {
+      this._snackBar.open('You are not authorized to create a user', 'Sign-up failed.');
+    }
   }
+
+  // function to be called on new sign up
+  private createUser(user: any, admin: boolean, name:  string) {
+    const data: UserProfile = {
+      uid: user.uid,
+      displayName: name,
+      email: user.email,
+      role: admin? 'admin': '',
+      projects: {
+        pid: '',
+        rate: 0,
+        status: ''
+      }
+    }
+    return this.fire.collection('users').doc(user.uid).set(data);
+  }
+
 
   logOut() {
     this.auth.signOut().then(() => {

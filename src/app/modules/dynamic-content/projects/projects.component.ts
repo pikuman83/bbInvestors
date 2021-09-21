@@ -4,24 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { FireStoreService } from 'src/app/core/fire-store.service';
 import { AuthService } from '../../shared/auth.service';
-
-export interface Projects{
-  id?: string;
-  titulo?: string;
-  ciudad?: string;
-  pais?: string;
-  sup?: string;
-  hab?: string;
-  bath?: string;
-  year?: string;
-  bModel?: string;
-  rentabilidad?: string;
-  desc?: string;
-  fotoAntes?: string;
-  fotoDsps?: string;
-  fotoFinal?: string;
-  fotosObra?: string[];
-}
+import { Projects } from '../../shared/interfaces';
 
 @Component({
   selector: 'app-projects',

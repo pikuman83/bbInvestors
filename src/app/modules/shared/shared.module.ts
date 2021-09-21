@@ -18,11 +18,13 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { LoginComponent } from './login/login.component';
+import { CredentialsPromptComponent } from './login/credentials-prompt/credentials-prompt.component';
 
 @NgModule({
   declarations: [
     FileUploadComponent,
-    LoginComponent
+    LoginComponent,
+    CredentialsPromptComponent
   ],
   imports: [
     CommonModule,

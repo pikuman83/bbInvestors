@@ -4,7 +4,8 @@
 
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
-import { Projects } from '../projects.component';
+import { Projects } from 'src/app/modules/shared/interfaces';
+
 
 @Component({
   selector: 'app-projects-admin',

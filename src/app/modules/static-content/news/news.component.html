@@ -21,7 +21,7 @@
                 <div class="cat">{{n.cat}}</div>
             </div>
 
-            <div *ngIf="auth.authenticated&&auth.user.email==='pikuman10@gmail.com'" class="desc-btns txt-center">
+            <div *ngIf="auth.authenticated&&auth.isAdmin" class="desc-btns txt-center">
                 <button (click)="news=n;openPanel=true"><mat-icon >edit</mat-icon></button>
                 <button><mat-icon (click)="deleteNews(n.id, n.downloadUrl ,i)">delete_forever</mat-icon></button>
             </div>
@@ -29,7 +29,7 @@
     </div>
 </div>
 
-<app-news-admin *ngIf="auth.authenticated&&auth.user.email==='pikuman10@gmail.com'" class="mt-childComp-200"
+<app-news-admin *ngIf="auth.authenticated&&auth.isAdmin" class="mt-childComp-200"
     (addEvent)="addNews($event)"
     (editEvent)="editNews($event)"
     (focusEvent)="focusDiv.focus()"
