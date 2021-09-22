@@ -150,7 +150,8 @@
     position: absolute;
     bottom: 0;
     left: 172px;
-    width: 95px;
+    min-width: 96px;
+    width: fit-content;
     text-align: center;
     transform: rotateX(90deg);
     animation: buttons 1s 3.3s forwards;
