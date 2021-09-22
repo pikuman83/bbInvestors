@@ -3,12 +3,14 @@
     padding: 50px;
     text-align: center;
     margin: 0 auto;
-    max-width: 600px;
+    /* max-width: 600px; */
 }
 mat-form-field, app-file-upload{
     width: 100%;
     display: block;
-    margin-top: 22px;
+    margin: 22px auto auto auto;
+    max-width: 600px;
+
 }
 button[type="submit"]{
     padding: 6px;
@@ -34,7 +36,7 @@ mat-panel-description{
     justify-content: center;
 }
 .fotosObra app-file-upload{
-    width: 60%;
+    width: 50%;
 }
 .addNewField{
     border: rgba(0,0,0,.54) 1px solid;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FireStoreService } from 'src/app/core/fire-store.service';
 
@@ -7,7 +7,7 @@ import { FireStoreService } from 'src/app/core/fire-store.service';
   templateUrl: './projects-details.component.html',
   styleUrls: ['./projects-details.component.css']
 })
-export class ProjectsDetailsComponent implements OnInit {
+export class ProjectsDetailsComponent implements OnInit, OnDestroy {
 
   project: any;
   id!: string|null;
@@ -20,8 +20,11 @@ export class ProjectsDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     this.service.get('projects', this.id!).valueChanges().subscribe((project) => this.project = project);
+    console.log('proj details init')
   }
-
+  ngOnDestroy():void {
+    console.log('proj details destroyed');
+  }
   getLang(){
     if (window.location.pathname.split('/')[1] === 'en') return 'EN';
     if (window.location.pathname.split('/')[1] === 'fr') return 'FR';

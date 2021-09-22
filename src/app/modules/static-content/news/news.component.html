@@ -1,7 +1,7 @@
 <div class="fake-div"></div>
 
 <div class="heading-container contact-animation">
-    <div class="heading bask" #focusDiv>
+    <div class="heading bask" #focusDiv i18n>
         Porque el saber es el poder en estos tiempos tan cambiantes, 
         aquí encontrarás las noticias que BB considera relevantes para los actuales y futuros inversores.
     </div>
@@ -16,9 +16,9 @@
         <div class="card" *ngFor="let n of newsList; let i = index">
             <img class="news-image" [src]="n.downloadUrl" width="300" height="200" alt="News-Image">
             <div class="desc">
-                <a class="card-heading" href=`${n.url}` target="_blank" rel="noopener noreferrer">{{n.title}}</a>
-                <div class="src">{{n.src}}</div>
-                <div class="cat">{{n.cat}}</div>
+                <a class="card-heading" i18n-title title="Título" href=`${n.url}` target="_blank" rel="noopener noreferrer">{{n.title}}</a>
+                <div class="src" i18n-title title="fuente">{{n.src}}</div>
+                <div class="cat" i18n-title title="Categoría">{{n.cat}}</div>
             </div>
 
             <div *ngIf="auth.authenticated&&auth.isAdmin" class="desc-btns txt-center">

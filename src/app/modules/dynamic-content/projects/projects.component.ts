@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
@@ -12,7 +12,7 @@ import { Projects } from '../../shared/interfaces';
   styleUrls: ['./projects.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent implements OnInit, OnDestroy {
 
   tabIndex = 0;
   project!: Projects|null;
@@ -30,6 +30,10 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCollection();
+    console.log('projects init')
+  }
+  ngOnDestroy():void {
+    console.log('projects destroyed');
   }
 
   getLang(){

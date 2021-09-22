@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="8433768950518578342" datatype="html">
+        <source>Contacto</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7059066431512200341" datatype="html">
+        <source>Hola!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu1" datatype="html">
+        <source>INICIO</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu2" datatype="html">
+        <source>SOBRE MI</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu3" datatype="html">
+        <source>SERVICIOS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu4" datatype="html">
+        <source>PORTAFOLIO</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="menu5" datatype="html">
+        <source>ACTUALIDAD</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7936324845623671188" datatype="html">
+        <source>Hola</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <note priority="1" from="description">@mobile-view</note>
+      </trans-unit>
+      <trans-unit id="2612290723431887571" datatype="html">
+        <source>Area privada</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <note priority="1" from="description">Inside user menu</note>
+      </trans-unit>
+      <trans-unit id="7349065148301340370" datatype="html">
+        <source>Cambiar contraseña</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+        <note priority="1" from="description">inside user menu</note>
+      </trans-unit>
+      <trans-unit id="6014558315748012628" datatype="html">
+        <source>© 2021 BB For Investors. Todos los derechos reservados.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="936617009595388754" datatype="html">
+        <source>Políticas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2404108777045472353" datatype="html">
+        <source>Terminos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="536948554092842349" datatype="html">
+        <source>Antes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6044474717596751881" datatype="html">
+        <source>Después</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="119564566581123071" datatype="html">
+        <source>INTERVENCIÓN</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9018131739843554162" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;numbers&quot;&gt;"/>1 <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Bid <x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span class=&quot;plus&quot;&gt;"/>+<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7194314484648629275" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;numbers&quot;&gt;"/>2 <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Bargain <x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span class=&quot;plus&quot;&gt;"/>+<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="505293874408454727" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;numbers&quot;&gt;"/>3 <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Build <x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span class=&quot;plus&quot;&gt;"/>+<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4660497551292297125" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;numbers&quot;&gt;"/>4 <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Business <x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span class=&quot;plus&quot;&gt;"/>+<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4160641576705565541" datatype="html">
+        <source>SUP.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3803002505266899617" datatype="html">
+        <source>HAB.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="617831377281643444" datatype="html">
+        <source>BAÑOS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6540577227408481700" datatype="html">
+        <source>AÑO</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7909694654372113811" datatype="html">
+        <source>MOD. NEGOCIO</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3985663192077521830" datatype="html">
+        <source>RENTABILIDAD</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6147910762788023097" datatype="html">
+        <source>EL PROYECTO</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8424785099677751944" datatype="html">
+        <source>PROCESO DE OBRA</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7414984947329409992" datatype="html">
+        <source>RESULTADO FINAL</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7559418097494982846" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon style=&quot;width: 5px;&quot;&gt;"/>navigate_before<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/><x id="START_TAG_MAT_ICON_1" ctype="x-mat_icon_1" equiv-text="&lt;mat-icon&gt;"/>navigate_before<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/>ANTERIOR </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">92,94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="914184961066078021" datatype="html">
+        <source>VOLVER A PROYECTOS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2088947234090453974" datatype="html">
+        <source>SIGUIENTE <x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon style=&quot;width: 5px;&quot;&gt;"/>navigate_next<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/><x id="START_TAG_MAT_ICON_1" ctype="x-mat_icon_1" equiv-text="&lt;mat-icon&gt;"/>navigate_next<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">98,100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="607563119569560631" datatype="html">
+        <source> ¡TRABAJEMOS JUNTOS! </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects-details/projects-details.component.html</context>
+          <context context-type="linenumber">106,107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3300567220329145110" datatype="html">
+        <source>Proyectos de éxito</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/dynamic-content/projects/projects.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5824432629015994945" datatype="html">
+        <source> * Email invalido</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/login/login.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7132730488496169673" datatype="html">
+        <source>Contraseña</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/login/login.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8408936052104765059" datatype="html">
+        <source> * Contraseña invalida</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/login/login.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3474851221104949821" datatype="html">
+        <source>¿Ha olvidado su contraseña?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/login/login.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="873040344378921972" datatype="html">
+        <source>Soy Brigitte Gregori</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8450996244006390684" datatype="html">
+        <source>El desarrollo urbanístico y los activos inmobiliarios, siempre fueron mi pasión. Acumulo una extensa experiencia exitosa como <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bold&quot;&gt;"/>inversora inmobiliaria de más de 23 años<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> en mercados internacionales, y otros 4 años como consultora inmobiliaria en la prestigiosa Sotheby´s International Realty en Catalunya, España. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Ser trilingue me ha facilitado la comprensión y las relaciones interculturales entre mis clientes y los actores locales en cada mercado internacional en el que opero. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Soy una persona curiosa, audaz, fácilmente adaptable a los entornos complejos y cambiantes, muy enfocada a resultados, y con gran orientación al cliente y el negocio. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">20,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="132569631996116293" datatype="html">
+        <source>¿Qué es BB?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3085744274437620090" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bold&quot;&gt;"/>Budapest y Barcelona,<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> las ciudades entre las que comparto mi vida, prestan sus iniciales a <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bold&quot;&gt;"/>BB International Real Estate Consulting,<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> que nace de mi voluntad de compartir lo aprendido en mi recorrido profesional, poniendolo al servicio de mis clientes inversores en pro de sus propios éxitos. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">35,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2309960871846087067" datatype="html">
+        <source>Asesoramiento.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="82422502566328727" datatype="html">
+        <source>Guío y acompaño sus decisiones</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3839418929735297411" datatype="html">
+        <source>Experiencia</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2616327403625957718" datatype="html">
+        <source>Pongo a su disposición mi expertise como inversora</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="737144668998895040" datatype="html">
+        <source>Atención.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6750963734629401705" datatype="html">
+        <source>Cada uno de mis clientes es único</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1200358204863076304" datatype="html">
+        <source>Transparencia.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6905072623927914948" datatype="html">
+        <source>En la gestión y los presupuestos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="523327038708236082" datatype="html">
+        <source>Diligencia.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1659571160833015837" datatype="html">
+        <source>En el cumplimiento de presupuestos y plazos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3776866251198163515" datatype="html">
+        <source>Mi Primer Consejo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1014739684989398550" datatype="html">
+        <source> Diversifique ya su portafolio de activos inmobiliarios en mercados extranjeros rentables, con máxima tranquilidad y ¡Desde su casa! </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">75,81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3603055170304512977" datatype="html">
+        <source>¡TRABAJEMOS JUNTOS!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8468093934402856675" datatype="html">
+        <source>FORMACIÓN ACADÉMICA</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/about/about.component.html</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8013744119479468097" datatype="html">
+        <source>Asunto</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/contact/contact.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8719230340638492246" datatype="html">
+        <source>Quiero invertir</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/contact/contact.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8880895658917626879" datatype="html">
+        <source>Quiero reservar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/contact/contact.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5357661269973482487" datatype="html">
+        <source>Nombre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/contact/contact.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2041098187848096411" datatype="html">
+        <source>Jose Luis Rodriguez Amador</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/contact/contact.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8437243144618493917" datatype="html">
+        <source>Teléfono</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/contact/contact.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6683630593532897114" datatype="html">
+        <source>hola@buenosdías.com</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/contact/contact.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6181392829528060012" datatype="html">
+        <source>Mensaje</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/contact/contact.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1661295687462927580" datatype="html">
+        <source>      &lt;!-- [class.valid]=&quot;contactForm.controls.message.valid&quot;
+      [class.invalid]=&quot;contactForm.controls.message.invalid &amp;&amp; (contactForm.controls.message.dirty || contactForm.controls.message.touched)&quot; --&gt;
+      Estoy interesado en 
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/contact/contact.component.html</context>
+          <context context-type="linenumber">44,47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1563824554107671219" datatype="html">
+        <source>Estoy de acuerdo con los términos y condiciones</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/contact/contact.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1896093879997026163" datatype="html">
+        <source>Enviar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/contact/contact.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6734179026699749195" datatype="html">
+        <source>Construimos y diversificamos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5882569406504251888" datatype="html">
+        <source>su portafolio de inversiones</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4267869769502242449" datatype="html">
+        <source>inmobiliarias internacionales</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2338893255221656557" datatype="html">
+        <source>de manera fácil, remota y segura</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6571318226906356942" datatype="html">
+        <source>VER SERVICIOS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8998652096023369926" datatype="html">
+        <source>Brigitte, su asesora.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6866521589685063886" datatype="html">
+        <source> “En estos tiempos, la supervivencia económica pasa por la diversificación de sus activos.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Mi trabajo es facilitar sus inversiones en activos inmobiliarios en el extranjero con ayuda de mi experiencia y conocimientos” </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">21,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3196871765944629014" datatype="html">
+        <source>MAS SOBRE MI</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8307187864813406447" datatype="html">
+        <source>PORTAFOLIO</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8897826143604930857" datatype="html">
+        <source>su activo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="34905898557885562" datatype="html">
+        <source>+     mi asesoramiento</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6737040578216738013" datatype="html">
+        <source>=     su beneficio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="130006659487007121" datatype="html">
+        <source>¡El mundo<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>ha cambiado!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1959022640281257233" datatype="html">
+        <source>Asegure su<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>supervivencia<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>económica</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1420294822764996856" datatype="html">
+        <source> Ahora más que nunca las inversiones inmobiliaria son un valor refugio.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Es el momento idóneo para realizar excelentes compras con precios a la baja.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Desarrollar sus propios proyectos de renovación siempre será más rentable.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Le ayudaré a conocer las regulaciones locales para obtener la máxima rentabilidad en el menor tiempo. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">53,57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1243023785655538151" datatype="html">
+        <source>Aquí encontrará mi selección de<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> artículos de interés para el inversor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">87,88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7767909918470726705" datatype="html">
+        <source>Contactemos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">214</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7470527587107082845" datatype="html">
+        <source>Tanto si tiene preguntas como si quiere ponerse manos a la obra, todo comienza con un “Hola” </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/inicio/inicio.component.html</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4994112457300883914" datatype="html">
+        <source>Maximice el retorno de las inversiones inmobiliarias</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/landing/landing.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6989110680466619851" datatype="html">
+        <source>VEA COMO</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/landing/landing.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2473377218935809256" datatype="html">
+        <source>Viva una auténtica experiencia en nuestros acogedores apartamentos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/landing/landing.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6351629056275364483" datatype="html">
+        <source>RESERVE YA!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/landing/landing.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="868961501511106413" datatype="html">
+        <source> Porque el saber es el poder en estos tiempos tan cambiantes, aquí encontrarás las noticias que BB considera relevantes para los actuales y futuros inversores. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/news/news.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8331458230102334089" datatype="html">
+        <source>Título</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/news/news.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1937330837795427135" datatype="html">
+        <source>fuente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/news/news.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7159627112785313048" datatype="html">
+        <source>Categoría</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/news/news.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5962081135827219847" datatype="html">
+        <source>Servicios</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7838250922143890526" datatype="html">
+        <source>Con mi experiencia como inversora y promotora, le acompañaré y guiaré en todo el proceso de invertir en mercados internacionales de manera controlada y segura. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5717155999246940089" datatype="html">
+        <source>Trabajaremos juntos para conseguir los objetivos marcados</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2308148411067094141" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;fsize-2&quot; &gt;"/>1<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Oportunidad <x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span&gt;"/>+<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3817544065066511406" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;fsize-2&quot;&gt;"/>2<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Compra <x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span&gt;"/>+<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5221483459825970906" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;fsize-2&quot;&gt;"/>3<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Desarollo <x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span&gt;"/>+<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2406420144584575684" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;fsize-2&quot;&gt;"/>4<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Negocio <x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span&gt;"/>+<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4319454223381292" datatype="html">
+        <source> La mejor Oportunidad </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">46,47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7360886484964682564" datatype="html">
+        <source> Análisis de la oportunidad de inversión </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">49,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1388697514969490231" datatype="html">
+        <source><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Para realizar una comprar inteligente es determinante el análisis de un estudios de viabilidad y rentabilidad.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Analizo las oportunidades de inversión con parámetros globales y locales para seleccionar el activo que más se adapte a sus exigencias, presupuesto y expectativas como inversor. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">52,58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6209383643731193031" datatype="html">
+        <source> La mejor Compra </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">68,69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="381315497533604302" datatype="html">
+        <source> Búsqueda de activos inmobiliarios </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">71,72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2515028139015965950" datatype="html">
+        <source><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Encontrar la propiedad perfecta requiere tiempo, conocimiento y confianza durante todo el proceso. Adapto la búsqueda a sus criterios y necesidades y presupuesto, Le acompaño hasta que tengas las llaves en sus manos. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">75,80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9188234845278587237" datatype="html">
+        <source>Búsqueda</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="193828876095489818" datatype="html">
+        <source>Visitas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5189784815690641624" datatype="html">
+        <source>Preselección</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3633544509915636441" datatype="html">
+        <source>Negociación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="345634804530712788" datatype="html">
+        <source>Verificación de propiedades</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6258550301583735484" datatype="html">
+        <source>Procedimientos administrativos <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bullet-padding&quot;&gt;"/>y legales de la transacción de<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bullet-padding&quot;&gt;"/>compra venta<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">87,89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6422226240025417881" datatype="html">
+        <source> El mejor Desarrollo </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">101,102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5597397435404518803" datatype="html">
+        <source> Adecuación de activos inmobiliarios </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">104,105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8163460681921805776" datatype="html">
+        <source> (Project Management) </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">107,108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1609422764232201811" datatype="html">
+        <source><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Gestiono los proyectos de rehabilitación integral del activo respetando la expectativa de rentabilidad.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Controlo la calidad, negociación de presupuestos y plazos de entrega para evitar desviaciones, cumpliendo con las regulaciones administrativas y normativas locales. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">110,116</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="634820194030762370" datatype="html">
+        <source> El mejor negocio </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">125,126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2182936727810176283" datatype="html">
+        <source> Salida del activo al mercado </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">128,129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4477915228031946186" datatype="html">
+        <source><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Le asesoro en la <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bold&quot;&gt;"/>salida al mercado<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> de su activo para su mayor beneficio, tanto para <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bold&quot;&gt;"/>alquiler o venta, a través de mi propia gestión<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> o con mis colaboradores locales de confianza. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">131,135</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2997852349137447444" datatype="html">
+        <source>Lo que puede esperar de mis servicios</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">140</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6593716209404248741" datatype="html">
+        <source> Gestión remota <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>y sin preocupaciones </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">147,148</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3334704439264548630" datatype="html">
+        <source> No importa en qué parte del mundo se encuentre, soy su puente de gestión, sus manos y sus ojos que controlan todos los detalles, 100% resolutiva para su tranquilidad. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">150,152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2033593189824253853" datatype="html">
+        <source> Para inversores con o <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> sin experiencia </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">157,158</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="517044029835236062" datatype="html">
+        <source> Tanto si es un gran inversor experimentado como si quiere emprender por primera vez como <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;orange bold&quot;&gt;"/> pequeño inversor / promotor.<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> el objetivo es el mismo: mayor rentabilidad. <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;orange bold&quot;&gt;"/> A partir de 30k€<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">160,162</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4945761833150698040" datatype="html">
+        <source> Asistencia durante todo <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> el proceso 360º </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">168,169</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="133872248443963285" datatype="html">
+        <source> Desde la búsqueda del activo, análisis de la oportunidad. estudios de viabilidad, adecuación del activo, hasta su salida al mercado, estaré a su lado. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">171,173</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8443887029707536337" datatype="html">
+        <source> Operativa en distintas <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> ciudades europeas </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">183,184</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6210643054053682113" datatype="html">
+        <source> Opero en distintas ciudades internacionales muy atractivas como <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bold&quot;&gt;"/>Barcelona, Budapest, Sevilla y Jerez de la Frontera,<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> con experiencias exitosas en cada una de ellas. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">186,188</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2455696341166559841" datatype="html">
+        <source> Soy un puente cultural </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">193,194</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4865885381940022100" datatype="html">
+        <source> Trabajo para superar las principales barreras que tienen mis inversores para operar en mercados extranjeros: idiomáticas, culturales, legislativas y administrativas locales. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">196,198</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6236548189650946874" datatype="html">
+        <source> Soy inversora. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Entiendo sus necesidades </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">203,204</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8667559982746599468" datatype="html">
+        <source> Nuestro servicio de asesoría se sustenta en nuestras múltiples experiencias exitosas como inversores. Nuestra experiencia y empatía a su servicio. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">206,208</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7662171207470729255" datatype="html">
+        <source>Tanto si tiene preguntas como si <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>quiere ponerse manos a la obra, todo <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> comienza con un “Hola” </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
+          <context context-type="linenumber">215</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

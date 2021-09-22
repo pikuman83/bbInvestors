@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { FireStoreService } from 'src/app/core/fire-store.service';
 import { News } from '../news/news.component';
@@ -8,7 +8,7 @@ import { News } from '../news/news.component';
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
-export class InicioComponent implements OnInit {
+export class InicioComponent implements OnInit, OnDestroy {
 
   newsList =  <News[]>[];
 
@@ -16,8 +16,11 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllNewsList();
+    console.log('inicio init')
   }
-
+  ngOnDestroy():void {
+    console.log('inicio destroyed');
+  }
   getAllNewsList(): void{
     this.service.getAll('news').snapshotChanges().pipe(
       map(changes =>

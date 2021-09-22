@@ -1,5 +1,5 @@
 // Open panel on edit click
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { map } from 'rxjs/operators';
 import { FireStoreService } from 'src/app/core/fire-store.service';
@@ -21,7 +21,7 @@ export interface News{
   styleUrls: ['./news.component.css']
 })
 
-export class NewsComponent implements OnInit {
+export class NewsComponent implements OnInit, OnDestroy {
 
   news!: News|null;
   newsList =  <News[]>[];
@@ -33,6 +33,10 @@ export class NewsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllNewsList();
+    console.log('news init')
+  }
+  ngOnDestroy():void {
+    console.log('news destroyed');
   }
 
   getAllNewsList(): void{

@@ -1,16 +1,16 @@
 <form class="form-container" [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)" autocomplete="off">
   
   <mat-form-field appearance="outline">
-    <mat-label>Asunto</mat-label>
+    <mat-label i18n>Asunto</mat-label>
     <mat-select formControlName="asunto">
-      <mat-option value="Quiero invertir">Quiero invertir</mat-option>
-      <mat-option value="Quiero reservar">Quiero reservar</mat-option>
+      <mat-option value="Quiero invertir" i18n>Quiero invertir</mat-option>
+      <mat-option value="Quiero reservar" i18n>Quiero reservar</mat-option>
     </mat-select>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
-    <mat-label>Nombre</mat-label>
-    <input matInput placeholder="Jose Luis Rodriguez Amador" formControlName="name">
+    <mat-label i18n>Nombre</mat-label>
+    <input matInput i18n-placeholder placeholder="Jose Luis Rodriguez Amador" formControlName="name">
     <!-- [class.isValid]="contactForm.controls.name.valid"
       [class.invalid]="contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)" -->
     <!-- <mat-hint *ngIf="contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)">
@@ -19,7 +19,7 @@
   </mat-form-field>
 
   <mat-form-field appearance="outline">
-    <mat-label>Teléfono</mat-label>
+    <mat-label i18n>Teléfono</mat-label>
     <input type="tel" matInput placeholder="+34-930 000 000" formControlName="movil">
     <!-- [class.valid]="contactForm.controls.movil.valid"
       [class.invalid]="contactForm.controls.movil.invalid && (contactForm.controls.movil.dirty || contactForm.controls.movil.touched)" -->
@@ -30,7 +30,7 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
-    <input type="email" matInput placeholder="hola@buenosdías.com" formControlName="email">
+    <input type="email" matInput i18n-placeholder placeholder="hola@buenosdías.com" formControlName="email">
     <!-- [class.valid]="contactForm.controls.email.valid"
       [class.invalid]="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)" -->
     <!-- <mat-hint *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)">
@@ -39,8 +39,8 @@
   </mat-form-field>
 
   <mat-form-field appearance="outline">
-    <mat-label>Mensaje</mat-label>
-    <textarea matInput [mat-autosize]="true" rows="4" formControlName="message">
+    <mat-label i18n>Mensaje</mat-label>
+    <textarea matInput [mat-autosize]="true" rows="4" formControlName="message" i18n>
       <!-- [class.valid]="contactForm.controls.message.valid"
       [class.invalid]="contactForm.controls.message.invalid && (contactForm.controls.message.dirty || contactForm.controls.message.touched)" -->
       Estoy interesado en 
@@ -52,8 +52,8 @@
   
   <div class="terms">
     <input type="checkbox" id="data-policy">
-    <label for="data-policy">Estoy de acuerdo con los términos y condiciones</label>
+    <label for="data-policy" i18n>Estoy de acuerdo con los términos y condiciones</label>
   </div>
 
-  <button type="submit" class="popStyle" [disabled]="contactForm.invalid">Enviar</button>
+  <button type="submit" class="popStyle" [disabled]="contactForm.invalid" i18n>Enviar</button>
 </form>

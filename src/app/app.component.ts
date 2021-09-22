@@ -24,6 +24,11 @@ export class AppComponent implements OnInit {
     this.setLang();
   }
 
+  onActivate(event: any) {
+    document.body.scrollTop = 0;
+    //or document.querySelector('body').scrollTo(0,0)
+    
+}
   setLang(){
     let lang = '';
     if (window.location.pathname.split('/')[1] === 'en') return lang = 'EN';

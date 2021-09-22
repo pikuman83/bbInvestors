@@ -2,11 +2,11 @@
   <!-- FIXED SIDE CONTACT FORM -->
   <div class="contact1" (click)="showForm=!showForm">
     <mat-icon class="contact-text">mail</mat-icon>
-    <div class="contact-text">Contact</div>
+    <div class="contact-text" i18n>Contacto</div>
   </div>
   <div class="popupForm" [class.visible]="showForm">
     <div class="navBar d-flex">
-      <div>Contacto</div>
+      <div i18n>Contacto</div>
       <div (click)="showForm=!showForm"><mat-icon>close</mat-icon></div>
     </div>
     <app-contact></app-contact>
@@ -24,7 +24,7 @@
             
           <button class="user-btn" [title]="auth.authenticated?'Logout':'Login'" mat-icon-button [matMenuTriggerFor]="menu">
             <div class="hello-user" *ngIf="auth.authenticated">
-              Hello {{auth.user.displayName? auth.user.displayName: 'Welcome back'}} 
+              <span i18n>Hola!</span>&nbsp;{{auth.user.displayName? auth.user.displayName: ''}} 
               <mat-icon>arrow_drop_down</mat-icon></div>
             <mat-icon *ngIf="!auth.authenticated">account_circle</mat-icon>
           </button>
@@ -59,7 +59,7 @@
     
     <button class="user-logo user-btn" [title]="auth.authenticated?'Logout':'Login'" mat-icon-button [matMenuTriggerFor]="menu">
       <div class="hello-user" *ngIf="auth.authenticated">
-        Hello {{auth.user.displayName? auth.user.displayName: 'Welcome back'}} 
+        <span i18n="@mobile-view">Hola</span> {{auth.user.displayName? auth.user.displayName: 'Welcome back'}} 
         <mat-icon>arrow_drop_down</mat-icon></div>
       <mat-icon *ngIf="!auth.authenticated">account_circle</mat-icon>
     </button>
@@ -67,10 +67,11 @@
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="auth.authenticated? signOut():openLogin('')">
         <mat-icon>{{auth.authenticated? 'logout': 'login'}}</mat-icon>
-          {{auth.authenticated? 'Logout': 'Login'}}</button>
-      <button mat-menu-item ><mat-icon>dashboard</mat-icon><span>Private Area</span></button>
-      <button mat-menu-item (click)="openLogin('new')" *ngIf="auth.authenticated&&auth.isAdmin"><mat-icon>person_add</mat-icon>Signup user</button>
-      <button mat-menu-item ><mat-icon>password</mat-icon><span>Change Password</span></button>
+        <span>{{auth.authenticated? 'Logout': 'Login'}}</span></button>
+      <button mat-menu-item><mat-icon>dashboard</mat-icon><span i18n="Inside user menu">Area privada</span></button>
+      <button mat-menu-item (click)="openLogin('new')" *ngIf="auth.authenticated&&auth.isAdmin"><mat-icon>person_add</mat-icon>
+        <span>Crear usuario</span></button>
+      <button mat-menu-item ><mat-icon>password</mat-icon><span i18n="inside user menu">Cambiar contraseña</span></button>
     </mat-menu>
 
     <button class="phone-logo" title="Call us" mat-icon-button><mat-icon>phone</mat-icon></button>
@@ -102,17 +103,17 @@
 </div>
 
 <!-- APP -->
-<router-outlet></router-outlet>
+<router-outlet (activate)="onActivate($event)"></router-outlet>
 
 <!-- FOOTER -->
 <footer *ngIf="service.showMenu">
   <div class="d-flex flex-between copyright">
-    <div>&copy; 2021 BB For Investors. Todos los derechos reservados.</div>
+    <div i18n>&copy; 2021 BB For Investors. Todos los derechos reservados.</div>
     <div>
-      <a href="#">Políticas</a> | 
-      <a href="#">Terminos</a> | 
+      <a href="#" i18n>Políticas</a> | 
+      <a href="#" i18n>Terminos</a> | 
       <a href="#">Cookies</a> | 
-      <a href="#">Mapa del sitio</a> 
+      <!-- <a href="#" i18n>Mapa del sitio</a>  -->
     </div>
   </div>
 </footer>
