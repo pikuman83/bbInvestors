@@ -2,7 +2,7 @@
   <!-- FIXED SIDE CONTACT FORM -->
   <div class="contact1" (click)="showForm=!showForm">
     <mat-icon class="contact-text">mail</mat-icon>
-    <div class="contact-text" i18n>Contacto</div>
+    <div class="contact-text hide" i18n>Contacto</div>
   </div>
   <div class="popupForm" [class.visible]="showForm">
     <div class="navBar d-flex">
@@ -112,7 +112,7 @@
     <div>
       <a href="#" i18n>Políticas</a> | 
       <a href="#" i18n>Terminos</a> | 
-      <a href="#">Cookies</a> | 
+      <a href="#">Cookies</a> 
       <!-- <a href="#" i18n>Mapa del sitio</a>  -->
     </div>
   </div>

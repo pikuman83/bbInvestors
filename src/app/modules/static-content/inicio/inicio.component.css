@@ -242,14 +242,20 @@ header{
     color: #d7944a;
 }
 .section3-image{
-    box-sizing: border-box;
-    padding-top: 550px;
+    padding-top: 56.81%;
     width: 100%;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fimg108.jpg?alt=media&token=0ce8641a-37a6-4e83-8433-c6d0d446180b);
+    background-image: url(../../../../assets/House3.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* box-sizing: border-box;
+    padding-top: 550px;
+    width: 100%; */
+    /* background-image: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fimg108.jpg?alt=media&token=0ce8641a-37a6-4e83-8433-c6d0d446180b); */
+    /* background-image: url(../../../../assets/House3.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position: relative; */
 }
 .fakediv{
     max-width: 1200px;
@@ -422,7 +428,10 @@ header{
 @media screen and (max-width: 785px) {
     header{height: calc(100vh - 80px);}
     .container{display: block; padding: 20px 0;}
-    .bg-settings{padding-top: 400px;}
+    .bg-settings{
+        padding-top: 75%;
+        background-size: contain;
+    }
     .bx-1{font-size: 6vw; opacity: 1; text-align: center;}
     .btn{
         width: fit-content;
@@ -444,7 +453,7 @@ header{
         line-height: 100%;
         padding: 20px 0;
     }
-    .section3-image{padding-top: 400px;}
+    /* .section3-image{padding-top: 400px;} */
     .fakediv{height: 145px;}
     .cities1{
         display: flex;
@@ -462,7 +471,7 @@ header{
     .first-white-bx > div:last-child{width: 100%; padding-bottom: 40px;}
     .section3-title{font-size: 20px; padding: 20px 0; height: unset;}
     .cities1{height: unset; padding: 20px 0; font-size: 12px;}
-    .section3-image{padding-top: 300px;}
+    /* .section3-image{padding-top: 300px;} */
     .fakediv{height: 111px;}
     .cities1 a{padding:  0 4px;}
     .bg > div:first-child{font-size: 40px;}

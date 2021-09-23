@@ -1,25 +1,45 @@
 /* CONTACT FORM */
 .contact1{
-    display: flex;
+    /* display: flex;
     align-items: center;
     position: fixed;
-    top: calc(100% - 123px);
+    bottom: 0;
     right: 0;
     left: auto;
     writing-mode: tb-rl;
-    transform: rotate(-180deg); /*Only turning the text shape*/
+    transform: rotate(-180deg); 
+    Only turning the text shape
     color: white;
     font-weight: 300;
     background: #d7944a;
     z-index: 2;
     padding: 6px;
     border-radius: 0 8px 8px 0;
+    cursor: pointer; */
+
+
+    display: flex;
+    align-items: center;
+    position: fixed;
+    right: 40px;
+    color: #fff;
+    background: whitesmoke;
+    z-index: 2;
     cursor: pointer;
+    bottom: 40px;
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    filter: drop-shadow(1px 2px 1px lightgray);
 }
 .contact-text{
-    letter-spacing: 2px;
+    /* letter-spacing: 2px;
     font-weight: 400;
-    margin: 6px auto;
+    margin: 6px auto; */
+    color: #f5963c;
+    font-size: 32px;
+    margin: 0px 7.5px 7px 0;
 }
 .navBar{
     width: 100%;
