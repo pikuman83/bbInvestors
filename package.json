@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --localize",
+    "build": "ng build",
     "postbuild": "cp /opt/build/repo/src/_redirects dist/bbInvestors/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -30,8 +30,8 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.2.0",
-    "@angular/cli": "~12.2.0",
+    "@angular-devkit/build-angular": "~12.2.7",
+    "@angular/cli": "~12.2.7",
     "@angular/compiler-cli": "~12.2.0",
     "@angular/localize": "^12.2.0",
     "@types/jasmine": "~3.8.0",
