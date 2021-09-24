@@ -14,10 +14,10 @@
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#1976d2">
 
-  <script src="/assets/llamanos/detectWebRTC.min.js"></script>
+  <!-- <script src="/assets/llamanos/detectWebRTC.min.js"></script>
   <script src="/assets/llamanos/jssip.min.js"></script>
   <script src="/assets/llamanos/full-version/widget.js"></script>
-  <link rel="stylesheet" href="/assets/llamanos/style.min.css" 0=""/>
+  <link rel="stylesheet" href="/assets/llamanos/style.min.css" 0=""/> -->
 
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#1976d2">
@@ -25,5 +25,13 @@
 <body class="mat-typography">
   <app-root></app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
+  <div id="zadarmaScripts"></div>
+<script>
+(function() {
+  var script = document.createElement('script');
+  script.src = 'https://my.zadarma.com/callmewidget/v2.0.8/loader.js';
+  document.getElementById('zadarmaScripts').appendChild(script);
+}());
+</script>
 </body>
 </html>

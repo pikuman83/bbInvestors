@@ -42,14 +42,9 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css",
-              "src/assets/llamanos/style.min.css"
+              "src/styles.css"
             ],
-            "scripts": [
-              "src/assets/llamanos/detectWebRTC.min.js",
-              "src/assets/llamanos/jssip.min.js",
-              "src/assets/llamanos/full-version/widget.js"
-            ],
+            "scripts": [],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
           },
