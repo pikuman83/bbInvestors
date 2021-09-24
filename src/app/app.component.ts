@@ -30,6 +30,7 @@ export class AppComponent implements OnInit{
   ngOnInit() {
     this.setLang();
     let script = this._renderer2.createElement('script');
+    script.type = "text/javascript";
     script.text = `
         {
           var myZadarmaCallmeWidget10387;
