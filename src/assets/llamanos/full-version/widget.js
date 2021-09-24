@@ -1,9 +1,9 @@
 /* Zadarma Callme Widget v.2.0.8
  * For this widget version you may use language pack of any version
  */
- (function() {
+ export class abc { 
   
- 	this.ZadarmaCallmeWidget = function(_objectLink) {
+ 	ZadarmaCallmeWidget = function(_objectLink) {
 		
 		var objectLink = _objectLink;
 		
@@ -1213,4 +1213,4 @@
 		}
 		
   	}
-}());
+};
