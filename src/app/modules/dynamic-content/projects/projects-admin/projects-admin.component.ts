@@ -45,7 +45,8 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
     fotoDsps: ['', Validators.required],
     fotoFinal: ['', Validators.required],
     fotosObra: this.fb.array([
-    ])
+    ]),
+    status: ['Public']
   });
 // this.fb.control([])
   get fotosObra(): FormArray {

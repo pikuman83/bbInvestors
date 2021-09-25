@@ -1,6 +1,6 @@
 
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { GlobalService } from './global.service';
 import { AuthService } from './modules/shared/auth.service';
@@ -11,7 +11,7 @@ import { LoginComponent } from './modules/shared/login/login.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnDestroy{
 
   title = 'bbInvestors';
   showForm = false;
@@ -39,6 +39,11 @@ export class AppComponent implements OnInit{
       }
     }`;
     this._renderer2.appendChild(this._document.body, script);
+  }
+
+  ngOnDestroy():void{
+    this.showForm = false;
+    document.getElementById('popUp')!.style.display = 'none';
   }
 
   onActivate(_event: any) {

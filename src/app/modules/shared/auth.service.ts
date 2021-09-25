@@ -98,8 +98,7 @@ export class AuthService {
       role: admin? 'admin': '',
       projects: {
         pid: '',
-        rate: 0,
-        status: ''
+        rate: 0
       }
     }
     return this.fire.collection('users').doc(user.uid).set(data);
