@@ -196,7 +196,7 @@ a:focus {
     bottom: 12px;
     right: 0;
     left: auto;
-    visibility: hidden;
+    display: none;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 6px rgba(0,0,0,0.16);
@@ -208,7 +208,7 @@ a:focus {
     box-sizing: border-box;
 }
 .visible{
-    visibility: true;
+    display: block;
     transform: rotateY(0deg) !important;
 }
 
