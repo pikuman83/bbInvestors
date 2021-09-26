@@ -194,9 +194,8 @@ a:focus {
     transform: rotateY(90deg) !important; /* rotate 90deg means normal view, transform 0deg means invisible (the latter is used in the upcoming class) */
     max-width: 300px;
     position: absolute;
-    bottom: -9999px;
+    top: -9999px;
     right: 0;
-    left: auto;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 6px rgba(0,0,0,0.16);
@@ -207,6 +206,7 @@ a:focus {
     box-sizing: border-box;
 }
 .visible{
+    top: unset;
     bottom: 12px;
     transform: rotateY(0deg) !important;
 }
@@ -234,6 +234,22 @@ a:focus {
     color: crimson;
 }
 
+/* MAT snackbar class */
+.happy{
+    color: greenyellow;
+}
+
+@media screen and (max-width: 768px) {
+    .fake-div{height: 80px;}
+    .contact-animation{background-position-y: 36px, bottom;}
+}
+@media screen and (max-width: 5765px) {
+    .contact > div:first-child{font-size: 40px;}
+}
+
+
+
+
 /* Scroll strategy: jump 1 Viewport down, requires another class ".scroll-icon" which is in the same component 
     and  ids to the elements and a JS function to work */
 /* .scroll-icon{
@@ -257,16 +273,3 @@ a:focus {
 /* .hide-scroll{
     display: none;
 } */
-
-/* MAT snackbar class */
-.happy{
-    color: greenyellow;
-}
-
-@media screen and (max-width: 768px) {
-    .fake-div{height: 80px;}
-    .contact-animation{background-position-y: 36px, bottom;}
-}
-@media screen and (max-width: 5765px) {
-    .contact > div:first-child{font-size: 40px;}
-}

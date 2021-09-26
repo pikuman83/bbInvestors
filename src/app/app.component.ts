@@ -1,6 +1,6 @@
 
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, Renderer2, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { GlobalService } from './global.service';
 import { AuthService } from './modules/shared/auth.service';
@@ -9,7 +9,8 @@ import { LoginComponent } from './modules/shared/login/login.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit, OnDestroy{
 
@@ -43,7 +44,7 @@ export class AppComponent implements OnInit, OnDestroy{
 
   ngOnDestroy():void{
     this.showForm = false;
-    document.getElementById('popUp')!.style.display = 'none';
+    document.getElementById('popUp')!.classList.remove('popupForm');
   }
 
   onActivate(_event: any) {
