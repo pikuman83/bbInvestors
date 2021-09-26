@@ -191,6 +191,7 @@ a:focus {
 
 /* CONTACT POPUP */
 .popupForm{
+    transform: rotateY(90deg) !important; /* rotate 90deg means normal view, transform 0deg means invisible (the latter is used in the upcoming class) */
     max-width: 300px;
     position: absolute;
     bottom: 12px;
@@ -199,7 +200,6 @@ a:focus {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 6px rgba(0,0,0,0.16);
-    transform: rotateX(90deg) !important; /* rotate 90deg means normal view, transform 0deg means invisible (the latter is used in the upcoming class) */
     transition: all .5s ease 0s; /* the effect, pushe it (push bcoz of transporm origin, this is just the motion strategy, contains no effect) towards the new position slowly */
     transform-origin: 100% 0 0; /* makes the transition starts from thee origin*/
     z-index: 20;
@@ -207,7 +207,7 @@ a:focus {
     box-sizing: border-box;
 }
 .visible{
-    transform: rotateX(0deg) !important;
+    transform: rotateY(0deg) !important;
 }
 
 /* A fake div covering top menu bar height */
