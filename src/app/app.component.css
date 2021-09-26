@@ -119,16 +119,17 @@ header{
     display: flex;
 }
 .sidenav {
-    height: calc(100% - 90px);
+    height: calc(100% - 80px);
     width: 0;
     position: fixed;
-    z-index: 1;
     top: 80px;
     right: 0;
     padding-top: 25px;
     background-color: #f5f5f5;
     overflow-x: hidden;
     transition: 0.5s;
+    margin-left: 20px;
+    z-index: 101;
 }
 .sidenav a {
     padding: 16px 8px 16px 32px;
@@ -155,10 +156,6 @@ header{
     letter-spacing: 2px;
     color: green;
     padding: 0;
-}
-.sidenav{
-    margin-left: 20px;
-    z-index: 101;
 }
 .langbtn{
     padding: 0;
@@ -221,5 +218,4 @@ footer{
 @media screen and (max-width: 768px) {
     header {display: none;}
     .responsive-top-bar {display: flex;}
-    .sidenav{height: calc(100% - 80px);}
 }

@@ -196,20 +196,18 @@ a:focus {
     bottom: 12px;
     right: 0;
     left: auto;
-    display: none;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 6px rgba(0,0,0,0.16);
-    transform: rotateY(90deg) !important; /* rotate 90deg means normal view, transform 0deg means invisible (the latter is used in the upcoming class) */
-    transition: all 0.5s ease 0s; /* the effect, pushe it (push bcoz of transporm origin, this is just the motion strategy, contains no effect) towards the new position slowly */
+    transform: rotateX(90deg) !important; /* rotate 90deg means normal view, transform 0deg means invisible (the latter is used in the upcoming class) */
+    transition: all .5s ease 0s; /* the effect, pushe it (push bcoz of transporm origin, this is just the motion strategy, contains no effect) towards the new position slowly */
     transform-origin: 100% 0 0; /* makes the transition starts from thee origin*/
-    z-index: 2;
+    z-index: 20;
     padding: 20px;
     box-sizing: border-box;
 }
 .visible{
-    display: block;
-    transform: rotateY(0deg) !important;
+    transform: rotateX(0deg) !important;
 }
 
 /* A fake div covering top menu bar height */
