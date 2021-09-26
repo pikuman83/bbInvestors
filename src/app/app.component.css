@@ -119,10 +119,10 @@ header{
     margin-top: 1px;
     margin-left: 9px;
 }
-.z-callme-widget.callme.callme--default .callme__content{
+::ng-deep.z-callme-widget.callme.callme--default .callme__content{
     box-shadow: none !important;
 }
-.z-callme-widget.callme.callme--square .callme__content{
+::ng-deep.z-callme-widget.callme.callme--square .callme__content{
     padding: 3px 4px !important;
 }
 .menuFirstItem:focus{
