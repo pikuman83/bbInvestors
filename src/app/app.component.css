@@ -104,6 +104,27 @@ header{
     align-items: center;
     color: green;
 }
+/* CALL US */
+.llamame{
+    width: 24px;
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+    display: flex;
+    text-align-last: start;
+    justify-content: center;
+    box-shadow: none;
+    border: none;
+    align-self: center;
+    margin-top: 1px;
+    margin-left: 9px;
+}
+.z-callme-widget.callme.callme--default .callme__content{
+    box-shadow: none !important;
+}
+.z-callme-widget.callme.callme--square .callme__content{
+    padding: 3px 4px !important;
+}
 .menuFirstItem:focus{
     color: #1D4C56;
 }
