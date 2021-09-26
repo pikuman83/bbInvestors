@@ -106,7 +106,7 @@ header{
 }
 /* CALL US */
 .llamame{
-    width: 24px;
+    width: 24px !important;
     opacity: 1;
     visibility: visible;
     cursor: pointer;
