@@ -7,7 +7,6 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class GlobalService {
 
   showMenu = new BehaviorSubject<boolean>(true);
-  // showMenu: boolean = true;
 
   constructor() {}
   
