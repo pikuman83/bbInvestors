@@ -1,4 +1,4 @@
-<div *ngIf="showMenu">
+<div *ngIf="service.showMenu">
   <!-- FIXED SIDE CONTACT FORM -->
   <div class="contact1" (click)="showForm=!showForm">
     <mat-icon class="contact-text">mail</mat-icon>
@@ -109,7 +109,7 @@
 <router-outlet (activate)="onActivate($event)"></router-outlet>
 
 <!-- FOOTER -->
-<footer *ngIf="showMenu">
+<footer *ngIf="service.showMenu">
   <div class="d-flex flex-between copyright">
     <div i18n>&copy; 2021 BB For Investors. Todos los derechos reservados.</div>
     <div>
