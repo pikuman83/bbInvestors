@@ -21,25 +21,48 @@
     display: flex;
     align-items: center;
     position: fixed;
-    right: 40px;
+    /* right: 40px; */
     color: #fff;
     background: whitesmoke;
     z-index: 2;
     cursor: pointer;
-    bottom: 40px;
-    border-radius: 60px;
-    width: 60px;
-    height: 60px;
+    /* bottom: 40px; */
+    /* border-radius: 60px; */
+    /* width: 60px; */
+    /* height: 60px; */
     justify-content: center;
     filter: drop-shadow(1px 2px 1px lightgray);
+
+    right: 30px;
+    border-radius: 40px;
+    width: 40px !important;
+    height: 40px;
+}
+.bottom-30{
+    bottom: 30px;
+}
+.bottom-75{
+    opacity: 0;
+    visibility: visible;
+    bottom: 75px;
+}
+.showMe{
+    opacity: 1;
 }
 .contact-text{
     /* letter-spacing: 2px;
     font-weight: 400;
     margin: 6px auto; */
-    color: #f5963c;
+
+    /* color: #f5963c;
     font-size: 32px;
-    margin: 0px 7.5px 7px 0;
+    margin: 0px 7.5px 7px 0; */
+
+    color: #f5963c;
+    font-size: 26px;
+    margin: 0 7.5px 7px 0;
+    line-height: 33px;
+    margin-left: 5px;
 }
 .navBar{
     width: 100%;
@@ -105,7 +128,7 @@ header{
     color: green;
 }
 /* CALL US */
-.llamame{
+/* .llamame{
     width: 24px !important;
     opacity: 1;
     visibility: visible;
@@ -118,7 +141,7 @@ header{
     align-self: center;
     margin-top: 1px;
     margin-left: 9px;
-}
+} */
 ::ng-deep.z-callme-widget.callme.callme--default .callme__content{
     box-shadow: none !important;
 }

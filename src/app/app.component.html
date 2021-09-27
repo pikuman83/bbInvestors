@@ -1,6 +1,7 @@
+
 <div *ngIf="showMenu">
   <!-- FIXED SIDE CONTACT FORM -->
-  <div class="contact1" (click)="showForm=!showForm">
+  <div class="contact1 bottom-30" (click)="showForm=!showForm">
     <mat-icon class="contact-text">mail</mat-icon>
     <div class="contact-text hide" i18n>Contacto</div>
   </div>
@@ -28,9 +29,6 @@
               <mat-icon>arrow_drop_down</mat-icon></div>
             <mat-icon *ngIf="!auth.authenticated">account_circle</mat-icon>
           </button>
-
-          <div class="llamame" i18n-title title="Call us" id="myZadarmaCallmeWidget10387"></div>
-          <!-- style="width: 24px;" -->
 
           <!-- <button class="phone-logo" title="Call us" mat-icon-button><mat-icon>phone</mat-icon></button> -->
           
@@ -120,3 +118,4 @@
     </div>
   </div>
 </footer>
+<div class="contact1 bottom-75" [class.showMe]="showMenu" i18n-title title="Call us" id="myZadarmaCallmeWidget10387"></div>

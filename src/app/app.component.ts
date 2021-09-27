@@ -22,22 +22,23 @@ export class AppComponent implements OnInit, OnDestroy{
     public auth: AuthService
     ){service.showMenu.subscribe((x) => {
         this.showMenu = x;
-        if(x){
-          console.log('Came from landing')
-          this.writeScript();
-        }
+        // if(x){
+        //   console.log('Came from landing')
+        //   this.writeScript();
+        // }
       })
     }
 
   ngOnInit() {
     this.setLang();
-    setTimeout(() => {
-      if (this.showMenu){
-        console.log('direct access to home')
-        this.writeScript();
-      }
-      else console.log('I am at landing')
-    }, 1000);
+    this.writeScript();
+    // setTimeout(() => {
+    //   if (this.showMenu){
+    //     console.log('direct access to home')
+    //     this.writeScript();
+    //   }
+    //   else console.log('I am at landing')
+    // }, 1000);
   }
 
   ngOnDestroy():void{
