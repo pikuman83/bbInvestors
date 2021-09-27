@@ -144,19 +144,24 @@ header{
     margin-left: 9px;
 } */
 ::ng-deep.z-callme-widget.callme{
-    position: fixed;
+    position: fixed !important;
 }
 ::ng-deep.z-callme-widget.callme.callme--default .callme__content{
     box-shadow: none !important;
 }
 ::ng-deep.z-callme-widget.callme.callme--square .callme__content{
     height: 100%;
+    padding: 8px 10px !important;
     text-align-last: start;
 }
 ::ng-deep.default-phone-ico.z-callme-widget.callme.callme--square .callme__icon{
     font-size: 24px;
     margin-left: 6px;
     margin-top: 4px;
+}
+::ng-deep.z-callme-widget.callme.callme--square .callme__icon .z-icon {
+    margin-right: 46px;
+    font-size: 24px;
 }
 .menuFirstItem:focus{
     color: #1D4C56;
