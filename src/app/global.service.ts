@@ -6,9 +6,9 @@ import { Subject } from 'rxjs';
 })
 export class GlobalService {
 
-  showMenu1 = new Subject<boolean>();
-  showMenu: boolean = true;
+  showMenu = new Subject<boolean>();
+  // showMenu: boolean = true;
 
-  constructor() {this.showMenu1.subscribe(x => this.showMenu = x) }
+  constructor() {}
   
 }
