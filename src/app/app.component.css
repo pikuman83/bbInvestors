@@ -42,12 +42,13 @@
     bottom: 30px;
 }
 .bottom-75{
-    opacity: 0;
+    top: -9999px;
     visibility: visible;
-    bottom: 75px;
+    /* bottom: 75px; */
 }
 .showMe{
-    opacity: 1;
+    top: unset;
+    bottom: 75px;
 }
 .contact-text{
     /* letter-spacing: 2px;
@@ -142,11 +143,20 @@ header{
     margin-top: 1px;
     margin-left: 9px;
 } */
+::ng-deep.z-callme-widget.callme{
+    position: fixed;
+}
 ::ng-deep.z-callme-widget.callme.callme--default .callme__content{
     box-shadow: none !important;
 }
 ::ng-deep.z-callme-widget.callme.callme--square .callme__content{
-    padding: 3px 4px !important;
+    height: 100%;
+    text-align-last: start;
+}
+::ng-deep.default-phone-ico.z-callme-widget.callme.callme--square .callme__icon{
+    font-size: 24px;
+    margin-left: 6px;
+    margin-top: 4px;
 }
 .menuFirstItem:focus{
     color: #1D4C56;
