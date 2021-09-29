@@ -1,5 +1,5 @@
 /* add this to image, transition: all .3s ease-out; */
-/* and then on hover transform: scale(1.15); */
+/* and then on hover transform: scale(1.15); FOR A ZOOM EFFECT ON HOVER, TRY ON PARENT ELEMENT INSTEAD IF DOESN'T WORK */ 
 
 /* Major break points
   xs: 0,
@@ -10,7 +10,8 @@
   xxl: 1400px */
 @font-face {
     font-family: 'operetta18-regular';
-    src: url(./assets/Fonts/operetta18-regular-webfont.woff2) format('woff2');
+    src: url(./assets/Fonts/operetta18-regular-webfont.woff2) format('woff2'),
+         url(./assets/Fonts/operetta18-regular-webfont.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -46,12 +47,6 @@ a:focus {
     border: 2px solid #EA9A4C;
     min-width: 180px;
 }
-.bt-big{
-    display: block;
-    padding: 40px 80px;
-    border: 2px solid #EA9A4C;
-}
-
 
 .bd-box{
     box-sizing: border-box;
@@ -117,7 +112,10 @@ a:focus {
     color: #EA9A4C;
 }
 .bold{
-    font-weight: 800;
+    font-weight: 500;
+}
+.bold-400{
+    font-weight: 400;
 }
 
 
@@ -174,6 +172,7 @@ a:focus {
 
 /* CONTACT */
 .contact{
+    box-sizing: border-box;
     width: 100%;
     text-align: center;
     margin: 0 auto;

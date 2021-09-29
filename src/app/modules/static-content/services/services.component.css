@@ -2,10 +2,10 @@
     background-color: #1D4C56;
 }
 .title{
-    padding-top: 50px;
+    padding: 40px;
     text-align: center;
-    font-size: 6em;
-    line-height: 200px;
+    font-size: 50px;
+    line-height: 150%;
     color: #becaca;
     font-family: 'operetta8-medium';
 }
@@ -33,11 +33,12 @@
 }
 .card{
     background-color: white;
-    font-size: 25px;
-    line-height: 36px;
+    font-size: 22px;
+    line-height: 200%;
     padding: 40px;
-    /* text-align: center; */
+    font-weight: 300;
 }
+
 .pin{
     margin-top: 14px;
     width: 10%;
@@ -102,6 +103,8 @@
     color: #1D4C56;
 }
 .button1:first-child{
+    letter-spacing: 2px;
+    line-height: 150%;
     color: #EA9A4C;
 }
 .button2:last-child{
@@ -113,22 +116,22 @@
 }
 .contact-link{
     width: fit-content;
-    padding: 50px 0 100px 0;
+    padding: 40px;
     margin: 0 auto;
-    white-space: nowrap;
 }
 .contact-button{
     color: #EA9A4C;
-    font-size: 1.5em;
-    font-weight: 300;
+    /* font-size: 1.5em; */
+    /* font-weight: 300; */
 }
 
 
 .heading2{
-    font-size: 3em;
-    line-height: 3em;
+    font-size: 50px;
+    line-height: 100%;
     color: #1D4C56;
     text-align: center;
+    padding: 40px;
 }
 .cards1{
     display: flex;
@@ -137,7 +140,7 @@
 }
 .card1{
     max-width: 30%;
-    padding: 50px;
+    padding: 40px;
     text-align: center;
     /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
 }
@@ -160,8 +163,6 @@
     line-height: 1.5em;
     font-stretch: expanded;
 }
-
-
 
 .boxes{
     font-size: 1.5em;
@@ -188,22 +189,24 @@
     font-family: 'operetta8-medium';
 }
 .box-heading{
+    font-size: 29px;
+    line-height: 160%;
     color: #1D4C56;
-    font-size: 1.5em;
-    line-height: 1.5em;
     font-family: 'operetta8-medium';
 }
 .box-heading1{
     color: #EA9A4C;
-    font-size: 1.4em;
-    line-height: 2em;
+    font-size: 26px;
+    line-height: 100%;
 }
 .box-desc{
-    font-size: 1em;
-    line-height: 1.8em;
-    color: gray;
+    font-size: 22px;
+    line-height: 150%;
+    font-weight: 300;
+    /* color: #becaca; */
     justify-content: space-between;
     margin-right: 80px;
+    letter-spacing: 1px;
 }
 .col{
     max-width: 50%;
@@ -212,7 +215,15 @@
 .bullet-padding{
     padding-left: 28px;
 }
+.contact1{
+    background: #1D4C56;
+    padding: 40px;
+    margin-bottom: 40px;
+}
 
+@media screen and (max-width: 925px) {
+    .button1:first-child{letter-spacing: 0; font-size: 22px;}
+}
 @media screen and (max-width: 768px) {
     .title{display: none;}
     .pin{display: none;}
@@ -227,17 +238,12 @@
         max-width: unset;
     }
     .image{padding-top: 180px;}
-    .contact-link{padding: 100px 40px 100px 40px;}
-    .bt-big{padding: 40px;}
     .heading2{
-        font-size: 2em;
-        line-height: 1.2em;
-        padding: 0 40px;
+        font-size: 30px;
     }
     .cards1{display: block;}
     .card1{
         max-width: unset;
-        padding: 40px;
         text-align: center;
     }   
     .card-heading{

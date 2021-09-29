@@ -109,11 +109,9 @@ header{
     text-align: center;
     padding: 0 40px;
 }
-.menu{
-    letter-spacing: 1px;
-}
 .header2 a{
-    margin: 0 16px;
+    margin: 0 10px;
+    font-weight: 500;
 }
 .header2 a:last-child{
     margin-right: 0; 
