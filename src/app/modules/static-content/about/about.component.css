@@ -86,7 +86,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin-right: 40px;
-    z-index: 2;
+    z-index: 1;
 }
 .fotoline{
     grid-column: 9/13;
