@@ -217,7 +217,7 @@
       </mat-expansion-panel>
 
       <mat-action-row>
-        <button type="reset" mat-button color="primary" (click)="projectsForm.reset();edit=null">
+        <button type="reset" mat-button color="primary" (click)="reset()">
           <mat-icon style="margin-right: 10px;">restart_alt</mat-icon> Reset</button>
         <button type="submit" mat-button color="primary" [disabled]="projectsForm.invalid">Publicar</button>
       </mat-action-row>

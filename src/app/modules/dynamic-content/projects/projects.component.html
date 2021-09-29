@@ -30,7 +30,7 @@
   *ngIf="auth.authenticated&&auth.isAdmin"
   (addEvent)="addProject($event)"
   (editEvent)="editProject($event)"
-  (focusEvent)="focusDiv.focus()"
+  (focusEvent)="focusDiv.focus();project=null"
   (panelEvent)="openPanel = false"
   [edit]="project!"
   [openPanel]="openPanel">

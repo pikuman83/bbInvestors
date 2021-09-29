@@ -180,14 +180,16 @@ a:focus {
     color: #1D4C56;
 }
 .contact div:first-child{
-    font-size: 3em;
+    color: #bececa;
+    font-size: 50px;
     line-height: 100%;
-    margin: 40px;
+    margin: 20px auto;
 }
 .contact div:last-child{
-    color: #1D4C56;
-    font-size: 1.5em;
-    line-height: 1.5em;
+    margin: 20px auto;
+    color: white;
+    font-size: 18px;
+    line-height: 150%;
     letter-spacing: 1px;
 }
 
@@ -259,8 +261,8 @@ a:focus {
     .fake-div{height: 80px;}
     .contact-animation{background-position-y: 36px, bottom;}
 }
-@media screen and (max-width: 5765px) {
-    .contact > div:first-child{font-size: 40px;}
+@media screen and (max-width: 576px) {
+    /* .contact > div:first-child{font-size: 40px;} */
 }
 
 

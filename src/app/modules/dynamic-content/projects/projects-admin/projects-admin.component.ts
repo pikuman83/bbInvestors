@@ -121,9 +121,16 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
 
   users!: UserProfile[];
   getUsers(){
-    this.service.getUsers('users').valueChanges().subscribe((x:UserProfile[]) => {
+    this.service.getUsers().valueChanges().subscribe((x:UserProfile[]) => {
       this.users = x.filter(y => y.role !== 'admin');
     })
+  }
+
+  reset(){
+    this.fotosObra.clear();
+    this.edit = null;
+    this.projectsForm.reset();
+    this.focusEvent.emit();
   }
 
 }

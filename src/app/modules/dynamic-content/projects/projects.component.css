@@ -5,7 +5,7 @@
     line-height: 100%;
     box-sizing: border-box;
     padding: 40px;
-    color: lightgray;
+    color: #becaca;
     /* height: 150px; */
     text-align: center;
 }
@@ -69,7 +69,7 @@ mat-tab-group{
 }
 .proj-location{
     font-size: 1.2em;
-    color: lightgray;
+    color: #becaca;
     margin-bottom: 12px;
 }
 .mt-childComp-200{

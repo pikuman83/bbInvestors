@@ -35,8 +35,8 @@ export class FireStoreService {
     return this.db.collection(`/${path}`).doc(id).delete();
   }
 
-  getUsers(path: string): AngularFirestoreCollection<any> {
-    return this.db.collection(`/${path}`);
+  getUsers(): AngularFirestoreCollection<any> {
+    return this.db.collection('users');
   }
   getRateList(pid: string): AngularFirestoreCollection<rateList> {
     return this.db.collection('/rateList', ref => ref.where('pid', '==', pid));
