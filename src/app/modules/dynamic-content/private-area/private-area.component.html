@@ -1,0 +1,17 @@
+<div class="fake-div"></div>
+
+<div class="title bask" #focusDiv i18n>Mis Proyectos</div>
+<div class="header-img"></div>
+
+<div class="container1">
+    <div class="projs-container">
+        <div class="project" *ngFor="let projects of pList; let i = index">
+        <div (click)="router.navigate(['projects/project-details/' + projects.id])" 
+        [ngStyle]="{'background': 'url(' + projects.fotoFinal + ')', 'background-repeat': 'no-repeat', 'padding-top': '54.25%' ,'background-size': 'contain'}"></div>
+        <!-- [ngStyle]="{'background': 'url(' + projects.fotoFinal + ')', 'height': '320px', 'background-position': 'center' ,'background-size': 'cover'}"></div> -->
+        <div class="proj-name bask">{{getLang()==='ES'? projects.tituloES : getLang()==='EN'? projects.tituloEN: projects.tituloFR}}</div>
+        <div class="proj-location">{{projects.ciudad}} | {{projects.pais}}</div>
+        <div>{{projects.rate | currency:'EUR'}}</div>
+        </div>
+    </div>-
+</div>

@@ -6,7 +6,6 @@
     box-sizing: border-box;
     padding: 40px;
     color: lightgray;
-    /* height: 150px; */
     text-align: center;
 }
 .header-img{
@@ -21,7 +20,7 @@
     background-size: contain;
     background-repeat: repeat;
 }
-mat-tab-group{
+.container1{
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
@@ -29,26 +28,7 @@ mat-tab-group{
     padding: 0 40px;
 }
 
-/* Encasulated.None */
-.mat-tab-body-content{
-    overflow: hidden !important;
-}
-.mat-tab-header{
-    border-bottom: none;
-}
-.mat-tab-label, .mat-tab-link {
-    font-size: 20px;
-    font-weight: normal;
-    font-family: 'Montserrat', sans-serif;
-    justify-content: center;
-}
-.mat-ink-bar{
-    background-color: #EA9A4C !important;
-    min-width: 120px !important;
-    /* margin-left: 20px !important; */
-}
 /* ********** */
-
 .projs-container{
     width: 100%;
     margin: 0 auto;
@@ -72,32 +52,13 @@ mat-tab-group{
     color: lightgray;
     margin-bottom: 12px;
 }
-.mt-childComp-200{
-    margin: 0 auto;
-    max-width: 1200px;
-    box-sizing: border-box;
-    display: block;
-    margin-top: 100px;
-}
-
-app-projects-admin{
-    padding: 40px;
-}
 
 @media screen and (max-width: 768px) {
-    mat-tab-group{padding: 0 40px; display: flex; justify-content: center;}
-    /* .header-img{max-height: 450px;} */
-    .project{
-        width: 100%;
-        box-shadow: 0 0 6px rgba(0,0,0,0.16);
-    }
-    app-projects-admin{padding: 40px;}
+    .project{width: 100%;box-shadow: 0 0 6px rgba(0,0,0,0.16);}
 }
 
 @media screen and (max-width: 576px) {
-    .title{font-size: 2.5em; padding: 40px;}
-    /* .header-img{max-height: 350px;} */
-    .mat-ink-bar{min-width: 72px !important;}
+    .title{font-size: 2.5em; padding: 20px;}
 }
 @media screen and (max-width: 450px) {
     /* .header-img{max-height: 300px;} */

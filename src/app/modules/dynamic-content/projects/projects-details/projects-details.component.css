@@ -14,7 +14,7 @@
   width: 100%;
   box-sizing: border-box;
   font-size: 1.5em;
-  color: #d7944a;
+  color: #EA9A4C;
   box-sizing: border-box;
 }
 .container *{
@@ -36,7 +36,7 @@ header{
 .proj-location{
   font-size: 1.5em;
   line-height: 1.5em;
-  color: #d7944a;
+  color: #EA9A4C;
 }
 
 .heading{
@@ -103,12 +103,12 @@ img-comparison-slider{
   width: calc(50% - 50px);
 }
 .intervencion div:not(.intervencion>div:first-child){  
-  background-color: #d7944a;
+  background-color: #EA9A4C;
   color: #1D4C56;
   width: fit-content;
   padding: 6px;
   padding-left: 20px;
-  font-family: Baskerville;
+  font-family: 'operetta8-medium';
   min-width: 210px;
   margin-top: 4px;
   font-size: 1.2em;
@@ -226,14 +226,14 @@ img-comparison-slider{
   display: block;
   width: fit-content;
   text-align: center;
-  padding: 30px;
-  border: #d7944a solid 2px;
+  padding: 40px;
+  border: #EA9A4C solid 2px;
   letter-spacing: 1px;
   font-size: 25px;
   font-weight: 300;
 }
 .contact-btn:hover{
-  background-color: #d7944a;
+  background-color: #EA9A4C;
   color: white;
   cursor: pointer;
 }

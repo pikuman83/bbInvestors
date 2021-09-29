@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { News } from '../news.component';
+import { News } from 'src/app/modules/shared/interfaces';
 
 @Component({
   selector: 'app-news-admin',

@@ -17,7 +17,7 @@
         <div class="proj-location">{{projects.ciudad}} | {{projects.pais}}</div>
 
         <div *ngIf="auth.authenticated&&auth.isAdmin" class="desc-btns txt-center">
-          <button (click)="project=projects;openPanel=true"><mat-icon >edit</mat-icon></button>
+          <button (click)="sendEdit(projects);openPanel=true"><mat-icon >edit</mat-icon></button>
           <button><mat-icon (click)="deleteDoc(projects.id, projects)">delete_forever</mat-icon></button>
         </div>
       </div>

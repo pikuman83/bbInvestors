@@ -4,12 +4,14 @@ import { ProjectsComponent } from './projects/projects.component';
 import { SharedModule } from "../shared/shared.module";
 import { ProjectsAdminComponent } from './projects/projects-admin/projects-admin.component';
 import { ProjectsDetailsComponent } from './projects/projects-details/projects-details.component';
+import { PrivateAreaComponent } from './private-area/private-area.component';
 
 @NgModule({
   declarations: [
     ProjectsComponent,
     ProjectsAdminComponent,
-    ProjectsDetailsComponent
+    ProjectsDetailsComponent,
+    PrivateAreaComponent
   ],
   imports: [
     SharedModule,

@@ -1,3 +1,6 @@
+/* add this to image, transition: all .3s ease-out; */
+/* and then on hover transform: scale(1.15); */
+
 /* Major break points
   xs: 0,
   sm: 576px,
@@ -5,31 +8,48 @@
   lg: 992px,
   xl: 1200px,
   xxl: 1400px */
-
 @font-face {
-    font-family: Baskerville;
-    src: url(./assets/Fonts/Baskerville-01.woff);
-}
-@font-face {
-    font-family: 'Helvetica Neue';
-    src: url(./assets/Fonts/HelveticaNeue-01.woff);
+    font-family: 'operetta18-regular';
+    src: url(./assets/Fonts/operetta18-regular-webfont.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.bask{font-family: Baskerville;}
-.helv{font-family: 'Helvetica Neue';}
+.bask{font-family: 'operetta18-regular';}
 
 html, body { height: 100%; overflow-x: hidden; box-sizing: border-box; overflow: auto;}
-body { margin: 0; font-family: 'Helvetica Neue', sans-serif; box-sizing: border-box;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; box-sizing: border-box; letter-spacing: 1px;}
 
 a, a:visited, a:hover {
     color: #1D4C56;
     text-decoration: none;
 }
 a:hover {
-    color: #d7944a;
+    color: #EA9A4C;
 }
 a:focus {
-    color: #d7944a;
+    color: #EA9A4C;
+}
+
+/* Buttons */
+.btn{
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    align-self: center;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    color: #EA9A4C;
+    border: 2px solid #EA9A4C;
+    min-width: 180px;
+}
+.bt-big{
+    display: block;
+    padding: 40px 80px;
+    border: 2px solid #EA9A4C;
 }
 
 
@@ -94,7 +114,7 @@ a:focus {
     color: #1D4C56 !important;
 }
 .orange{
-    color: #d7944a;
+    color: #EA9A4C;
 }
 .bold{
     font-weight: 800;
@@ -148,11 +168,6 @@ a:focus {
 
 .pointer{
     cursor: pointer;
-}
-.bt-big{
-    display: block;
-    padding: 40px 80px;
-    border: 2px solid #d7944a;
 }
 
 

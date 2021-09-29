@@ -16,6 +16,7 @@
     color: #1D4C56;
     font-weight: 300;
     text-align: center;
+    letter-spacing: 1px;
 }
 
 /* .scroll-icon *{
@@ -42,14 +43,12 @@
     box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
 .card{
-    max-width: 300px;
     justify-content: center;
     display: block;
-    margin: 40px 20px;
+    margin: 40px 15px;
 }
 .desc{
-    width: 275px;
-    max-width: 275px;
+    width: 300px;
     margin: 0 auto;
     margin-top: -18px;
     word-wrap: break-word;
@@ -61,19 +60,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 150px;
+    min-height: 190px;
 }
 .desc:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .card-heading{
-    font-size: 1.3em;
-    font-weight: 700;
+    font-size: 18px;
     color: black;
     line-height: 22px;
 }
 .src{
-    padding-top: 20px;
+    padding-top: 40px;
     font-size: 16px;
     color: #1D4C56;
 }
@@ -108,5 +106,5 @@ app-news-admin{
         padding: 20px;
         font-size: 35px;
     }
-    app-news-admin{padding: 20px;}
+    app-news-admin{padding: 40px;}
 }

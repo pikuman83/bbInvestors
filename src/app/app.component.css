@@ -11,7 +11,7 @@
     Only turning the text shape
     color: white;
     font-weight: 300;
-    background: #d7944a;
+    background: #EA9A4C;
     z-index: 2;
     padding: 6px;
     border-radius: 0 8px 8px 0;
@@ -109,6 +109,9 @@ header{
     text-align: center;
     padding: 0 40px;
 }
+.menu{
+    letter-spacing: 1px;
+}
 .header2 a{
     margin: 0 16px;
 }
@@ -167,7 +170,7 @@ header{
     color: #1D4C56;
 }
 .menuFirstItem:hover{
-    color: #d7944a  ;
+    color: #EA9A4C  ;
 }
 
 /* SIDENAV */
@@ -225,7 +228,7 @@ header{
 }
 .user-logo{
     margin-left: 32px;
-    color: #d7944a;
+    color: #EA9A4C;
 }
 .responsive-top-bar{
     display: none;
@@ -254,10 +257,11 @@ header{
 /* FOOTER */
 footer{
     box-sizing: border-box;
-    padding: 20px;
+    padding: 0 40px;
     width: 100%;
     max-width: 1200px;
     background-color: white;
+    margin: 100px auto 8px auto;
 }
 .copyright{
     color: gray;

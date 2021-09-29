@@ -12,7 +12,7 @@
   </mat-expansion-panel-header>
     
   <form class="form-container" [formGroup]="projectsForm" #formDirective="ngForm"
-    (ngSubmit)="addEditProject(projectsForm, formDirective);panel.close()" autocomplete="off">
+    (ngSubmit)="addEditProject(projectsForm, formDirective);panel.close();" autocomplete="off">
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -20,31 +20,31 @@
                 <mat-icon class="as-center">maps_home_work</mat-icon>
               </mat-panel-title>
               <mat-panel-description style="align-self: center; padding: 0;">
-                MULTILANGUAGE PROJECT DATA
+                DATOS MULTI-IDIOMA
               </mat-panel-description>
             </mat-expansion-panel-header>
 
-            <mat-button-toggle-group formControlName="langToggle">
+            <mat-button-toggle-group formControlName="lang">
               <mat-button-toggle value="ES">ES</mat-button-toggle>
               <mat-button-toggle value="EN">EN</mat-button-toggle>
               <mat-button-toggle value="FR">FR</mat-button-toggle>
             </mat-button-toggle-group>
 
-            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='ES'" appearance="legacy">
+            <mat-form-field [class.hide]="projectsForm.value.lang!=='ES'" appearance="legacy">
               <mat-label>Título</mat-label>
               <input matInput formControlName="tituloES" id="firstField">
               <mat-hint *ngIf="projectsForm.controls.tituloES.invalid && (projectsForm.controls.tituloES.dirty || projectsForm.controls.tituloES.touched)">
               * Campo obligatorio.
               </mat-hint>
             </mat-form-field>
-            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='EN'" appearance="legacy">
+            <mat-form-field [class.hide]="projectsForm.value.lang!=='EN'" appearance="legacy">
               <mat-label>Title</mat-label>
               <input matInput formControlName="tituloEN">
               <mat-hint *ngIf="projectsForm.controls.tituloES.invalid && (projectsForm.controls.tituloES.dirty || projectsForm.controls.tituloES.touched)">
               * Campo obligatorio.
               </mat-hint>
             </mat-form-field>
-            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='FR'" appearance="legacy">
+            <mat-form-field [class.hide]="projectsForm.value.lang!=='FR'" appearance="legacy">
               <mat-label>Titre</mat-label>
               <input matInput formControlName="tituloFR">
               <mat-hint *ngIf="projectsForm.controls.tituloES.invalid && (projectsForm.controls.tituloES.dirty || projectsForm.controls.tituloES.touched)">
@@ -52,31 +52,31 @@
               </mat-hint>
             </mat-form-field>
 
-            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='ES'" appearance="legacy">
+            <mat-form-field [class.hide]="projectsForm.value.lang!=='ES'" appearance="legacy">
               <mat-label>Descripción</mat-label>
               <textarea matInput [mat-autosize]="true" rows="4" formControlName="descES">
               </textarea>
             </mat-form-field>
-            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='EN'" appearance="legacy">
+            <mat-form-field [class.hide]="projectsForm.value.lang!=='EN'" appearance="legacy">
               <mat-label>Description</mat-label>
               <textarea matInput [mat-autosize]="true" rows="4" formControlName="descEN">
               </textarea>
             </mat-form-field>
-            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='FR'" appearance="legacy">
+            <mat-form-field [class.hide]="projectsForm.value.lang!=='FR'" appearance="legacy">
               <mat-label>La description</mat-label>
               <textarea matInput [mat-autosize]="true" rows="4" formControlName="descFR">
               </textarea>
             </mat-form-field>
 
-            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='ES'" appearance="legacy">
+            <mat-form-field [class.hide]="projectsForm.value.lang!=='ES'" appearance="legacy">
               <mat-label>Mod. Negocio</mat-label>
               <input matInput formControlName="bModelES">
             </mat-form-field>
-            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='EN'" appearance="legacy">
+            <mat-form-field [class.hide]="projectsForm.value.lang!=='EN'" appearance="legacy">
               <mat-label>Business model</mat-label>
               <input matInput formControlName="bModelEN">
             </mat-form-field>
-            <mat-form-field [class.hide]="projectsForm.value.langToggle!=='FR'" appearance="legacy">
+            <mat-form-field [class.hide]="projectsForm.value.lang!=='FR'" appearance="legacy">
               <mat-label>Modèle d'affaires</mat-label>
               <input matInput formControlName="bModelFR">
             </mat-form-field>
@@ -88,7 +88,7 @@
                 <mat-icon class="as-center">location_city</mat-icon>
               </mat-panel-title>
               <mat-panel-description style="align-self: center; padding: 0;">
-                MEASUREMENTS
+                MEDIDAS
               </mat-panel-description>
             </mat-expansion-panel-header>
 
@@ -143,7 +143,7 @@
                 <mat-icon class="as-center">auto_awesome</mat-icon>
               </mat-panel-title>
               <mat-panel-description style="align-self: center; padding: 0;">
-                IMAGES
+                IMÁGENES
               </mat-panel-description>
             </mat-expansion-panel-header>
 
@@ -186,9 +186,53 @@
             <div class="addNewField as-center d-flex" (click)="newFotoObra()">+ foto obra</div>
           </div>
         </mat-expansion-panel>
-      </mat-accordion>
-    <mat-action-row>
-      <button type="submit" mat-button color="primary" [disabled]="projectsForm.invalid">Publicar</button>
-    </mat-action-row>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon class="as-center">euro</mat-icon>
+            </mat-panel-title>
+            <mat-panel-description style="align-self: center; padding: 0;">
+              PRECIO & AJUSTES
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          
+          <mat-form-field appearance="legacy">
+            <mat-label>Precio</mat-label>
+            <input type="number" matInput formControlName="rate">
+            <div matSuffix>€</div>
+          </mat-form-field>
+
+          <mat-form-field appearance="legacy">
+            <mat-label i18n>Asignar a:</mat-label>
+            <mat-select formControlName="user" placeholder="Usuario">
+              <mat-option value="" i18n></mat-option>
+              <mat-option *ngFor="let user of users" [value]="user.uid">{{user.displayName}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-slide-toggle class="mt-25 mb-25" formControlName="public" color="primary">Estado: 
+            <span style="color: blue;">{{projectsForm.value.public?'Público': 'Privado'}}</span>
+          </mat-slide-toggle>
+      </mat-expansion-panel>
+
+      <mat-action-row>
+        <button type="reset" mat-button color="primary" (click)="projectsForm.reset();edit=null">
+          <mat-icon style="margin-right: 10px;">restart_alt</mat-icon> Reset</button>
+        <button type="submit" mat-button color="primary" [disabled]="projectsForm.invalid">Publicar</button>
+      </mat-action-row>
+
+      </mat-accordion>    
+      
   </form>
+  <div style="display: block;">
+    Campos obligatorios:<br>
+
+      * Títulos<br>
+      * Ciudad<br>
+      * Foto antes<br>
+      * Foto después<br>
+      * Foto final
+  </div>
 </mat-expansion-panel>
+

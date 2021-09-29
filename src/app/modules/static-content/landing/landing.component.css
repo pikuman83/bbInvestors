@@ -1,3 +1,6 @@
+* {
+    letter-spacing: 1px;
+}
 /* LANDING PAGE */
 .container-landing{
     display: flex;
@@ -20,15 +23,12 @@
     height: 100%;
     position: relative;
 }
-
-
 .inner-box{
     width: 60%;
-    max-width: 60%;
     height: 280px;
     position: absolute;
     top: calc(50% - 136px);
-    animation: invBack 2s 1s forwards; /* name  time delay fill-mode(final-position)*/
+    animation: invBack 2s 1s forwards; /* name  time delay fill-mode(forwards means box stays at final-position)*/
 }
 .inv-inner-box{
     left: calc(100% - 65px);
@@ -38,7 +38,7 @@
 }
 @keyframes invBack {
     100% {
-        left: calc(50% - 142px);
+        left: 20%;
     }
 }
 
@@ -141,12 +141,11 @@
 
 /* BOTH BUTTONS */
 .btns{
-    color: #d7944a;
-    border: #d7944a 2px solid;
+    color: #EA9A4C;
+    border: #EA9A4C 2px solid;
     border-radius: 6px;
     padding: 6px;
     font-size: 13px;
-    font-weight: 600;
     position: absolute;
     bottom: 0;
     left: 140px;
@@ -167,11 +166,17 @@
 }
 
 .btns:hover, .btns:hover mat-icon{
-    background-color: #d7944a;
+    background-color: #EA9A4C;
     color: white;
 }
 
 @media screen and (max-width: 768px) {
     .container-landing {display: block;}
     .investor-bx, .guest-bx {width: 100%; height: 50%;}
+    .inner-box{width: 80%;}
+    @keyframes invBack {
+        100% {
+            left: 10%;
+        }
+    }
 }

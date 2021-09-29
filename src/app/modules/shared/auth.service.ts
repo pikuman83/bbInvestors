@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { UserProfile } from './interfaces';
 import { CredentialsPromptComponent } from './login/credentials-prompt/credentials-prompt.component';
 
@@ -23,15 +24,20 @@ export class AuthService {
   constructor(readonly auth: AngularFireAuth, 
     private _snackBar: MatSnackBar, 
     private fire: AngularFirestore, 
-    private dialog: MatDialog) {
+    private dialog: MatDialog,
+    private router:Router) {
     this.auth.onAuthStateChanged(user => {
+      console.log('authstate at service, admin: ', this.isAdmin)
       if (user){
         const currentUser = this.fire.collection('users').doc(user.uid).valueChanges().subscribe((x)=>{
           if (x){
             this.user = x;
             this.user.role === 'admin'? this.isAdmin = true: this.isAdmin = false;
           }
-          // else should delete the user
+          else{
+            this.user = null;
+            this.isAdmin = false;
+          }
         currentUser.unsubscribe()
       })
       } else {
@@ -95,20 +101,15 @@ export class AuthService {
       uid: user.uid,
       displayName: name,
       email: user.email,
-      role: admin? 'admin': '',
-      projects: {
-        pid: '',
-        rate: 0
-      }
+      role: admin? 'admin': ''
     }
     return this.fire.collection('users').doc(user.uid).set(data);
   }
 
 
   logOut() {
-    this.auth.signOut().then(() => {
-      this._snackBar.open('See you soon','Briggite', {panelClass: 'happy'});
-    });
+    this._snackBar.open(`See you soon ${this.user.displayName}`,'Briggite', {panelClass: 'happy'});
+    this.auth.signOut().then(() => this.router.navigate(['/home']));
   }
 
 }

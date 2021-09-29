@@ -7,7 +7,7 @@
     font-size: 6em;
     line-height: 200px;
     color: #becaca;
-    font-family: Baskerville;
+    font-family: 'operetta8-medium';
 }
 .wrapper{
     text-align: center;
@@ -45,24 +45,24 @@
 .mid-space{
     width: 100%;
     align-self: center;
-    border-top: #d7944a 2px solid;
+    border-top: #EA9A4C 2px solid;
 }
 .circle-small{
     width: 25px;
     height: 25px;
     border-radius: 25px;
     margin-left: -13px;
-    background-color: #d7944a;
+    background-color: #EA9A4C;
     align-self: center;
 }
 .line1{
     width: 60px;
     height: 168px;
-    border-top: #d7944a 2px solid;
-    border-left: #d7944a 2px solid;
+    border-top: #EA9A4C 2px solid;
+    border-left: #EA9A4C 2px solid;
 }
 .line1:last-child{
-    border-bottom: #d7944a 2px solid;
+    border-bottom: #EA9A4C 2px solid;
 }
 .big-line{
     align-self: flex-end;
@@ -72,7 +72,7 @@
     width: 100%;
     text-align: left;
     align-items: flex-end;
-    font-family: Baskerville;
+    font-family: 'operetta8-medium';
 }
 .button1{
     box-sizing: border-box;
@@ -82,7 +82,7 @@
     line-height: 30px;
     letter-spacing: 1px;
     margin: 24px 0;
-    padding: 0 20px;
+    padding: 0 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -95,14 +95,14 @@
 .button1:hover:not(.button1:first-child:hover){
     width: 100%;
     max-width: 380px;
-    background-color: #d7944a;
+    background-color: #EA9A4C;
 }
 .button2{
     background-color: #e6ecec;
     color: #1D4C56;
 }
 .button1:first-child{
-    color: #d7944a;
+    color: #EA9A4C;
 }
 .button2:last-child{
     margin-bottom: 0;
@@ -118,7 +118,7 @@
     white-space: nowrap;
 }
 .contact-button{
-    color: #d7944a;
+    color: #EA9A4C;
     font-size: 1.5em;
     font-weight: 300;
 }
@@ -144,7 +144,7 @@
 .card-heading{
     font-size: 1.6em;
     line-height: 1.2em;
-    color: #d7944a;
+    color: #EA9A4C;
     margin-top: 50px;
     text-align: left;
 }
@@ -185,16 +185,16 @@
     font-size: 3em;
     padding: 0 30px 0 0;
     color: #1D4C56;
-    font-family: Baskerville;
+    font-family: 'operetta8-medium';
 }
 .box-heading{
     color: #1D4C56;
     font-size: 1.5em;
     line-height: 1.5em;
-    font-family: Baskerville;
+    font-family: 'operetta8-medium';
 }
 .box-heading1{
-    color: #d7944a;
+    color: #EA9A4C;
     font-size: 1.4em;
     line-height: 2em;
 }
@@ -228,16 +228,16 @@
     }
     .image{padding-top: 180px;}
     .contact-link{padding: 100px 40px 100px 40px;}
-    .bt-big{padding: 20px;}
+    .bt-big{padding: 40px;}
     .heading2{
         font-size: 2em;
         line-height: 1.2em;
-        padding: 0 20px;
+        padding: 0 40px;
     }
     .cards1{display: block;}
     .card1{
         max-width: unset;
-        padding: 20px;
+        padding: 40px;
         text-align: center;
     }   
     .card-heading{
@@ -245,10 +245,10 @@
         margin-top: 12px;
     }
     .card-desc{margin-top: 25px;}
-    .contact-animation{padding: 20px;}
+    .contact-animation{padding: 40px;}
     .box{
         margin: 0;
-        padding: 50px 20px;
+        padding: 50px 40px;
     }
     .box-number{
         font-size: 2em;

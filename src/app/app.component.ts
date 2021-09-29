@@ -2,6 +2,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { GlobalService } from './global.service';
 import { AuthService } from './modules/shared/auth.service';
 import { LoginComponent } from './modules/shared/login/login.component';
@@ -17,29 +18,21 @@ export class AppComponent implements OnInit, OnDestroy{
   showForm = false;
   showMenu = true;
 
-  constructor(public service: GlobalService, @Inject(DOCUMENT) private _document: Document, private _renderer2: Renderer2,
+  constructor(
+    public service: GlobalService,
+    @Inject(DOCUMENT) private _document: Document, private _renderer2: Renderer2,
     public dialog: MatDialog,
-    public auth: AuthService
+    public auth: AuthService,
+    public router: Router
     ){const route = service.showMenu.subscribe((x) => {
         this.showMenu = x;
-        if(x){
-          route.unsubscribe();
-          // console.log('Came from landing')
-          // this.writeScript();
-        }
+        if(x){route.unsubscribe();}
       })
     }
 
   ngOnInit() {
     this.setLang();
     this.writeScript();
-    // setTimeout(() => {
-    //   if (this.showMenu){
-    //     console.log('direct access to home')
-    //     this.writeScript();
-    //   }
-    //   else console.log('I am at landing')
-    // }, 1000);
   }
 
   ngOnDestroy():void{
@@ -63,7 +56,6 @@ export class AppComponent implements OnInit, OnDestroy{
         }
     }`;
     this._renderer2.appendChild(this._document.body, script);
-    console.log('writing script', script)
   }
   onActivate(_event: any) {
     document.body.scrollTop = 0;

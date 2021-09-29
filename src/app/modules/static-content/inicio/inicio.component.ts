@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { FireStoreService } from 'src/app/core/fire-store.service';
-import { News } from '../news/news.component';
+import { News } from '../../shared/interfaces';
 
 @Component({
   selector: 'app-inicio',

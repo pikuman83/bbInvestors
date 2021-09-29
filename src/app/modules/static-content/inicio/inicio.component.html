@@ -22,8 +22,9 @@
             Mi trabajo es facilitar sus inversiones en activos inmobiliarios en el extranjero 
             con ayuda de mi experiencia y conocimientos”
         </div>
-        <a class="btn btn2" [routerLink]="['/about']" i18n>MAS SOBRE MI</a>
-        <a class="btn btn3" [routerLink]="['/projects']" i18n>PORTAFOLIO</a>
+        <div class="btn2-3">
+            <a class="btn btn2" [routerLink]="['/about']" i18n>MAS SOBRE MI</a>
+        </div>
         <div class="formula">
             <li class="ml-5"><span class="ml-12" i18n>su activo</span></li>
             <div i18n>+ &nbsp; &nbsp; mi asesoramiento</div>
@@ -33,7 +34,7 @@
     </div>
 </section>
 
-<div class="first-white-bx d-flex mx-w-12 txt-center m-auto">
+<div class="first-white-bx d-flex mx-w-12 m-auto">
 
     <div class="d-flex w-40 flex-col ai-center as-center">
         <div class="green font-set" i18n>¡El mundo<br>ha cambiado!</div>
@@ -58,7 +59,7 @@
 </div>
 <section class="section3">
 
-    <div>
+    <div class="section3-header">
         <div class="section3-title" i18n>Proyectos de éxito</div>
         <div class="cities1">
             <a routerLink="/projects/Barcelona">Barcelona</a>
@@ -79,7 +80,7 @@
             <a class="btn mt-25" id="btn5" [routerLink]="['/projects']" >VER PORTAFOLIO</a>
         </div> -->
     </div>
-    <div class="fakediv"></div>
+    <div class="fakediv"><a class="btn btn3" [routerLink]="['/projects']" i18n>PORTAFOLIO</a></div>
 </section>
 
 <div class="bg" id="news-section">
@@ -89,7 +90,7 @@
     <div class="fullWidth"> 
         <div class="container-news mx-w-12">
             <div class="card" *ngFor="let n of newsList; let i = index">
-                <img class="news-image" [src]="n.downloadUrl" width="300" height="200" alt="News-Image">
+                <img class="news-image" [src]="n.downloadUrl" width="330" height="220" alt="News-Image">
                 <div class="desc">
                     <a class="card-heading" href=`${n.url}` target="_blank" rel="noopener noreferrer">{{n.title}}</a>
                     <div class="src">{{n.src}}</div>
@@ -102,7 +103,7 @@
 
 <div class="contact">
     <div class="bask" i18n>Contactemos</div>
-    <div class="helv" i18n>Tanto si tiene preguntas como si quiere ponerse manos a la obra, todo comienza con un “Hola” </div>
+    <div i18n>Tanto si tiene preguntas como si quiere ponerse manos a la obra, todo comienza con un “Hola” </div>
 </div>
 <div class="mx-w-12 p-20 contact-animation">
     <app-contact></app-contact>

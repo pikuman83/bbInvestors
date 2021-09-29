@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FireStoreService } from 'src/app/core/fire-store.service';
+import { AuthService } from 'src/app/modules/shared/auth.service';
 
 @Component({
   selector: 'app-projects-details',
@@ -15,11 +16,13 @@ export class ProjectsDetailsComponent implements OnInit, OnDestroy {
   constructor(
     private service: FireStoreService, 
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private auth: AuthService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     this.service.get('projects', this.id!).valueChanges().subscribe((project) => this.project = project);
+    this.auth.auth.onAuthStateChanged(() => { this.router.navigate(['/projects'])})
     console.log('proj details init')
   }
   ngOnDestroy():void {

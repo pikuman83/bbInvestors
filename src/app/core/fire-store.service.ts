@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Projects, rateList } from '../modules/shared/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,13 @@ export class FireStoreService {
   constructor(private db: AngularFirestore) {}
 
   getAll(path: string): AngularFirestoreCollection<any> {
-    return this.db.collection(`/${path}`, path === 'projects'? ref => ref.orderBy('ciudad'): ref => ref.orderBy('cat'));
+    return this.db.collection(`/${path}`, path === 'projects'? ref => ref.where('public', '==', true): ref => ref.orderBy('cat'));
+  }
+  getProjectsAdmin(): AngularFirestoreCollection<any> {
+    return this.db.collection('projects', ref => ref.orderBy('ciudad'));
+  }
+  getPrivateData(uid: string): AngularFirestoreCollection<Projects> {
+    return this.db.collection('projects', ref => ref.where('user', '==', uid));
   }
 
   get(path: string, documentId: string) {
@@ -26,6 +33,19 @@ export class FireStoreService {
 
   delete(path: string, id: string): Promise<void> {
     return this.db.collection(`/${path}`).doc(id).delete();
+  }
+
+  getUsers(path: string): AngularFirestoreCollection<any> {
+    return this.db.collection(`/${path}`);
+  }
+  getRateList(pid: string): AngularFirestoreCollection<rateList> {
+    return this.db.collection('/rateList', ref => ref.where('pid', '==', pid));
+  }
+  updateRateList(pid: string, data: rateList): Promise<void> {
+    return this.db.collection('/rateList').doc(pid).update(data);
+  }
+  deleteRatelist(pid: string): Promise<void>  {
+    return this.db.collection('/rateList').doc(pid).delete();
   }
   
 }

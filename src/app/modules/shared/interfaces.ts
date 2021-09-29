@@ -1,7 +1,8 @@
-export interface userProjects { 
-  pid?: string;
-  rate?: number;
-  status?: string;
+export interface rateList {
+  id?: string|undefined;
+  pid: string;
+  rate: number|undefined;
+  user: string
 }
 
 export interface UserProfile {
@@ -9,7 +10,6 @@ export interface UserProfile {
   displayName?: string;
   email: string;
   role: string;
-  projects?: userProjects
 }
 
 export interface Projects{
@@ -34,4 +34,18 @@ export interface Projects{
   fotoDsps?: string;
   fotoFinal?: string;
   fotosObra?: string[];
+  user?: string;
+  lang?: string; 
+  public?: boolean,
+  rate?: number
+}
+
+export interface News{
+  id?: string;
+  cat?: string;
+  title?: string;
+  url?: string;
+  src?: string;
+  img?: string;
+  downloadUrl?: string 
 }

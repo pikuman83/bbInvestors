@@ -36,7 +36,7 @@
     font-size: 2.6em;
     line-height: 100%;
     color: darkgray;
-    font-family: Baskerville;
+    font-family: 'operetta8-medium';
 }
 .s-m{
     grid-column: 3/8;
@@ -63,7 +63,7 @@
     grid-column: 3/7;
     grid-row: 8;
     font-size: 3em;
-    font-family: Baskerville;
+    font-family: 'operetta8-medium';
 }
 .text3{
     grid-column: 1/10;
@@ -95,7 +95,7 @@
 .line1{
     height: 100%;
     width: 0;
-    border-left: #d7944a 2px solid ;
+    border-left: #EA9A4C 2px solid ;
     margin: 0 auto;
     padding-bottom: 40px;
 }
@@ -107,8 +107,8 @@
 .line2{
     height: 100%;
     width: 100%;
-    border-top: #d7944a 2px solid;
-    border-left: #d7944a 2px solid ;
+    border-top: #EA9A4C 2px solid;
+    border-left: #EA9A4C 2px solid ;
     margin: 0 auto;
 }
 .fotoline3{
@@ -118,7 +118,7 @@
 .line3{
     height: 0;
     width: 50%;
-    border-top: #d7944a 2px solid;
+    border-top: #EA9A4C 2px solid;
 }
 .abilities, .abilities * {
     display: block;
@@ -127,7 +127,7 @@
     font-size: 2em;
     line-height: 1.5em;
     font-weight: 300;
-    font-family: Baskerville;
+    font-family: 'operetta8-medium';
 }
 .abilities{
     text-align: center;
@@ -147,7 +147,7 @@
 .divider{
     width: 200px;
     height: none;
-    border-top: #d7944a 2px solid;
+    border-top: #EA9A4C 2px solid;
     padding: 0.5em;
     margin: 0 auto;
 }
@@ -174,9 +174,9 @@
     letter-spacing: 2px;
 }
 .advice a{
-    border: #d7944a 2px solid;
+    border: #EA9A4C 2px solid;
     min-height: 3em;
-    color: #d7944a;
+    color: #EA9A4C;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -200,7 +200,7 @@ footer{
     margin: 50px auto;
     white-space: nowrap;
     width: fit-content;
-    border-bottom: #d7944a 2px solid;
+    border-bottom: #EA9A4C 2px solid;
     cursor: pointer;
 }
 .studies-container{
@@ -229,7 +229,7 @@ footer{
     .header{
         background: #1D4C56;
         display: block;
-        padding: 40px 20px;
+        padding: 40px;
     }
     .heading1{
         line-height: initial;
@@ -274,6 +274,6 @@ footer{
     .studies-container .flex-col{max-width: unset;}
 }
 @media screen and (max-width: 400px) {
-    footer{padding: 20px;}
+    footer{padding: 40px;}
     .heading2 h1{font-size: 18px;}
 }

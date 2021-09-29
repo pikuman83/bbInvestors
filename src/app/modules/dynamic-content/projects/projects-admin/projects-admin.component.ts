@@ -4,7 +4,8 @@
 
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
-import { Projects } from 'src/app/modules/shared/interfaces';
+import { FireStoreService } from 'src/app/core/fire-store.service';
+import { Projects, UserProfile } from 'src/app/modules/shared/interfaces';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { Projects } from 'src/app/modules/shared/interfaces';
 })
 export class ProjectsAdminComponent implements OnInit, OnChanges {
       
-  @Input() edit: any = {};
+  @Input() edit!: Projects|null;
   @Input() openPanel = false;
   
   @Output() addEvent:EventEmitter<Projects> = new EventEmitter();
@@ -24,7 +25,7 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
   
   
   projectsForm = this.fb.group({
-    langToggle: ['ES'], 
+    lang: ['ES'], 
     tituloES:  ['', Validators.required],
     tituloEN:  ['', Validators.required],
     tituloFR:  ['', Validators.required],
@@ -44,9 +45,10 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
     fotoAntes: ['', Validators.required],
     fotoDsps: ['', Validators.required],
     fotoFinal: ['', Validators.required],
-    fotosObra: this.fb.array([
-    ]),
-    status: ['Public']
+    fotosObra: this.fb.array([]),
+    public: [false],
+    user: [''],
+    rate:[]
   });
 // this.fb.control([])
   get fotosObra(): FormArray {
@@ -60,12 +62,14 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
     this.fotosObra.push(new FormControl())
   }
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private service: FireStoreService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getUsers();
+  }
   ngOnChanges(): void {
+    console.log('searching changes')
     if (this.edit && this.edit.fotosObra) {
-      
       const fo = this.edit.fotosObra;
       if(fo.length){
         this.fotosObra.clear();
@@ -89,8 +93,7 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
       this.addEvent.emit(form.value);
     }
     this.fotosObra.clear();
-    this.edit = {};
-    this.projectsForm.reset();
+    this.edit = null;
     fd.resetForm();
     this.focusEvent.emit();
   }
@@ -115,4 +118,12 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
   removeField(i: number){
     this.fotosObra.removeAt(i);
   }
+
+  users!: UserProfile[];
+  getUsers(){
+    this.service.getUsers('users').valueChanges().subscribe((x:UserProfile[]) => {
+      this.users = x.filter(y => y.role !== 'admin');
+    })
+  }
+
 }

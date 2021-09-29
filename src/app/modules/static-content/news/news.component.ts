@@ -4,16 +4,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { map } from 'rxjs/operators';
 import { FireStoreService } from 'src/app/core/fire-store.service';
 import { AuthService } from '../../shared/auth.service';
-
-export interface News{
-  id?: string;
-  cat?: string;
-  title?: string;
-  url?: string;
-  src?: string;
-  img?: string;
-  downloadUrl?: string 
-}
+import { News } from '../../shared/interfaces';
 
 @Component({
   selector: 'app-news',
