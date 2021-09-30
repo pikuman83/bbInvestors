@@ -72,11 +72,11 @@
 }
 .src{
     padding-top: 40px;
-    font-size: 16px;
+    font-size: 20px;
     color: #1D4C56;
 }
 .cat{
-    font-size: 14px;
+    font-size: 18px;
     color: dodgerblue;
     font-weight: 300
 }
@@ -90,6 +90,9 @@ app-news-admin{
     padding: 40px;
 }
 
+@media screen and (max-width: 1080px) {
+    .container .flex-wrap {justify-content: center;}
+}
 @media screen and (max-width: 768px) {
     .heading-container{
         background-position-x: 0;

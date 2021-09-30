@@ -12,7 +12,7 @@
     font-family: 'operetta18-regular';
     src: url(./assets/Fonts/operetta18-regular-webfont.woff2) format('woff2'),
          url(./assets/Fonts/operetta18-regular-webfont.woff) format('woff'),
-         url(./assets/Fonts/operetta18-regular-webfont.ttf) format('woff');
+         url(./assets/Fonts/operetta18-regular-webfont.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
 }
