@@ -22,9 +22,8 @@
 html, body { height: 100%; overflow-x: hidden; box-sizing: border-box;}
 body { 
     margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    font: 400 14px/20px Roboto,Helvetica Neue,sans-serif; 
     box-sizing: border-box; 
-    letter-spacing: 1px;
     background-color: white;
 }
 
