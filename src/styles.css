@@ -19,9 +19,13 @@
 
 .bask{font-family: 'operetta18-regular';}
 
-html, body { height: 100%; overflow-x: hidden; box-sizing: border-box;}
+html, body { 
+    height: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    min-height: -webkit-fill-available;
+}
 body {
-    box-sizing: unset;
     padding-bottom: 20px; 
     margin: 0; 
     font: 400 14px/20px Roboto,Helvetica Neue,sans-serif; 
