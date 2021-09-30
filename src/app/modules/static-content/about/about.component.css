@@ -34,7 +34,7 @@
     font-size: 35px;
     line-height: 100%;
     color: #bececa;
-    font-family: 'operetta8-medium';
+    font-family: 'operetta18-regular';
 }
 .s-m{
     grid-column: 3/8;
@@ -64,7 +64,7 @@
     grid-row: 8;
     font-size: 35px;
     line-height: 160%;
-    font-family: 'operetta8-medium';
+    font-family: 'operetta18-regular';
 }
 .text3{
     grid-column: 1/10;
@@ -128,7 +128,7 @@
     font-size: 35px;
     line-height: 160%;
     font-weight: 300;
-    font-family: 'operetta8-medium';
+    font-family: 'operetta18-regular';
 }
 .abilities{
     text-align: center;

@@ -7,7 +7,7 @@
     font-size: 50px;
     line-height: 150%;
     color: #becaca;
-    font-family: 'operetta8-medium';
+    font-family: 'operetta18-regular';
 }
 .wrapper{
     text-align: center;
@@ -73,7 +73,7 @@
     width: 100%;
     text-align: left;
     align-items: flex-end;
-    font-family: 'operetta8-medium';
+    font-family: 'operetta18-regular';
 }
 .button1{
     box-sizing: border-box;
@@ -186,13 +186,13 @@
     font-size: 3em;
     padding: 0 30px 0 0;
     color: #1D4C56;
-    font-family: 'operetta8-medium';
+    font-family: 'operetta18-regular';
 }
 .box-heading{
     font-size: 29px;
     line-height: 160%;
     color: #1D4C56;
-    font-family: 'operetta8-medium';
+    font-family: 'operetta18-regular';
 }
 .box-heading1{
     color: #EA9A4C;
