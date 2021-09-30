@@ -26,7 +26,6 @@ html, body {
     min-height: -webkit-fill-available;
 }
 body {
-    padding-bottom: 20px; 
     margin: 0; 
     font: 400 14px/20px Roboto,Helvetica Neue,sans-serif; 
     box-sizing: border-box; 
