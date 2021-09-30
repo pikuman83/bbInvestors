@@ -19,7 +19,7 @@
 
 .bask{font-family: 'operetta18-regular';}
 
-html, body { height: 100%; overflow: hidden; box-sizing: border-box;}
+html, body { height: 100%; overflow-x: hidden; box-sizing: border-box;}
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif; 
