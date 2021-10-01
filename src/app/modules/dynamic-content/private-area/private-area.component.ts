@@ -21,10 +21,10 @@ export class PrivateAreaComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getCollection();
-    this.auth.auth.onAuthStateChanged(user => {
-      if (user) this.getCollection();
-      else this.router.navigate(['/projects']);
-    })
+    // this.auth.auth.onAuthStateChanged(user => {
+    //   if (user) this.getCollection();
+    //   else this.router.navigate(['/projects']);
+    // })
     console.log('projects init')
   }
   ngOnDestroy():void {
@@ -38,24 +38,22 @@ export class PrivateAreaComponent implements OnInit, OnDestroy {
   }
 
   getCollection(): void{
-    this.auth.auth.user.subscribe(x => {
-      if(x?.uid){
-        this.service.getPrivateData(x!.uid).snapshotChanges().pipe(
-          map(changes => changes.map(c => ({id: c.payload.doc.id, ...c.payload.doc.data()
-            })))).subscribe(data => {
-              if (data && data.length){
-                for (let d of data){
-                  this.service.getRateList(d.id).snapshotChanges().pipe(
-                   map(changes => changes.map(c => ({id: c.payload.doc.id, ...c.payload.doc.data()
-                  })
-                ))
-              ).subscribe((x: rateList[])=> {d.rate = x[0].rate;})
-            };
-          this.pList = data!;
-          }
-        })
-      }
-    });
+    this.auth.auth.currentUser.then((user) => {
+      this.service.getPrivateData(user!.uid).snapshotChanges().pipe(
+        map(changes => changes.map(c => ({id: c.payload.doc.id, ...c.payload.doc.data()
+          })))).subscribe(data => {
+            if (data && data.length){
+              for (let d of data){
+                this.service.getRateList(d.id).snapshotChanges().pipe(
+                  map(changes => changes.map(c => ({id: c.payload.doc.id, ...c.payload.doc.data()
+                })
+              ))
+            ).subscribe((x: rateList[])=> {d.rate = x[0].rate;})
+          };
+        this.pList = data!;
+        }
+      })
+    })
   }
 
 }

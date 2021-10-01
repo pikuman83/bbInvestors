@@ -9,16 +9,11 @@
     text-align: center;
 }
 .header-img{
-    /* height: calc(100vh - 240px); 240 = 90 top-bar + 150 title */
-    /* max-height: 600px; */
-    /* width: 100%; */
-    /* background-image: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fimg108.jpg?alt=media&token=0ce8641a-37a6-4e83-8433-c6d0d446180b); */
-    /* background-size: cover; */
-    /* background-position: center; */
-    padding-top: 54.4%;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fimg108.jpg?alt=media&token=0ce8641a-37a6-4e83-8433-c6d0d446180b);
-    background-size: contain;
-    background-repeat: repeat;
+    height: calc(100vh - 220px); /*220 = 90 top-bar + 130 title */
+    max-height: 700px;
+    width: 100%;
+    background: url(../../../../assets/House3.jpg) no-repeat center;
+    background-size: cover;
 }
 mat-tab-group{
     max-width: 1200px;
@@ -61,6 +56,18 @@ mat-tab-group{
     text-align: center;
     width: 45%;
 }
+.proj-img{
+    cursor: pointer;
+    padding-top: 56.85%;
+    transition: all 3s;
+    overflow: hidden;
+}
+.proj-img:hover{
+    transform: scale(1.1);
+}
+.overflow-control{
+    overflow: hidden;
+}
 .proj-name{
     margin-top: 12px;
     font-size: 30px;
@@ -70,6 +77,11 @@ mat-tab-group{
     font-size: 20px;
     color: #becaca;
     margin-bottom: 12px;
+}
+.price{
+    color: green;
+    font-size: 20px;
+    line-height: 200%;
 }
 .mt-childComp-200{
     margin: 0 auto;
@@ -83,21 +95,27 @@ app-projects-admin{
     padding: 40px;
 }
 
+@media screen and (min-width: 1700px) {
+    .header-img{height: unset;
+        padding-top: 56.79%;
+        background-size: contain;
+    }
+}
+@media screen and (max-width: 1050px) {
+    .header-img{
+        height: unset;
+        padding-top: 56.79%;
+        background-size: contain;
+    }
+}
 @media screen and (max-width: 768px) {
     mat-tab-group{padding: 0 40px; display: flex; justify-content: center;}
-    /* .header-img{max-height: 450px;} */
-    .project{
-        width: 100%;
-        box-shadow: 0 0 6px rgba(0,0,0,0.16);
-    }
-    app-projects-admin{padding: 40px;}
+    app-projects-admin{padding: 10px;}
+    .project{width: 100%;box-shadow: 0 0 6px rgba(0,0,0,0.16);}
 }
 
 @media screen and (max-width: 576px) {
-    .title{font-size: 2.5em; padding: 40px;}
+    .title{font-size: 30px;}
     /* .header-img{max-height: 350px;} */
     .mat-ink-bar{min-width: 72px !important;}
-}
-@media screen and (max-width: 450px) {
-    /* .header-img{max-height: 300px;} */
 }

@@ -12,7 +12,7 @@
   </mat-expansion-panel-header>
     
   <form class="form-container" [formGroup]="projectsForm" #formDirective="ngForm"
-    (ngSubmit)="addEditProject(projectsForm, formDirective);panel.close();" autocomplete="off">
+    (ngSubmit)="addEditProject(projectsForm);panel.close();" autocomplete="off">
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>

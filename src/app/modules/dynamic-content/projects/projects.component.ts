@@ -36,10 +36,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.auth.auth.onAuthStateChanged((user) => {
       if (user){
-        this.fire.collection('users').doc(user.uid).valueChanges().subscribe((x:any)=>{
-          console.log(x.role)
-          this.getCollection(!!x.role);
-        })
+        this.fire.collection('users').doc(user.uid).valueChanges().subscribe((x:any)=>
+          this.getCollection(!!x.role));
       }
       else{
         this.getCollection(false)
@@ -149,6 +147,12 @@ export class ProjectsComponent implements OnInit, OnDestroy {
           }
           this.service.updateRateList(this.rateRef, data).then(() => {
             this.rateRef = '';
+            this.tabs = ['ALL'];
+            this.pList.map(x => x.ciudad).map(y => {
+              if (!this.tabs.includes(y!)){
+                this.tabs.push(y!);
+              }
+            });
             this._snackBar.open('Updated succefully','BBInvestors', {panelClass: 'happy'});
           })
         })

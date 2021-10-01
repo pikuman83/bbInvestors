@@ -16,9 +16,8 @@
     /* background-size: cover; */
     /* background-position: center; */
     padding-top: 54.4%;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fimg108.jpg?alt=media&token=0ce8641a-37a6-4e83-8433-c6d0d446180b);
-    background-size: contain;
-    background-repeat: repeat;
+    background: url(../../../../assets/House3.jpg) no-repeat center bottom;
+    background-size: cover;
 }
 .container1{
     max-width: 1200px;
@@ -37,7 +36,7 @@
     justify-content: space-between;
 }
 .project{
-    margin-top: 100px;
+    /* margin-top: 100px; */
     display: block;
     text-align: center;
     width: 45%;

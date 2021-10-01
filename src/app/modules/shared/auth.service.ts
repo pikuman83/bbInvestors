@@ -27,7 +27,6 @@ export class AuthService {
     private dialog: MatDialog,
     private router:Router) {
     this.auth.onAuthStateChanged(user => {
-      console.log('authstate at service, admin: ', this.isAdmin)
       if (user){
         const currentUser = this.fire.collection('users').doc(user.uid).valueChanges().subscribe((x)=>{
           if (x){

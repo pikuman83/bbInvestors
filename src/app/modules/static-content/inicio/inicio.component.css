@@ -397,7 +397,7 @@ a[class^="btn"] {
 }
 @media screen and (max-width: 576px) {
     .img2{padding-top: 0;}
-    .bx-1{font-size: 22px;}
+    .bx-1{font-size: 24px;letter-spacing: 0;}
     .cities1{font-size: 18px;}
     .cities1 a{padding: 0 8px;}
     .section3-image{height: 300px;}

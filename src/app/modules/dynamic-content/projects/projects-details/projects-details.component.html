@@ -5,7 +5,7 @@
 <div class="container" *ngIf="project">
 
   <header>
-    <div class="proj-name bask">{{getLang()==='ES'? project.tituloES : getLang()==='EN'? project.tituloEN: project.tituloFR}} </div>
+    <div class="proj-name1 bask">{{getLang()==='ES'? project.tituloES : getLang()==='EN'? project.tituloEN: project.tituloFR}} </div>
     <div class="proj-location">{{project.ciudad | uppercase}} | {{project.pais | uppercase}}</div>
   </header>
 
@@ -74,7 +74,7 @@
 
   <div class="green-bx" *ngIf="project.fotosObra.length">
     <div class="obra-container">
-      <div class="heading" i18n>PROCESO DE OBRA</div>
+      <div class="heading heading3" i18n>PROCESO DE OBRA</div>
       <div class="obra-imgs">
         <div *ngFor="let f of project.fotosObra">
           <img class="fotosObra" [src]="f" alt="Foto de Obra">
@@ -102,7 +102,7 @@
 
   </div>
 
-  <div class="contact-btn" routerLink="/contact" i18n>
+  <div class="btn contact-btn" routerLink="/contact" i18n>
     ¡TRABAJEMOS JUNTOS!
   </div>
 

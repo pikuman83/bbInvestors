@@ -3,7 +3,7 @@
 // this number can be used to order in the latest entry or oldest entry, can i provide a drag n drop sort order?
 
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FireStoreService } from 'src/app/core/fire-store.service';
 import { Projects, UserProfile } from 'src/app/modules/shared/interfaces';
 
@@ -85,17 +85,14 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
       document.getElementById('firstField')?.focus();
   }
 
-  addEditProject(form:FormGroup, fd: FormGroupDirective) {
+  addEditProject(form:FormGroup) {
     if (this.edit&&this.edit.id) {
       this.editEvent.emit(form.value);
     }
     else {
       this.addEvent.emit(form.value);
     }
-    this.fotosObra.clear();
-    this.edit = null;
-    fd.resetForm();
-    this.focusEvent.emit();
+    this.reset();
   }
 
   /**

@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FireStoreService } from 'src/app/core/fire-store.service';
-import { AuthService } from 'src/app/modules/shared/auth.service';
 
 @Component({
   selector: 'app-projects-details',
@@ -16,13 +15,14 @@ export class ProjectsDetailsComponent implements OnInit, OnDestroy {
   constructor(
     private service: FireStoreService, 
     private route: ActivatedRoute,
-    private router: Router,
-    private auth: AuthService) { }
+    private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.service.get('projects', this.id!).valueChanges().subscribe((project) => this.project = project);
-    this.auth.auth.onAuthStateChanged(() => { this.router.navigate(['/projects'])})
+    this.service.get('projects', this.id!).valueChanges().subscribe((project) => {
+      if (project) this.project = project;
+      else alert('Private data, please contact with Briggite to get access')
+    });
     console.log('proj details init')
   }
   ngOnDestroy():void {
@@ -35,8 +35,8 @@ export class ProjectsDetailsComponent implements OnInit, OnDestroy {
   }
 
   projectsLoaded(){
-    const proj = localStorage.getItem('projects');
-    if (proj && proj.length) return true;
+    const proj: string[] = JSON.parse(localStorage.getItem('projects')!);
+    if (proj && proj.length>1) return true;
     return false;
   }
 
