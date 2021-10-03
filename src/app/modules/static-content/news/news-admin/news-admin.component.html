@@ -46,6 +46,8 @@
         </app-file-upload>
 
         <mat-action-row>
+          <button type="reset" mat-button color="primary" (click)="reset();panel.close()">
+            <mat-icon style="margin-right: 10px;">restart_alt</mat-icon> Reset</button>
           <button type="submit" mat-button color="primary" [disabled]="newsForm.invalid">Crear</button>
         </mat-action-row>
     </form>

@@ -1,7 +1,3 @@
-// PROJECTS SORT?? add a new field called serial number? which in case of add, can be list.highestNumber+1 
-// and on edit, remains the same? or date.now can also be added and used to sort 
-// this number can be used to order in the latest entry or oldest entry, can i provide a drag n drop sort order?
-
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FireStoreService } from 'src/app/core/fire-store.service';
@@ -23,9 +19,9 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
   @Output() focusEvent:EventEmitter<any> = new EventEmitter();
   @Output() panelEvent:EventEmitter<any> = new EventEmitter();
   
-  
   projectsForm = this.fb.group({
-    lang: ['ES'], 
+    lang: ['ES'],
+    time: [new Date()],
     tituloES:  ['', Validators.required],
     tituloEN:  ['', Validators.required],
     tituloFR:  ['', Validators.required],
@@ -47,6 +43,7 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
     fotoFinal: ['', Validators.required],
     fotosObra: this.fb.array([]),
     public: [false],
+    servicios: [['Bid','Bargain','Build','Business']],
     user: [''],
     rate:[]
   });
@@ -54,7 +51,6 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
   get fotosObra(): FormArray {
     return this.projectsForm.get('fotosObra') as FormArray;
   }
-
   /**
    * Adds a new form field for "construction" fotos
    */
@@ -128,6 +124,11 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
     this.edit = null;
     this.projectsForm.reset();
     this.focusEvent.emit();
+  }
+
+  remove(i: number){
+    this.projectsForm.value.servicios.splice(i, 1);
+    console.warn(this.projectsForm.value.servicios)
   }
 
 }

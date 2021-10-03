@@ -18,6 +18,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatChipsModule} from '@angular/material/chips';
 
 import { LoginComponent } from './login/login.component';
 import { CredentialsPromptComponent } from './login/credentials-prompt/credentials-prompt.component';
@@ -44,7 +45,8 @@ import { CredentialsPromptComponent } from './login/credentials-prompt/credentia
     MatTabsModule,
     MatDialogModule,
     MatButtonToggleModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatChipsModule
   ],
   exports: [
     CommonModule,
@@ -63,7 +65,8 @@ import { CredentialsPromptComponent } from './login/credentials-prompt/credentia
     MatTabsModule,
     MatDialogModule,
     MatButtonToggleModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatChipsModule
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}

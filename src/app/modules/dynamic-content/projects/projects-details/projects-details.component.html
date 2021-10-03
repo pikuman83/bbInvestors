@@ -23,11 +23,9 @@
   <div class="green-bx">
     <div class="max-width">
       <div class="intervencion">
-        <div class="heading" i18n>INTERVENCIÓN</div>
-        <div i18n><span class="numbers">1 </span> Bid <span class="plus">+</span></div>
-        <div i18n><span class="numbers">2 </span> Bargain <span class="plus">+</span></div>
-        <div i18n><span class="numbers">3 </span> Build <span class="plus">+</span></div>
-        <div i18n><span class="numbers">4 </span> Business <span class="plus">+</span></div>
+        <div class="heading mb-25" i18n>INTERVENCIÓN</div>
+        <div *ngFor="let s of project.servicios" i18n><span class="numbers">{{s}}</span>
+          <span class="plus">+</span></div>
       </div>
   
       <div class="project-data">

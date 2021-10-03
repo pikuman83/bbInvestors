@@ -210,10 +210,19 @@
               <mat-option *ngFor="let user of users" [value]="user.uid">{{user.displayName}}</mat-option>
             </mat-select>
           </mat-form-field>
-  
-          <mat-slide-toggle class="mt-25 mb-25" formControlName="public" color="primary">Estado: 
-            <span style="color: blue;">{{projectsForm.value.public?'Público': 'Privado'}}</span>
-          </mat-slide-toggle>
+          
+            <mat-label i18n>Intervención <mat-icon (click)="projectsForm.value.servicios=['Bid','Bargain','Build','Business']" 
+              style="margin-left: 10px; vertical-align: middle;">restart_alt</mat-icon></mat-label>
+            <mat-chip-list>
+              <mat-chip *ngFor="let s of projectsForm.value.servicios; let i = index" color="accent" selected
+                	[removable]="true" (removed)="remove(i)">{{s}}
+                <button matChipRemove style="display: contents;"><mat-icon>cancel</mat-icon></button>
+              </mat-chip>
+            </mat-chip-list>
+
+            <mat-slide-toggle class="mt-25 mb-25" formControlName="public" color="primary">Estado: 
+              <span style="color: blue;">{{projectsForm.value.public?'Público': 'Privado'}}</span>
+            </mat-slide-toggle>
       </mat-expansion-panel>
 
       <mat-action-row>

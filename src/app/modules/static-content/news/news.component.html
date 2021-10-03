@@ -1,37 +1,37 @@
 <div class="fake-div"></div>
-
-<div class="heading-container contact-animation">
-    <div class="heading bask" #focusDiv i18n>
-        Porque el saber es el poder en estos tiempos tan cambiantes, 
+<div class="contact-animation">
+    <div class="heading bask" #focusDiv>BB News</div>
+    <div class="heading-container" i18n >
+        Porque el saber es el poder en estos tiempos tan cambiantes, <br>
         aquí encontrarás las noticias que BB considera relevantes para los actuales y futuros inversores.
     </div>
-    <!-- <div class="scroll-icon" id="scroll-icon" (click)="scroll()">
-        <mat-icon>expand_more</mat-icon>
-        <mat-icon class="ico1">expand_more</mat-icon>
-    </div> -->
-</div>
+        <!-- <div class="scroll-icon" id="scroll-icon" (click)="scroll()">
+            <mat-icon>expand_more</mat-icon>
+            <mat-icon class="ico1">expand_more</mat-icon>
+        </div> -->
 
-<div class="bg">        
-    <div class="container">
-        <div class="d-flex ai-start flex-between flex-wrap">
-            <div class="card" *ngFor="let n of newsList; let i = index">
-                <img class="news-image" [src]="n.downloadUrl" width="330" height="220" alt="News-Image">
-                <div class="desc">
-                    <a class="card-heading" i18n-title title="Título" href=`${n.url}` target="_blank" rel="noopener noreferrer">{{n.title}}</a>
-                    <div class="src" i18n-title title="fuente">{{n.src}}</div>
-                    <div class="cat" i18n-title title="Categoría">{{n.cat}}</div>
-                </div>
+    <div class="bg">        
+        <div class="container">
+            <div class="d-flex ai-start flex-between flex-wrap">
+                <div class="card" *ngFor="let n of newsList; let i = index">
+                    <img class="news-image" [src]="n.downloadUrl" width="330" height="220" alt="News-Image">
+                    <div class="desc">
+                        <a class="card-heading" i18n-title title="Título" href=`${n.url}` target="_blank" rel="noopener noreferrer">{{n.title}}</a>
+                        <div class="src" i18n-title title="fuente">{{n.src}}</div>
+                        <div class="cat" i18n-title title="Categoría">{{n.cat}}</div>
+                    </div>
 
-                <div *ngIf="auth.authenticated&&auth.isAdmin" class="desc-btns txt-center">
-                    <button (click)="news=n;openPanel=true"><mat-icon >edit</mat-icon></button>
-                    <button><mat-icon (click)="deleteNews(n.id, n.downloadUrl ,i)">delete_forever</mat-icon></button>
+                    <div *ngIf="auth.authenticated&&auth.isAdmin" class="desc-btns txt-center">
+                        <button (click)="news=n;openPanel=true;scroll();"><mat-icon >edit</mat-icon></button>
+                        <button><mat-icon (click)="deleteNews(n.id, n.downloadUrl ,i)">delete_forever</mat-icon></button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<app-news-admin *ngIf="auth.authenticated&&auth.isAdmin" class="mt-childComp-200"
+<app-news-admin id="news-admin" *ngIf="auth.authenticated&&auth.isAdmin" class="mt-childComp-200"
     (addEvent)="addNews($event)"
     (editEvent)="editNews($event)"
     (focusEvent)="focusDiv.focus()"

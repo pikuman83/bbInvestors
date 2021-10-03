@@ -23,7 +23,8 @@ export class NewsAdminComponent implements OnInit, OnChanges {
     url: ['', Validators.required],
     src: [''],
     img: ['', Validators.required],
-    downloadUrl: ['', Validators.required]
+    downloadUrl: ['', Validators.required],
+    time: [new Date()]
   });
 
   constructor(private fb: FormBuilder) {}
@@ -50,4 +51,11 @@ export class NewsAdminComponent implements OnInit, OnChanges {
     this.newsForm.reset();
     this.focusEvent.emit();
   }
+
+  reset(){
+    this.edit = {};
+    this.newsForm.reset();
+    this.focusEvent.emit();
+  }
+
 }

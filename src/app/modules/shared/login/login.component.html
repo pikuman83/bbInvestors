@@ -31,7 +31,7 @@
             <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             <mat-hint align="start" *ngIf="loginForm.controls.secret.invalid && (loginForm.controls.secret.dirty || loginForm.controls.secret.touched)" i18n>
                 * Contraseña invalida</mat-hint>
-            <mat-hint align="end" class="txt-end"><a style="color: blue;" href="" i18n>¿Ha olvidado su contraseña?</a></mat-hint>
+            <!-- <mat-hint align="end" class="txt-end"><a style="color: blue;" href="" i18n>¿Ha olvidado su contraseña?</a></mat-hint> -->
         </mat-form-field>
 
         <label for="admin" *ngIf="type==='new'">

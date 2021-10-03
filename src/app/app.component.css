@@ -23,7 +23,7 @@
     position: fixed;
     /* right: 40px; */
     color: #fff;
-    background: whitesmoke;
+    background: #f5963c;
     z-index: 2;
     cursor: pointer;
     /* bottom: 40px; */
@@ -59,7 +59,7 @@
     font-size: 32px;
     margin: 0px 7.5px 7px 0; */
 
-    color: #f5963c;
+    color: white;
     font-size: 26px;
     margin: 0 7.5px 7px 0;
     line-height: 33px;

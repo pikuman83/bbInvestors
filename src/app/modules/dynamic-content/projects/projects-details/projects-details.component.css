@@ -65,13 +65,14 @@ img-comparison-slider{
 .before figcaption, .after figcaption{
     border-radius: 12px;
     color: white;
-    opacity: 0.5;
+    /* opacity: 0.5; */
     padding: 12px;
     position: absolute;
     top: 30px;
     transform: translateY(-50%);
     line-height: 100%;
     font-size: 16px;
+    cursor: pointer;
 }
 .before figcaption{
   left: 12px;
@@ -80,7 +81,7 @@ img-comparison-slider{
   right: 12px;
 }
 .before figcaption:hover, .after figcaption:hover{
-  background-color: gray;
+  background-color: rgb(94, 89, 89);
 }
 .img-antes-dsps{
   width: 100%;
@@ -115,10 +116,10 @@ img-comparison-slider{
   width: fit-content;
   padding: 6px;
   padding-left: 20px;
-  font-family: 'operetta18-regular';
+  font-family: 'operetta8-medium';
   min-width: 210px;
   margin-top: 4px;
-  font-size: 1.2em;
+  font-size: 18px;
   letter-spacing: 2px;
   display: flex;
   align-items: center;
@@ -139,7 +140,7 @@ img-comparison-slider{
   width: 50%;
   text-align: center;
   /* justify-content: space-between; */
-  font-size: initial;
+  font-size: 22px;
   line-height: 36px;
 }
 .project-data > div{

@@ -61,6 +61,11 @@ mat-panel-description{
     visibility: hidden;
     position: absolute;
 }
+mat-chip-list{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
 
 @media screen and (max-width: 768px) {
     form div:first-child{display: block;}

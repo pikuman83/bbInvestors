@@ -15,21 +15,15 @@ export class InicioComponent implements OnInit, OnDestroy {
   constructor(private service: FireStoreService) { }
 
   ngOnInit(): void {
-    this.getAllNewsList();
+    this.getNews();
     console.log('inicio init')
   }
   ngOnDestroy():void {
     console.log('inicio destroyed');
   }
-  getAllNewsList(): void{
-    this.service.getAll('news').snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c =>
-          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
-        )
-      )
-    ).subscribe(data => {
-        this.newsList = data.slice(0, 3);
-    });
+
+  getNews(): void{
+    this.service.getNewsPartial().valueChanges().subscribe(news => this.newsList = news)
   }
+  
 }

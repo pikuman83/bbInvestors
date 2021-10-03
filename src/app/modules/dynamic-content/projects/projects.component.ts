@@ -115,7 +115,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
         user: this.auth.user.uid
       }
       this.service.create('rateList', rateList).then(()=> {
-        this._snackBar.open('Loaded succefully','BBInvestors', {panelClass: 'happy'});
+        this._snackBar.open('Published succefully','BBInvestors', {panelClass: 'happy'});
       })
     })
   }

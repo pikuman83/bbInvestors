@@ -19,7 +19,7 @@
         <!-- [ngStyle]="{'background': 'url(' + projects.fotoFinal + ')', 'height': '320px', 'background-position': 'center' ,'background-size': 'cover'}"></div> -->
         <div class="proj-name bask">{{getLang()==='ES'? projects.tituloES : getLang()==='EN'? projects.tituloEN: projects.tituloFR}}</div>
         <div class="proj-location">{{projects.ciudad}} | {{projects.pais}}</div>
-        <div class="price" *ngIf="auth.authenticated&&auth.isAdmin">{{projects.rate | currency:'EUR'}}</div>
+        <div class="price" *ngIf="auth.authenticated&&auth.isAdmin&&projects.rate && projects.rate>0">{{projects.rate | currency:'EUR'}}</div>
 
         <div *ngIf="auth.authenticated&&auth.isAdmin" class="desc-btns txt-center">
           <button (click)="sendEdit(projects);openPanel=true"><mat-icon >edit</mat-icon></button>

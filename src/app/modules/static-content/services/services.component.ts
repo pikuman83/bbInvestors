@@ -14,4 +14,9 @@ export class ServicesComponent implements OnInit, OnDestroy {
   ngOnDestroy():void {
     console.log('services destroyed');
   }
+
+  scrollToElement(el: HTMLDivElement): void {
+    el.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+  }
+
 }

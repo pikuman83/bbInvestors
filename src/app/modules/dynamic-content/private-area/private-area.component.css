@@ -8,20 +8,9 @@
     color: #becaca;
     text-align: center;
 }
-.header-img{
-    /* height: calc(100vh - 240px); 240 = 90 top-bar + 150 title */
-    /* max-height: 600px; */
-    /* width: 100%; */
-    /* background-image: url(https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fimg108.jpg?alt=media&token=0ce8641a-37a6-4e83-8433-c6d0d446180b); */
-    /* background-size: cover; */
-    /* background-position: center; */
-    padding-top: 54.4%;
-    background: url(../../../../assets/House3.jpg) no-repeat center bottom;
-    background-size: cover;
-}
 .container1{
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 100px auto;
     overflow: hidden;
     margin: 100px auto;
     padding: 0 40px;
@@ -58,7 +47,4 @@
 
 @media screen and (max-width: 576px) {
     .title{font-size: 2.5em; padding: 20px;}
-}
-@media screen and (max-width: 450px) {
-    /* .header-img{max-height: 300px;} */
 }

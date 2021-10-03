@@ -14,6 +14,7 @@ export interface UserProfile {
 
 export interface Projects{
   id?: string;
+  time?: Date;
   tituloES?: string;
   tituloEN?: string;
   tituloFR?: string;
@@ -36,12 +37,14 @@ export interface Projects{
   fotosObra?: string[];
   user?: string;
   lang?: string; 
+  servicios?: string[];
   public?: boolean,
   rate?: number
 }
 
 export interface News{
   id?: string;
+  time?: Date;
   cat?: string;
   title?: string;
   url?: string;

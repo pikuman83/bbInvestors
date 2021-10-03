@@ -10,7 +10,7 @@ export class FireStoreService {
   constructor(private db: AngularFirestore) {}
 
   getAll(path: string): AngularFirestoreCollection<any> {
-    return this.db.collection(`/${path}`, path === 'projects'? ref => ref.where('public', '==', true): ref => ref.orderBy('cat'));
+    return this.db.collection(`/${path}`, path === 'projects'? ref => ref.where('public', '==', true).orderBy('time', 'desc'): ref => ref.orderBy('time', 'desc'));
   }
   getProjectsAdmin(): AngularFirestoreCollection<any> {
     return this.db.collection('projects', ref => ref.orderBy('ciudad'));
@@ -18,11 +18,9 @@ export class FireStoreService {
   getPrivateData(uid: string): AngularFirestoreCollection<Projects> {
     return this.db.collection('projects', ref => ref.where('user', '==', uid));
   }
-
   get(path: string, documentId: string) {
     return this.db.collection(`/${path}`).doc(documentId);
   }
-
   create(path: string, data: any): any {
     return this.db.collection(`/${path}`).add({ ...data });
   }
@@ -46,6 +44,9 @@ export class FireStoreService {
   }
   deleteRatelist(pid: string): Promise<void>  {
     return this.db.collection('/rateList').doc(pid).delete();
+  }
+  getNewsPartial(): AngularFirestoreCollection<Projects> {
+    return this.db.collection('news', ref => ref.limit(3));
   }
   
 }

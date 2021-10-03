@@ -29,16 +29,18 @@
     z-index: 1;
 }
 .heading1{
-    grid-column: 3/8;
+    grid-column: 1/8;
     grid-row: 2;
-    font-size: 35px;
+    padding-left: 40px;
+    font-size: 30px;
     line-height: 100%;
     color: #bececa;
     font-family: 'operetta18-regular';
 }
 .s-m{
-    grid-column: 3/8;
+    grid-column: 1/8;
     grid-row: 3;
+    padding-left: 40px;
     display: flex;
     justify-content: center;
 }
@@ -73,7 +75,7 @@
     line-height: 150%;
     font-style: italic;
     font-weight: 300;
-    color: gray;
+    /* color: gray; */
     padding: 0 0 40px 40px;
 }
 .foto{
@@ -142,7 +144,7 @@
     font-size: 18px;
     font-weight: 300;
     font-style: italic;
-    color: gray;
+    /* color: gray; */
     padding: 0.5em 0;
 }
 .divider{
@@ -162,6 +164,10 @@
     font-size: 1.5em;
     line-height: 1.5em;
     margin-right: 40px;
+}
+.advice > a:hover{
+    color: white;
+    background-color: #EA9A4C;
 }
 .quote{
     font-size: 22px;
@@ -231,8 +237,8 @@ footer{
         display: block;
         padding: 40px;
     }
-    .heading1{line-height: initial;font-size: 2.2em;}
-    .s-m{margin-top: 20px;}
+    .heading1{padding-left: 0;}
+    .s-m{margin-top: 20px; padding-left: 0;}
     .text1{padding-right: 40px;}
     .foto{width: 100%;padding-top: 875px;}
     .text2{line-height: initial;padding-bottom: 60px;}
@@ -255,6 +261,9 @@ footer{
         text-align: inherit;
     }
     .studies-container .flex-col{max-width: unset;}
+}
+@media screen and (max-width: 576px) {
+    .heading1{font-size: 22px;}
 }
 @media screen and (max-width: 400px) {
     footer{padding: 40px;}

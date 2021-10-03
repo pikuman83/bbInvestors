@@ -11,8 +11,13 @@
 @font-face {
     font-family: 'operetta18-regular';
     src: url(./assets/Fonts/operetta18-regular-webfont.woff2) format('woff2'),
-         url(./assets/Fonts/operetta18-regular-webfont.woff) format('woff'),
-         url(./assets/Fonts/operetta18-regular-webfont.ttf) format('truetype');
+         url(./assets/Fonts/operetta18-regular-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'operetta8-medium';
+    src: url(./assets/Fonts/operetta8-medium-webfont.woff2) format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -21,8 +26,7 @@
 
 html, body { 
     height: 100%;
-    padding-bottom: 60px;
-    box-sizing: content-box;
+    /* padding-bottom: 60px; */
     min-height: -webkit-fill-available;
     height: 100vh;
     overflow-x: hidden;
@@ -31,7 +35,6 @@ html, body {
 body {
     margin: 0; 
     font: 400 14px/20px Roboto,Helvetica Neue,sans-serif; 
-    box-sizing: border-box; 
     background-color: white;
 }
 app-root{
@@ -59,11 +62,16 @@ a:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1em;
+    font-size: 16px;
     color: #EA9A4C;
     border: 2px solid #EA9A4C;
     min-width: 180px;
     cursor: pointer;
+    line-height: 100%;
+}
+.btn:hover{
+    background-color: #EA9A4C;
+    color: white !important;
 }
 
 .bd-box{

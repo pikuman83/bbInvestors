@@ -14,7 +14,7 @@
     max-width: 1200px;
     display: flex;
     align-items: center;
-    margin: 50px auto;
+    margin: 0 auto;
     padding: 0 40px 0 40px;
 }
 .section1, .section2{
@@ -73,7 +73,7 @@
     width: 100%;
     text-align: left;
     align-items: flex-end;
-    font-family: 'operetta18-regular';
+    font-family: 'operetta8-medium';
 }
 .button1{
     box-sizing: border-box;
@@ -116,7 +116,7 @@
 }
 .contact-link{
     width: fit-content;
-    padding: 40px;
+    padding: 100px 40px;
     margin: 0 auto;
 }
 .contact-button{
@@ -127,7 +127,7 @@
 
 
 .heading2{
-    font-size: 50px;
+    font-size: 40px;
     line-height: 100%;
     color: #1D4C56;
     text-align: center;
@@ -140,28 +140,34 @@
 }
 .card1{
     max-width: 30%;
-    padding: 40px;
+    padding: 20px 40px;
     text-align: center;
     /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
 }
 .card-heading{
-    font-size: 1.6em;
-    line-height: 1.2em;
+    font-size: 22px;
+    line-height: 100%;
     color: #EA9A4C;
-    margin-top: 50px;
-    text-align: left;
+    margin-top: 20px;
+    text-align: center;
 }
 .min-height{
     min-height: 2.4em;
 }
 .card-desc{
-    text-align: left;
+    text-align: center;
+    color: gray;
+    font-size: 18px;
+    line-height: 150%;
+    margin: 20px auto;
+
+    /* text-align: left;
     margin-top: 50px;
     margin-bottom: 50px;
     color: gray;
     font-size: 1.5em;
     line-height: 1.5em;
-    font-stretch: expanded;
+    font-stretch: expanded; */
 }
 
 .boxes{
@@ -171,7 +177,7 @@
 .box{
     display: flex;
     flex-direction: row;
-    margin: 50px auto;
+    margin: 40px auto 0 auto;
     padding: 50px;
     width: 100%;
     box-sizing: border-box;
@@ -190,7 +196,8 @@
 }
 .box-heading{
     font-size: 29px;
-    line-height: 160%;
+    line-height: 100%;
+    padding-bottom: 20px;
     color: #1D4C56;
     font-family: 'operetta18-regular';
 }
@@ -233,33 +240,16 @@
         display: block;
         padding: 0;
     }
-    .section1{
-        width: unset;
-        max-width: unset;
-    }
+    .section1{width: unset;max-width: unset;}
     .image{padding-top: 180px;}
-    .heading2{
-        font-size: 30px;
-    }
+    .heading2{font-size: 30px;}
     .cards1{display: block;}
-    .card1{
-        max-width: unset;
-        text-align: center;
-    }   
-    .card-heading{
-        text-align: inherit;
-        margin-top: 12px;
-    }
-    .card-desc{margin-top: 25px;}
+    .card1{max-width: unset;text-align: center;}   
+    .card-desc{text-align: left;}
     .contact-animation{padding: 40px;}
-    .box{
-        margin: 0;
-        padding: 50px 40px;
-    }
-    .box-number{
-        font-size: 2em;
-        padding: 0 12px 0 0;
-    }
+    .contact-link{padding: 40px};
+    .box{margin: 0;padding: 40px;}
+    .box-number{font-size: 2em;padding: 0 12px 0 0;}
     .box-heading{text-align: center; font-size: 26px;}
     .box-heading1{
         font-size: 22px;
@@ -275,8 +265,5 @@
         padding: 0;
     }
     .mobile-display{display: block;}
-    .col{
-        max-width: unset;
-        margin: 0;
-    }
+    .col{max-width: unset;margin: 0;}
 }

@@ -22,3 +22,7 @@ mat-panel-description{
     flex-grow: 1;
     padding-top: 15px;
 }
+.mat-action-row{
+    display: flex !important;
+    align-items: center !important;
+}

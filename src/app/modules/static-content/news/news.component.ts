@@ -1,6 +1,6 @@
-// Open panel on edit click
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { map } from 'rxjs/operators';
 import { FireStoreService } from 'src/app/core/fire-store.service';
 import { AuthService } from '../../shared/auth.service';
@@ -20,7 +20,8 @@ export class NewsComponent implements OnInit, OnDestroy {
 
   constructor(private service: FireStoreService, 
     private storage: AngularFireStorage, 
-    public auth: AuthService) { }
+    public auth: AuthService,
+    private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getAllNewsList();
@@ -42,12 +43,10 @@ export class NewsComponent implements OnInit, OnDestroy {
     });
   }
 
-  // #template
   addNews(article:News){
     this.newsList?.push(article);
-    this.service.create('news',article).then(()=> {
-      // window.location.hash = '#start';
-    })
+    this.service.create('news',article).catch((err: any) => this._snackBar.open(err, 'BBInvestors'))
+    //.then(window.location.hash = '#start';
   }
   editNews(newObj: News): void {
     if (newObj && this.news) {
@@ -61,29 +60,26 @@ export class NewsComponent implements OnInit, OnDestroy {
             return x
           })
           this.news = {};
-          // notify?
+          this._snackBar.open('Updated succefully','BBInvestors', {panelClass: 'happy'});
         })
         .catch(err => console.log(err));
     }
   }
   deleteNews(id: string|undefined, url: string|undefined, i: number): void {
     if (id) {
-      // this.newsList?.splice(i, 0);
-      this.service.delete('news',id)
+      if (confirm('Seguro que quiere eliminar este artículo?')){
+        this.service.delete('news',id)
         .then(() => {
           this.storage.refFromURL(url!).delete();
-          // show confirmation?
+          this._snackBar.open('Deleted succefully','BBInvestors');
         })
-    .catch(err => 
-      // show error?
-      console.error(err)
-      );
+      .catch(err => this._snackBar.open(err, 'BBInvestors'));
+      }
     }
   }
 
-  // scroll():  void{
-  //   document.getElementById('news-section')?.scrollIntoView();
-  //   document.getElementById('scroll-icon')?.classList.add('hide-scroll');
-  // }
+  scroll():  void{
+    document.getElementById('news-admin')?.scrollIntoView();
+  }
 
 }

@@ -5,8 +5,8 @@
         <div class="section1 flex-col">
             <div class="image"></div>
             <div class="card green" i18n>Con mi experiencia como inversora 
-                y promotora, le acompañaré y guiaré en todo el proceso de invertir en mercados internacionales 
-                de manera controlada y segura. <br>
+                y promotora, le acompañaré y guiaré en todo el proceso de invertir 
+                en mercados internacionales de manera controlada y segura. <br>
             </div>
         </div>
         
@@ -24,20 +24,20 @@
             </div>
             <div class="buttons d-flex flex-col">
                 <div class="button1" i18n>Trabajaremos juntos para conseguir los objetivos marcados</div>
-                <div class="button1 button2" i18n><span class="fsize-2" >1</span> Oportunidad <span>+</span></div>
-                <div class="button1 button2" i18n><span class="fsize-2">2</span> Compra <span>+</span></div>
-                <div class="button1 button2" i18n><span class="fsize-2">3</span> Desarollo <span>+</span></div>
-                <div class="button1 button2" i18n><span class="fsize-2">4</span> Negocio <span>+</span></div>
+                <div class="button1 button2" i18n (click)="scrollToElement(srv1)"><span class="fsize-2">1</span> Oportunidad <span>+</span></div>
+                <div class="button1 button2" i18n (click)="scrollToElement(srv2)"><span class="fsize-2">2</span> Compra <span>+</span></div>
+                <div class="button1 button2" i18n (click)="scrollToElement(srv3)"><span class="fsize-2">3</span> Desarollo <span>+</span></div>
+                <div class="button1 button2" i18n (click)="scrollToElement(srv4)"><span class="fsize-2">4</span> Negocio <span>+</span></div>
             </div>
         </div>
     </div>
     <div class="contact-link">
-        <a class="btn contact-button" [routerLink]="['/smoothScrollin']" i18n>¡TRABAJEMOS JUNTOS!</a>
+        <a class="btn contact-button" i18n (click)="scrollToElement(contact)">¡TRABAJEMOS JUNTOS!</a>
     </div>
 </div>
 
 <div class="boxes mx-w-12">
-    <div class="box">
+    <div class="box" #srv1>
         <div class="box-number">
             1
         </div>
@@ -59,7 +59,7 @@
         </div>
     </div>
 
-    <div class="box">
+    <div class="box" #srv2>
         <div class="box-number">
             2
         </div>
@@ -92,7 +92,7 @@
         </div>
     </div>
 
-    <div class="box">
+    <div class="box" #srv3>
         <div class="box-number">
             3
         </div>
@@ -116,7 +116,7 @@
             </div>
         </div>
     </div>
-    <div class="box">
+    <div class="box" #srv4>
         <div class="box-number">
             4
         </div>
@@ -142,7 +142,7 @@
 <div class="mx-w-12">
     <div class="cards1 d-flex">
         <div class="card1">
-            <img src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2FGPS.svg?alt=media&token=4c67da9d-7275-40e2-b99b-5d794b317f45" width="144" height="144" alt="gps-icon">
+            <img src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2FGPS.svg?alt=media&token=4c67da9d-7275-40e2-b99b-5d794b317f45" width="100" height="100" alt="gps-icon">
             <div class="card-heading" i18n>
                 Gestión remota <br>y sin preocupaciones
             </div>
@@ -152,7 +152,7 @@
             </div>
         </div>
         <div class="card1">
-            <img src="assets/suitecase.svg" width="144" height="144" alt="gps-icon">
+            <img src="assets/suitecase.svg" width="100" height="100" alt="gps-icon">
             <div class="card-heading" i18n>
                 Para inversores con o <br> sin experiencia
             </div>
@@ -163,7 +163,7 @@
             </div>
         </div>
         <div class="card1">
-            <img src="assets/suitecase2.svg" width="144" height="144" alt="gps-icon">
+            <img src="assets/suitecase2.svg" width="100" height="100" alt="gps-icon">
             <div class="card-heading" i18n>
                 Asistencia durante todo <br> el proceso 360º
             </div>
@@ -178,7 +178,7 @@
     
     <div class="cards1">
         <div class="card1">
-            <img src="assets/world2.svg" width="144" height="144" alt="gps-icon">
+            <img src="assets/world2.svg" width="100" height="100" alt="gps-icon">
             <div class="card-heading" i18n>
                 Operativa en distintas <br> ciudades europeas
             </div>
@@ -188,7 +188,7 @@
             </div>
         </div>
         <div class="card1">
-            <img src="assets/network.svg" width="144" height="144" alt="gps-icon">
+            <img src="assets/network.svg" width="100" height="100" alt="gps-icon">
             <div class="card-heading min-height" i18n>
                 Soy un puente cultural
             </div>
@@ -198,7 +198,7 @@
             </div>
         </div>
         <div class="card1">
-            <img src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fbubble.svg?alt=media&token=d688e530-a39d-4cc7-93c8-09ef032dc902" width="144" height="144" alt="gps-icon">
+            <img src="https://firebasestorage.googleapis.com/v0/b/bbforinvestors.appspot.com/o/Assets%2Fbubble.svg?alt=media&token=d688e530-a39d-4cc7-93c8-09ef032dc902" width="100" height="100" alt="gps-icon">
             <div class="card-heading" i18n>
                 Soy inversora. <br> Entiendo sus necesidades
             </div>
@@ -214,6 +214,6 @@
     <div class="bask" i18n>Contactemos</div>
     <div i18n>Tanto si tiene preguntas como si <br>quiere ponerse manos a la obra,<br>todo comienza con un “Hola” </div>
 </div>
-<div class="mx-w-12 contact-animation">
+<div class="mx-w-12 contact-animation" #contact>
     <app-contact></app-contact>
 </div>

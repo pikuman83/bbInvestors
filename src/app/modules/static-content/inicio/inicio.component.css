@@ -183,6 +183,14 @@ a[class^="btn"] {
     border-radius: 25px;
     background-color: #EA9A4C;
 }
+.circle-mob{
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background-color: #EA9A4C;
+    margin: 20px auto;
+    display: none;
+}
 .circle:first-child{
     grid-column: 1;
     grid-row: 1;
@@ -206,6 +214,9 @@ a[class^="btn"] {
 }
 .ml-5{
     margin-left: 5px;
+}
+.mb-30{
+    margin-bottom: 30px;
 }
 
 /* SECTION3 - PROJECTS*/
@@ -251,8 +262,12 @@ a[class^="btn"] {
     justify-content: center;
     padding: 40px 0;
 }
-.section3 a:hover{
+.section3 a:hover:not(.section3 a:last-child){
     color: #EA9A4C;
+}
+.section3 a:last-child:hover{
+    background-color: #EA9A4C;
+    color: white;
 }
 
 .cities1 a{
@@ -389,6 +404,8 @@ a[class^="btn"] {
     .first-white-bx{display: block; text-align: center;}
     .first-white-bx > div:first-child{width: 100%; padding: 40px 0;}
     .first-white-bx > div:nth-child(2){display: none;}
+    .font-set1{padding: 0;}
+    .circle-mob{display: block;}
     .first-white-bx > div:last-child{width: 100%; padding-bottom: 40px;}
     .btn4{align-self: center;}
     .section3-title{font-size: 30px;}
