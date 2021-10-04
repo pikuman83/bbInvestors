@@ -23,7 +23,7 @@ const routes: Routes = [
   {path: 'projects', loadChildren: () => import('./modules/dynamic-content/dynamic.module').then(m => m.DynamicModule) },
   {path: 'projects/:city', component: ProjectsComponent },
   {path: 'projects/project-details/:id', component: ProjectsDetailsComponent },
-  {path: 'contact', component: ContactComponent },
+  {path: 'contact/:param', component: ContactComponent },
   {path: 'privateArea', component: PrivateAreaComponent, ...canActivate(redirectUnauthorizedToLogin)}
 ];
 

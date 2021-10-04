@@ -1,3 +1,12 @@
+
+<div [class.contact-animation]="showHeader">
+<div class="contact" [class.show-header]="showHeader">
+  <div class="bask" style="font-size: 40px; color: #1D4C56;" i18n>Contactemos</div>
+  <div i18n style="color: #1D4C56; font-size: 16px;">Tanto si tiene preguntas como si<br>
+      quiere ponerse manos a la obra,<br>
+      todo comienza con un “Hola”</div>
+</div>
+
 <form class="form-container" [class.contact-animation] [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)" autocomplete="off">
   <!-- add animation and height if fragment -->
   <mat-form-field appearance="outline">
@@ -57,3 +66,4 @@
 
   <button type="submit" class="submit" [disabled]="contactForm.invalid" i18n>Enviar</button>
 </form>
+</div>

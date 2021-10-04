@@ -1,9 +1,9 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
-import { concatMap, map, mergeMap, take } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { FireStoreService } from 'src/app/core/fire-store.service';
 import { AuthService } from '../../shared/auth.service';
 import { Projects, rateList } from '../../shared/interfaces';
@@ -14,7 +14,7 @@ import { Projects, rateList } from '../../shared/interfaces';
   styleUrls: ['./projects.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class ProjectsComponent implements OnInit, OnDestroy {
+export class ProjectsComponent implements OnInit {
 
   tabIndex = 0;
   project!: Projects|null;
@@ -43,10 +43,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
         this.getCollection(false)
       }
     })
-    console.log('projects init')
-  }
-  ngOnDestroy():void {
-    console.log('projects destroyed');
   }
 
   getLang(){
@@ -58,7 +54,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   getCollection(role: boolean): void{
     try {
       if (role) {
-        console.log('bringing for admin')
         this.service.getProjectsAdmin().snapshotChanges().pipe(
           map(changes => changes.map(c => 
             ({id: c.payload.doc.id, ...c.payload.doc.data()}))))
@@ -70,7 +65,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
             });
       }
       else {
-        console.log('bringing for public')
         this.service.getAll('projects').snapshotChanges().pipe(
           map(changes => changes.map(c => ({id: c.payload.doc.id, ...c.payload.doc.data()}))))
           .subscribe(data => {this.processData(data)});
