@@ -1,5 +1,5 @@
-<form class="form-container contact-animation" [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)" autocomplete="off">
-  
+<form class="form-container" [class.contact-animation] [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)" autocomplete="off">
+  <!-- add animation and height if fragment -->
   <mat-form-field appearance="outline">
     <mat-label i18n>Asunto</mat-label>
     <mat-select formControlName="asunto">
@@ -51,9 +51,9 @@
   </mat-form-field>
   
   <div class="terms">
-    <input type="checkbox" id="data-policy">
+    <input type="checkbox" id="data-policy" formControlName="terms">
     <label for="data-policy" i18n>Estoy de acuerdo con los términos y condiciones</label>
   </div>
 
-  <button type="submit" class="popStyle" [disabled]="contactForm.invalid" i18n>Enviar</button>
+  <button type="submit" class="submit" [disabled]="contactForm.invalid" i18n>Enviar</button>
 </form>

@@ -5,31 +5,31 @@
     width: 100%;
     max-width: 400px;
     box-sizing: border-box;
-    /* padding: 40px; */
-
-    height: 600px;
+    font-size: 12px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    width: 100%;
     background-position-x: -65px, 0px;
     background-position-y: 78px, 387px;
-    padding: 20px;
+    padding: 0 20px;
 }
 mat-form-field{
     display: block;
     width: 100%;
     margin: 0 auto;
-    margin-bottom: -20px;
+    margin-bottom: -12px;
 }
-.popStyle{
-    width: 100%;
-    max-width: 400px;
+.submit{
+    width: 180px;
     color: white;
     background-color: #1D4C56;
-    height: 50px;
     border-radius: 6px;
-    margin-top: 20px;
+    margin: 20px auto;
+    padding: 8px;
+    cursor: pointer;
+}
+.submit:hover{
+    background-color: #EA9A4C;
 }
 .terms{
     margin-top: 25px;

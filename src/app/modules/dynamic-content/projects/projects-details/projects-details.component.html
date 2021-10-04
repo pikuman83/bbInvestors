@@ -24,7 +24,8 @@
     <div class="max-width">
       <div class="intervencion">
         <div class="heading mb-25" i18n>INTERVENCIÓN</div>
-        <div *ngFor="let s of project.servicios" i18n><span class="numbers">{{s}}</span>
+        <div *ngFor="let s of project.servicios" i18n><span class="numbers">{s, plural, =Bid {Bid} =Bargain {Bargain} =Build {Build} =Business {Business}}</span>
+          <!-- {{s}} -->
           <span class="plus">+</span></div>
       </div>
   

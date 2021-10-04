@@ -236,7 +236,8 @@ a:focus {
 /* CONTACT POPUP */
 .popupForm{
     transform: rotateY(90deg) !important; /* rotate 90deg means normal view, transform 0deg means invisible (the latter is used in the upcoming class) */
-    max-width: 300px;
+    width: 90%;
+    max-width: 350px;
     position: absolute;
     top: -9999px;
     /* bottom: 12px; */
@@ -247,7 +248,7 @@ a:focus {
     transition: all .5s ease 0s; /* the effect, pushe it (push bcoz of transporm origin, this is just the motion strategy, contains no effect) towards the new position slowly */
     transform-origin: 100% 0 0; /* makes the transition starts from thee origin*/
     z-index: 20;
-    padding: 20px;
+    /* padding: 20px; */
     box-sizing: border-box;
 }
 .visible{

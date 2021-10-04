@@ -3,7 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { concatMap, map, mergeMap, take } from 'rxjs/operators';
 import { FireStoreService } from 'src/app/core/fire-store.service';
 import { AuthService } from '../../shared/auth.service';
 import { Projects, rateList } from '../../shared/interfaces';
@@ -60,8 +60,14 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       if (role) {
         console.log('bringing for admin')
         this.service.getProjectsAdmin().snapshotChanges().pipe(
-          map(changes => changes.map(c => ({id: c.payload.doc.id, ...c.payload.doc.data()}))))
-          .subscribe(data => {this.processData(data)});
+          map(changes => changes.map(c => 
+            ({id: c.payload.doc.id, ...c.payload.doc.data()}))))
+          .subscribe(data => {
+            for (let proj of data){
+              this.service.getRateList(proj.id).valueChanges().subscribe((x: rateList[]) => {proj.rate = x[0].rate})
+            }
+            this.processData(data);
+            });
       }
       else {
         console.log('bringing for public')
@@ -96,6 +102,10 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     localStorage.setItem('projects', '');
   }
 
+  getRate(id: string){
+    this.service.getRateList(id).valueChanges().subscribe((x: any) => {console.log('rate in getrate',x.rate);return x.rate})
+  }
+  
   filterByCity(i: number){
     if(this.tabs[i]==='ALL') {
       this.tabContent = this.pList;  
@@ -139,26 +149,25 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   }
   editProject(newObj: Projects): void {
     if (newObj && this.project) {
-      this.service.update('projects', this.project.id!, newObj)
+      const data: any = {
+        rate: newObj.rate!,
+        user: newObj.user!
+      }
+      this.service.updateRateList(this.rateRef, data).then(() => {
+        newObj.rate = 0;
+        this.service.update('projects', this.project!.id!, newObj)
         .then(() => {
-          const data: any = {
-            rate: newObj.rate!,
-            user: newObj.user!
-          }
-          this.service.updateRateList(this.rateRef, data).then(() => {
-            this.rateRef = '';
-            this.tabs = ['ALL'];
-            this.pList.map(x => x.ciudad).map(y => {
-              if (!this.tabs.includes(y!)){
-                this.tabs.push(y!);
-              }
-            });
-            this._snackBar.open('Updated succefully','BBInvestors', {panelClass: 'happy'});
-          })
+          this.rateRef = '';
+          this.tabs = ['ALL'];
+          this.pList.map(x => x.ciudad).map(y => {
+            if (!this.tabs.includes(y!)){
+              this.tabs.push(y!);
+            }
+          });
+          this._snackBar.open('Updated succefully','BBInvestors', {panelClass: 'happy'});
         })
-      .catch(err =>
-        alert(err)
-      );
+      })
+      .catch(err =>this._snackBar.open(err,'BBInvestors'));
     }
   }
   deleteDoc(id: string|undefined, project: any): void {
