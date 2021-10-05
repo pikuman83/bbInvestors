@@ -945,7 +945,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="6210643054053682113" datatype="html">
-        <source> Opero en distintas ciudades internacionales muy atractivas como <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bold&quot;&gt;"/>Barcelona, Budapest, Sevilla y Jerez de la Frontera,<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> con experiencias exitosas en cada una de ellas. </source>
+        <source> Opero en distintas ciudades internacionales muy atractivas como <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bold&quot;&gt;"/>Barcelona, Budapest, Sevilla y Valencia,<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> con experiencias exitosas en cada una de ellas. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/static-content/services/services.component.html</context>
           <context context-type="linenumber">186,188</context>

@@ -28,9 +28,6 @@ mat-panel-description{
 .mt-47{
     margin-top: 47px;
 }
-.mt-85{
-    margin-top: 85px;
-}
 .fotosObra{
     display: flex;
     justify-content: center;
@@ -68,7 +65,7 @@ mat-chip-list{
 }
 mat-chip{
     display: flex;
-    min-width: 120px;
+    min-width: 100px;
     justify-content: space-between;
 }
 

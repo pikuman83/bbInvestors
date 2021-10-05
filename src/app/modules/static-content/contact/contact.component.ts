@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -20,10 +20,11 @@ export class ContactComponent implements OnInit {
   });
 
   showHeader = false;
+
   constructor(
     private fb: FormBuilder, 
     private _snackBar: MatSnackBar,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.showHeader = !!this.route.snapshot.paramMap.get('param');
@@ -32,9 +33,26 @@ export class ContactComponent implements OnInit {
   onSubmit(form:FormGroup) {
     if (!form.value.terms){
       this._snackBar.open(`${$localize}:@@snackbar Must accept terms and conditions`,'BBInvestors');
+      return
     }
-    // send emails
-    console.log(form.value)
+    else{
+      if (this.contactForm.valid){
+        const msg = {
+          to: form.value.email,
+          from: 'wahab_anjum@hotmail.com',
+          subject: form.value.asunto,
+          text: form.value.message,
+          html: `<strong>New email from the web ${form.value.name}</strong>`,
+        };
+        async () => {
+          try {
+            console.table(msg)
+          } catch (error) {
+            console.error(error);
+          }
+        };
+      }
+    }
   }
 
 }
