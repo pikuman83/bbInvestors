@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
@@ -11,6 +11,7 @@ import { FireStoreService } from 'src/app/core/fire-store.service';
 })
 export class ContactComponent implements OnInit {
 
+  @Output() closeEvent:EventEmitter<any> = new EventEmitter();
   contactForm = this.fb.group({
     asunto: ['Quiero invertir'],
     name: ['', Validators.required],
@@ -48,12 +49,13 @@ export class ContactComponent implements OnInit {
             subject: `${form.value.asunto} con BB for Investors`,
             html: `<strong>Hello ${form.value.name}!!</strong> Thank you very much for contacting, 
             we have received your message and will get back to you as soon as possible. <br>
-            Message details: ${form.value.message}`,
+            Message details: ${form.value.message}<br>${form.value.movil}`,
           }
         };
         try {
           this.service.create('contacts', msg).then(()=>{
             this._snackBar.open(`Thank you for contacting us, we will come back to you as soon as possible`,'BBInvestors', {panelClass: 'happy'});
+            this.closeEvent.emit()
           })
         } catch (error: any) {
           this._snackBar.open(error.message,'BBInvestors');

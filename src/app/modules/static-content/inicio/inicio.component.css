@@ -408,6 +408,7 @@ a[class^="btn"] {
     .circle-mob{display: block;}
     .first-white-bx > div:last-child{width: 100%; padding-bottom: 40px;}
     .btn4{align-self: center;}
+    .container-news{padding: 0;}
     .section3-title{font-size: 30px;}
     .cities1 a:nth-child(4){display: none;}
     .section3-image{height: 400px;}

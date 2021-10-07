@@ -10,7 +10,7 @@
       <div i18n>Contacto</div>
       <div (click)="showForm=!showForm"><mat-icon>close</mat-icon></div>
     </div>
-    <app-contact></app-contact>
+    <app-contact (closeEvent)="showForm=!showForm"></app-contact>
   </div>
 
   <!-- TOP MENU BAR -->

@@ -69,7 +69,7 @@ import { CredentialsPromptComponent } from './login/credentials-prompt/credentia
     MatChipsModule
   ],
   providers: [
-    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 5000}}
   ]
 })
 export class SharedModule { }

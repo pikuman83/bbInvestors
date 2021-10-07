@@ -128,7 +128,7 @@
 
 .heading2{
     font-size: 40px;
-    line-height: 100%;
+    line-height: 130%;
     color: #1D4C56;
     text-align: center;
     padding: 40px;
@@ -220,7 +220,7 @@
     margin-right: 50px;
 }
 .bullet-padding{
-    padding-left: 28px;
+    padding-left: 21px;
 }
 .contact1{
     background: #1D4C56;
@@ -232,6 +232,7 @@
     .button1:first-child{letter-spacing: 0; font-size: 22px;}
 }
 @media screen and (max-width: 768px) {
+    .box{margin: 0;padding: 50px 27px 50px 8px;}
     .title{display: none;}
     .pin{display: none;}
     .section2{display: none;}
@@ -248,15 +249,13 @@
     .card-desc{text-align: left;}
     .contact-animation{padding: 40px;}
     .contact-link{padding: 40px};
-    .box{margin: 0;padding: 40px;}
     .box-number{font-size: 2em;padding: 0 12px 0 0;}
-    .box-heading{text-align: center; font-size: 26px;}
+    .box-heading{font-size: 26px;}
     .box-heading1{
         font-size: 22px;
         line-height: 100%;
         padding: 10px 0;
         letter-spacing: 1px;
-        text-align: center;
     }
     .box-desc{
         font-size: 18px;
@@ -265,5 +264,6 @@
         padding: 0;
     }
     .mobile-display{display: block;}
-    .col{max-width: unset;margin: 0;}
+    .col{max-width: unset;margin: 0; margin-bottom: 20px;}
+    .bullet-list{font-size: initial;}
 }
