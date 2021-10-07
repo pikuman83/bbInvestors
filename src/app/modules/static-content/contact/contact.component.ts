@@ -3,6 +3,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { FireStoreService } from 'src/app/core/fire-store.service';
+declare var require: any;
+export interface country{
+  iso2: string,
+  iso3: string,
+  prefix: number
+}
 
 @Component({
   selector: 'app-contact',
@@ -18,12 +24,13 @@ export class ContactComponent implements OnInit {
     movil: ['', Validators.minLength(9)],
     email: ['', [Validators.required, Validators.email]],
     message: ['', [Validators.required, Validators.minLength(5)]],
-    terms: [false, [Validators.requiredTrue]],
-    time: [new Date()]
+    terms: [false, Validators.requiredTrue],
+    time: [new Date()],
+    prefix: ['', Validators.required]
   });
 
   showHeader = false;
-
+  cpp = require("country-phone-prefix");
   constructor(
     private fb: FormBuilder, 
     private _snackBar: MatSnackBar,
@@ -31,9 +38,18 @@ export class ContactComponent implements OnInit {
     private service: FireStoreService) {}
 
   ngOnInit(): void {
-    this.showHeader = !!this.route.snapshot.paramMap.get('param');
+    this.showHeader = !!this.route.snapshot.paramMap.get('param');   
   }
 
+  getCountry(){
+    return Object.keys(this.cpp).map((key)=>{return this.cpp[key]}); 
+  }
+  abc(){
+    const x = this.contactForm.value.prefix;
+    this.contactForm.controls['movil']!.setValue(x.prefix);
+    // (`${x} - ${this.contactForm.value.movil}`)
+    console.log('hello',this.contactForm.value.prefix)
+  }
   onSubmit(form:FormGroup) {
     if (!form.value.terms){
       this._snackBar.open(`Must accept terms and conditions`,'BBInvestors');
