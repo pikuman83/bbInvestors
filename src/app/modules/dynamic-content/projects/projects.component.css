@@ -12,7 +12,7 @@
     height: calc(100vh - 220px); /*220 = 90 top-bar + 130 title */
     max-height: 700px;
     width: 100%;
-    background: url(../../../../assets/House3.jpg) no-repeat center;
+    background: url(../../../../assets/House3.jpg) no-repeat center bottom;
     background-size: cover;
 }
 mat-tab-group{

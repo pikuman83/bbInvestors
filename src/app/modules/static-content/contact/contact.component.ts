@@ -2,7 +2,6 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { ReCaptchaV3Service } from 'ng-recaptcha';
 import { FireStoreService } from 'src/app/core/fire-store.service';
 declare var require: any;
 export interface country{
@@ -27,7 +26,8 @@ export class ContactComponent implements OnInit {
     message: ['', [Validators.required, Validators.minLength(5)]],
     terms: [false, Validators.requiredTrue],
     time: [new Date()],
-    prefix: ['', Validators.required]
+    prefix: ['', Validators.required],
+    recaptchaReactive: [null, Validators.required]
   });
 
   showHeader = false;
@@ -36,8 +36,7 @@ export class ContactComponent implements OnInit {
     private fb: FormBuilder, 
     private _snackBar: MatSnackBar,
     private route: ActivatedRoute,
-    private service: FireStoreService,
-    private recaptchaV3Service: ReCaptchaV3Service) {}
+    private service: FireStoreService) {}
 
   ngOnInit(): void {
     this.showHeader = !!this.route.snapshot.paramMap.get('param');   
@@ -81,10 +80,8 @@ export class ContactComponent implements OnInit {
       }
     }
   }
-
-  public executeImportantAction(): void {
-    this.recaptchaV3Service.execute('importantAction')
-      .subscribe((token) => console.log(token));
+  resolved(captchaResponse: any) {
+    console.log(`Resolved captcha with response: ${captchaResponse}`);
   }
 
 }

@@ -22,6 +22,7 @@ import {MatChipsModule} from '@angular/material/chips';
 
 import { LoginComponent } from './login/login.component';
 import { CredentialsPromptComponent } from './login/credentials-prompt/credentials-prompt.component';
+import { RecaptchaModule, RecaptchaFormsModule  } from "ng-recaptcha";
 
 @NgModule({
   declarations: [
@@ -46,7 +47,9 @@ import { CredentialsPromptComponent } from './login/credentials-prompt/credentia
     MatDialogModule,
     MatButtonToggleModule,
     MatSlideToggleModule,
-    MatChipsModule
+    MatChipsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   exports: [
     CommonModule,
@@ -66,7 +69,9 @@ import { CredentialsPromptComponent } from './login/credentials-prompt/credentia
     MatDialogModule,
     MatButtonToggleModule,
     MatSlideToggleModule,
-    MatChipsModule
+    MatChipsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 5000}}
