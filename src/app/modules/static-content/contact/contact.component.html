@@ -73,7 +73,9 @@
     <label for="data-policy" i18n>Estoy de acuerdo con los términos y condiciones</label>
   </div>
 
-  <re-captcha formControlName="recaptchaReactive" siteKey="6LdYjrgcAAAAAB-4t6IkJBmmENIm8yCy-MejUuJZ" 
+  <re-captcha class="d-flex as-center" 
+    formControlName="recaptchaReactive" 
+    siteKey="6LdYjrgcAAAAAB-4t6IkJBmmENIm8yCy-MejUuJZ" 
     (resolved)="resolved($event)"></re-captcha>
 
   <button type="submit" class="submit" [disabled]="contactForm.invalid" i18n>Enviar</button>
