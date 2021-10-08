@@ -241,7 +241,7 @@ a:focus {
     transform: rotateY(90deg) !important; /* rotate 90deg means normal view, transform 0deg means invisible (the latter is used in the upcoming class) */
     width: 90%;
     max-width: 350px;
-    position: absolute;
+    position: fixed;
     top: -9999px;
     /* bottom: 12px; */
     right: 0;
