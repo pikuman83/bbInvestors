@@ -255,6 +255,8 @@ header{
 
 /* FOOTER */
 footer{
+    /* position: absolute; */
+    bottom: 0;
     box-sizing: border-box;
     padding: 0 40px;
     width: 100%;

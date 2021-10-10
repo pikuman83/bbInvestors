@@ -71,6 +71,7 @@ export class ContactComponent implements OnInit {
         };
         try {
           this.service.create('contacts', msg).then(()=>{
+            this.contactForm.reset();
             this._snackBar.open(`Thank you for contacting us, we will come back to you as soon as possible`,'BBInvestors', {panelClass: 'happy'});
             this.closeEvent.emit()
           })
