@@ -39,18 +39,14 @@ export class ContactComponent implements OnInit {
     private service: FireStoreService) {}
 
   ngOnInit(): void {
-    this.showHeader = !!this.route.snapshot.paramMap.get('param');   
+    this.showHeader = !!this.route.snapshot.paramMap.get('param');
+    // console.log(this.getCountry())
   }
 
   getCountry(){
-    return Object.keys(this.cpp).map((key)=>{return this.cpp[key]}); 
+    return (Object.keys(this.cpp).map((key)=>{return this.cpp[key]})).sort((a,b)=>{return a.iso2.localeCompare(b.iso2)}); 
   }
 
-  // abc(){
-  //   const x = this.contactForm.value.prefix;
-  //   this.contactForm.controls['movil']!.setValue(x.prefix);
-  //   console.log('hello',this.contactForm.value.prefix)
-  // }
   onSubmit(form:FormGroup) {
     if (!form.value.terms){
       this._snackBar.open(`Must accept terms and conditions`,'BBInvestors');
