@@ -152,7 +152,7 @@ img-comparison-slider{
   color: #becaca;
 }
 .data-box1{
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 /* Description */
@@ -267,11 +267,16 @@ img-comparison-slider{
     width: 100%;
     margin-top: 40px;
   }
+  .data-box1{margin-bottom: 20px;}
   .project-data > div{justify-content: space-around;}
   .desc .max-width{display: block;}
   .desc > div > div{width: 100%;}
   .desc > div > div:last-child{margin-top: 40px;}
-  .heading-last{justify-content: center;}
+  .heading-last{
+    justify-content: center;
+    min-height: unset;
+    padding: 40px;
+  }
   .fotoFinal{min-height: 400px;}
 }
 @media screen and (max-width: 660px) {
