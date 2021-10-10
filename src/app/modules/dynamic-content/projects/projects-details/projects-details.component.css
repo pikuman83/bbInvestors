@@ -146,10 +146,13 @@ img-comparison-slider{
 .project-data > div{
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 .project-data > div > div > div:last-child{
   color: #becaca;
+}
+.data-box1{
+  margin-bottom: 50px;
 }
 
 /* Description */
