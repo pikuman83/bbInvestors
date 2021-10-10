@@ -194,7 +194,7 @@
     color: #1D4C56;
     font-family: 'operetta18-regular';
 }
-.box-heading{
+.service-heading{
     font-size: 29px;
     line-height: 100%;
     padding-bottom: 20px;
@@ -250,7 +250,7 @@
     .contact-animation{padding: 40px;}
     .contact-link{padding: 40px};
     .box-number{font-size: 2em;padding: 0 12px 0 0;}
-    .box-heading{font-size: 26px;}
+    .service-heading{font-size: 26px;}
     .box-heading1{
         font-size: 22px;
         line-height: 100%;
