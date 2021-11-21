@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/global.service';
 
 @Component({
@@ -6,12 +6,10 @@ import { GlobalService } from 'src/app/global.service';
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.css']
 })
-export class LandingComponent implements OnInit, OnDestroy {
+export class LandingComponent implements OnInit {
 
   constructor(public service: GlobalService) {this.service.showMenu.next(false)}
 
-  ngOnInit(): void {console.log('landing init')}
-  ngOnDestroy():void {
-    console.log('landing destroyed');
-  }
+  ngOnInit(): void {}
+
 }

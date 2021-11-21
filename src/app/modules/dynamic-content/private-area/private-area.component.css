@@ -30,6 +30,9 @@
     text-align: center;
     width: 45%;
 }
+.project:hover{
+    cursor: pointer;
+}
 .proj-name{
     margin-top: 12px;
     font-size: 2.2em;

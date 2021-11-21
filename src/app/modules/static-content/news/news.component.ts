@@ -1,9 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { map } from 'rxjs/operators';
-import { FireStoreService } from 'src/app/core/fire-store.service';
-import { AuthService } from '../../shared/auth.service';
+import { FireStoreService } from 'src/app/modules/shared/services/fire-store.service';
+import { AuthService } from '../../shared/services/auth.service';
 import { News } from '../../shared/interfaces';
 
 @Component({
@@ -12,11 +12,12 @@ import { News } from '../../shared/interfaces';
   styleUrls: ['./news.component.css']
 })
 
-export class NewsComponent implements OnInit, OnDestroy {
+export class NewsComponent implements OnInit {
 
   news!: News|null;
   newsList =  <News[]>[];
   openPanel = false;
+  isAdmin = false;
 
   constructor(private service: FireStoreService, 
     private storage: AngularFireStorage, 
@@ -24,11 +25,8 @@ export class NewsComponent implements OnInit, OnDestroy {
     private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    this.auth.isAdmin.subscribe(x => this.isAdmin = x)
     this.getAllNewsList();
-    console.log('news init')
-  }
-  ngOnDestroy():void {
-    console.log('news destroyed');
   }
 
   getAllNewsList(): void{
@@ -62,7 +60,7 @@ export class NewsComponent implements OnInit, OnDestroy {
           this.news = {};
           this._snackBar.open('Updated succefully','BBInvestors', {panelClass: 'happy'});
         })
-        .catch(err => console.log(err));
+        .catch(err => this._snackBar.open(err,'BBInvestors'));
     }
   }
   deleteNews(id: string|undefined, url: string|undefined, i: number): void {

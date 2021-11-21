@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { FireStoreService } from 'src/app/core/fire-store.service';
+import { FireStoreService } from 'src/app/modules/shared/services/fire-store.service';
 import { Projects, UserProfile } from 'src/app/modules/shared/interfaces';
 
 
@@ -64,7 +64,6 @@ export class ProjectsAdminComponent implements OnInit, OnChanges {
     this.getUsers();
   }
   ngOnChanges(): void {
-    console.log('searching changes')
     if (this.edit && this.edit.fotosObra) {
       const fo = this.edit.fotosObra;
       if(fo.length){

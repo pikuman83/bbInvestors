@@ -4,8 +4,8 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
-import { FireStoreService } from 'src/app/core/fire-store.service';
-import { AuthService } from '../../shared/auth.service';
+import { FireStoreService } from 'src/app/modules/shared/services/fire-store.service';
+import { AuthService } from '../../shared/services/auth.service';
 import { Projects, rateList } from '../../shared/interfaces';
 
 @Component({
@@ -22,7 +22,7 @@ export class ProjectsComponent implements OnInit {
   openPanel = false;
   tabs: [string] = ['ALL'];
   tabContent = <Projects[]>[];
-  // isAdmin = false;
+  isAdmin = false;
 
   constructor(
     private service: FireStoreService, 
@@ -30,19 +30,22 @@ export class ProjectsComponent implements OnInit {
     public router: Router,
     private _snackBar: MatSnackBar,
     private route: ActivatedRoute,
-    public auth: AuthService,
-    private fire: AngularFirestore) {}
+    public auth: AuthService) {}
 
   ngOnInit(): void {
-    this.auth.auth.onAuthStateChanged((user) => {
-      if (user){
-        this.fire.collection('users').doc(user.uid).valueChanges().subscribe((x:any)=>
-          this.getCollection(!!x.role));
-      }
-      else{
-        this.getCollection(false)
-      }
+    this.auth.isAdmin.subscribe(x => {
+      this.isAdmin = x;
+      this.getCollection(x);
     })
+    // this.auth.auth.onAuthStateChanged((user) => {
+    //   if (user){
+    //     this.fire.collection('users').doc(user.uid).valueChanges().subscribe((x:any)=>
+    //       this.getCollection(!!x.role));
+    //   }
+    //   else{
+    //     this.getCollection(false)
+    //   }
+    // })
   }
 
   getLang(){
@@ -53,24 +56,26 @@ export class ProjectsComponent implements OnInit {
 
   getCollection(role: boolean): void{
     try {
-      if (role) {
-        this.service.getProjectsAdmin().snapshotChanges().pipe(
-          map(changes => changes.map(c => 
-            ({id: c.payload.doc.id, ...c.payload.doc.data()}))))
-          .subscribe(data => {
-            for (let proj of data){
-              this.service.getRateList(proj.id).valueChanges().subscribe((x: rateList[]) => {proj.rate = x[0].rate})
-            }
-            this.processData(data);
-            });
-      }
-      else {
-        this.service.getAll('projects').snapshotChanges().pipe(
-          map(changes => changes.map(c => ({id: c.payload.doc.id, ...c.payload.doc.data()}))))
-          .subscribe(data => {this.processData(data)});
-      }
+      this.auth.auth.currentUser.then(user => {
+        if (user && role) {
+          this.service.getProjectsAdmin().snapshotChanges().pipe(
+            map(changes => changes.map(c => 
+              ({id: c.payload.doc.id, ...c.payload.doc.data()}))))
+            .subscribe(data => {
+              for (let proj of data){
+                this.service.getRateListAdmin(proj.id).valueChanges().subscribe((x: rateList[]) => {proj.rate = x.length?x[0].rate:0})
+              }
+              this.processData(data);
+              });
+        }
+        else {
+          this.service.getAll('projects').snapshotChanges().pipe(
+            map(changes => changes.map(c => ({id: c.payload.doc.id, ...c.payload.doc.data()}))))
+            .subscribe(data => {this.processData(data)});
+        }
+      })
     } catch (error) {
-      console.log('error caught', error);
+      this._snackBar.open(error as string,'BBInvestors');
       this.router.navigate(['/home'])
     }
   }
@@ -95,10 +100,6 @@ export class ProjectsComponent implements OnInit {
     if (LS) localStorage.removeItem('projects');
     localStorage.setItem('projects', '');
   }
-
-  getRate(id: string){
-    this.service.getRateList(id).valueChanges().subscribe((x: any) => {console.log('rate in getrate',x.rate);return x.rate})
-  }
   
   filterByCity(i: number){
     if(this.tabs[i]==='ALL') {
@@ -109,10 +110,16 @@ export class ProjectsComponent implements OnInit {
     return this.tabContent;
   }
   
+  /**
+   * 
+   * Update to the following commented system for better data architecture and easier queries, 
+   * Save rateList first to obtain its id and save it in the project, instead of its rate
+   * then query the rate directly by its id, instead of using 'WHERE' query, when required.
+   */
   addProject(project:Projects){
     const rate = project.rate;
     project.rate = 0;
-    this.service.create('projects',project).then((x: any)=> {
+    this. service.create('projects',project).then((x: any)=> {
       const rateList: rateList = {
         pid: x.id,
         rate: rate,
@@ -122,6 +129,15 @@ export class ProjectsComponent implements OnInit {
         this._snackBar.open('Published succefully','BBInvestors', {panelClass: 'happy'});
       })
     })
+    // const user = this.auth.user.uid;
+    // if (user) {
+    //   this.service.create('rateList', {rate: project.rate, user: user}).then((x: any)=> {
+    //     project.rate = 0;
+    //     this.service.create('projects',{rateId: x.id, ...project}).then(()=> {
+    //       this._snackBar.open('Published succefully','BBInvestors', {panelClass: 'happy'});
+    //    })
+    //  })
+    // }
   }
   
   /**
@@ -131,16 +147,24 @@ export class ProjectsComponent implements OnInit {
    */
   rateRef!: string;
   sendEdit(currentProject: Projects){
-    if (this.auth.authenticated && this.auth.isAdmin){
-      this.service.getRateList(currentProject.id!).snapshotChanges().pipe(
-        map(changes => changes.map(c => ({id: c.payload.doc.id, ...c.payload.doc.data()
-        })))).subscribe((x: rateList[])=> {
-        currentProject.rate = x[0].rate;
-        this.rateRef = x[0].id!;
-        this.project = currentProject; //changes on this.projects are linked with onChanges of admin component.
-      })
-    }
+    this.auth.auth.currentUser.then(user => {
+      if (user && this.auth.isAdmin){
+        this.service.getRateListAdmin(currentProject.id!).snapshotChanges().pipe(
+          map(changes => changes.map(c => ({id: c.payload.doc.id, ...c.payload.doc.data()
+          })))).subscribe((x: rateList[])=> {
+          if (x&&x.length){
+            currentProject.rate = x[0].rate;
+            this.rateRef = x[0].id!;
+          }
+          this.project = currentProject; //changes on this.projects are linked with onChanges of admin component.
+        })
+      }
+    })
   }
+  /**
+   * 
+   * @param newObj form.value from projects.admin.component
+   */
   editProject(newObj: Projects): void {
     if (newObj && this.project) {
       const data: any = {
@@ -166,38 +190,40 @@ export class ProjectsComponent implements OnInit {
   }
   deleteDoc(id: string|undefined, project: any): void {
     if (id) {
-      if (this.auth.authenticated && this.auth.isAdmin){
-        if(confirm('Seguro que quiere eliminar este proyecto?')){
-          this.service.delete('projects', id)
-          .then(() => {
-            this.storage.refFromURL(project.fotoAntes).delete().subscribe(()=>
-            this.storage.refFromURL(project.fotoDsps).delete().subscribe(()=>
-            this.storage.refFromURL(project.fotoFinal).delete().subscribe(()=>{
-              if(project.fotosObra.length){
-                project.fotosObra.forEach((url:any) => {
-                  this.storage.refFromURL(url).delete();
-                });
-              }
-            })
-          ));
-          this.service.getRateList(id!).snapshotChanges().pipe(
-            map(changes => changes.map(c => ({id: c.payload.doc.id, ...c.payload.doc.data()}))
-            )).subscribe((x: rateList[])=> {
-              const rateRef = x[0].id; 
-              this.service.delete('rateList', rateRef!).then(()=>{
-                this.tabs = ['ALL'];
-                this.pList.map(x => x.ciudad).map(y => {
-                  if (!this.tabs.includes(y!)){
-                    this.tabs.push(y!);
-                  }
-                });
-              this._snackBar.open('Deleted succefully','BBInvestors');
+      this.auth.auth.currentUser.then(user => {
+        if (user && this.auth.isAdmin){
+          if(confirm('Seguro que quiere eliminar este proyecto?')){
+            this.service.delete('projects', id)
+            .then(() => {
+              this.storage.refFromURL(project.fotoAntes).delete().subscribe(()=>
+              this.storage.refFromURL(project.fotoDsps).delete().subscribe(()=>
+              this.storage.refFromURL(project.fotoFinal).delete().subscribe(()=>{
+                if(project.fotosObra.length){
+                  project.fotosObra.forEach((url:any) => {
+                    this.storage.refFromURL(url).delete();
+                  });
+                }
               })
-            })
-        })
-      .catch(err => 
-        this._snackBar.open(err,'BBInvestors'));}
-      }
+            ));
+            this.service.getRateListAdmin(id!).snapshotChanges().pipe(
+              map(changes => changes.map(c => ({id: c.payload.doc.id, ...c.payload.doc.data()}))
+              )).subscribe((x: rateList[])=> {
+                const rateRef = x[0].id; 
+                this.service.delete('rateList', rateRef!).then(()=>{
+                  this.tabs = ['ALL'];
+                  this.pList.map(x => x.ciudad).map(y => {
+                    if (!this.tabs.includes(y!)){
+                      this.tabs.push(y!);
+                    }
+                  });
+                this._snackBar.open('Deleted succefully','BBInvestors');
+                })
+              })
+          })
+        .catch(err => 
+          this._snackBar.open(err,'BBInvestors'));}
+        }
+      })
     }
   }
 

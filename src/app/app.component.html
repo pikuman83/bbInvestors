@@ -25,7 +25,7 @@
             
           <button class="user-btn" [title]="auth.authenticated?'Logout':'Login'" mat-icon-button [matMenuTriggerFor]="menu">
             <div class="hello-user" *ngIf="auth.authenticated">
-              <span i18n>Hola!</span>&nbsp;{{auth.user.displayName? auth.user.displayName: ''}} 
+              <span i18n>Hola </span>&nbsp;{{auth.user.displayName? auth.user.displayName + '!': ''}} 
               <mat-icon>arrow_drop_down</mat-icon></div>
             <mat-icon *ngIf="!auth.authenticated">account_circle</mat-icon>
           </button>
@@ -69,8 +69,8 @@
       <button mat-menu-item (click)="auth.authenticated? signOut():openLogin('')">
         <mat-icon>{{auth.authenticated? 'logout': 'login'}}</mat-icon>
         <span>{{auth.authenticated? 'Logout': 'Login'}}</span></button>
-      <button mat-menu-item (click)="router.navigate(['/privateArea'])" *ngIf="auth.authenticated&&!auth.isAdmin"><mat-icon>dashboard</mat-icon><span i18n="Inside user menu">Area privada</span></button>
-      <button mat-menu-item (click)="openLogin('new')" *ngIf="auth.authenticated&&auth.isAdmin"><mat-icon>person_add</mat-icon>
+      <button mat-menu-item (click)="router.navigate(['/privateArea'])" *ngIf="auth.authenticated&&!isAdmin"><mat-icon>dashboard</mat-icon><span i18n="Inside user menu">Area privada</span></button>
+      <button mat-menu-item (click)="openLogin('new')" *ngIf="auth.authenticated&&isAdmin"><mat-icon>person_add</mat-icon>
         <span>Crear usuario</span></button>
       <!-- <button mat-menu-item ><mat-icon>password</mat-icon><span i18n="inside user menu">Cambiar contraseña</span></button> -->
     </mat-menu>

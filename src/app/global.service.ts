@@ -7,7 +7,6 @@ import { Subject } from 'rxjs';
 export class GlobalService {
 
   showMenu = new Subject<boolean>();
-  // showMenu: boolean = true;
 
   constructor() {}
   

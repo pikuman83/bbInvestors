@@ -1,19 +1,15 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css']
 })
-export class ServicesComponent implements OnInit, OnDestroy {
+export class ServicesComponent implements OnInit{
 
   constructor() { }
 
-  ngOnInit(): void {console.log('services init')
-  }
-  ngOnDestroy():void {
-    console.log('services destroyed');
-  }
+  ngOnInit(): void {}
 
   scrollToElement(el: HTMLDivElement): void {
     el.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});

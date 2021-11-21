@@ -1,13 +1,13 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FireStoreService } from 'src/app/core/fire-store.service';
+import { FireStoreService } from 'src/app/modules/shared/services/fire-store.service';
 
 @Component({
   selector: 'app-projects-details',
   templateUrl: './projects-details.component.html',
   styleUrls: ['./projects-details.component.css']
 })
-export class ProjectsDetailsComponent implements OnInit, OnDestroy {
+export class ProjectsDetailsComponent implements OnInit {
 
   project: any;
   id!: string|null;
@@ -19,15 +19,14 @@ export class ProjectsDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.service.get('projects', this.id!).valueChanges().subscribe((project) => {
-      if (project) this.project = project;
-      else alert('Private data, please contact with Briggite to get access')
-    });
-    console.log('proj details init')
+    if (this.id){
+      this.service.get('projects', this.id!).valueChanges().subscribe((project) => {
+        if (project) this.project = project;
+        else alert('No data to visualize, please contact with Briggite to obtain your personalized quotation')
+      });
+    }
   }
-  ngOnDestroy():void {
-    console.log('proj details destroyed');
-  }
+
   getLang(){
     if (window.location.pathname.split('/')[1] === 'en') return 'EN';
     if (window.location.pathname.split('/')[1] === 'fr') return 'FR';

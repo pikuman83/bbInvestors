@@ -1,4 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { RouterTestingModule } from '@angular/router/testing';
+import { environment } from 'src/environments/environment';
+import { AuthService } from '../../shared/services/auth.service';
 
 import { NewsComponent } from './news.component';
 
@@ -8,7 +15,14 @@ describe('NewsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewsComponent ]
+      imports: [
+        RouterTestingModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        MatSnackBarModule,
+        MatDialogModule
+      ],
+      declarations: [ NewsComponent ],
+      providers: [AuthService]
     })
     .compileComponents();
   });

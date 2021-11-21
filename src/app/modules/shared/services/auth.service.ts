@@ -1,11 +1,13 @@
+// Pending task, unsubscribe/detach on destroy 
 import { Injectable} from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { UserProfile } from './interfaces';
-import { CredentialsPromptComponent } from './login/credentials-prompt/credentials-prompt.component';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { UserProfile } from '../interfaces';
+import { CredentialsPromptComponent } from '../login/credentials-prompt/credentials-prompt.component';
 
 
 @Injectable({
@@ -15,11 +17,13 @@ export class AuthService {
 
   /**For the method auth.currentUser you have to use awaits and keep track of the states manually
    * the current method with the observer used with onAuthstateChanged is a better solution*/
-  public user: UserProfile|any;
-
+  user: any;  
   /** As admin role is not assignable directly from the web in firebase and a server app node.js is required
-   * which uses admin sdk to manage users, a work around is done, creating a user profile collection*/
-  isAdmin = false;
+   * which uses admin sdk to manage users, a work around is done, creating a user profile collection
+   * and role is extracted from the collection and spread through out the app and its state is controled 
+   * through behavioural subject
+   * */
+  isAdmin = new BehaviorSubject<boolean>(false);
 
   constructor(readonly auth: AngularFireAuth, 
     private _snackBar: MatSnackBar, 
@@ -28,20 +32,19 @@ export class AuthService {
     private router:Router) {
     this.auth.onAuthStateChanged(user => {
       if (user){
-        const currentUser = this.fire.collection('users').doc(user.uid).valueChanges().subscribe((x)=>{
+        const currentUser = this.fire.collection('users').doc(user.uid).valueChanges().subscribe((x:any)=>{
           if (x){
-            this.user = x;
-            this.user.role === 'admin'? this.isAdmin = true: this.isAdmin = false;
+            this.user = user;
+            x.role === 'admin'? this.isAdmin.next(true) : this.isAdmin.next(false);
           }
           else{
             this.user = null;
-            this.isAdmin = false;
+            this.isAdmin.next(false);
           }
         currentUser.unsubscribe()
-      })
-      } else {
+      })} else {
         this.user = null;
-        this.isAdmin = false;
+        this.isAdmin.next(false);
       }
     })
   }
@@ -80,6 +83,7 @@ export class AuthService {
                await this.login(credentials.email, credentials.secret).then((x) => {
                 this.createUser(credential.user, admin, displayName).then(()=>{
                   credential.user!.updateProfile({ displayName })
+                  this._snackBar.open(`User account for ${displayName} created succesfully`, '', {panelClass: 'happy'});
                })
             })
             dialogRef.unsubscribe();  
@@ -105,7 +109,9 @@ export class AuthService {
     return this.fire.collection('users').doc(user.uid).set(data);
   }
 
-
+  /**
+   * this method needs to stop watching onSnapshots before signing out
+   */
   logOut() {
     this._snackBar.open(`See you soon ${this.user.displayName}`,'Briggite', {panelClass: 'happy'});
     this.auth.signOut().then(() => this.router.navigate(['/home']));

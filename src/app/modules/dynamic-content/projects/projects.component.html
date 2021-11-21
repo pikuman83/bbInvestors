@@ -19,9 +19,9 @@
         <!-- [ngStyle]="{'background': 'url(' + projects.fotoFinal + ')', 'height': '320px', 'background-position': 'center' ,'background-size': 'cover'}"></div> -->
         <div class="proj-name bask">{{getLang()==='ES'? projects.tituloES : getLang()==='EN'? projects.tituloEN: projects.tituloFR}}</div>
         <div class="proj-location">{{projects.ciudad}} | {{projects.pais}}</div>
-        <div class="price" *ngIf="auth.authenticated&&auth.isAdmin&&projects.rate && projects.rate>0">{{projects.rate | currency:'EUR'}}</div>
+        <div class="price" *ngIf="auth.authenticated&&isAdmin&&projects.rate && projects.rate>0">{{projects.rate | currency:'EUR'}}</div>
 
-        <div *ngIf="auth.authenticated&&auth.isAdmin" class="desc-btns txt-center">
+        <div *ngIf="auth.authenticated&&isAdmin" class="desc-btns txt-center">
           <button (click)="sendEdit(projects);openPanel=true"><mat-icon >edit</mat-icon></button>
           <button><mat-icon (click)="deleteDoc(projects.id, projects)">delete_forever</mat-icon></button>
         </div>
@@ -32,7 +32,7 @@
 </mat-tab-group>
 
 <app-projects-admin class="mt-childComp-200"
-  *ngIf="auth.authenticated&&auth.isAdmin"
+  *ngIf="auth.authenticated&&isAdmin"
   (addEvent)="addProject($event)"
   (editEvent)="editProject($event)"
   (focusEvent)="focusDiv.focus();project=null"

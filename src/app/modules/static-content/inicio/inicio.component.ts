@@ -1,6 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { FireStoreService } from 'src/app/core/fire-store.service';
+import { Component, OnInit } from '@angular/core';
+import { FireStoreService } from 'src/app/modules/shared/services/fire-store.service';
 import { News } from '../../shared/interfaces';
 
 @Component({
@@ -8,7 +7,7 @@ import { News } from '../../shared/interfaces';
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
-export class InicioComponent implements OnInit, OnDestroy {
+export class InicioComponent implements OnInit {
 
   newsList =  <News[]>[];
 
@@ -16,10 +15,6 @@ export class InicioComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getNews();
-    console.log('inicio init')
-  }
-  ngOnDestroy():void {
-    console.log('inicio destroyed');
   }
 
   getNews(): void{

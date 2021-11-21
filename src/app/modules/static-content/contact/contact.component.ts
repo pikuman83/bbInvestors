@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { FireStoreService } from 'src/app/core/fire-store.service';
+import { FireStoreService } from 'src/app/modules/shared/services/fire-store.service';
 declare var require: any;
 export interface country{
   iso2: string,
@@ -40,7 +40,6 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.showHeader = !!this.route.snapshot.paramMap.get('param');
-    // console.log(this.getCountry())
   }
 
   getCountry(){

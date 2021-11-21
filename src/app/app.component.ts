@@ -1,10 +1,10 @@
 
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { GlobalService } from './global.service';
-import { AuthService } from './modules/shared/auth.service';
+import { AuthService } from './modules/shared/services/auth.service';
 import { LoginComponent } from './modules/shared/login/login.component';
 
 @Component({
@@ -12,33 +12,34 @@ import { LoginComponent } from './modules/shared/login/login.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy{
+export class AppComponent implements OnInit{
 
   title = 'bbInvestors';
   showForm = false;
   showMenu = true;
+  isAdmin = false;
 
   constructor(
     public service: GlobalService,
     @Inject(DOCUMENT) private _document: Document, private _renderer2: Renderer2,
     public dialog: MatDialog,
     public auth: AuthService,
-    public router: Router
-    ){const route = service.showMenu.subscribe((x) => {
-        this.showMenu = x;
-        if(x){route.unsubscribe();}
-      })
-    }
+    public router: Router){}
 
   ngOnInit() {
+    const landing = this.service.showMenu.subscribe((x) => {
+      this.showMenu = x;
+      if(x){landing.unsubscribe();}
+    })
+    this.auth.isAdmin.subscribe(x => this.isAdmin = x);
     this.setLang();
     this.writeScript();
   }
 
-  ngOnDestroy():void{
-    this.showForm = false;
-    document.getElementById('popUp')!.classList.remove('popupForm');
-  }
+  // ngOnDestroy():void{
+  //   this.showForm = false;
+  //   document.getElementById('popUp')!.classList.remove('popupForm');
+  // }
 
   writeScript(){
     let script = this._renderer2.createElement('script');

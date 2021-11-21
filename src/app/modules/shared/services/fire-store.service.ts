@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Projects, rateList } from '../modules/shared/interfaces';
+import { Projects, rateList } from '../interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -33,8 +33,15 @@ export class FireStoreService {
   getUsers(): AngularFirestoreCollection<any> {
     return this.db.collection('users');
   }
-  getRateList(pid: string): AngularFirestoreCollection<rateList> {
-    return this.db.collection<rateList>('/rateList', ref => ref.where('pid', '==', pid));
+  // the app allows a quotation per project and user and not ONLY per user (means single price per project)
+  getRateList(pid: string, id: string): AngularFirestoreCollection<rateList> {
+    return this.db.collection<rateList>('/rateList', 
+      ref => ref.where('user', '==', id)
+      .where('pid', '==', pid));
+  }
+  getRateListAdmin(pid: string): AngularFirestoreCollection<rateList> {
+    return this.db.collection<rateList>('/rateList', 
+      ref => ref.where('pid', '==', pid));
   }
   updateRateList(pid: string, data: rateList): Promise<void> {
     return this.db.collection('/rateList').doc(pid).update(data);
