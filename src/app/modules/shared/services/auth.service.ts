@@ -5,7 +5,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { UserProfile } from '../interfaces';
 import { CredentialsPromptComponent } from '../login/credentials-prompt/credentials-prompt.component';
 
@@ -114,7 +114,7 @@ export class AuthService {
    */
   logOut() {
     this._snackBar.open(`See you soon ${this.user.displayName}`,'Briggite', {panelClass: 'happy'});
-    this.auth.signOut().then(() => this.router.navigate(['/home']));
+    this.auth.signOut().then(() => this.router.navigateByUrl('/home'));
   }
 
 }

@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
+import { MatMenuModule } from '@angular/material/menu';
+
 import { SharedModule } from "./modules/shared/shared.module";
 import { StaticContentModule } from "./modules/static-content/static-content.module";
 import { DynamicModule } from "./modules/dynamic-content/dynamic.module";
@@ -27,6 +29,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     HttpClientModule,
     StaticContentModule,
     DynamicModule,
+    MatMenuModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
     AngularFireAuthModule,

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { NewsAdminComponent } from './news-admin.component';
 
@@ -24,4 +24,12 @@ describe('NewsAdminComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // first field should be focused upon expand
+  // if form.invalid, create should be disable
+  // reset should reset form and edit field
+  // validations should work as expected
+  // must load fields if edit event is recieved
+  // must distinguish if edit or new and send event accordingly
+
 });

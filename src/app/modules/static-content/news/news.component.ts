@@ -43,8 +43,11 @@ export class NewsComponent implements OnInit {
 
   addNews(article:News){
     this.newsList?.push(article);
-    this.service.create('news',article).catch((err: any) => this._snackBar.open(err, 'BBInvestors'))
-    //.then(window.location.hash = '#start';
+    this.service.create('news',article).then(()=> {
+      document.body.scrollTop = 0; // Safari
+      document.documentElement.scrollTop = 0; // Chrome
+      this._snackBar.open('Updated succefully','BBInvestors', {panelClass: 'happy'});
+    }).catch((err: any) => this._snackBar.open(err, 'BBInvestors'))
   }
   editNews(newObj: News): void {
     if (newObj && this.news) {
@@ -76,8 +79,8 @@ export class NewsComponent implements OnInit {
     }
   }
 
-  scroll():  void{
-    document.getElementById('news-admin')?.scrollIntoView();
+  scroll(): void{
+    document.getElementById('news-admin')?.scrollIntoView({behavior: "smooth", block: "end"});
   }
 
 }

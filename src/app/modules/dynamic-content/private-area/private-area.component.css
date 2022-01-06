@@ -49,5 +49,7 @@
 }
 
 @media screen and (max-width: 576px) {
+    .container1{margin: 50px auto;}
     .title{font-size: 2.5em; padding: 20px;}
+    .project{margin-bottom: 20px;}
 }

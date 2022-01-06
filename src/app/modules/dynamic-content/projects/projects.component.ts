@@ -76,7 +76,7 @@ export class ProjectsComponent implements OnInit {
       })
     } catch (error) {
       this._snackBar.open(error as string,'BBInvestors');
-      this.router.navigate(['/home'])
+      this.router.navigateByUrl('/home')
     }
   }
 

@@ -18,15 +18,18 @@ export class ProjectsDetailsComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+    // Must make sure a private project is not shown if not admin or owner, it is controlled from the backend
+    // but front end should handle the situation and derivate
     this.id = this.route.snapshot.paramMap.get('id');
     if (this.id){
       this.service.get('projects', this.id!).valueChanges().subscribe((project) => {
         if (project) this.project = project;
-        else alert('No data to visualize, please contact with Briggite to obtain your personalized quotation')
-      });
+        else alert('No data to visualize, please contact Briggite to obtain your personalized quotation')
+      })
     }
   }
 
+  // the original language menu should be transferred to a service and provide the chosen language info globally
   getLang(){
     if (window.location.pathname.split('/')[1] === 'en') return 'EN';
     if (window.location.pathname.split('/')[1] === 'fr') return 'FR';
@@ -52,7 +55,7 @@ export class ProjectsDetailsComponent implements OnInit {
     const index = x.indexOf(this.id!);
     if (x){
       if (index !== x.length - 1){
-        this.router.navigate([`/projects/project-details/${x[index+1]}`]);
+        this.router.navigateByUrl(`/projects/project-details/${x[index+1]}`);
         this.service.get('projects', x[index+1]).valueChanges().subscribe((project: any) => {
           this.project = project;
           this.id = x[index+1];
@@ -60,7 +63,7 @@ export class ProjectsDetailsComponent implements OnInit {
         });
       }
       else{
-        this.router.navigate([`/projects/project-details/${x[0]}`]);
+        this.router.navigateByUrl(`/projects/project-details/${x[0]}`);
         this.service.get('projects', x[0]).valueChanges().subscribe((project: any) => {
           this.project = project;
           this.id = x[0];
@@ -76,7 +79,7 @@ export class ProjectsDetailsComponent implements OnInit {
     if (x){
       if (index !== 0){
         const newId = x[index - 1];
-        this.router.navigate([`/projects/project-details/${newId}`]);
+        this.router.navigateByUrl(`/projects/project-details/${newId}`);
         this.service.get('projects', newId).valueChanges().subscribe((project: any) => {
           this.project = project;
           this.id = newId;
@@ -85,7 +88,7 @@ export class ProjectsDetailsComponent implements OnInit {
       }
       else{
         const newId = x[x.length - 1];
-        this.router.navigate([`/projects/project-details/${newId}`]);
+        this.router.navigateByUrl(`/projects/project-details/${newId}`);
         this.service.get('projects', newId).valueChanges().subscribe((project: any) => {
           this.project = project;
           this.id = newId;

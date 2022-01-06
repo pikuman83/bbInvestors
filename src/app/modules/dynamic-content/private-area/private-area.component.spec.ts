@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { AngularFireModule } from '@angular/fire';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -11,11 +11,38 @@ import { PrivateAreaComponent } from './private-area.component';
 describe('PrivateAreaComponent', () => {
   let component: PrivateAreaComponent;
   let fixture: ComponentFixture<PrivateAreaComponent>;
-  const user = {
-    uid:  'mockUser'
-  }
+  const fakeUser = { email: 'example@gmail.com', uid: 1, emailVerified: true }
+  const authStub = {currentUser: Promise.resolve(fakeUser)};
+  let AuthServiceSpy: any;
 
+  let fakeService = {
+    getratelist() {
+
+    },
+    getPrivateData(){
+
+    },
+    fakeRateList: {
+      
+    },
+    fakePrivateData: {
+      payload: {
+        doc:{
+          id: '1',
+          data(){
+            return {
+              id: 11,
+              pais: 'España',
+              rate: 0
+            }
+          }
+        }
+      }
+    }
+  }
+  
   beforeEach(async () => {
+    AuthServiceSpy = { auth: authStub }
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
@@ -24,20 +51,63 @@ describe('PrivateAreaComponent', () => {
         MatDialogModule
       ],
       declarations: [ PrivateAreaComponent ],
-      providers: [AuthService, FireStoreService]
+      providers: [
+        { provide: AuthService, useValue: AuthServiceSpy},
+        { provide: FireStoreService, useValue: fakeService}
+      ]
     })
     .compileComponents();
-  });
-
-  beforeEach(() => {
-    const service = TestBed.inject(AuthService);
-    service.user = user;
     fixture = TestBed.createComponent(PrivateAreaComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    AuthServiceSpy = TestBed.inject(AuthService);
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+   it('Should fail without user', fakeAsync(() => {
+    AuthServiceSpy.auth.currentUser = Promise.resolve(null);
+    fixture.detectChanges();
+    tick();
+    expect(component.pList).toEqual([{id: 'hello'}]);
+  }));
+
+  it('#getRate must return right rates of the projects and should be called only once', fakeAsync(() => {
+    // try with fake service
+    // Also try with creating spy and returning fake value with original service
+    AuthServiceSpy.auth.currentUser = Promise.resolve(null);
+    fixture.detectChanges();
+    tick();
+    expect(component.pList).toEqual([{id: 'hello'}]);
+  }));
+
+  it('#getProjects must return a single array with merged rate and should iterate only once', fakeAsync(() => {
+    AuthServiceSpy.auth.currentUser = Promise.resolve(null);
+    fixture.detectChanges();
+    tick();
+    expect(component.pList).toEqual([{id: 'hello'}]);
+  }));
+  
+  it('number of cards must be similar to length of projects[]', fakeAsync(() => {
+    AuthServiceSpy.auth.currentUser = Promise.resolve(null);
+    fixture.detectChanges();
+    tick();
+    expect(component.pList).toEqual([{id: 'hello'}]);
+  }));
+
+  it('must show the title in the selected language', fakeAsync(() => {
+    AuthServiceSpy.auth.currentUser = Promise.resolve(null);
+    fixture.detectChanges();
+    tick();
+    expect(component.pList).toEqual([{id: 'hello'}]);
+  }));
+
+  it('Must return user related objects only', fakeAsync(() => {
+    AuthServiceSpy.auth.currentUser = Promise.resolve(null);
+    fixture.detectChanges();
+    tick();
+    expect(component.pList).toEqual([{id: 'hello'}]);
+  }));
+
 });

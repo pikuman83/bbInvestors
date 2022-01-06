@@ -13,7 +13,7 @@
     <div class="projs-container">
       <div class="project" *ngFor="let projects of tabContent; let i = index">
         <div class="overflow-control">
-          <div class="proj-img" (click)="router.navigate(['projects/project-details/' + projects.id])" 
+          <div class="proj-img" (click)="router.navigateByUrl('projects/project-details/' + projects.id)" 
             [ngStyle]="{'background': 'url(' + projects.fotoFinal + ') no-repeat', 'background-size': 'contain'}"></div>
         </div>
         <!-- [ngStyle]="{'background': 'url(' + projects.fotoFinal + ')', 'height': '320px', 'background-position': 'center' ,'background-size': 'cover'}"></div> -->

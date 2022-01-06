@@ -4,11 +4,11 @@
 <div class="container1" *ngIf="auth.authenticated">
     <div class="projs-container">
         <div class="project" *ngFor="let projects of pList; let i = index">
-            <div (click)="router.navigate(['projects/project-details/' + projects.id])" 
+            <div (click)="router.navigateByUrl('projects/project-details/' + projects.id)" 
             [ngStyle]="{'background': 'url(' + projects.fotoFinal + ')', 'background-repeat': 'no-repeat', 'padding-top': '56.85%' ,'background-size': 'contain'}"></div>
             <div class="proj-name bask">{{getLang()==='ES'? projects.tituloES : getLang()==='EN'? projects.tituloEN: projects.tituloFR}}</div>
             <div class="proj-location">{{projects.ciudad}} | {{projects.pais}}</div>
-            <div>{{projects.rate | currency:'EUR'}}</div>
+            <div style="margin-bottom: 20px;">{{projects.rate | currency:'EUR'}}</div>
         </div>
     </div>
 </div>

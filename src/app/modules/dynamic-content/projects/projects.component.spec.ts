@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AngularFireModule } from '@angular/fire';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -19,7 +20,8 @@ describe('ProjectsComponent', () => {
         RouterTestingModule,
         MatDialogModule
       ],
-      declarations: [ ProjectsComponent ]
+      declarations: [ ProjectsComponent ],
+      schemas:      [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
   });
