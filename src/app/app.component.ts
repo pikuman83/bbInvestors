@@ -36,11 +36,6 @@ export class AppComponent implements OnInit{
     this.writeScript();
   }
 
-  // ngOnDestroy():void{
-  //   this.showForm = false;
-  //   document.getElementById('popUp')!.classList.remove('popupForm');
-  // }
-
   writeScript(){
     let script = this._renderer2.createElement('script');
     script.type = "text/javascript";
@@ -69,6 +64,12 @@ export class AppComponent implements OnInit{
     return lang = '';
   }
 
+  /**
+   * 
+   * @param type string, passes an argument to dialogue as injected data to determine whether it's a 
+   * login or new user call. If there as data in this arg 'new', it will hide inputs and change labels.
+   * ¿Should this method be moved to global service, so that it is accebile from the whole app?
+   */
   openLogin(type: string){
     const dialogRef = this.dialog.open(LoginComponent,{width: '350px', disableClose:true, autoFocus:true, data:type});
   }
